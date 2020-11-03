@@ -28,23 +28,14 @@ L'équipe chargée de ce module va dans un premier temps construire la base de d
 
 ===== Interface Android/IOS
 
-L'équipe chargée de ce module est au coeur du projet puisqu'elle developpera l'application Andoid par laquelle l'utilisateur se repérera dans le magasin après avoir rentré sa liste de course. L'équipe devra déveloper les différentes pages de l'application(écran de chargement, écran où l'on choisit le magasin, écran où l'on fait sa liste de produit, carte du magasin, promotions, ... ). Nous avons fourni un première aperçu de l'application(Stroyboard) dans le dossier ? . Il s'agit aussi de développer un moteur de recherche dans lequel l'utilisateur pourra filtrer les différents produits en fonction de plusieurs critères(tels que le prix, l'impact environnemental, ...). 
+L'équipe chargée de ce module est au coeur du projet puisqu'elle developpera l'application Andoid par laquelle l'utilisateur se repérera dans le magasin après avoir rentré sa liste de course. L'équipe devra déveloper les différentes pages de l'application(écran de chargement, écran où l'on choisit le magasin, écran où l'on fait sa liste de produit, carte du magasin, promotions, ... ). Nous avons fourni un première aperçu de l'application(Stroyboard) dans le dossier ? . Il s'agit aussi de développer un moteur de recherche dans lequel l'utilisateur pourra filtrer les différents produits en fonction de plusieurs critères(tels que le prix, l'impact environnemental, ...). Liste collaboratives ...
 
 ===== Algorithmie
 
-Dans ce module, les étudiants se chargeront d'implémenter l'algorithme de plus court chemin en s'appuyant notamment sur l'algorithme de djikstra(Les produits représenteront les sommets du graphe). Ces mêmes étudiants devront aussi developper un algorithme qui en fonction de la liste de course de l'utilisateur, lui proposera d'autres produits à consommer afin d'avoir une consommation plus saine et plus respectueuse de l'environnement.
+Dans ce module, les étudiants se chargeront d'implémenter l'algorithme de plus court chemin en s'appuyant notamment sur l'algorithme de djikstra(Les produits représenteront les sommets du graphe). Ces mêmes étudiants devront aussi developper un algorithme qui en fonction de la liste de course de l'utilisateur, lui proposera d'autres produits à consommer en fonction de ses préferences tout en encourageant une consommation plus saine et plus respectueuse de l'environnement.
 
 ===== Test et Integration
 
 Ce module consistera à tester les différents modules du projet afin de mettre en évidence certains problèmes. L'équipe se chargera aussi d'assembler les différents modules afin que le projet marche dans sa globalité. 
 
 
-
-
-
-
-
-
-
-
-Description textuelle du bloc 1.
