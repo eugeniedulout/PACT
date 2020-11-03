@@ -43,9 +43,11 @@ Décrire votre projet sans le scénariser : De quoi s’agit-il ? En quoi
 cette idée est compatible avec le thème de PACT ? Qu’est ce qu’il
 permettrait de faire de façon générale.
 
-Il s'agit d'une application de création de liste de courses relié à une base de donnée des produits disponibles en magasin, associé à une méthode de localisation à l'intérieur du magasin. Lors de la création de la liste, l'application propose des produits en fonction des préférences de l'utilisateur et de ses listes précédentes, mais aussides promotions actuelles dans le magasin. 
-Les listes de courses peuvent être partagés entre utilisateurs, ainsi que des sous-listes (ou "recettes") de type d'ingrédients. Une fois la liste de courses rentrés, l'application fournit une fois dans le magasin la localisation de l'usager et des produits sur la listes, ainsi qu'un chemin optimal pour aller les récupérés. 
+Il s'agit d'une application de création de liste de courses reliée à une base de donnée des produits disponibles en magasin, associée à une méthode de localisation à l'intérieur du magasin. Lors de la création de la liste, l'application propose des produits en fonction des préférences de l'utilisateur et de ses listes précédentes, mais aussi des promotions actuelles dans le magasin. 
+Les listes de courses peuvent être partagées entre utilisateurs, ainsi que des sous-listes (ou "recettes") de type d'ingrédients, ce qui est utile au sein d'un foyer par exemple. Une fois la liste de courses rentrée et dans le magasin, l'application fournit la localisation de l'usager et des produits sur la listes, ainsi qu'un chemin optimal pour aller les récupérer. 
 Le recensement des produits et de leur localisation se fait de manière participative par les utilisateurs.
+De plus, notre projet n'a pas pour unique objectif de guider les clients dans leur magasin afin de rendre leurs courses moins pénibles. L'application devra aussi permettre à l'utilisateur de pouvoir adopter (s'il le souhaite) un mode de consommation sain et responsable. Lorsque l'utilisateur choisit un produit à ajouter à sa liste, l'application devra lui proposer les différents produits disponibles, classés selon ses préférences (prix, bio, local, sain...).
+Dès lors, notre projet se place au service de l'humain en aidant l'utilisateur à prendre soin de sa santé, les commerçants locaux à vivre et vendre leurs produits, et la planète en luttant contre le gaspillage et en valorisant l'agriculture biologique.  
 
 
 == English Summary (PAN1)
