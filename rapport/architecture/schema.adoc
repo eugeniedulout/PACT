@@ -17,9 +17,10 @@ disponibles de ce que vous allez produire (coder) vous même. Vous ne
 devez pas réinventer la roue mais vous ne devez pas non plus avoir votre
 projet tout fait en encapsulant un programme déjà existant.
 
-===== NomBloc1
+===== Environnement 
 
-Description textuelle du bloc 1.
+Ce module consiste à acquerir la position de l'utilisateur en temps réel dans le magasin. Pour cela, on utilisera des capteurs bluetooth beacon.
+
 
 ===== NomBloc2
 
