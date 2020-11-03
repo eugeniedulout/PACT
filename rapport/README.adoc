@@ -16,12 +16,14 @@ ifdef::env-gitlab,env-browser[:outfilesuffix: .adoc]
 
 === Membres du groupe
 
-* Nom1
-* Nom2
-* Nom3
-* Nom4
-* Nom5
-* Nom6
+* Glasziou Erwan
+* Bouffant Charles
+* Dulout Eugénie
+* Bruno François
+* Audinet Quentin
+* Bakache Victor
+* Btj Sofiene
+* Senane Zineb
 
 === Tuteur
 
