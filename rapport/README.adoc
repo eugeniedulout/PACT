@@ -33,6 +33,7 @@ E-POKAMP
 === Encadrant génie logiciel
 
 * MOISSINAC Jean-Claude
+* DUFOURD Jean-Claude
 
 == Résumé du sujet choisi en français (PAN1)
 
