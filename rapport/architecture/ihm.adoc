@@ -11,3 +11,14 @@ dessins au crayon photographiés ou scannés, car ce sont les meilleurs
 supports de discussion : on appelle souvent ces dessins un
 « storyboard ». Une description textuelle fait le lien entre tous les
 éléments de l’IHM (ou des IHMs).
+
+
+Notre projet est une application Android. Il est donc impératif de mettre en place une IHM pour smartphone et tablette, les dimensions étant différentes.
+
+
+
+==Storyboard
+image::../image/story_board_premieres_pages.jpg[Premières pages de l'appli]
+image::../image/story_board_listes_et_recettes.jpg[Les listes et recettes]
+image::../image/story_board_profil.jpg[Le profil de l'utilisateur]
+image::../image/story_board_plan.jpg[Le plan]
