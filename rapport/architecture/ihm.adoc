@@ -17,7 +17,8 @@ Notre projet est une application Android. Il est donc impératif de mettre en pl
 
 
 
-==Storyboard
+== Storyboard
+
 image::../images/story_board_premieres_pages.jpg[Premières pages de l'appli]
 image::../images/story_board_listes_et_recettes.jpg[Les listes et recettes]
 image::../images/story_board_profil.jpg[Le profil de l'utilisateur]
