@@ -6,14 +6,7 @@ constatés avant élaboration du projet, comment votre projet répond à ces
 besoins. Ajouter une image ou une figure pour montrer à quoi cela
 ressemble si besoin._
 
-Amet, tellus. Maecenas a dolor. Praesent tempor, felis eget gravida
-blandit, urna lacus faucibus velit, in consectetuer sapien erat nec
-quam. Integer bibendum odio sit amet neque. Integer imperdiet rhoncus
-mi. Pellentesque malesuada purus id purus. Quisque viverra porta lectus.
-Sed lacus leo, feugiat at, consectetuer eu, luctus quis, risus.
-Suspendisse faucibus orci et nunc. Nullam vehicula fermentum risus.
-Fusce felis nibh, dignissim vulputate, ultrices quis, lobortis et, arcu.
-Duis aliquam libero non diam.
+L'objectif de notre projet est de simplifier la tâche d'aller faire des courses, aussi bien en amont de celle-ci (constitution de liste de courses simplifiées et éventuellement collectives, présentation des promotions disponibles) que dans le magasin (aide au repérage et localisation des produits).  
 
 Vestibulum placerat tincidunt tortor. Ut vehicula ligula quis lectus. In
 eget velit. Quisque vel risus. Mauris pede. Nullam ornare sapien sit
