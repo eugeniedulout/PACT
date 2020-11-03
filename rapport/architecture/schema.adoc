@@ -19,9 +19,32 @@ projet tout fait en encapsulant un programme déjà existant.
 
 ===== Environnement 
 
-Ce module consiste à acquerir la position de l'utilisateur en temps réel dans le magasin. Pour cela, on utilisera des capteurs bluetooth beacon.
+Ce module consistera à acquerir la position de l'utilisateur en temps réel dans le magasin. Pour cela, on utilisera une méthode de triangulisation à l'aide de balises bluetooth beacon.
 
 
-===== NomBloc2
+===== Base de donnée/Serveur
+
+L'équipe chargée de ce module va dans un premier temps construire la base de donnée où l'on stockera les différents magasins, les produit(prix, impact environnemental, qualité nutritionnelle). L'équipe devra aussi gérer tout au long du projet le serveur et les requetes SQL.
+
+===== Interface Android/IOS
+
+L'équipe chargée de ce module est au coeur du projet puisqu'elle developpera l'application Andoid par laquelle l'utilisateur se repérera dans le magasin après avoir rentré sa liste de course. L'équipe devra déveloper les différentes pages de l'application(écran de chargement, écran où l'on choisit le magasin, écran où l'on fait sa liste de produit, carte du magasin, promotions, ... ). Nous avons fourni un première aperçu de l'application(Stroyboard) dans le dossier ? . Il s'agit aussi de développer un moteur de recherche dans lequel l'utilisateur pourra filtrer les différents produits en fonction de plusieurs critères(tels que le prix, l'impact environnemental, ...). 
+
+===== Algorithmie
+
+Dans ce module, les étudiants se chargeront d'implémenter l'algorithme de plus court chemin en s'appuyant notamment sur l'algorithme de djikstra(Les produits représenteront les sommets du graphe). Ces mêmes étudiants devront aussi developper un algorithme qui en fonction de la liste de course de l'utilisateur, lui proposera d'autres produits à consommer afin d'avoir une consommation plus saine et plus respectueuse de l'environnement.
+
+===== Test et Integration
+
+Ce module consistera à tester les différents modules du projet afin de mettre en évidence certains problèmes. L'équipe se chargera aussi d'assembler les différents modules afin que le projet marche dans sa globalité. 
+
+
+
+
+
+
+
+
+
 
 Description textuelle du bloc 1.
