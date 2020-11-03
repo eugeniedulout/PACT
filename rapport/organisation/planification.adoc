@@ -9,12 +9,12 @@
 [cols=",^,^,,",options="header",]
 |====
 |Tâche |Qui |Quand |Fait |Remarques
-|sujet | | | |
-|sujet en anglais | | | |
-|scenario | | | |
-|architecture (schéma et documentation) | | | |
-|découpage en modules | | | |
-|planning temporel (ce document, personnalisé) | | | |
+|sujet |Erwan |3/11 |Oui | revu avec tout le monde
+|sujet en anglais | Erwan | 4/11|Non |
+|scenario |François, Victor, Sofiene |12/10 |Non | Modifié par Erwan et Eugénie apres le retour du copil
+|architecture (schéma et documentation) |Sofiene |12/10 |Non |
+|découpage en modules | Charles, François | 19/10 et 3/11 | Non |
+|planning temporel (ce document, personnalisé) | Eugénie |3/11 |Oui | 
 |====
 
 * présentation 15mn
@@ -22,9 +22,9 @@
 [cols=",^,^,,",options="header",]
 |====
 |Tâche |Qui |Quand |Fait |Remarques
-|préparation du document | | | |
-|répartition de la parole | | | |
-|répétition | | | |
+|préparation du document |Tout le monde | À venir | Non | Mêmes répartitions que parole
+|répartition de la parole |Eugénie | 3/11| Oui | Quentin et Zineb sujet / Victor et Eugénie scénario / sofiene et erwan architecture / Charles et François découpage
+|répétition | Tout le monde | À venir | Non | Idem
 |====
 
 ==== Taches / PAN2 20/01/20
