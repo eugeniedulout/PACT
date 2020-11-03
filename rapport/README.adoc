@@ -1,5 +1,5 @@
 = Rapport d’avancement du groupe “3.3”
-PACT groupe xy (Les plus beaux)
+PACT groupe 33
 ifdef::env-gitlab,env-browser[:outfilesuffix: .adoc]
 :doctype: book
 :stem: latexmath
@@ -13,6 +13,7 @@ ifdef::env-gitlab,env-browser[:outfilesuffix: .adoc]
 // Partie non numérotée
 :sectnums!:
 == « Nom du groupe »
+E-POKAMP
 
 === Membres du groupe
 
