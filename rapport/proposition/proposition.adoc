@@ -43,7 +43,7 @@ image::../images/logo_PACT.png[logo pact]
 * L'image peut être redimensionnée et avoir un titre:
 
 .Le logo du projet
-image::../images/logo_PACT.png[logo pact, 400, 400]
+image::https://media.discordapp.net/attachments/760468165817270286/763335790557396992/Architecture_PACT.png?width=862&height=468.png[logo pact, 400, 400]
 
 * Pour le rapport, les images peuvent être aux formats jpeg, png ou même *svg*:
 
