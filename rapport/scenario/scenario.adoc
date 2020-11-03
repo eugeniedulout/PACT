@@ -1,26 +1,9 @@
 === Scénarios d’usage
-Mettre ici le scénario d’usage que vous avez construit lors des séances
-encadrées par les experts SES. Vous pouvez mettre un scénario amélioré
-(et non celui noté) si vous jugez votre scénario insuffisant pour faire
-comprendre au jury PACT les différentes étapes d’utilisation de votre
-produit/service ou si vous avez changé d’idées entre temps.
 
-==== XX
+Une famille se rend tous les week-end dans la grande surface la plus proche. Pour ce faire, elle utilise l'application E-POKAMP qui lui propose le plus court chemin dans le magasin et la guide avec un plan qui évolue pendant son trajet. Elle  lui permet donc de gagner un temps précieux et de réduire la pénibilité en fluidifiant le parcours des courses tout en consommant de façon responsable. 
 
-Nulla. Curabitur aliquet leo ac massa. Praesent posuere lectus vitae
-odio. Donec imperdiet urna vel ante. In semper accumsan diam. Vestibulum
-porta justo. Suspendisse egestas commodo eros.
+Pour cela, l’usager aura au préalable créé une liste de course dans l’application. En recherchant par exemple “farine”, il lui sera proposé tous les produits de ce type présents dans le magasin ainsi que les éventuelles promotions les concernant, qui seront triés de différentes façons : prix croissant ou décroissant, Bio en premier, selon le nutri-score… Selon sa volonté, l’usager pourra automatiser le choix parmi ces produits selon des critères prédéfinis ou ses préférences observées par l’application. Ces listes pourront par ailleurs être collaboratives, afin que plusieurs membres d’une même famille, qui constitueront les “amis” de l’usager,  puissent faire des courses communes. Les listes seront complétées par des recettes (sous-liste de types d’ingrédients) qui pourront être sauvegardées, partagées, et exportées vers une liste de course lorsque l’usager souhaite réaliser un plat.
 
-Suspendisse tincidunt mi vel metus. Vivamus non urna in nisi gravida
-congue. Aenean semper orci a eros. Praesent dictum. Maecenas pharetra
-odio ut dui. Pellentesque.
+De plus, E-POKAMP fournit des conseils réguliers pour consommer de façon responsable, d’un point de vue humain (suggestions de produits locaux et issus du commerce équitable...), sanitaire (informations sur l’apport calorique et la composition des produits) et environnemental (produits issus de l’agriculture biologique et ayant une empreinte carbone réduite). Elle permet donc aux clients d’adapter un meilleur mode de vie en consommant plus sain et éthique sans avoir à y penser: lorsqu’ils chercheront à ajouter un produit à une liste, ceux qui répondent aux critères définis précédemment seront proposés en premier. 
 
-==== YY
-
-Ac mauris.
-
-Duis velit magna, scelerisque vitae, varius ut, aliquam vel, justo.
-Proin ac augue. Nullam auctor lectus vitae arcu. Vestibulum porta justo
-placerat purus. Ut sem nunc, vestibulum nec, sodales vitae, vehicula
-eget, ipsum. Sed nec tortor. Aenean malesuada. Nunc convallis, massa eu
-vestibulum commodo, quam mauris interdum arcu, at pellentesque.
+En cas d’incohérence entre la base de données et la réalité (produit absent ou mal localisé), le client aura la possibilité de corriger l’erreur directement depuis son application : ainsi les changements de rayons mal documentés seront compensés de manière participative.
