@@ -27,11 +27,11 @@ ifdef::env-gitlab,env-browser[:outfilesuffix: .adoc]
 
 === Tuteur
 
-* xx yy
+* JABBOUR Chadi
 
 === Encadrant génie logiciel
 
-* xx yy
+* MOISSINAC Jean-Claude
 
 == Résumé du sujet choisi en français (PAN1)
 
