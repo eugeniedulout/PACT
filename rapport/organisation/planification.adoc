@@ -12,7 +12,7 @@
 |sujet |Erwan |3/11 |Oui | revu avec tout le monde
 |sujet en anglais | Erwan | 4/11|Non |
 |scenario |François, Victor, Sofiene |12/10 |Non | Modifié par Erwan et Eugénie apres le retour du copil
-|architecture (schéma et documentation) |Sofiene |12/10 |Non |
+|architecture (schéma et documentation) |Sofiene, Zineb, Eugénie, Quentin |12/10 |Non |
 |découpage en modules | Charles, François | 19/10 et 3/11 | Non |
 |planning temporel (ce document, personnalisé) | Eugénie |3/11 |Oui | 
 |====
