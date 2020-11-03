@@ -22,7 +22,7 @@ ifdef::env-gitlab,env-browser[:outfilesuffix: .adoc]
 * Bruno François
 * Audinet Quentin
 * Bakache Victor
-* Btj Sofiene
+* Boutaj Sofiene
 * Senane Zineb
 
 === Tuteur
