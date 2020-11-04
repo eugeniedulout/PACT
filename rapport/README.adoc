@@ -36,12 +36,6 @@ E-POKAMP
 
 == Résumé du sujet choisi en français (PAN1)
 
-*_Note: 15 lignes max_*
-
-Décrire votre projet sans le scénariser : De quoi s’agit-il ? En quoi
-cette idée est compatible avec le thème de PACT ? Qu’est ce qu’il
-permettrait de faire de façon générale.
-
 Notre projet est une application de création de liste de courses reliée à une base de donnée des produits disponibles en magasin, associée à une méthode de localisation à l'intérieur du magasin. Lors de la création de la liste, l'application propose des produits en fonction des préférences de l'utilisateur et de ses listes précédentes, mais aussi des promotions actuelles dans le magasin. 
 Les listes de courses peuvent être partagées entre utilisateurs, ainsi que des sous-listes (ou "recettes") de type d'ingrédients, ce qui est utile au sein d'un foyer par exemple. Une fois la liste de courses rentrée et dans le magasin, l'application fournit la localisation de l'usager et des produits sur la listes, ainsi qu'un chemin optimal pour aller les récupérer. 
 Le recensement des produits et de leur localisation peut se faire de manière participative par les utilisateurs.
@@ -57,20 +51,6 @@ The list of available products and their location can be collaboratively uptated
 Furthermore, our app isn't simply designed to guide  clients inside stores to make shopping less bothering. It will also allow the user to consume (if they wish to) in a more healthy and responsible way. When the user chooses a product to add to their list, the app will show them other available products, sorted accordingly to their preferences (price, organic, local production, healthy...).
 Henceforth, our project provides a service to humans by helping users take good care of their health, favorising local business, and alerting users about the ecological impact of their consumption while providing them with the tools to adjust it.
 
-*Notes concenant le rapport*
-
-Les différentes pages du document sont rédigées en utilisant le langage
-AsciiDoc. Le squelette de rapport contient des exemples avec entre autre:
-
-* des images,
-* des liens,
-* des équations.
-
-La structure du rapport (parties, sections et la relation avec les
-differents fichiers) se trouve dans le fichier courant.
-
-// en PDF on ne peut pas controler la position de la toc
-// Macros non supportées
 ifndef::backend-pdf[]
 == Table des matières
 :toc-title:
