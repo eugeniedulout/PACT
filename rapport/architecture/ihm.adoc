@@ -13,13 +13,21 @@ supports de discussion : on appelle souvent ces dessins un
 éléments de l’IHM (ou des IHMs).
 
 
-Notre projet est une application Android. Il est donc impératif de mettre en place une IHM pour smartphone et tablette, les dimensions étant différentes.
 
+Notre projet est une application Android. Il est donc impératif de mettre en place une IHM pour smartphone et tablette, les dimensions étant différentes.
 
 
 ==== Storyboard
 
 image::../images/story_board_premieres_pages.jpg[Premières pages de l'appli]
+
+La première page où l'utilisateur peut intéragir est l'écran de connection (en bas à gauche)
+Cette page peut renvoyer sur une page de création de compte en cas de première connection (avec les champs E-mail/Nom/Mot de passe/Confirmation de Mot de passe). Elle renvoie ensuite sur la page de connection une fois les informations du compte validées.
+La page de connection demande simplement e-mail et mot de passe, et possède un bouton mot de passe oublié.
+Une fois connecté, le client arrive sur la page d'acceuil (Milieu haut), dont le foctionnnement est détaillé ci dessous.
+De cette page il peut accéder aux autres via les onglets.
+La page offres (en haut à droite) liste les différentes promotions dans les magasins déjà utilisés par le client et les affiches par catégories 
+
 image::../images/story_board_listes_et_recettes.jpg[Les listes et recettes]
 image::../images/story_board_profil.jpg[Le profil de l'utilisateur]
 image::../images/story_board_plan.jpg[Le plan]
