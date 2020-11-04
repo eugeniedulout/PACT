@@ -5,7 +5,7 @@ cours d’introduction au Génie Logiciel. N’hésitez pas à faire des
 schémas hiérarchiques, c’est à dire avec un bloc d’un schéma général
 raffiné dans un second schéma ; ou des schémas en plusieurs parties.
 
-image::../TP-2020-2021/unknown.png[Schéma d'architecture]
+image::../images/arch.png[Schéma d'architecture]
 
 ==== Description des blocs
 
