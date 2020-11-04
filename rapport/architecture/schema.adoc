@@ -6,21 +6,22 @@ image::../images/arch_finale_f.svg[Schéma d'architecture,800,600]
 
 ===== Localisation par Bluetooth 
 
-Ce module consistera à acquerir la position de l'utilisateur en temps réel dans le magasin. Pour cela, on utilisera une méthode de triangulation à l'aide de balises bluetooth beacon. AndroidStudio nous fournit des bibliothèques permettant de gérer les fonctionnalités bluetooth. En particulier, elles permettent de pouvoir communiquer avec d'autres appareils bluetooth (envoyer et recevoir des données). Nous utiliserons donc cette bibliothèque pour implémenter l'algorithme de triangulation. 
+Ce module consistera à acquerir la position de l'utilisateur en temps réel dans le magasin. Pour cela, on utilisera une méthode de triangulation à l'aide de balises bluetooth (beacons). AndroidStudio nous fournit des bibliothèques permettant de gérer les fonctionnalités bluetooth. En particulier, elles permettent de pouvoir communiquer avec d'autres appareils bluetooth (envoyer et recevoir des données). Nous utiliserons donc cette bibliothèque pour implémenter l'algorithme de triangulation. 
 Dans ce module, il s'agira aussi de déterminer l'emplacement des balises bluetooth afin de couvrir la plus grande surface à moindre frais. 
 
 
-===== Base de donnée/Serveur
+===== Base de donnée/serveur
 
-L'équipe chargée de ce module va dans un premier temps construire la base de donnée où l'on stockera les différents magasins, les produits (prix, impact environnemental, qualité nutritionnelle...). L'équipe devra aussi gérer tout au long du projet le serveur et les requêtes SQL. Elle devra fournir un système permettant aux magasins de mettre à jour les informations de leurs produits. De plus, il faudra mettre en place un service de mise à jour collaborative dans le cas où un produit déplacé n'aurait pas été notifié par le magasin. Les utilisateurs, en scannant le code barre pourront informer le reste de la communauté qui validera ou non ce changement. Ces changements se feront donc dans la base de donnée. 
-Autre point essentiel: chaque utilisateur disposera d'un compte (Nom, prénom, email, mot de passe) associé à un identifiant unique. Des groupes (familles) pourront être créés afin de partager une même liste. Chaque changement effectué par l'un des membres devra donc s'accompagner d'un synchronisation pour toute la famille.
+L'équipe chargée de ce module va dans un premier temps construire la base de donnée où l'on stockera les différents magasins, les produits (prix, impact environnemental, qualité nutritionnelle...). L'équipe devra aussi gérer tout au long du projet le serveur et les requêtes SQL. Elle devra fournir un système permettant aux magasins de mettre à jour les informations concernant leurs produits. De plus, il faudra mettre en place un service de mise à jour collaborative dans le cas où un produit déplacé n'aurait pas été notifié par le magasin. Les utilisateurs, en scannant le code barre pourront informer le reste de la communauté qui validera ou non ce changement. Ces derniers se feront donc dans la base de donnée. 
+Autre point essentiel: chaque utilisateur disposera d'un compte (nom, prénom, email, mot de passe) associé à un identifiant unique. Des groupes (familles) pourront être créés afin de partager une même liste. Chaque changement effectué par l'un des membres devra donc s'accompagner d'un synchronisation pour toute la famille.
 Le serveur ne devra pas effectuer trop de calculs afin d'éviter une surcharge. Il faudra donc s'assurer de la cohérence de l'implémentation des algorithmes sur les différentes interfaces (voir ci-après). 
 
 ===== Interfaces Utilisateur Android et Web
 
-L'équipe chargée de ce module est au coeur du projet puisqu'elle developpera l'application Andoid par laquelle l'utilisateur se repérera dans le magasin après avoir rentré sa liste de course. L'équipe devra développer les différentes pages de l'application (écran de chargement, écran où l'on choisit le magasin, écran où l'on fait sa liste de produit, carte du magasin, promotions, ... ). Nous avons fourni un première aperçu de l'application ci-dessous (storyboard). On peut ainsi voir que de nombreuses fonctionnalités devront être prises en comtpe et reliées au reste du projet. L'interface ne s'arrête pas à l'application android.
-Il faudra développer une interface Web qui permettrait de gérer uniquement les listes de courses. En effet, il est plus agréable de rentrer ses produits depuis son ordinateur que depuis un smartphone ou une tablette. Cet outil n'implémentera pas la fonctionnalité de guidage dans le magasin, qui ne peut se faire sur ordinateur.
-*Remarque*: Nous avons décider de ne pas réaliser d'application pour iOS - du moins dans un premier temps - car cela nécessiterait d'apprendre un langage supplémentaire en parallèle de Java et surtout que la distribution sur iOS n'est pas libre.
+L'équipe chargée de ce module developpera l'application Andoid à travers laquelle l'utilisateur se repérera dans le magasin après avoir rentré sa liste de course. L'équipe devra développer les différentes pages de l'application (écran de chargement, écran où l'on choisit le magasin, écran où l'on fait sa liste de produit, carte du magasin, promotions, ... ). Nous avons fourni un premier aperçu de l'application ci-dessous (storyboard). On peut ainsi voir que de nombreuses fonctionnalités devront être prises en compte et reliées au reste du projet. L'interface ne s'arrête pas à l'application android.
+Il faudra développer une interface Web qui permettra de gérer uniquement les listes de courses. En effet, il est plus agréable de rentrer ses produits depuis son ordinateur que depuis un smartphone ou une tablette. Cet outil n'implémentera pas la fonctionnalité de guidage dans le magasin, qui ne peut se faire sur ordinateur.
+
+*Remarque*: Nous avons décidé de ne pas réaliser d'application pour iOS - du moins dans un premier temps - car cela nécessiterait d'apprendre un langage supplémentaire en parallèle de Java et surtout, la distribution sur iOS n'est pas libre et gratuite.
 
 ===== Implémentation du plan dynamique
 
@@ -28,11 +29,11 @@ Le plan dynamique est la vue qui permettra à l'utilisateur de se repérer dans 
 
 ===== Algorithmie
 
-Ce module est le moteur (Engine) de notre application. C'est ici que nous développerons l'algorithme de plus court chemin permettant de guider l'utilisateur. Nous pourrons nous appuyer sur l'algorithme de Dijkstra en y apportant quelques modification car ici, il ne s'agit pas seulement d'aller du départ (l'accueuil du magasin) à l'arrivée (la caisse) le plus vite possible. Le graphe utilisé aura pour sommet l'ensemble des produits à acheter et il faudra donc passer par tous ces sommets. Une approche probabiliste ne semble pas nécessaire car le nombre de sommet devrait généralement être inférieur à 300.
-Cet algorithme n'est pas le seul dans le projet. Nous devrons aussi développer un algorithme proposant à l'utilisateur différents  produits selon ses préférences et les caractéristiques fournies par la base de donnée tout en encourageant une consommation plus saine et plus respectueuse de l'environnement.
+Ce module est le moteur (Engine) de notre application. C'est ici que nous développerons l'algorithme de plus court chemin permettant de guider l'utilisateur. Nous pourrons nous appuyer sur l'algorithme de Dijkstra en y apportant quelques modifications car ici, il ne s'agit pas seulement d'aller du départ (l'accueuil du magasin) à l'arrivée (la caisse) le plus vite possible. Le graphe utilisé aura pour sommets l'ensemble des produits à acheter et il faudra donc passer par tous ces sommets. Une approche probabiliste ne semble pas nécessaire car le nombre de sommets devrait généralement être inférieur à 300, ce qui reste gérable rapidement par une approche plus classique.
+Cet algorithme n'est pas le seul dans le projet. Nous devrons aussi en développer un proposant à l'utilisateur différents  produits selon ses préférences et les caractéristiques fournies par la base de donnée tout en encourageant une consommation plus saine et plus respectueuse de l'environnement.
 
 ===== Test et Intégration
 
-Ce module consistera à tester les différents modules du projet afin de mettre en évidence certains problèmes. L'équipe se chargera aussi d'assembler les différents modules afin que le projet marche dans sa globalité. 
+Ce module consistera à tester les différents modules du projet afin de mettre en évidence certains problèmes. L'équipe se chargera aussi d'assembler les différents modules afin que le projet fonctionne dans sa globalité. 
 
 
