@@ -17,7 +17,7 @@ notions abordées en séances de Génie Logiciel, programmées avant le PAN1
 et entre PAN1 et PAN2 respectivement.
 * Un module SES
 
-[cols=",^,^,^,^,^,^,^",options="header",]
+[cols=",^,^,^,^,^,^,^,^",options="header",]
 |====
 | Nom        | UI Principal | UI Secondaire | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithme de Suggestion | Recherche Nutrition/Infographie | Module SES | Test & Intégration
 | Nom Expert |         |         |         |         |         |            | |
