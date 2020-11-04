@@ -8,6 +8,18 @@ ressemblant à votre projet et les différences éventuelles. Illustrez
 avec des images si besoin. Utilisez des renvois vers votre
 bibliographie : « comme démontré dans [2], … »
 
+==== Aisle411
+
+Aisle411 est une application développé en Amérique et qui est déployer dans plus de 14 000 lieux de vente, de bureaux ou  d'aéroports. Cette application indique à un utilisateur l'emplacement de l'objet de leur choix dans un magasin particulier. Les utilisateurs peuvent également utiliser l'application pour scanner les codes barres afin de lire les avis sur les produits et de découvrir les remises et les promotions en magasin. 
+
+Une des différences majeurres avec notre projet est que le "GPS" donne une vision 3D à l'utilisateur tout au long de son trajet dans le magasin. Contrairement à cette application, nous envisageons de donner une vision 2D à l'utilisateur lorsque celui-ci navigue dans les rayons, puis basculer en 3D lorsque l'utilisateur se trouve près du produit afin de mieux le guider vers le produit. De plus, la dimension environnementale n'est pas prise en compte dans l'application contrairement à notre projet qui essaie au mieux de traiter cette problématique. Pour finir, notre application possède beaucoup de fonctionnalités en plus tels que la possibilité de partager des recettes avec ses amis ou encore l'algorithme de suggestions intelligente.
+
+==== Yuka
+
+
+
+
+
 ==== XXX
 
 Et magnis dis parturient montes, nascetur ridiculus mus.
