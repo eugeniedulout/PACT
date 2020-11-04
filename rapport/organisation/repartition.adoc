@@ -17,24 +17,24 @@ notions abordées en séances de Génie Logiciel, programmées avant le PAN1
 et entre PAN1 et PAN2 respectivement.
 * Un module SES
 
-[cols=",^,^,^,^,^,^,^,^",options="header",]
+[cols=",^,^,^,^,^,^,^,^,^",options="header",]
 |====
-| Nom        | UI Principal | UI Secondaire | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithme de Suggestion | Recherche Nutrition/Infographie | Module SES | Test & Intégration
-| Nom Expert         |         |         |         |         |         |      |       |
+| Nom        | UI Principal | UI Secondaire | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithme de Suggestion | Recherche Nutrition/Infographie | Communication client/serveur | Module SES | Test & Intégration
+| Nom Expert         |         |         |         |     |      |         |       |       |
 
-| Glasziou Erwan     | X       |         |         |         |         |      |       | X
+| Glasziou Erwan     | X       |         |         |     |      |         |       |       | X
 
-| Bouffant Charles   |         |         | X       |         |  X      |      |       | 
+| Bouffant Charles   |         |         | X       |     | X    |         |       |       | 
 
-| Dulout Eugénie     | X       |         |         |         |         |      |       |
+| Dulout Eugénie     | X       |         |         |     |      |         |       | X     |
 
-| Bruno François     |         |         |         |         |         |      |       |
+| Bruno François     |         |         |         |     |      |         |       |       |
 
-| Audinet Quentin    |         |         |         |         |         |      |       |
+| Audinet Quentin    |         |         | X       |     |      | X       |       |       |
 
-| Bakache Victor     |         |         |         |         |         |      |       |
+| Bakache Victor     |         |         |         |     |      |         |       |       |
 
-| Boutaj Sofiene     |         |         |         |         |         |      |       |  
+| Boutaj Sofiene     |         |         |         |     | X    |         |       |       |  
 
-| Senane Zineb       |         |         |         |         |         |      |       |  
+| Senane Zineb       |         |         |         |     |      |         |       |       |  
 |====
