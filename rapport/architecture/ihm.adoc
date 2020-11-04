@@ -21,9 +21,9 @@ Notre projet est une application Android. Il est donc impératif de mettre en pl
 
 image::../images/story_board_premieres_pages.jpg[Premières pages de l'appli]
 
-La première page où l'utilisateur peut intéragir est l'écran de connection (en bas à gauche)
-Cette page peut renvoyer sur une page de création de compte en cas de première connection (avec les champs E-mail/Nom/Mot de passe/Confirmation de Mot de passe). Elle renvoie ensuite sur la page de connection une fois les informations du compte validées.
-La page de connection demande simplement e-mail et mot de passe, et possède un bouton mot de passe oublié.
+La première page où l'utilisateur peut intéragir est l'écran de connexion (en bas à gauche)
+Cette page peut renvoyer sur une page de création de compte en cas de première connexion (avec les champs E-mail/Nom/Mot de passe/Confirmation de Mot de passe). Elle renvoie ensuite sur la page de connexion une fois les informations du compte validées.
+La page de connexion demande simplement e-mail et mot de passe, et possède un bouton mot de passe oublié.
 Une fois connecté, le client arrive sur la page d'acceuil (Milieu haut), dont le foctionnnement est détaillé ci dessous.
 De cette page il peut accéder aux autres via les onglets.
 La page offres (en haut à droite) liste les différentes promotions dans les magasins déjà utilisés par le client et les affiches par catégories 
