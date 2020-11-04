@@ -51,11 +51,11 @@ Dès lors, notre projet se place au service de l'humain en aidant l'utilisateur 
 
 == English Summary (PAN1)
 
-Our project is an application made to create shopping lists, itself linked to a database of available products in a set department store, and associated with a  localisation method inside the department store. While the user assembles his shopping list, the app suggests products depending on the user's preferences and his previous shopping lists, along with the current available offers in the department store. 
-Shopping lists can be shared between users, as can sub-lists (or "recipes") of ingredient types, wich is useful within a home for exemple. Once the shopping list is inputed and the user is inside the store, the app provides him with his location and the position of products on the list, along with an optimal path to gather these. 
-The list of available products and their location can be coolaboratively uptated by the users.
-Furthermore, isn't only built to guide  clients within their store to make them less annoying. The app will also allow the user to consume (if they wish to) in a more healthy and responsible way. When the user chooses a product to add to his list, the app will show him other available products, sorted accordingly with their preferences (price, ecological, local production, healthy...).
-Henceforth, our project provides a service to man by helping the user to take good care of his health, favorising local business, and alerting the user to the ecological impact of his consumption while providing him with the tools to adjust it.
+Our project is an application designed to create shopping lists, itself linked to a database of available products in a set department store, and associated with a  localisation method inside the department store. While the user assembles their shopping list, the app suggests products depending on the user's preferences and previous shopping lists, along with the current available offers in the department store. 
+Shopping lists can be shared between users, as can sub-lists (or "recipes") of ingredient types, wich is useful within a household for exemple. Once the shopping list is inputed and the user is inside the store, the app provides them with their location and the position of products on the list, along with an optimal path to gather these. 
+The list of available products and their location can be collaboratively uptated by the users.
+Furthermore, our app isn't simply designed to guide  clients inside stores to make shopping less bothering. It will also allow the user to consume (if they wish to) in a more healthy and responsible way. When the user chooses a product to add to their list, the app will show them other available products, sorted accordingly to their preferences (price, organic, local production, healthy...).
+Henceforth, our project provides a service to humans by helping users take good care of their health, favorising local business, and alerting users about the ecological impact of their consumption while providing them with the tools to adjust it.
 
 *Notes concenant le rapport*
 
