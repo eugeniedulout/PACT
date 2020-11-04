@@ -102,12 +102,12 @@ include::References.adoc[Bibliographie]
 
 <<<
 
-== Annexes
+// == Annexes
 
-include::annexes/modifications.adoc[Modifications (PAN2+)]
+//include::annexes/modifications.adoc[Modifications (PAN2+)]
 
-include::annexes/avancement.adoc[Avancement des modules]
+//include::annexes/avancement.adoc[Avancement des modules]
 
-include::annexes/moduleX.adoc[Avancement module X]
+//include::annexes/moduleX.adoc[Avancement module X]
 
-include::annexes/moduleY.adoc[Avancement module Y]
+//include::annexes/moduleY.adoc[Avancement module Y]
