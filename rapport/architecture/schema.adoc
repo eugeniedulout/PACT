@@ -1,6 +1,6 @@
 === Schéma d’architecture
 
-image::../images/arch_finale.svg[Schéma d'architecture,800,600]
+image::../images/arch_finale_f.svg[Schéma d'architecture,800,600]
 
 ==== Description des blocs
 
