@@ -21,17 +21,17 @@ Notre projet est une application Android. Il est donc impératif de mettre en pl
 
 image::../images/story_board_premieres_pages.jpg[Premières pages de l'appli]
 
-La première page où l'utilisateur peut intéragir est l'écran de connection (en bas à gauche).
+La première page où l'utilisateur peut intéragir est l'écran de connexion (en bas à gauche).
 
-Cette page peut renvoyer sur une page de création de compte en cas de première connection (avec les champs E-mail/Nom/Mot de passe/Confirmation de Mot de passe). Elle renvoie ensuite sur la page de connection une fois les informations du compte validées.
+Cette page peut renvoyer sur une page de création de compte en cas de première connexion (avec les champs E-mail/Nom/Mot de passe/Confirmation de Mot de passe). Elle renvoie ensuite sur la page de connexion une fois les informations du compte validées.
 
-La page de connection demande simplement l'e-mail et le mot de passe, et possède un bouton "mot de passe oublié".
+La page de connexion demande simplement l'e-mail et le mot de passe, et possède un bouton "mot de passe oublié".
 
 Une fois connecté, le client arrive sur la page d'acceuil (Milieu haut), dont le fonctionnement est détaillé ci dessous.
 
 De cette page il peut accéder aux autres via les onglets.
 
-La page offres (en haut à droite) liste les différentes promotions dans les magasins déjà utilisés par le client et les affiches par catégories. 
+La page offre (en haut à droite) liste des différentes promotions dans les magasins déjà utilisés par le client et les affiche par catégories. 
 
 image::../images/story_board_listes_et_recettes.jpg[Les listes et recettes]
 
@@ -39,7 +39,7 @@ Il s'agit ici de la page principale (haut gauche).
 
 A part les onglets, elle présente les listes les plus récentes, et la possibilité de créer une nouvelle liste. 
 
-La création de liste se fait en entrant un nom de produit (auquel cas il est ajouter) ou de type de produit (par exemple oeuf) : dans le second cas, un menu défilant propose les produits correspondant organisés en foction des préférences rentrées par l'utilisateurs, des listes précédentes encore en mémoire et des promotions. Il est également possible de directement rajouter une recette (sous-liste de type de produit, par exemple : chocolat, oeuf, beurre, farine ainsi que les quantités pour un gâteau au chocolat).
+La création de liste se fait en entrant un nom de produit (auquel cas il est ajouter) ou de type de produit (par exemple oeuf) : dans le second cas, un menu défilant propose les produits correspondant organisés en foction des préférences rentrées par l'utilisateur, des listes précédentes encore en mémoire et des promotions. Il est également possible de directement rajouter une recette (sous-liste de type de produit, par exemple : chocolat, oeuf, beurre, farine ainsi que les quantités pour un gâteau au chocolat).
 
 La création de recette se fait exactement comme la création de liste, mis à part que l'on entre des types de produits et non des produits.
 
