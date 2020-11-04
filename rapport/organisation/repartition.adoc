@@ -32,7 +32,9 @@ et entre PAN1 et PAN2 respectivement.
 
 | Audinet Quentin    |         |         | X       |     |      |         | X     |       |
 
-| Bakache Victor     |         |         |         |     |      |         |       |       | X
+| Bakache Victor     |         |         |         |     |      |         |       |       |
+
+| Boutaj Sofiene     |         |         |         |     |      |         |       |       | X
 
 | Senane Zineb       |         |         |         |     |      |         |       |       |  
 |====
