@@ -9,7 +9,7 @@
 [cols=",^,^,,",options="header",]
 |====
 |Tâche |Qui |Quand |Fait |Remarques
-|sujet |Erwan |3/11 |Oui | revu avec tout le monde
+|sujet |Erwan, Quentin |3/11 |Oui | revu avec tout le monde
 |sujet en anglais | Erwan | 4/11|Oui |
 |scenario |François, Victor, Sofiene |12/10 |Oui | Modifié par Erwan et Eugénie apres le retour du copil
 |architecture (schéma et documentation) |Sofiene, Zineb, Eugénie, Quentin |12/10 |Oui |
