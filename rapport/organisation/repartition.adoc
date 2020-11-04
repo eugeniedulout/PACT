@@ -19,7 +19,7 @@ et entre PAN1 et PAN2 respectivement.
 
 [cols=",^,^,^,^,^,^,^,^,^",options="header",]
 |====
-| Nom        | UI | INTERFACE WEB | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithme de Suggestion | Recherche Nutrition/Infographie | Communication client/serveur | Module SES | Test & Intégration
+| Nom        | UI | Interface web | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithme de Suggestion | Recherche Nutrition/Infographie | Communication client/serveur | Module SES | Test & Intégration
 | Nom Expert         |         |         |         |     |      |         |       |       |
 
 | Dulout Eugénie     | X       |         |         |     |      | X       |       | X     |
