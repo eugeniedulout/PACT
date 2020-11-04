@@ -19,7 +19,8 @@ projet tout fait en encapsulant un programme déjà existant.
 
 ===== Environnement 
 
-Ce module consistera à acquerir la position de l'utilisateur en temps réel dans le magasin. Pour cela, on utilisera une méthode de triangulisation à l'aide de balises bluetooth beacon.
+Ce module consistera à acquerir la position de l'utilisateur en temps réel dans le magasin. Pour cela, on utilisera une méthode de triangulation à l'aide de balises bluetooth beacon. AndroidStudio nous fournit des bibliothèques permettant de gérer les fonctionnalités bluetooth. En particulier, elles permettent de pouvoir communiquer avec d'autres appareils bluetooth (envoyer et recevoir des données). Nous utiliserons donc cette bibliothèque pour implémenter l'algorithme de triangulation. 
+Dans ce module, il s'agira aussi de déterminer l'emplacement des balises bluetooth afin de couvrir la plus grande surface à moindre frais. 
 
 
 ===== Base de donnée/Serveur
