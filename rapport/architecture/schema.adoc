@@ -38,6 +38,8 @@ Il faudra développer une interface Web qui permettrait de gérer uniquement les
 
 ===== Implémentation du plan dynamique
 
+Le plan dynamique est la vue qui permettra à l'utilisateur de se repérer dans le magasin, le "gps" à proprement parler. Nous envisageons de réaliser celui-ci en deux et trois dimensions. Ainsi, l'utilisateur disposerait d'abord d'une vision globale en 2D de son parcours dans le magasin et pourrait basculer dans un mode 3D à la "StreetView" affichant plus précisemment l'emplacement des produits. Il pourrait être envisageable par la suite d'utiliser la réalité augmentée pour guider l'utilisateur, masi ceci n'est pour l'instant pas notre priorité.
+
 ===== Algorithmie
 
 Dans ce module, les étudiants se chargeront d'implémenter l'algorithme de plus court chemin en s'appuyant notamment sur l'algorithme de djikstra(Les produits représenteront les sommets du graphe). Ces mêmes étudiants devront aussi developper un algorithme qui en fonction de la liste de course de l'utilisateur, lui proposera d'autres produits à consommer en fonction de ses préferences tout en encourageant une consommation plus saine et plus respectueuse de l'environnement.
