@@ -15,15 +15,17 @@ Si c’est une interface +
 entre deux blocs électroniques, c’est une description des signaux +
 électroniques. Etc.
 
-==== InterfaceBloc Utilisateur-Android/IOS
+==== InterfaceBloc Android-Serveur
 
-Acquisition des données (coordonnées, liste de courses...)
+Communication des données relative à la connexion au compte, aux modifications de listes, aux produits dans le magasin (caractéristique puis localisation une fois la liste achevé), plan du magasin. Il y a également les requêtes de mise à jour en cas d'erreur de ressencement dans le rayonnage. 
 
-==== InterfaceBloc Administrateur-Pc/Serveur
+==== InterfaceBloc Web-Serveur
 
-Mise à jour de la BDD
+==== InterfaceBloc Capteurs-Android
 
-==== InterfaceBloc Environnement-Pc/Serveur
+Acquisition des coordonnées relatives au balises pour déterminer la position. 
 
-Acquisition de la position de l'utilisateur suite à la communication entre les balises bluetooth(beacon) et le smartphone
+==== InterfaceBloc Android-Produit
+
+Acquisition du code barre pour recensé un produit. 
 
