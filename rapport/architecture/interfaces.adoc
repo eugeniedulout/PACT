@@ -15,10 +15,10 @@ Si c’est une interface +
 entre deux blocs électroniques, c’est une description des signaux +
 électroniques. Etc.
 
-==== InterfaceBloc1-2
+==== InterfaceBloc Utilisateur-Android/IOS
 
-Description textuelle d’interface
+Acquisition des données (coordonnées, liste de courses...)
 
-==== InterfaceBloc2-4
+==== InterfaceBloc Administrateur-Pc/Serveur
 
-Description textuelle d’interface
+Mise à jour de la BDD
