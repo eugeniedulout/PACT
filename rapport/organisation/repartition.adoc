@@ -20,21 +20,21 @@ et entre PAN1 et PAN2 respectivement.
 [cols=",^,^,^,^,^,^,^,^",options="header",]
 |====
 | Nom        | UI Principal | UI Secondaire | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithme de Suggestion | Recherche Nutrition/Infographie | Module SES | Test & Intégration
-| Nom Expert |         |         |         |         |         |            | |
+| Nom Expert         |         |         |         |         |         |      |       |
 
-| Glasziou Erwan     | X       |         |         |         |         |        |     |
+| Glasziou Erwan     | X       |         |         |         |         |      |       | X
 
-| Bouffant Charles     |         | X       |         |         |         |       |      | X
+| Bouffant Charles   |         |         | X       |         |  X      |      |       | 
 
-| Dulout Eugénie     |         |         |         |         |         |      |       |
+| Dulout Eugénie     | X       |         |         |         |         |      |       |
 
-| Bruno François     | X       |         |         |         |         |        |     |
+| Bruno François     |         |         |         |         |         |      |       |
 
-| Audinet Quentin     |         |         |         |         |         |      |       |
+| Audinet Quentin    |         |         |         |         |         |      |       |
 
-| Bakache Victor     |         |         |         |         |         |     |        |
+| Bakache Victor     |         |         |         |         |         |      |       |
 
-| Boutaj Sofiene     |         | X       |         |         |         |       |      | X
+| Boutaj Sofiene     |         |         |         |         |         |      |       |  
 
-| Senane Zineb     |         | X       |         |         |         |       |      | X
+| Senane Zineb       |         |         |         |         |         |      |       |  
 |====
