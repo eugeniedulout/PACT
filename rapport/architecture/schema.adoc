@@ -32,18 +32,18 @@ Le serveur ne devra pas effectuer trop de calculs afin d'éviter une surcharge. 
 
 ===== Interface UI Android+Web
 
-L'équipe chargée de ce module est au coeur du projet puisqu'elle developpera l'application Andoid par laquelle l'utilisateur se repérera dans le magasin après avoir rentré sa liste de course. L'équipe devra déveloper les différentes pages de l'application(écran de chargement, écran où l'on choisit le magasin, écran où l'on fait sa liste de produit, carte du magasin, promotions, ... ). Nous avons fourni un première aperçu de l'application ci dessus. On peut ainsi voir que de nombreuses fonctionnalités devront être prises en comtpe et reliées au reste du projet. L'interface ne s'arrête pas à l'application android.
+L'équipe chargée de ce module est au coeur du projet puisqu'elle developpera l'application Andoid par laquelle l'utilisateur se repérera dans le magasin après avoir rentré sa liste de course. L'équipe devra développer les différentes pages de l'application(écran de chargement, écran où l'on choisit le magasin, écran où l'on fait sa liste de produit, carte du magasin, promotions, ... ). Nous avons fourni un première aperçu de l'application ci dessus. On peut ainsi voir que de nombreuses fonctionnalités devront être prises en comtpe et reliées au reste du projet. L'interface ne s'arrête pas à l'application android.
 Il faudra développer une interface Web qui permettrait de gérer uniquement les listes de courses. En effet, il est plus agréable de rentrer ses produits depuis son ordinateur que depuis un smartphone ou une tablette. Cet outil n'implémentera pas la fonctionnalité de guidage dans le magasin, qui ne peut se faire sur ordinateur.
 *Remarque*: Nous avons décider de ne pas réaliser d'application pour iOS - du moins dans un premier temps - car cela nécessiterait d'apprendre un langage supplémentaire en parallèle de Java et surtout que la distribution sur iOS n'est pas libre.
 
 ===== Implémentation du plan dynamique
 
-Le plan dynamique est la vue qui permettra à l'utilisateur de se repérer dans le magasin, le "gps" à proprement parler. Nous envisageons de réaliser celui-ci en deux et trois dimensions. Ainsi, l'utilisateur disposerait d'abord d'une vision globale en 2D de son parcours dans le magasin et pourrait basculer dans un mode 3D à la "StreetView" affichant plus précisemment l'emplacement des produits. Il pourrait être envisageable par la suite d'utiliser la réalité augmentée pour guider l'utilisateur, masi ceci n'est pour l'instant pas notre priorité.
+Le plan dynamique est la vue qui permettra à l'utilisateur de se repérer dans le magasin, le "gps" à proprement parler. Nous envisageons de réaliser celui-ci en deux et trois dimensions. Ainsi, l'utilisateur disposerait d'abord d'une vision globale en 2D de son parcours dans le magasin et pourrait basculer dans un mode 3D à la "StreetView" affichant plus précisemment l'emplacement des produits. Il pourrait être envisageable par la suite d'utiliser la réalité augmentée pour guider l'utilisateur, mais ceci n'est pour l'instant pas notre priorité.
 
 ===== Algorithmie
 
 Ce module est le moteur (Engine) de notre application. C'est ici que nous développerons l'algorithme de plus court chemin permettant de guider l'utilisateur. Nous pourrons nous appuyer sur l'algorithme de Dijkstra en y apportant quelques modification car ici, il ne s'agit pas seulement d'aller du départ (l'accueuil du magasin) à l'arrivée (la caisse) le plus vite possible. Le graphe utilisé aura pour sommet l'ensemble des produits à acheter et il faudra donc passer par tous ces sommets. Une approche probabiliste ne semble pas nécessaire car le nombre de sommet devrait généralement être inférieur à 300.
-Cet algorithme n'est pas le seul dans le projet. Nous devrons aussi développer un algorithme permettant de sélectionner des produits selon les préférences de l'utilisateur et les caractéristiques fournies par la base de donnée.
+Cet algorithme n'est pas le seul dans le projet. Nous devrons aussi développer un algorithme proposant à l'utilisateur différents  produits selon ses préférences et les caractéristiques fournies par la base de donnée tout en encourageant une consommation plus saine et plus respectueuse de l'environnement.
 
 ===== Test et Integration
 
