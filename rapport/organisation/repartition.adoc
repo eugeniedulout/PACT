@@ -19,20 +19,22 @@ et entre PAN1 et PAN2 respectivement.
 
 [cols=",^,^,^,^,^,^,^",options="header",]
 |====
-| Nom        | Module1 | Module2 | Module3 | Module4 | ModuleN | Module SES | Test & Intégration
-| Nom Expert |         |         |         |         |         |            |
+| Nom        | UI Principal | UI Secondaire | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithme de Suggestion | Recherche Nutrition/Infographie | Module SES | Test & Intégration
+| Nom Expert |         |         |         |         |         |            | |
 
-| Eleve1     | X       |         |         |         |         |            |
+| Glasziou Erwan     | X       |         |         |         |         |        |     |
 
-| Eleve2     |         | X       |         |         |         |            | X
+| Bouffant Charles     |         | X       |         |         |         |       |      | X
 
-| Eleve3     |         |         |         |         |         |            |
+| Dulout Eugénie     |         |         |         |         |         |      |       |
 
-| Eleve4     | X       |         |         |         |         |            |
+| Bruno François     | X       |         |         |         |         |        |     |
 
-| Eleve5     |         |         |         |         |         |            |
+| Audinet Quentin     |         |         |         |         |         |      |       |
 
-| Eleve6     |         |         |         |         |         |            |
+| Bakache Victor     |         |         |         |         |         |     |        |
 
-| Eleve7     |         | X       |         |         |         |            | X
+| Boutaj Sofiene     |         | X       |         |         |         |       |      | X
+
+| Senane Zineb     |         | X       |         |         |         |       |      | X
 |====
