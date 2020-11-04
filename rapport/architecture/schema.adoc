@@ -26,7 +26,9 @@ Dans ce module, il s'agira aussi de déterminer l'emplacement des balises blueto
 
 ===== Base de donnée/Serveur
 
-L'équipe chargée de ce module va dans un premier temps construire la base de donnée où l'on stockera les différents magasins, les produit(prix, impact environnemental, qualité nutritionnelle). L'équipe devra aussi gérer tout au long du projet le serveur et les requetes SQL.
+L'équipe chargée de ce module va dans un premier temps construire la base de donnée où l'on stockera les différents magasins, les produit(prix, impact environnemental, qualité nutritionnelle). L'équipe devra aussi gérer tout au long du projet le serveur et les requetes SQL. Elle devra fournir un système permettant aux magasins de mettre à jour les informations de leurs produits. De plus, il faudra mettre en place un service de mise à jour collaborative dans le cas où un produit déplacé n'aurait pas été notifié par le magasin. Les utilisateurs en scannant le code barre pourront informer le reste de la communauté qui validera ou non ce changement. Ces changements se feront donc dans la base de donnée. 
+Autre point essentiel: chaque utilisateur disposera d'un compte (Nom, prénom, email, mot de passe) associé à un identifiant unique. Des groupes (familles) pourront être créés afin de partager une même liste. Chaque changement effectué par l'un des membres devra donc s'accompagner d'un synchronisation pour toute la famille.
+Le serveur devra aussi effectuer des calculs en amont tels que la recherche du produit correspondant aux critères de l'utilisateur.
 
 ===== Interface Android/IOS
 
