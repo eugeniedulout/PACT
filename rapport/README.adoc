@@ -12,8 +12,7 @@ ifdef::env-gitlab,env-browser[:outfilesuffix: .adoc]
 
 // Partie non numérotée
 :sectnums!:
-== « Nom du groupe »
-E-POKAMP
+== « E-POKAMP »
 
 === Membres du groupe
 
