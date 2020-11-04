@@ -22,7 +22,7 @@ et entre PAN1 et PAN2 respectivement.
 | Nom        | UI Android | Interface web | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithmie | Recherche Nutrition/Infographie | Communication client/serveur | Module SES | Test & Intégration
 | Nom Expert         | Jean-Claude Duffourd |        | Jean Le Feuvre | Olivier Hudry (non confirmé) / Thomas Bonald (non confirmé)|     | Jean-Claude Duffourd |  | Christophe Prieur (non confirmé) |
 
-| Dulout Eugénie     | X       |         |         |     |      | X       |       | X     |
+| Dulout Eugénie     |         | X       |         |     |      | X       |       | X     |
 
 | Bruno François     |         |         |         | X   |      | X       |       | X     |
 
@@ -32,9 +32,9 @@ et entre PAN1 et PAN2 respectivement.
 
 | Bouffant Charles   |         |         | X       |     | X    |         |       | X     | 
 
-| Boutaj Sofiene     |         | X       |         |     | X    |         |       | X     | 
-
-| Glasziou Erwan     |         | X       |         |     |      |         |       | X     | X
+| Boutaj Sofiene     | X       |         |         |     | X    |         |       | X     | 
 
 | Senane Zineb       | X       |         |         |     |      |         |       | X     | X 
+
+| Glasziou Erwan     |         | X       |         |     |      |         |       | X     | X
 |====
