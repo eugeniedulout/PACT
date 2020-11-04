@@ -22,3 +22,8 @@ Acquisition des données (coordonnées, liste de courses...)
 ==== InterfaceBloc Administrateur-Pc/Serveur
 
 Mise à jour de la BDD
+
+==== InterfaceBloc Environnement-Pc/Serveur
+
+Acquisition de la position de l'utilisateur suite à la communication entre les balises bluetooth(beacon) et le smartphone
+
