@@ -70,4 +70,4 @@ Le bouton "pause" fige la localisation. En mode pause, un bouton "code barre" ap
 
 ==== Interface Web
 
-l'Interface Web est en tout point la même que l'interface Android, mis à part qu'elle ne présente pas l'onglet plan.
+L'Interface Web est en tout point la même que l'interface Android, mis à part qu'elle ne présente pas l'onglet plan.
