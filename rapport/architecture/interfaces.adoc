@@ -11,20 +11,19 @@ Si c’est une interface +
 entre deux blocs électroniques, c’est une description des signaux +
 électroniques. Etc.
 
-==== InterfaceBloc Android-Serveur
+==== InterfaceBloc Android-Serveur/BDD
 
-Communication des données relative à la connexion au compte, aux modifications de listes, aux produits dans le magasin (caractéristique puis localisation une fois la liste achevé), plan du magasin.
-Il y a également les requêtes de mise à jour en cas d'erreur de ressencement dans le rayonnage. 
+Communication des données relative à la connexion au compte, aux modifications de listes, aux produits dans le magasin (caractéristique puis localisation une fois la liste achevé), plan du magasin, via des méthodes POST.
+Il y a également les requêtes de mise à jour en cas d'erreur de ressencement dans le rayonnage.
 
 ==== InterfaceBloc Web-Serveur
 
-Comme ci-dessus pour Android, (l'Interface Utilisateur restant en grande partie la même) à l'exception des mises à jour de rayonnage. 
+Comme ci-dessus pour Android, (l'interface utilisateur restant en grande partie la même) à l'exception des mises à jour de rayonnage. 
 
 ==== InterfaceBloc Capteurs-Android
 
-Acquisition des coordonnées relatives au balises pour déterminer la position. 
+Acquisition des coordonnées relatives au balises pour déterminer la position via une communication Bluetooth (certainement Rfcomm). Une courte liaison a alors lieu afin de déterminer la distance du téléphone à la balise. 
 
 ==== InterfaceBloc Android-Produit
 
-Acquisition du code barre pour recensé un produit. 
-
+Acquisition du code barre pour recenser un produit. C'est donc l'appareil photo du téléphone qui permettra de récupérer l'information.
