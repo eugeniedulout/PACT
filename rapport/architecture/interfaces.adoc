@@ -1,5 +1,5 @@
 === Description des interfaces (PAN1 / PAN2)
-Pour le PAN2, il faut une description complête des interfaces.
+Pour le PAN2, il faut une description complète des interfaces.
 
 Il faut ici une description textuelle de chaque interface, c’est à
 dire +
@@ -13,17 +13,18 @@ entre deux blocs électroniques, c’est une description des signaux +
 
 ==== InterfaceBloc Android-Serveur/BDD
 
-Communication des données relative à la connexion au compte, aux modifications de listes, aux produits dans le magasin (caractéristique puis localisation une fois la liste achevé), plan du magasin, via des méthodes POST.
-Il y a également les requêtes de mise à jour en cas d'erreur de ressencement dans le rayonnage.
+Communication des données relatives à la connexion au compte, aux modifications des listes, aux produits dans le magasin (caractéristiques, puis localisation une fois la liste achevée), plan du magasin, via des méthodes POST.
+Il y a également les requêtes de mise à jour à effectuer en cas d'erreurs de recensement dans le rayonnage.
 
 ==== InterfaceBloc Web-Serveur
 
-Comme ci-dessus pour Android, (l'interface utilisateur restant en grande partie la même) à l'exception des mises à jour de rayonnage. 
+Comme ci-dessus pour l'interface Android-Serveur/BDD, (l'interface utilisateur restant en grande partie la même) à l'exception des mises à jour de rayonnage qui ne s'effectueront pas sur l'application web. Il faut être dans le magasin pour faire ces changements.
+Une exception pourra être faite pour l'interface administrateur pour les magasins. 
 
 ==== InterfaceBloc Capteurs-Android
 
-Acquisition des coordonnées relatives au balises pour déterminer la position via une communication Bluetooth (certainement Rfcomm). Une courte liaison a alors lieu afin de déterminer la distance du téléphone à la balise. 
+Acquisition des coordonnées relatives aux balises pour déterminer la position via une communication Bluetooth (certainement Rfcomm). Une courte liaison a alors lieu afin de déterminer la distance du téléphone à la balise. 
 
 ==== InterfaceBloc Android-Produit
 
-Acquisition du code barre pour recenser un produit. C'est donc l'appareil photo du téléphone qui permettra de récupérer l'information.
+Acquisition du code-barre pour recenser un produit. C'est donc l'appareil photo du téléphone qui permettra de récupérer l'information.
