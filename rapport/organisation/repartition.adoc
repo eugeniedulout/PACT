@@ -30,7 +30,7 @@ et entre PAN1 et PAN2 respectivement.
 
 | Bruno François     |         |         |         |     |      |         |       |       |
 
-| Audinet Quentin    |         |         | X       |     |      | X       |       |       |
+| Audinet Quentin    |         |         | X       |     |      |         | X     |       |
 
 | Bakache Victor     |         |         |         |     |      |         |       |       |
 
