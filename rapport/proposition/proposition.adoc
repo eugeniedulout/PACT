@@ -1,10 +1,4 @@
 === Description de la proposition
-*_Note: 2 page max._*
-
-_Décrire de façon détaillée votre projet : motivations de base/problèmes
-constatés avant élaboration du projet, comment votre projet répond à ces
-besoins. Ajouter une image ou une figure pour montrer à quoi cela
-ressemble si besoin._
 
 Pour répondre à la problématique du numérique au service de l'humain, nous avons dégagé plusieurs pistes de réflexion. D'abord, nous nous sommes penchés sur deux problématiques très générales et actuelles, qui nous tenaient à cœur : la préservation de l'environnement et la justice sociale. Nous avions à coeur de permettre aux citoyens d'adopter un mode de consommation plus responsable d’un point de vue environnemental et social. Ensuite, notre attention s'est portée sur des questions de santé publique, notamment à l'aune de la découverte de ce chiffre alarmant : d'ici 2030, le nombre de personnes en surpoids ou en obésité devrait doubler en Europe -portant même ce chiffre à 89% de la population Irlandaise ! Dès lors, nous souhaitions également aider ces mêmes citoyens a adopter un mode de consommation responsable d'un point de vue sanitaire. 
 Enfin, nous avons réfléchi autour d'une dernière problématique plus originale : celle du temps et de son optimisation dans une société où les journées sont chargées. Parmi les tâches chronophages et répétitives dont il nous a paru opportun de réduire la pénibilité, nous avons identifier faire ses courses en grande surface. En effet, cela mobilise souvent un temps conséquent, la recherche des produits s'avérant longue sinon vaine lorsque le magasin ne possède pas le produit recherché. Ce problème concerne tout autant les magasins alimentaires que les magasins spécialisés. En particulier, la recherche est encore plus fastidieuse dans des magasins de bricolage (Leroy Merlin, Castorama...) : ils s'étendent sur d'immenses surfaces, le consommateur a rarement l'habitude d'y mettre les pieds et n'est pas forcément familier de l'agencement typique de ce genre d'enseignes. Notre voulions donc que notre projet, tout en répondant aux attentes susmentionnées, permettent aussi à chacun de gagner du temps. 
