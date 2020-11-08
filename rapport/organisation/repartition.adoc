@@ -20,7 +20,7 @@ et entre PAN1 et PAN2 respectivement.
 [cols=",^,^,^,^,^,^,^,^,^",options="header",]
 |====
 | Nom        | UI Android | Interface web | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithmie | Recherche Nutrition/Infographie | Communication client/serveur | Module SES | Test & Intégration
-| Nom Expert         | Jean-Claude Duffourd | Jean-Claude Duffourd |  Tarik Graba (non confirmé)    | Jean Le Feuvre | Olivier Hudry (non confirmé) / Thomas Bonald (non confirmé) | Michel Roux | Jean-Claude Duffourd | Christophe Prieur (non confirmé) | MOISSINAC Jean-Claude
+| Nom Expert         | Jean-Claude Duffourd | Jean-Claude Duffourd |  Ulrich Kühne   | Jean Le Feuvre | Olivier Hudry (non confirmé) / Thomas Bonald | Michel Roux | Jean-Claude Duffourd | Christophe Prieur | MOISSINAC Jean-Claude
 
 | Dulout Eugénie     |         | X       |         |     |      | X       |       | X     |
 
