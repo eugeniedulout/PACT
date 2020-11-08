@@ -23,7 +23,7 @@
 |====
 |Tâche |Qui |Quand |Fait |Remarques
 |préparation du document |Tout le monde | À venir | Non | Mêmes répartitions que parole
-|répartition de la parole |Eugénie | 3/11| Oui | Quentin et Zineb sujet / Victor et Eugénie scénario /Sofiene et Erwan architecture / Charles et François découpage
+|répartition de la parole |Tout le monde | 3/11| Oui | Sujet: François (Proposition), Sofiene (Etat de l'art) / Scénario: Victor / Architecture: Sofiene (Présentation), Quentin (Interfaces et blocs), Eugénie (UI Android et Web), Erwan (Plan), Zineb (Algorithmie) / Découpage: Charles
 |répétition | Tout le monde | À venir | Non | Idem
 |====
 
