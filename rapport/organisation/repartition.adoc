@@ -22,19 +22,19 @@ et entre PAN1 et PAN2 respectivement.
 | Nom        | UI Android | Interface web | Localisation par Bluetooth | Implémentation du plan dynamique | Algorithmie | Traitement de l'image | Communication client/serveur | Module SES | Test & Intégration
 | Nom Expert         | Jean-Claude Duffourd | Jean-Claude Duffourd |  Ulrich Kühne   | Jean Le Feuvre | Thomas Bonald | Michel Roux | Jean-Claude Duffourd | Christophe Prieur | MOISSINAC Jean-Claude
 
-| Dulout Eugénie     |         | X       |         |     |      | X       |       | X     |
+| Dulout Eugénie     |         | X       |         |     |      | X       |       |       |
 
-| Bruno François     |         |         |         | X   |      | X       |       | X     |
+| Bruno François     |         |         |         | X   |      | X       |       |       |
 
 | Bakache Victor     |         |         |         | X   |      |         | X     | X     |
 
-| Audinet Quentin    |         |         | X       |     |      |         | X     | X     |
+| Audinet Quentin    |         |         | X       |     |      |         | X     |       |
 
 | Bouffant Charles   |         |         | X       |     | X    |         |       | X     | 
 
-| Boutaj Sofiene     | X       |         |         |     | X    |         |       | X     | 
+| Boutaj Sofiene     | X       |         |         |     | X    |         |       |       | 
 
-| Senane Zineb       | X       |         |         |     |      |         |       | X     | X 
+| Senane Zineb       | X       |         |         |     |      |         |       |       | X 
 
-| Glasziou Erwan     |         | X       |         |     |      |         |       | X     | X
+| Glasziou Erwan     |         | X       |         |     |      |         |       |       | X
 |====
