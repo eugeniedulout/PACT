@@ -38,5 +38,9 @@ Utilise la liste en cours, l'historique des listes et les préférences de l'uti
 [source,java]
 include::../annexes/code/Interfaces/SuggestionInterface.java[]
 
+==== InterfaceBloc Plan-Algorithme
 
+Utilise la liste de course, le plan du magasin et la position de l'utilisateur pour proposer un chemin optimal pour récupérer les produits.
+[source,java]
+include::../annexes/code/Interfaces/ShortestPathInterface.java[]
 
