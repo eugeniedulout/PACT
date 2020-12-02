@@ -19,12 +19,24 @@ Il y a également les requêtes de mise à jour à effectuer en cas d'erreurs de
 ==== InterfaceBloc Web-Serveur
 
 Comme ci-dessus pour l'interface Android-Serveur/BDD, (l'interface utilisateur restant en grande partie la même) à l'exception des mises à jour de rayonnage qui ne s'effectueront pas sur l'application web. Il faut être dans le magasin pour faire ces changements.
-Une exception pourra être faite pour l'interface administrateur pour les magasins. 
+Une exception pourra être faite pour l'interface administrateur pour les magasins.
 
-==== InterfaceBloc Capteurs-Android
+==== InterfaceBloc Balises-Android
 
 Acquisition des coordonnées relatives aux balises pour déterminer la position via une communication Bluetooth (certainement Rfcomm). Une courte liaison a alors lieu afin de déterminer la distance du téléphone à la balise. 
+
+[source,java]
+include::../annexes/code/Interfaces/BeaconInterface.java[]
 
 ==== InterfaceBloc Android-Produit
 
 Acquisition du code-barre pour recenser un produit. C'est donc l'appareil photo du téléphone qui permettra de récupérer l'information.
+
+==== InterfaceBloc Android-Algorithme
+
+Utilise la liste en cours, l'historique des listes et les préférences de l'utilisateur pour proposer des produits pertinent à ajouté à la liste.
+[source,java]
+include::../annexes/code/Interfaces/SuggestionInterface.java[]
+
+
+
