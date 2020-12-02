@@ -2,4 +2,4 @@
 
 Ci-dessous le diagramme de séquence pour un utilisateur classique. Celui-ci dispose d'un nombre limité d'actions, décrites dans le diagramme.
 
-include::rapport_architecture_diagramme_sequence.pdf[Diagramme de séquence]
+image::diagramme_sequence.png[Diagramme de séquence]
