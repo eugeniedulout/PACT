@@ -28,10 +28,13 @@ Acquisition des coordonnées relatives aux balises pour déterminer la position 
 [source,java]
 include::../annexes/code/Interfaces/BeaconInterface.java[]
 
-==== InterfaceBloc Android-Produit
+==== InterfaceBloc Android (Plan)-Produit
 
-Acquisition du code-barre pour recenser un produit. C'est donc l'appareil photo du téléphone qui permettra de récupérer l'information.
-
+Acquisition du code-barre pour recenser un produit. C'est donc l'appareil photo du téléphone qui permettra de récupérer l'information. Cette acquisition ne peut en théorie n'être effectuer que depuis le plan, puisqu'il faut les coordonnées pour que la fonction soit utile. 
+[source,java]
+----
+include::../annexes/code/Interfaces/BarCodeReader.java[]
+----
 ==== InterfaceBloc Android-Algorithme
 
 Utilise la liste en cours, l'historique des listes et les préférences de l'utilisateur pour proposer des produits pertinent à ajouté à la liste.
