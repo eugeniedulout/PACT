@@ -1,0 +1,5 @@
+Ce dossier vise à contenir l'ensemble du projet.
+Il sera divisé en plusieurs catégories:
+- L'application android
+- Le serveur
+- Les beacons
