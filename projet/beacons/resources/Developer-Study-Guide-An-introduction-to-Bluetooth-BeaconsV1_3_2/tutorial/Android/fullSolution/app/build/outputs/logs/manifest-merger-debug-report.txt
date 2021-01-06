@@ -1,0 +1,159 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\37879e2ca67babe55c0fe6286680b114\appcompat-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\3369bad17173f17b8742c9e3d1fff956\fragment-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\04c4b8366bf93c9187500608980a77fb\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\45eec820dcfabac27f86ef7c71ebe586\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\8899d79261f7846ab6524af2889698f8\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\eb7c629e1f6451bd620a2f7ed55b9919\vectordrawable-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\831527dcdd718e3f7c20059ce4f0d884\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\fb2c9b9d45ee84b67397a1a76a0c47ff\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\014d1a4dbc37ba00f216d2b4a0e9c34c\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5399b829a83e6c3a2372d36e69ae6c59\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\190d19f117964f26dcd6e8f610b4bda1\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\d48d78370f047c0f13468871a2ea62f2\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\6f091bb18795693864d9a85643746714\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5fb5a15c2f578343849a1afd9ddd8d1f\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\da87a00da8aef0fe39e72c2f0b63ad5d\core-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5bf1209250c524f55667a17d1d605a00\versionedparcelable-1.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\25a2323baa05e69a666beacb2ce06f24\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\772979f3f1358d9e24783bfad6dc2a97\lifecycle-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\443feb6d9c30b9f8aaf4223f32abf226\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\c1424ea7bdabc535a166db598537694b\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\e747853080ddac82d14756edeb162783\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\dc09f5795dfcd02f46b8d4c32cb3d091\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\c603ff6f9419afd88df4143e4426bdc1\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\b9b19eec166241113223511119bf996b\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\e9d97cadc8c443a50fb1607a78a98e20\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\9497bab530b68d9d840f7e7d5994e51d\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:1-24:12
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:1-24:12
+	package
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:3:5-31
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:1-24:12
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.BLUETOOTH
+ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:5:5-68
+	android:name
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:5:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:6:5-74
+	android:name
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:6:22-71
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:7:22-76
+application
+ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:9:5-22:19
+MERGED from [androidx.core:core:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\da87a00da8aef0fe39e72c2f0b63ad5d\core-1.0.0\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\da87a00da8aef0fe39e72c2f0b63ad5d\core-1.0.0\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5bf1209250c524f55667a17d1d605a00\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5bf1209250c524f55667a17d1d605a00\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\da87a00da8aef0fe39e72c2f0b63ad5d\core-1.0.0\AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:12:9-41
+	android:icon
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:13:9-40
+activity#com.beacons.demo.MainActivity
+ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:14:9-21:20
+	android:label
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:16:13-45
+	android:name
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:15:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:17:13-20:29
+action#android.intent.action.MAIN
+ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml:19:27-74
+uses-sdk
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\37879e2ca67babe55c0fe6286680b114\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\37879e2ca67babe55c0fe6286680b114\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\3369bad17173f17b8742c9e3d1fff956\fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\3369bad17173f17b8742c9e3d1fff956\fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\04c4b8366bf93c9187500608980a77fb\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\04c4b8366bf93c9187500608980a77fb\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\45eec820dcfabac27f86ef7c71ebe586\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\45eec820dcfabac27f86ef7c71ebe586\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\8899d79261f7846ab6524af2889698f8\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\8899d79261f7846ab6524af2889698f8\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\eb7c629e1f6451bd620a2f7ed55b9919\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\eb7c629e1f6451bd620a2f7ed55b9919\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\831527dcdd718e3f7c20059ce4f0d884\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\831527dcdd718e3f7c20059ce4f0d884\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\fb2c9b9d45ee84b67397a1a76a0c47ff\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\fb2c9b9d45ee84b67397a1a76a0c47ff\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\014d1a4dbc37ba00f216d2b4a0e9c34c\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\014d1a4dbc37ba00f216d2b4a0e9c34c\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5399b829a83e6c3a2372d36e69ae6c59\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5399b829a83e6c3a2372d36e69ae6c59\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\190d19f117964f26dcd6e8f610b4bda1\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\190d19f117964f26dcd6e8f610b4bda1\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\d48d78370f047c0f13468871a2ea62f2\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\d48d78370f047c0f13468871a2ea62f2\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\6f091bb18795693864d9a85643746714\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\6f091bb18795693864d9a85643746714\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5fb5a15c2f578343849a1afd9ddd8d1f\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5fb5a15c2f578343849a1afd9ddd8d1f\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\da87a00da8aef0fe39e72c2f0b63ad5d\core-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\da87a00da8aef0fe39e72c2f0b63ad5d\core-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5bf1209250c524f55667a17d1d605a00\versionedparcelable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\5bf1209250c524f55667a17d1d605a00\versionedparcelable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\25a2323baa05e69a666beacb2ce06f24\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\25a2323baa05e69a666beacb2ce06f24\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\772979f3f1358d9e24783bfad6dc2a97\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\772979f3f1358d9e24783bfad6dc2a97\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\443feb6d9c30b9f8aaf4223f32abf226\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\443feb6d9c30b9f8aaf4223f32abf226\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\c1424ea7bdabc535a166db598537694b\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\c1424ea7bdabc535a166db598537694b\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\e747853080ddac82d14756edeb162783\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\e747853080ddac82d14756edeb162783\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\dc09f5795dfcd02f46b8d4c32cb3d091\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\dc09f5795dfcd02f46b8d4c32cb3d091\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\c603ff6f9419afd88df4143e4426bdc1\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\c603ff6f9419afd88df4143e4426bdc1\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\b9b19eec166241113223511119bf996b\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\b9b19eec166241113223511119bf996b\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\e9d97cadc8c443a50fb1607a78a98e20\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\e9d97cadc8c443a50fb1607a78a98e20\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\9497bab530b68d9d840f7e7d5994e51d\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mwoolley\.gradle\caches\transforms-2\files-2.1\9497bab530b68d9d840f7e7d5994e51d\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+		ADDED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
+		INJECTED from C:\workspaces\AndroidstudioProjects\BeaconStudyGuide\template\app\src\main\AndroidManifest.xml
