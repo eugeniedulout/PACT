@@ -3,12 +3,48 @@
   <form [formGroup]="thingForm">
     <div class="form-group">
       <label for="title">Titre</label>
-      <input type="text" placeholder="Que vendez-vous ?" id="title" formControlName="title" class="form-control">
+      <input type="text" placeholder="Nouveau produit" id="title" formControlName="title" class="form-control">
     </div>
+    
     <div class="form-group">
-      <label for="price">Prix (en €)</label>
-      <input type="number" id="price" class="form-control" formControlName="price" min="0">
+      <label for="Rayon">Rayon</label>
+      <input type="number" id="Rayon" class="form-control" formControlName="Rayon" min="0">
     </div>
+
+
+    <div>
+  <input type="checkbox" id="Bio" name="Bio"
+         checked>
+  <label for="Bio">Bio</label>
+</div>
+<div>
+  <input type="checkbox" id="Casher" name="Casher">
+  <label for="Casher">Casher</label>
+</div>
+<div>
+  <input type="checkbox" id="GlutenFree" name="GlutenFree">
+  <label for="GlutenFree">GlutenFree</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Halal" name="Halal">
+  <label for="Halal">Halal</label>
+</div>
+<div>
+  <input type="checkbox" id="Local" name="Local">
+  <label for="Local">Local</label>
+</div>
+<div>
+  <input type="checkbox" id="Vegan" name="Vegan">
+  <label for="Vegan">Vegan</label>
+</div>
+<div>
+  <input type="checkbox" id="Végétarien" name="Végétarien">
+  <label for="Végétarien">Végétarien</label>
+</div>
+
+
+
     <div class="form-group">
       <label for="description">Description</label>
       <textarea name="description"
