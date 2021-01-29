@@ -4,10 +4,10 @@
   </h1>
   <ul class="header-navigation">
     <li class="header-navigation-item" *ngIf="part === 1 || (part >= 3 && isAuth)">
-      <a class="header-link" routerLink="/{{ partString }}/all-stuff" routerLinkActive="active">OBJETS A VENDRE</a>
+      <a class="header-link" routerLink="/{{ partString }}/all-stuff" routerLinkActive="active">PRODUITS DU MAGASIN</a>
     </li>
     <li class="header-navigation-item" *ngIf="part === 1 || (part >= 3 && isAuth)">
-      <a class="header-link" routerLink="/{{ partString }}/new-thing" routerLinkActive="active">VENDRE UN OBJET</a>
+      <a class="header-link" routerLink="/{{ partString }}/new-thing" routerLinkActive="active">AJOUTER UN PRODUIT</a>
     </li>
     <li class="header-navigation-item" *ngIf="(part >= 3 && isAuth)">
       <a class="header-link" style="cursor: pointer" (click)="onLogout()">DECONNEXION</a>
@@ -27,6 +27,6 @@
 </header>
 <div class="hero-image" *ngIf="mode === 'list'">
   <h2 class="hero-text">
-    LE MEILLEUR ENDROIT POUR VENDRE VOS OBJETS
+    E-POKAMP
   </h2>
 </div>
