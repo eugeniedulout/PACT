@@ -1,0 +1,54 @@
+=== Description des interfaces (PAN1 / PAN2)
+Pour le PAN2, il faut une description complète des interfaces.
+
+Il faut ici une description textuelle de chaque interface, c’est à
+dire +
+chaque échange entre deux blocs. Si c’est une interface entre deux
+blocs +
+informatiques, c’est une interface Java. S’il y a des échanges de +
+données complexes, il faut en décrire le format avec grande précision.
+Si c’est une interface +
+entre deux blocs électroniques, c’est une description des signaux +
+électroniques. Etc.
+
+==== InterfaceBloc Android-Serveur/BDD
+
+Communication des données relatives à la connexion au compte, aux modifications des listes, aux produits dans le magasin (caractéristiques, puis localisation une fois la liste achevée), plan du magasin, via des méthodes POST.
+Il y a également les requêtes de mise à jour à effectuer en cas d'erreurs de recensement dans le rayonnage.
+
+==== InterfaceBloc Web-Serveur
+
+Comme ci-dessus pour l'interface Android-Serveur/BDD, (l'interface utilisateur restant en grande partie la même) à l'exception des mises à jour de rayonnage qui ne s'effectueront pas sur l'application web. Il faut être dans le magasin pour faire ces changements.
+Une exception pourra être faite pour l'interface administrateur pour les magasins.
+
+[source,java]
+----
+include::../annexes/code/Interfaces/ServerInterface.java[]
+----
+
+==== InterfaceBloc Balises-Android
+
+Acquisition des coordonnées relatives aux balises pour déterminer la position via une communication Bluetooth (certainement Rfcomm). Une courte liaison a alors lieu afin de déterminer la distance du téléphone à la balise. 
+
+[source,java]
+include::../annexes/code/Interfaces/BeaconInterface.java[]
+
+==== InterfaceBloc Android (Plan)-Produit
+
+Acquisition du code-barre pour recenser un produit. C'est donc l'appareil photo du téléphone qui permettra de récupérer l'information. Cette acquisition ne peut en théorie n'être effectuer que depuis le plan, puisqu'il faut les coordonnées pour que la fonction soit utile. 
+[source,java]
+----
+include::../annexes/code/Interfaces/BarCodeReader.java[]
+----
+==== InterfaceBloc Android-Algorithme
+
+Utilise la liste en cours, l'historique des listes et les préférences de l'utilisateur pour proposer des produits pertinent à ajouté à la liste.
+[source,java]
+include::../annexes/code/Interfaces/SuggestionInterface.java[]
+
+==== InterfaceBloc Plan-Algorithme
+
+Utilise la liste de course, le plan du magasin et la position de l'utilisateur pour proposer un chemin optimal pour récupérer les produits.
+[source,java]
+include::../annexes/code/Interfaces/ShortestPathInterface.java[]
+

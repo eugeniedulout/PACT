@@ -1,0 +1,113 @@
+= Rapport d’avancement du groupe “3.3”
+PACT groupe 33
+ifdef::env-gitlab,env-browser[:outfilesuffix: .adoc]
+:doctype: book
+:stem: latexmath
+:source-highlighter: coderay
+:toc-title: Table des matières
+:toc: macro
+:sectnums:
+:imagesdir: images
+
+
+// Partie non numérotée
+:sectnums!:
+== « E-POKAMP »
+
+=== Membres du groupe
+
+* Glasziou Erwan
+* Bouffant Charles
+* Dulout Eugénie
+* Bruno François
+* Audinet Quentin
+* Bakache Victor
+* Boutaj Sofiene
+* Senane Zineb
+
+=== Tuteur
+
+* JABBOUR Chadi
+
+=== Encadrant génie logiciel
+
+* MOISSINAC Jean-Claude
+
+== Résumé du sujet choisi en français (PAN1)
+
+Notre projet est une application de création de liste de courses reliée à une base de donnée des produits disponibles en magasin, le tout associé à une méthode de localisation à l'intérieur du magasin. Lors de la création de la liste, l'application propose à l'utilisateur des produits en fonction de ses préférences, de ses listes précédentes, tout en tenant compte des promotions actuelles dans le magasin. Ces promotions sont d'ailleurs consultables dans un onglet consacré. 
+Les listes de courses ainsi que les sous-listes de type d'ingrédients (ou "recettes") peuvent être partagées entre utilisateurs, ce qui est utile au sein d'un foyer par exemple. Une fois la liste de courses validée et l'usager entré dans le magasin, l'application calcule le chemin optimal pour aller récupérer les produits. 
+Le recensement des produits et de leur localisation peut se faire de manière participative par les utilisateurs.
+De plus, notre projet n'a pas pour unique objectif de guider les clients dans leur magasin afin de rendre leurs courses moins pénibles. L'application devra aussi permettre à l'utilisateur de pouvoir adopter (s'il le souhaite) un mode de consommation sain et responsable. Lorsque l'utilisateur choisit un produit à ajouter à sa liste, l'application devra lui proposer les différents produits disponibles, classés selon ses préférences (prix, bio, local, sain...).
+Dès lors, notre projet se place au service de l'humain en aidant l'utilisateur à prendre soin de sa santé, à favoriser le commerce local, et en se sensibilisant aux impacts écologiques de la consommation en offrant un outil pour la corriger.
+
+
+== English Summary (PAN1)
+
+Our project is an application designed to create shopping lists, itself linked to a database of available products in a set department store, and associated with a  localisation method inside the department store. While the user assembles their shopping list, the app suggests products depending on the user's preferences and previous shopping lists, along with the current available offers in the department store which can be found in a specific tab. 
+Shopping lists can be shared between users, as can sub-lists of ingredient types (or "recipes"), which is useful within a household for exemple. Once the shopping list is inputed and the user is inside the store, the app calculates the optimal path to gather the products. 
+The list of available products and their location can be collaboratively uptated by the users.
+Furthermore, our app isn't simply designed to guide  clients inside stores to make shopping less bothering. It will also allow the users to consume (if they wish to) in a more healthy and responsible way. When the user chooses a product to add to their list, the app will show him other available products, sorted accordingly to his preferences (price, organic, local production, healthy...).
+Henceforth, our project provides a service to humans by helping users take good care of their health, favorising local business, and alerting users about the ecological impact of their consumption while providing them with the tools to adjust it.
+
+ifndef::backend-pdf[]
+== Table des matières
+:toc-title:
+toc::[]
+endif::[]
+
+// On numérote le reste des sections
+:sectnums:
+
+== Étude d’antériorité et justification de la proposition (PAN1)
+
+include::proposition/proposition.adoc[Description de la proposition]
+
+include::proposition/etat-de-l-art.adoc[Description de l’état de l’art]
+
+== Scénarios d’usage (PAN1)
+
+include::scenario/scenario.adoc[Scénarios d’usage]
+
+<<<
+
+== Architecture du projet (PAN1)
+
+include::architecture/schema.adoc[Schéma d’architecture]
+
+include::architecture/interfaces.adoc[Description des interfaces]
+
+include::architecture/sequence.adoc[Diagramme de séquence]
+
+include::architecture/ihm.adoc[Interface utilisateur graphique]
+
+include::architecture/taches.adoc[Tableau détaillé des tâches]
+
+<<<
+
+== Organisation du projet (PAN1)
+
+include::organisation/planification.adoc[Diagramme de planification temporel des tâches]
+
+include::organisation/repartition.adoc[Répartition des élèves par module]
+
+include::organisation/plan-tests.adoc[Plans de test (PAN2+)]
+
+<<<
+
+[bibliography]
+== Bibliographie (PAN1+)
+
+include::References.adoc[Bibliographie]
+
+<<<
+
+// == Annexes
+
+//include::annexes/modifications.adoc[Modifications (PAN2+)]
+
+//include::annexes/avancement.adoc[Avancement des modules]
+
+//include::annexes/moduleX.adoc[Avancement module X]
+
+//include::annexes/moduleY.adoc[Avancement module Y]

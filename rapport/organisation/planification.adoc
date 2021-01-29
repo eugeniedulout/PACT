@@ -1,0 +1,111 @@
+=== Planning temporel PACT
+
+==== Taches / PAN1 09/11/2020
+
+===== Générales
+
+* rapport:
+
+[cols=",^,^,,",options="header",]
+|====
+|Tâche |Qui |Quand |Fait |Remarques
+|sujet |Erwan, Quentin |3/11 |Oui | revu avec tout le monde
+|sujet en anglais | Erwan | 4/11|Oui |
+|scenario |François, Victor, Sofiene |12/10 |Oui | Modifié par Erwan et Eugénie apres le retour du copil
+|architecture (schéma et documentation) |Sofiene, Zineb, Eugénie, Quentin |12/10 |Oui |
+|découpage en modules | Charles, François, Erwan et Eugénie | 19/10 et 3/11 | Oui |
+|planning temporel (ce document, personnalisé) | Eugénie |3/11 |Oui | 
+|====
+
+* présentation 15mn
+
+[cols=",^,^,,",options="header",]
+|====
+|Tâche |Qui |Quand |Fait |Remarques
+|préparation du document |Tout le monde | 8/11 | Oui | Mêmes répartitions que parole
+|répartition de la parole |Tout le monde | 3/11| Oui | Sujet: François (Proposition), Sofiene (Etat de l'art) / Scénario: Victor / Architecture: Sofiene (Présentation), Quentin (Interfaces et blocs), Eugénie (UI Android et Web), Erwan (Plan), Zineb (Algorithmie) / Découpage: Charles
+|répétition | Tout le monde | 9/11 | Oui | Idem
+|====
+
+==== Taches / PAN2 20/01/20
+
+===== Générales
+
+* rapport
+
+[cols=",^,^,,",options="header",]
+|====
+|Tâche |Qui |Quand |Fait |Remarques
+|mise à jour selon remarques du jury | | | |
+|mise à jour de l’architecture | | | |
+|interfaces | Erwan | 2/12 | Oui | Incomplet : il manque les interfaces liés à Client-Serveur
+|plan de test par module et global | | | |
+|avancement | | | |
+|====
+
+* Prendre rdv avec vos experts pour le PAN2
+
+[cols=",^,^,,",options="header",]
+|====
+|Tâche |Qui |Quand |Fait |Remarques
+|module 1 | | | |
+|====
+
+===== Modules
+
+* Android
+
+[cols=",^,^,",options="header",]
+|====
+|Tâche |Quand |Fait |Remarques
+|Installation de l’outil Android Studio | | |
+|TP Android | | |
+|Squelette d’application | | |
+|GUI | | |
+|Plan de test | | |
+|====
+
+* Autres modules
+
+==== Tâches / PAN3 18/03/20
+
+===== Générales
+
+* Préparer un déroulé de la démo et du ``matériel'' de démo
+
+===== Modules
+
+* Android
+
+[cols=",^,^,",options="header",]
+|====
+|Tâche |Quand |Fait |Remarques
+|asynctask pour client-serveur | | |
+|feature 1 | | |
+|feature 2 | | |
+|test | | |
+|====
+
+* …
+
+==== Tâches / PAN4 04/05/20
+
+===== Générales
+
+* poster pour le stand
+* présentation 4 slides
+* rapport: avancement, rapports de test
+
+===== Modules
+
+* Android
+
+[cols=",^,^,",options="header",]
+|====
+|Tâche |Quand |Fait |Remarques
+|feature 8 | | |
+|feature 9 | | |
+|test | | |
+|====
+
+* …
