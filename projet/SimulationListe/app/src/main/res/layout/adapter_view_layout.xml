@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="100">
+
+
+    <ImageView
+        android:id="@+id/iconProduct"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_weight="10"
+        app:srcCompat="@drawable/pomme" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="10">
+
+        <TextView
+            android:id="@+id/nameProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:choiceMode="singleChoice"
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textColor="#3F51B5"
+            android:textSize="17sp"
+            tools:layout_editor_absoluteX="392dp" />
+
+        <TextView
+            android:id="@+id/priceProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_below="@id/nameProduct"
+            android:layout_weight="10"
+            android:choiceMode="singleChoice"
+            android:gravity="center_horizontal"
+            android:text="TextView"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>
