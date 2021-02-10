@@ -21,3 +21,14 @@ test :
 * situation/contexte
 * action ou entrée à appliquer
 * réaction ou sortie attendue.
+
+==== Plan de test allégé
+
+* Test Barcode-Android
+**Situation**
+On a un code barre que l'on peut lire (et donc une sortie du module). Vérifier si le module Android réagit correctement (affichage du bon produit).
+**action ou entrée à appliquer**
+Scan d'un code barre et/ou variable en sortie du module.
+**réaction ou sortie attendue**
+requête à la BDD correspondant au bon produit/ affichage du produit.
+
