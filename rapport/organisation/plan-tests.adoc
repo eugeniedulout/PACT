@@ -83,7 +83,7 @@ Réception des coordonnées de la position et affichage de cette position sur le
 
 **Situation**
 
-Le Serveur reçoit une requête et la relai à l'algorythme de recherche 
+Le Serveur reçoit une requête et la relai à l'algorithme de recherche 
 
 **action ou entrée à appliquer**
 
