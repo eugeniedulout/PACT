@@ -79,7 +79,7 @@ cliquer sur le bouton localisation.
 
 Réception des coordonnées de la position et affichage de cette position sur le plan.
 
-* Test BDD-Algorythme
+* Test BDD-Algorithme
 
 **Situation**
 
