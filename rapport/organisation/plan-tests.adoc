@@ -38,3 +38,31 @@ Scan d'un code barre et/ou variable en sortie du module.
 
 Requête à la BDD correspondant au bon produit/ affichage du produit.
 
+* Test Plan-Android
+
+**Situation**
+
+On vérifie l'affichage correcte du module plan dans l'appli.
+
+**action ou entrée à appliquer**
+
+WIP : En attente du module Plan.
+
+**réaction ou sortie attendue**
+
+Affichage du plan 3D au sein de l'appli.
+
+* Test BDD-Android
+
+**Situation**
+
+On veut récupérer les produits qui sont en stock,ou bien une liste/recette de l'un des amis. On vérifie si les deux modules réagissent correctement entre eux.
+
+**action ou entrée à appliquer**
+
+Taper le nom du produit / ami.
+
+**réaction ou sortie attendue**
+Réception et affichage des produits / listes / recettes correspondants.
+
+
