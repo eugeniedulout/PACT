@@ -63,6 +63,21 @@ On veut récupérer les produits qui sont en stock,ou bien une liste/recette de 
 Taper le nom du produit / ami.
 
 **réaction ou sortie attendue**
+
 Réception et affichage des produits / listes / recettes correspondants.
+
+* Test BDD-Algorythme
+
+**Situation**
+
+Le Serveur reçoit une requête et la relai à l'algorythme de recherche 
+
+**action ou entrée à appliquer**
+
+Requête de l'appli/Interface WEB.
+
+**réaction ou sortie attendue**
+
+Réponse correspondant à la requête.
 
 
