@@ -76,6 +76,20 @@ On veut localiser l'appareil de l'utilisateur. On vérifie si les deux modules r
 cliquer sur le bouton localisation.
 
 **réaction ou sortie attendue**
+
 Réception des coordonnées de la position et affichage de cette position sur le plan.
 
+* Test BDD-Algorythme
+
+**Situation**
+
+Le Serveur reçoit une requête et la relai à l'algorythme de recherche 
+
+**action ou entrée à appliquer**
+
+Requête de l'appli/Interface WEB.
+
+**réaction ou sortie attendue**
+
+Réponse correspondant à la requête.
 
