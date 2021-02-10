@@ -1,5 +1,16 @@
-Ce dossier vise à contenir l'ensemble du projet.
-Il sera divisé en plusieurs catégories:
+**Ce dossier vise à contenir l'ensemble du projet.**
+
+Il sera divisé en plusieurs catégories, qui correspondent dans les grandes lignes
+aux modules :
+
 * L'application android
+
 * Le serveur
+
 * Les beacons
+
+* Interface Web
+
+*etc... Si deux modules le juge pertinent, il est possible qu'ils partagent un dossier 
+(par exemple le module Android et le module Plan dynamique).
+
