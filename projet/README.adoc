@@ -13,4 +13,7 @@ aux modules :
 
 * etc... Si deux modules le juge pertinent, il est possible qu'ils partagent un dossier 
 (par exemple le module Android et le module Plan dynamique).
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4fc68bb3175119041c80f46623f8d762f78cd047
