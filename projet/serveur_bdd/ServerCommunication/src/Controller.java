@@ -7,6 +7,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Controller {
 
@@ -15,20 +16,17 @@ public class Controller {
     public static final String USER_FONCTIONS = "http/user_functions.php";
 
     //ArrayList declaration
-    ArrayList<String> keys = new ArrayList<String>();
-    ArrayList<String> values = new ArrayList<String>();
+    private ArrayList<String> keys = new ArrayList<String>();
+    private ArrayList<String> values = new ArrayList<String>();
 
     public String getUserName(int id) {
         keys.add("action");
         values.add("get_username");
         keys.add("id");
         values.add(String.valueOf(id));
-        String[] answer = post(SERVER_URL+USER_FONCTIONS, keys, values).split("%");
-        if(answer[0].matches("false"))
-            return null;
-        keys.clear();
-        values.clear();
-        return answer[1];
+        String[] answer = postTreatment(post(SERVER_URL+USER_FONCTIONS, keys, values));
+
+        return answer==null?null:answer[0];
     }
 
     public String hello_world() {
@@ -88,5 +86,14 @@ public class Controller {
         }
 
         return result;
+    }
+
+    private String[] postTreatment(String answer) {
+        String[] results = answer.split("%");
+        if(results[0].matches("false"))
+            return null;
+        keys.clear();
+        values.clear();
+        return Arrays.copyOfRange(results, 1, results.length);
     }
 }
