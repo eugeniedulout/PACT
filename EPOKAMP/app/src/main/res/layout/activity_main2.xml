@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/retour"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Mes amis"
+            app:icon="@drawable/ic_baseline_replay_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.384"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="85dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button5"
+            app:layout_constraintVertical_bias="1.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="834dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="61dp"
+                    android:gravity="center|center_horizontal"
+                    android:text="Ajouter un ami"
+                    app:icon="@drawable/ic_baseline_person_add_24" />
+
+                <LinearLayout
+                    android:layout_width="286dp"
+                    android:layout_height="209dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/button30"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Ajouter avec e-mail" />
+
+                    <Button
+                        android:id="@+id/button31"
+                        android:layout_width="match_parent"
+                        android:layout_height="59dp"
+                        android:text="Ajouter avec nom" />
+
+                    <Button
+                        android:id="@+id/button32"
+                        android:layout_width="match_parent"
+                        android:layout_height="73dp"
+                        android:text="Envoyer une demande" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/mesdemandes"
+                    android:layout_width="198dp"
+                    android:layout_height="67dp"
+                    android:text="Mes demandes"
+                    app:icon="@drawable/ic_baseline_contact_mail_24" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp" />
+
+                <Button
+                    android:id="@+id/button13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="81dp"
+                    android:text="Ami 1"
+                    app:icon="@drawable/ic_baseline_person_pin_24" />
+
+                <Button
+                    android:id="@+id/button14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="74dp"
+                    android:text="Ami 2"
+                    app:icon="@drawable/ic_baseline_person_pin_24" />
+
+                <Button
+                    android:id="@+id/button12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="83dp"
+                    android:text="Ami 3"
+                    app:icon="@drawable/ic_baseline_person_pin_24" />
+
+                <Button
+                    android:id="@+id/button15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="73dp"
+                    android:text="Ami 4"
+                    app:icon="@drawable/ic_baseline_person_pin_24" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
