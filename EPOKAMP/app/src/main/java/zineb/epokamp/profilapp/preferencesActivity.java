@@ -1,28 +1,34 @@
 package zineb.epokamp.profilapp;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
-public class preferencesActivity extends AppCompatActivity {
+public class preferencesActivity extends Fragment {
 
     private Button retour;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preferences);
 
-        this.retour=findViewById(R.id.retour);
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.activity_preferences, container, false);
+
+        this.retour= v.findViewById(R.id.retour);
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity=new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(otherActivity);
-                finish();
+                FragmentController.swapFragmentInMainContainer(new MainActivity2(), getContext());
             }
         });
+        return v;
     }
+
 }

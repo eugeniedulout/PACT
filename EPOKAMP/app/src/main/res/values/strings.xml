@@ -1,7 +1,24 @@
 <resources>
-    <string name="app_name">ProfilApp</string>
-    <string name="title_activity_scrolling">ScrollingActivity</string>
-    <string name="large_text">
+        <string name="app_name">ProfilApp</string>
+        <string name="title_activity_scrolling">ScrollingActivity</string>
+        <string name="liste">Liste</string>
+        <string name="plan">Plan</string>
+        <string name="offres">Offres</string>
+        <string name="profil">Profil</string>
+        <string name="title_activity_sdyuhhsnx">sdyuhhsnx</string>
+        <!-- Strings used for fragments for navigation -->
+        <string name="first_fragment_label">First Fragment</string>
+        <string name="second_fragment_label">Second Fragment</string>
+        <string name="next">Next</string>
+        <string name="previous">Previous</string>
+
+        <string name="hello_first_fragment">Hello first fragment</string>
+        <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+        <!-- TODO: Remove or change this placeholder text -->
+        <string name="hello_blank_fragment">Hello blank fragment</string>
+        <string name="recette">Recette</string>
+        <string name="bigString">La pomme est un fruit comestible produit par un pommier. Les pommiers sont cultivés mondialement et représentent l\'espèce la plus cultivée du genre Malus. L\'arbre est originaire d\'Asie.</string>
+        <string name="large_text">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."

@@ -21,7 +21,7 @@ public class FriendsActivity extends AppCompatActivity {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity=new Intent(getApplicationContext(),MainActivity.class);
+                Intent otherActivity=new Intent(getApplicationContext(), MainActivity2.class);
                 startActivity(otherActivity);
                 finish();
             }
@@ -29,7 +29,7 @@ public class FriendsActivity extends AppCompatActivity {
         ajoutami.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent otherActivity=new Intent(getApplicationContext(),MainActivity2.class);
+                Intent otherActivity=new Intent(getApplicationContext(), MainActivity3.class);
                 startActivity(otherActivity);
                 finish();
             }
