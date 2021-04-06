@@ -38,6 +38,13 @@ public class BeaconModel
     //The distance
     public double distance;
 
+    //Coord
+    public x;
+    public y;
+
+    //Moyenne glissante
+    public final MoyGliss = 0;
+    public final CPT = 1;
 
     public static boolean isAltBeacon(final byte[] data) {
         Log.d("TESTING DEVICE", "****************************************************\n"+data.toString());
@@ -68,7 +75,13 @@ public class BeaconModel
         this.id = device.getAddress();
         this.timestamp = new Date().getTime();
         this.txPower = (int) advertisement[TXPOWER_INDEX];
-        updateDistance();
+        MoyGliss = ((this.txPower-this.rssi) + MoyGliss)
+        CPT++;
+        if(CPT == 5){
+            updateDistance((MoyGliss/CPT));
+            cpt = 0;
+            MoyGliss=0;
+        }
         this.arguments = String.format("arg1: %02x %02x \targ2: %02x %02x\t company: %04x",
                 advertisement[ARGS_START_INDEX],
                 advertisement[ARGS_START_INDEX+1],
@@ -86,9 +99,14 @@ public class BeaconModel
         this.uuid = sb.toString();
     }
 
-    public void updateDistance() {
-        double d = Math.exp(Math.log(10)*(this.txPower-this.rssi)/30);
+    public void updateDistance(MoyGliss) {
+        double d = Math.exp(Math.log(10)*(MoyGliss)/30);
         Log.d("distance", ""+d);
         this.distance = d;
+    }
+
+    public void SetCoord(x,y){
+        this.x = x;
+        this.y = y;
     }
 }
