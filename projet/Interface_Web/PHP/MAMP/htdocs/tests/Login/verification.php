@@ -13,13 +13,13 @@ try {
 $username = htmlspecialchars($_POST['username']); 
 $password = htmlspecialchars($_POST['password']);
 //  Récupération de l'utilisateur et de son pass hashé
-$req = $bdd->prepare('SELECT mot_de_passe FROM utilisateur WHERE username = :username');
+$req = $bdd->prepare('SELECT password FROM utilisateur WHERE username = :username');
 $req->execute(array(
     'username' => $username));
 $resultat = $req->fetch();
 
 // Comparaison du pass envoyé via le formulaire avec la base
-$isPasswordCorrect = password_verify($password, $resultat['password']);
+$isPasswordCorrect = password_verify($_POST['password'], $resultat['password']);
 
 if (!$resultat)
 {
@@ -35,4 +35,4 @@ else
     else {
            header('Location: login.php?erreur=1'); // utilisateur ou mot de passe incorrect
         }
-}
+}s
