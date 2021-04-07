@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity
         //Here in a thread not blocking UI
         
         if (previous.containsKey(device){
-            advertisement = filter(advertisement,previous.get(device));
+            advertisement = filter(advertisement,previous.get(device),ALPHA);
         }
         
         if(BeaconModel.isAltBeacon(advertisement)) {
