@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,6 +34,6 @@
             echo 'Il faut renseigner un nom et un prénom !';
         }
         ?>
-        
+
     </body>
 </html>
