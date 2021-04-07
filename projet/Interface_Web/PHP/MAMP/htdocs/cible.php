@@ -10,7 +10,7 @@ $_SESSION["password"] = $_POST["loginPW"];
 	if (isset ($_SESSION['password'])AND isset($_SESSION['MarketID'])){
 		?>
 	<p>
-    <?php echo $_SESSION['MarketID'] . "est connecté avec" . $_SESSION['password'] ?>
+    <?php echo $_SESSION['MarketID'] . " est connecté avec " . $_SESSION['password'] ?>
 	</p>
 	<?php
 }
