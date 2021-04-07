@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity
     private BluetoothAdapter.LeScanCallback mLeOldCallback = null;
     //After Lollipop
     private ScanCallback mLeNewCallback = null;
+    // smoothing constant for low-pass filter 0 - 1 ; a smaller
+    public static float ALPHA = 0.03f;
+    public byte[] previous;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -150,6 +153,7 @@ public class MainActivity extends AppCompatActivity
 
     private void handleNewBeaconDiscovered(final BluetoothDevice device, final int rssi, final byte[] advertisement) {
         //Here in a thread not blocking UI
+        
 
         if(BeaconModel.isAltBeacon(advertisement)) {
             Log.d("BEACON", "------------------------  ALT BEACON  -----------------------");
@@ -182,6 +186,18 @@ public class MainActivity extends AppCompatActivity
             }
         });
     }
+
+    public static float[] filter(float[] input, float[] prev, float alpha) {
+		if (input == null || prev == null)
+			throw new NullPointerException("input and prev float arrays must be non-NULL");
+		if (input.length != prev.length)
+			throw new IllegalArgumentException("input and prev must be the same length");
+
+		for (int i = 0; i < input.length; i++) {
+			prev[i] = prev[i] + alpha * (input[i] - prev[i]);
+		}
+		return prev;
+	}
 
     private boolean isBluetoothAvailableAndEnabled() {
         BluetoothManager btManager = null;
