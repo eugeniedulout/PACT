@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity
     Trilateration t = new Trilateration();
     // smoothing constant for low-pass filter 0 - 1 ; a smaller
     public static float ALPHA = 0.03f;
-    public ArrayMap <int,byte[]> previous = new ArrayMap<>();
+    public ArrayMap <Integer,Byte[]> previous = new ArrayMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -127,7 +127,6 @@ public class MainActivity extends AppCompatActivity
             mLeOldCallback = new BluetoothAdapter.LeScanCallback() {
                 @Override
                 public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
-                    previous.put(device,scanRecord);
                     handleNewBeaconDiscovered(device, rssi, scanRecord);
                 }
             };
@@ -138,7 +137,6 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onScanResult(int callbackType, ScanResult result) {
                     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        previous.put(result.getDevice(),result.getScanRecord().getBytes());
                         handleNewBeaconDiscovered(
                                 result.getDevice(),
                                 result.getRssi(),
@@ -164,10 +162,6 @@ public class MainActivity extends AppCompatActivity
 
     private void handleNewBeaconDiscovered(final BluetoothDevice device, final int rssi, final byte[] advertisement) {
         //Here in a thread not blocking UI
-        
-        if (previous.containsKey(device){
-            advertisement = filter(advertisement,previous.get(device),ALPHA);
-        }
         
         if(BeaconModel.isAltBeacon(advertisement)) {
             Log.d("BEACON", "------------------------  ALT BEACON  -----------------------");

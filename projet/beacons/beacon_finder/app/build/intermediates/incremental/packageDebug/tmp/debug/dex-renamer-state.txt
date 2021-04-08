@@ -1,7 +1,7 @@
-#Wed Apr 07 15:58:07 CEST 2021
-base.0=C\:\\Users\\quent\\OneDrive\\Documents\\Cours\\PACT\\Bluetooth\\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\\tutorial\\Android\\template\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+#Thu Apr 08 14:54:03 CEST 2021
+base.0=/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\quent\\OneDrive\\Documents\\Cours\\PACT\\Bluetooth\\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\\tutorial\\Android\\template\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
+base.1=/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="template/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/template.iml" filepath="$PROJECT_DIR$/.idea/modules/template.iml" group="template" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/beacon_finder.iml" filepath="$PROJECT_DIR$/.idea/modules/beacon_finder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/beacon_finder.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/beacon_finder.app.iml" />
     </modules>
   </component>
 </project>

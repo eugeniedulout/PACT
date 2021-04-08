@@ -1,159 +1,159 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:1-24:12
-MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\84fac7514a3b68e7efac8b72c087d522\appcompat-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\7fa56b841605dd4b42457ef9088fd814\fragment-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\8c736121f2a9971298e22ffb2ed19256\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\32c4d59032923b220b748c8c0b366fa6\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\d039002f7fb1c0174393c8a0cfa23dc1\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\3376f509e05ba1a0aa3e2c9ea3c341f4\vectordrawable-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\66921c00edacaf834c66c790bca81fd2\loader-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\8d0914347730259c556ed63f7c4029be\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\08496e4f39e9c230156605f5cb75d01d\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\2c068811b31cede1e3af056cb20006b0\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\b22995debd9ea726973dbb24d5f7b5ae\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\70f721dcd2f9071ef2f073c59d6fdf03\customview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\54e2975bbbd15e91548bb3a6d17fe0cb\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\a5b99478802176efc02480326fdce52a\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\99b069d38755a7bf0e814174e8baea61\core-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\739a46266beae8e83ee78400557d25c0\versionedparcelable-1.0.0\AndroidManifest.xml:17:1-25:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\87f325d03c33ed17f7c72b886bb2ca9e\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\1a2abd1a6880eaacad17570782ff175a\lifecycle-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\a659b4dc32895b7da94d29bc1d2858b4\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\eceaaca0ef1cf1de504aa117415c54b9\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\8a9b4cb2951b0ebc4b8e83ae0a5fbf6c\print-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\5b26bc4bd495e45786d9c43b0b01183b\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\1ba3f3298fe763ba38f341b8fb18f5ba\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\e8e2fe09da24143e0e2bebefd562466e\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\28347f6a07543daf4220f41a9f6ab893\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\dce4d7ce700a482d9f844676e8d30ff5\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:1-24:12
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/84fac7514a3b68e7efac8b72c087d522/appcompat-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/7fa56b841605dd4b42457ef9088fd814/fragment-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8c736121f2a9971298e22ffb2ed19256/vectordrawable-animated-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/32c4d59032923b220b748c8c0b366fa6/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/d039002f7fb1c0174393c8a0cfa23dc1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/3376f509e05ba1a0aa3e2c9ea3c341f4/vectordrawable-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/66921c00edacaf834c66c790bca81fd2/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8d0914347730259c556ed63f7c4029be/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/08496e4f39e9c230156605f5cb75d01d/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/2c068811b31cede1e3af056cb20006b0/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/b22995debd9ea726973dbb24d5f7b5ae/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/70f721dcd2f9071ef2f073c59d6fdf03/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/54e2975bbbd15e91548bb3a6d17fe0cb/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/a5b99478802176efc02480326fdce52a/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/99b069d38755a7bf0e814174e8baea61/core-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/739a46266beae8e83ee78400557d25c0/versionedparcelable-1.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/87f325d03c33ed17f7c72b886bb2ca9e/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/1a2abd1a6880eaacad17570782ff175a/lifecycle-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/a659b4dc32895b7da94d29bc1d2858b4/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/eceaaca0ef1cf1de504aa117415c54b9/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8a9b4cb2951b0ebc4b8e83ae0a5fbf6c/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/5b26bc4bd495e45786d9c43b0b01183b/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/1ba3f3298fe763ba38f341b8fb18f5ba/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/e8e2fe09da24143e0e2bebefd562466e/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/28347f6a07543daf4220f41a9f6ab893/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/dce4d7ce700a482d9f844676e8d30ff5/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:1-24:12
 	package
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:3:5-31
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:3:5-31
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:1-24:12
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:1-24:12
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.BLUETOOTH
-ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:5:5-68
+ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:5:5-68
 	android:name
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:5:22-65
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:5:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:6:5-74
+ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:6:5-74
 	android:name
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:6:22-71
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:6:22-71
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:7:5-79
+ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:7:22-76
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:7:22-76
 application
-ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:9:5-22:19
-MERGED from [androidx.core:core:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\99b069d38755a7bf0e814174e8baea61\core-1.0.0\AndroidManifest.xml:22:5-89
-MERGED from [androidx.core:core:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\99b069d38755a7bf0e814174e8baea61\core-1.0.0\AndroidManifest.xml:22:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\739a46266beae8e83ee78400557d25c0\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\739a46266beae8e83ee78400557d25c0\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
+ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:9:5-22:19
+MERGED from [androidx.core:core:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/99b069d38755a7bf0e814174e8baea61/core-1.0.0/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/99b069d38755a7bf0e814174e8baea61/core-1.0.0/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/739a46266beae8e83ee78400557d25c0/versionedparcelable-1.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/739a46266beae8e83ee78400557d25c0/versionedparcelable-1.0.0/AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\99b069d38755a7bf0e814174e8baea61\core-1.0.0\AndroidManifest.xml:22:18-86
+		ADDED from [androidx.core:core:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/99b069d38755a7bf0e814174e8baea61/core-1.0.0/AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:12:9-41
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:12:9-41
 	android:icon
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:13:9-40
 activity#com.beacons.demo.MainActivity
-ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:14:9-21:20
+ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:14:9-21:20
 	android:label
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:16:13-45
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:16:13-45
 	android:name
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:15:13-41
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:15:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:17:13-20:29
+ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:17:13-20:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:19:27-74
 uses-sdk
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\84fac7514a3b68e7efac8b72c087d522\appcompat-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\84fac7514a3b68e7efac8b72c087d522\appcompat-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\7fa56b841605dd4b42457ef9088fd814\fragment-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\7fa56b841605dd4b42457ef9088fd814\fragment-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\8c736121f2a9971298e22ffb2ed19256\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\8c736121f2a9971298e22ffb2ed19256\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\32c4d59032923b220b748c8c0b366fa6\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\32c4d59032923b220b748c8c0b366fa6\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\d039002f7fb1c0174393c8a0cfa23dc1\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\d039002f7fb1c0174393c8a0cfa23dc1\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\3376f509e05ba1a0aa3e2c9ea3c341f4\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\3376f509e05ba1a0aa3e2c9ea3c341f4\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\66921c00edacaf834c66c790bca81fd2\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\66921c00edacaf834c66c790bca81fd2\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\8d0914347730259c556ed63f7c4029be\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\8d0914347730259c556ed63f7c4029be\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\08496e4f39e9c230156605f5cb75d01d\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\08496e4f39e9c230156605f5cb75d01d\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\2c068811b31cede1e3af056cb20006b0\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\2c068811b31cede1e3af056cb20006b0\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\b22995debd9ea726973dbb24d5f7b5ae\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\b22995debd9ea726973dbb24d5f7b5ae\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\70f721dcd2f9071ef2f073c59d6fdf03\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\70f721dcd2f9071ef2f073c59d6fdf03\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\54e2975bbbd15e91548bb3a6d17fe0cb\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\54e2975bbbd15e91548bb3a6d17fe0cb\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\a5b99478802176efc02480326fdce52a\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\a5b99478802176efc02480326fdce52a\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\99b069d38755a7bf0e814174e8baea61\core-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\99b069d38755a7bf0e814174e8baea61\core-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\739a46266beae8e83ee78400557d25c0\versionedparcelable-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\739a46266beae8e83ee78400557d25c0\versionedparcelable-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\87f325d03c33ed17f7c72b886bb2ca9e\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\87f325d03c33ed17f7c72b886bb2ca9e\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\1a2abd1a6880eaacad17570782ff175a\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\1a2abd1a6880eaacad17570782ff175a\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\a659b4dc32895b7da94d29bc1d2858b4\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\a659b4dc32895b7da94d29bc1d2858b4\documentfile-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\eceaaca0ef1cf1de504aa117415c54b9\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\eceaaca0ef1cf1de504aa117415c54b9\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\8a9b4cb2951b0ebc4b8e83ae0a5fbf6c\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\8a9b4cb2951b0ebc4b8e83ae0a5fbf6c\print-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\5b26bc4bd495e45786d9c43b0b01183b\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\5b26bc4bd495e45786d9c43b0b01183b\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\1ba3f3298fe763ba38f341b8fb18f5ba\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\1ba3f3298fe763ba38f341b8fb18f5ba\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\e8e2fe09da24143e0e2bebefd562466e\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\e8e2fe09da24143e0e2bebefd562466e\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\28347f6a07543daf4220f41a9f6ab893\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\28347f6a07543daf4220f41a9f6ab893\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\dce4d7ce700a482d9f844676e8d30ff5\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\quent\.gradle\caches\transforms-2\files-2.1\dce4d7ce700a482d9f844676e8d30ff5\interpolator-1.0.0\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/84fac7514a3b68e7efac8b72c087d522/appcompat-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/84fac7514a3b68e7efac8b72c087d522/appcompat-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/7fa56b841605dd4b42457ef9088fd814/fragment-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/7fa56b841605dd4b42457ef9088fd814/fragment-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8c736121f2a9971298e22ffb2ed19256/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8c736121f2a9971298e22ffb2ed19256/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/32c4d59032923b220b748c8c0b366fa6/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/32c4d59032923b220b748c8c0b366fa6/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/d039002f7fb1c0174393c8a0cfa23dc1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/d039002f7fb1c0174393c8a0cfa23dc1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/3376f509e05ba1a0aa3e2c9ea3c341f4/vectordrawable-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/3376f509e05ba1a0aa3e2c9ea3c341f4/vectordrawable-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/66921c00edacaf834c66c790bca81fd2/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/66921c00edacaf834c66c790bca81fd2/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8d0914347730259c556ed63f7c4029be/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8d0914347730259c556ed63f7c4029be/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/08496e4f39e9c230156605f5cb75d01d/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/08496e4f39e9c230156605f5cb75d01d/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/2c068811b31cede1e3af056cb20006b0/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/2c068811b31cede1e3af056cb20006b0/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/b22995debd9ea726973dbb24d5f7b5ae/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/b22995debd9ea726973dbb24d5f7b5ae/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/70f721dcd2f9071ef2f073c59d6fdf03/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/70f721dcd2f9071ef2f073c59d6fdf03/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/54e2975bbbd15e91548bb3a6d17fe0cb/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/54e2975bbbd15e91548bb3a6d17fe0cb/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/a5b99478802176efc02480326fdce52a/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/a5b99478802176efc02480326fdce52a/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/99b069d38755a7bf0e814174e8baea61/core-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/99b069d38755a7bf0e814174e8baea61/core-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/739a46266beae8e83ee78400557d25c0/versionedparcelable-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/739a46266beae8e83ee78400557d25c0/versionedparcelable-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/87f325d03c33ed17f7c72b886bb2ca9e/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/87f325d03c33ed17f7c72b886bb2ca9e/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/1a2abd1a6880eaacad17570782ff175a/lifecycle-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/1a2abd1a6880eaacad17570782ff175a/lifecycle-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/a659b4dc32895b7da94d29bc1d2858b4/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/a659b4dc32895b7da94d29bc1d2858b4/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/eceaaca0ef1cf1de504aa117415c54b9/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/eceaaca0ef1cf1de504aa117415c54b9/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8a9b4cb2951b0ebc4b8e83ae0a5fbf6c/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/8a9b4cb2951b0ebc4b8e83ae0a5fbf6c/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/5b26bc4bd495e45786d9c43b0b01183b/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/5b26bc4bd495e45786d9c43b0b01183b/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/1ba3f3298fe763ba38f341b8fb18f5ba/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/1ba3f3298fe763ba38f341b8fb18f5ba/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/e8e2fe09da24143e0e2bebefd562466e/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/e8e2fe09da24143e0e2bebefd562466e/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/28347f6a07543daf4220f41a9f6ab893/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /root/.gradle/caches/transforms-2/files-2.1/28347f6a07543daf4220f41a9f6ab893/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/dce4d7ce700a482d9f844676e8d30ff5/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/dce4d7ce700a482d9f844676e8d30ff5/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\quent\OneDrive\Documents\Cours\PACT\Bluetooth\Developer-Study-Guide-An-introduction-to-Bluetooth-BeaconsV1_3\tutorial\Android\template\app\src\main\AndroidManifest.xml
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+		ADDED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+		INJECTED from /home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
