@@ -1,8 +1,4 @@
 <?php session_start();
-if (isset($_POST["loginID"])){
-$_SESSION['MarketID'] = $_POST["loginID"]; //WIP
-$_SESSION["password"] = $_POST["loginPW"]; //WIP
-}
 try {
 	$db = new PDO('mysql:host=localhost;dbname=foodgps_db;charset=utf8','root','root'); //password will be poo4Zaec5e
 }
@@ -35,8 +31,8 @@ if (isset ($_GET['Delete'])){
 <body>
 
 	<?php
-	if (isset ($_SESSION['password'])AND isset($_SESSION['MarketID'])){
-		echo "<p>" . $_SESSION['MarketID'] . " est connecté avec " . $_SESSION['password'] . "</p>";
+	if (isset ($_SESSION['username'])AND isset($_SESSION['MarketID'])){
+		echo "<p>" . $_SESSION['username'] . " est connecté avec l'ID " . $_SESSION['MarketID'] . "</p>";
     } else {
 	echo '<p> Accès refusé </p>';
     } 
