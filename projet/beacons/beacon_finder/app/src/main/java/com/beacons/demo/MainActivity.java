@@ -12,7 +12,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Handler;
 import android.os.Bundle;
 import android.util.ArrayMap;
 import android.util.Log;
@@ -24,7 +23,6 @@ import java.util.Date;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -34,7 +32,7 @@ public class MainActivity extends AppCompatActivity
     private final static int BT_REQUEST_ID = 1;
     private final static int REQUEST_LOCATION = 0;
 
-    private static String[] PERMISSION_LOCATION = {Manifest.permission.ACCESS_FINE_LOCATION};
+    private static final String[] PERMISSION_LOCATION = {Manifest.permission.ACCESS_FINE_LOCATION};
     private boolean permissions_granted = false;
     private Toast toast;
 
@@ -49,7 +47,7 @@ public class MainActivity extends AppCompatActivity
     Trilateration t = new Trilateration();
     // smoothing constant for low-pass filter 0 - 1 ; a smaller
     public static float ALPHA = 0.03f;
-    public ArrayMap <int,byte[]> previous = new ArrayMap<>();
+    public ArrayMap<BluetoothDevice, byte[]> previous = new ArrayMap<BluetoothDevice, byte[]>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -162,10 +160,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void handleNewBeaconDiscovered(final BluetoothDevice device, final int rssi, final byte[] advertisement) {
+    private void handleNewBeaconDiscovered(final BluetoothDevice device, final int rssi, byte[] advertisement) {
         //Here in a thread not blocking UI
         
-        if (previous.containsKey(device){
+        if (previous.containsKey(device)){
+            Log.d("Filter", "FILTER");
             advertisement = filter(advertisement,previous.get(device),ALPHA);
         }
         
@@ -246,14 +245,14 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    public static float[] filter(float[] input, float[] prev, float alpha) {
+    public static byte[] filter(byte[] input, byte[] prev, float alpha) {
 		if (input == null || prev == null)
 			throw new NullPointerException("input and prev float arrays must be non-NULL");
 		if (input.length != prev.length)
 			throw new IllegalArgumentException("input and prev must be the same length");
 
 		for (int i = 0; i < input.length; i++) {
-			prev[i] = prev[i] + alpha * (input[i] - prev[i]);
+			prev[i] = (byte) (prev[i] + alpha * (input[i] - prev[i]));
 		}
 		return prev;
 	}
