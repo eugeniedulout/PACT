@@ -1,6 +1,8 @@
 <?php session_start();
+if (isset($_POST["loginID"])){
 $_SESSION['MarketID'] = $_POST["loginID"]; //WIP
 $_SESSION["password"] = $_POST["loginPW"]; //WIP
+}
 try {
 	$db = new PDO('mysql:host=localhost;dbname=foodgps_db;charset=utf8','root','root'); //password will be poo4Zaec5e
 }
@@ -8,10 +10,13 @@ catch (Exception $e) {
 	die('Erreur : '. $e->getMessage());
 }
 if (isset ($_GET['Delete'])){
-    $reponse = $db->query('SELECT * FROM Products WHERE (market=' . $_POST["loginID"] . ' AND product_id=' . $_GET['Delete'] );
-    
+    $query = 'SELECT * FROM Products WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
+    echo $query;
+    $reponse = $db->query($query);
     if  ($donnees = $reponse->fetch()){
-        $db->query('DELETE FROM Products WHERE (market=' . $_POST["loginID"] . ' AND product_id=' . $_GET['Delete'] );
+        $query = 'DELETE FROM Products WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
+        echo $query;
+        $db->query($query);
     }
 }
 
@@ -35,7 +40,7 @@ if (isset ($_GET['Delete'])){
 	echo '<p> Accès refusé </p>';
     } 
 
-    $reponse = $db->query('SELECT * FROM Products WHERE market=' . $_POST["loginID"]);
+    $reponse = $db->query('SELECT * FROM Products WHERE market=' . $_SESSION["MarketID"]);
     ?>
 
     <table style="width:100%">
