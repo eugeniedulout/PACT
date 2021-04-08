@@ -6,12 +6,12 @@ catch (Exception $e) {
 	die('Erreur : '. $e->getMessage());
 }
 
+
 $item_id = $_GET["Modify"];
 
-
 if (isset($_POST["label"])){
-    $query = "INSERT INTO `products` (`label`, `market`, `price`, `quality`, `x`, `y`, `z`) 
-    VALUES ('" . $_POST["label"] . "', '" . $_SESSION["MarketID"] . "', '" . $_POST["price"] . "', '0', '" . $_POST["x"] . "', '" . $_POST["y"] . "', '" . $_POST["z"] . "');";
+    $query = " UPDATE products 
+               SET label='" . $_POST["label"] . "', price='" . $_POST["price"] . "', x='" . $_POST["x"] . "', y='" . $_POST["y"] . "', z='" . $_POST["z"] . "' WHERE product_id='" .  $_POST["product_id"] . "';";
     echo $query;
     $db->query($query);
     header('Location: cible.php');
@@ -26,7 +26,7 @@ if (isset($_POST["label"])){
     <p>
         Modification d'article
     </p>
-    <?php 
+    <?php
     $query = 'SELECT * FROM Products WHERE product_id=' . $item_id . ';';
     $product = $db->query($query)->fetch();
 
@@ -38,6 +38,7 @@ if (isset($_POST["label"])){
             Location X coordinate : <input type="text" name="x" value='<?php echo $product["x"] ?>'/></br>
             Location Y coordinate : <input type="text" name="y" value='<?php echo $product["y"] ?>'/></br>
             Shelf : <input type="text" name="z" value='<?php echo $product["z"] ?>'/></br>
+            <input type="hidden" name="product_id" value='<?php echo $item_id?>'/>
             <input type="submit" value="Confirm"/>
         </p>
     </form>
