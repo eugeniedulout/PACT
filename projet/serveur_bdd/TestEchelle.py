@@ -343,8 +343,7 @@ def main():
         print_solution(manager, routing, solution)
 
 
-if __name__ == '__main__':
-    main()
+
 
 
 # In[102]:
@@ -406,6 +405,10 @@ plt.show()
 
 def result():
     return CoordonneesCheminFinal
+
+if __name__ == '__main__':
+    result()
+
 
 # affichageCoordonnes(coordonnes)
 #
