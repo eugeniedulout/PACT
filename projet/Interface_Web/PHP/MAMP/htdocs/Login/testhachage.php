@@ -1,5 +1,5 @@
 <?php
 
 
-echo password_hash("bimbambed", PASSWORD_DEFAULT);
+echo password_hash("carabed", PASSWORD_DEFAULT);
 ?>

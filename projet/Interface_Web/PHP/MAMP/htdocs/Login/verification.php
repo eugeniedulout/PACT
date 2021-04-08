@@ -13,7 +13,7 @@ try {
 $username = htmlspecialchars($_POST['username']); 
 $password = htmlspecialchars($_POST['password']);
 //  Récupération de l'utilisateur et de son pass hashé
-$req = $bdd->prepare('SELECT password FROM utilisateur WHERE username = :username');
+$req = $bdd->prepare('SELECT password, market_id FROM utilisateur WHERE username = :username');
 $req->execute(array(
     'username' => $username));
 $resultat = $req->fetch();
@@ -31,6 +31,7 @@ else
         session_start();
         $_SESSION['username'] = $username;
         $_SESSION['MarketID'] = (int) $resultat['market_id'];
+        //echo $_SESSION['MarketID'] . "from" . $resultat['market_id'];
         header('Location: cible.php');
     }
     else {
