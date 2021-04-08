@@ -7,7 +7,10 @@ catch (Exception $e) {
 }
 if (isset($_POST["label"])){
     $query = "INSERT INTO `products` (`label`, `market`, `price`, `quality`, `x`, `y`, `z`) 
-    VALUES (" . $_POST["label"] . ", '0', " . $_POST["price"] . ", '0', '123.2', '542.3', '55');"
+    VALUES ('" . $_POST["label"] . "', '" . $_SESSION["MarketID"] . "', '" . $_POST["price"] . "', '0', '" . $_POST["x"] . "', '" . $_POST["y"] . "', '" . $_POST["z"] . "');";
+    echo $query;
+    $db->query($query);
+    header("Location : cible.php");
 }
 ?>
 
@@ -23,8 +26,8 @@ if (isset($_POST["label"])){
         <p>            
             Label : <input type="text" name="label"/></br>
             Price : <input type="text" name="price"/></br>
-            Location X coordinate : <input type="text" name="XandY"/></br>
-            Location X coordinate : <input type="text" name="XandY"/></br>
+            Location X coordinate : <input type="text" name="x"/></br>
+            Location Y coordinate : <input type="text" name="y"/></br>
             Shelf : <input type="text" name="z"/></br>
             <input type="submit" value="Confirm"/>
         </p>

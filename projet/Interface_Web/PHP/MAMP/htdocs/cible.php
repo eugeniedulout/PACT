@@ -11,11 +11,11 @@ catch (Exception $e) {
 }
 if (isset ($_GET['Delete'])){
     $query = 'SELECT * FROM Products WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
-    echo $query;
+    //echo $query;
     $reponse = $db->query($query);
     if  ($donnees = $reponse->fetch()){
         $query = 'DELETE FROM Products WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
-        echo $query;
+        //echo $query;
         $db->query($query);
     }
     $reponse->closeCursor(); // Termine le traitement de la requête
