@@ -4,7 +4,7 @@
 
 <?php 
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=utilisateur;charset=utf8','root','root');
+    $bdd = new PDO('mysql:host=localhost;dbname=foodgps_db;charset=utf8','root','root');
 }
   catch (Exception $e) {
     die('Erreur : '. $e->getMessage());
@@ -30,7 +30,8 @@ else
     if ($isPasswordCorrect) {
         session_start();
         $_SESSION['username'] = $username;
-        header('Location: principale.php');
+        $_SESSION['MarketID'] = $resultat['market_id'];
+        header('Location: cible.php');
     }
     else {
            header('Location: login.php?erreur=1'); // utilisateur ou mot de passe incorrect
