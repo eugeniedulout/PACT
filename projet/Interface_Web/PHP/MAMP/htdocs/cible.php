@@ -18,6 +18,7 @@ if (isset ($_GET['Delete'])){
         echo $query;
         $db->query($query);
     }
+    $reponse->closeCursor(); // Termine le traitement de la requête
 }
 
 ?>
