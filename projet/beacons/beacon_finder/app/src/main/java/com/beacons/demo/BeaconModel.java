@@ -42,7 +42,6 @@ public class BeaconModel
     public double x;
     public double y;
 
-
     public static boolean isAltBeacon(final byte[] data) {
         Log.d("TESTING DEVICE", "****************************************************\n"+data.toString());
         if((data[AD_LENGTH_INDEX] & 0xff) != AD_ALT_BEACON_LENGTH_VALUE) return false;

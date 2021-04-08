@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity
     TextView x_coord, y_coord;
 
     Trilateration t = new Trilateration();
+    // smoothing constant for low-pass filter 0 - 1 ; a smaller
+    public static float ALPHA = 0.03f;
+    public ArrayMap <int,byte[]> previous = new ArrayMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -124,6 +127,7 @@ public class MainActivity extends AppCompatActivity
             mLeOldCallback = new BluetoothAdapter.LeScanCallback() {
                 @Override
                 public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
+                    previous.put(device,scanRecord);
                     handleNewBeaconDiscovered(device, rssi, scanRecord);
                 }
             };
@@ -134,6 +138,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onScanResult(int callbackType, ScanResult result) {
                     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        previous.put(result.getDevice(),result.getScanRecord().getBytes());
                         handleNewBeaconDiscovered(
                                 result.getDevice(),
                                 result.getRssi(),
@@ -159,7 +164,11 @@ public class MainActivity extends AppCompatActivity
 
     private void handleNewBeaconDiscovered(final BluetoothDevice device, final int rssi, final byte[] advertisement) {
         //Here in a thread not blocking UI
-
+        
+        if (previous.containsKey(device){
+            advertisement = filter(advertisement,previous.get(device),ALPHA);
+        }
+        
         if(BeaconModel.isAltBeacon(advertisement)) {
             Log.d("BEACON", "------------------------  ALT BEACON  -----------------------");
         } else if(BeaconModel.isIBeacon(advertisement)) {
@@ -237,6 +246,17 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    public static float[] filter(float[] input, float[] prev, float alpha) {
+		if (input == null || prev == null)
+			throw new NullPointerException("input and prev float arrays must be non-NULL");
+		if (input.length != prev.length)
+			throw new IllegalArgumentException("input and prev must be the same length");
+
+		for (int i = 0; i < input.length; i++) {
+			prev[i] = prev[i] + alpha * (input[i] - prev[i]);
+		}
+		return prev;
+	}
 
     private boolean isBluetoothAvailableAndEnabled() {
         BluetoothManager btManager = null;
