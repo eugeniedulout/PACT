@@ -35,4 +35,4 @@ else
     else {
            header('Location: login.php?erreur=1'); // utilisateur ou mot de passe incorrect
         }
-}s
+} ?>
