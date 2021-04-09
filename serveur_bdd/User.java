@@ -23,7 +23,7 @@ public class User {
         return name;
     }
 
-    String getAdresse(){
+    String getAdresseMail(){
         return adresse;
     }
 
