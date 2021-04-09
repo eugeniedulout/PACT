@@ -43,6 +43,7 @@ if (isset ($_GET['Delete'])){
     $reponse = $db->query('SELECT * FROM Products WHERE market=' . $_SESSION["MarketID"]);
     ?>
 
+
     <table style="width:100%">
        <tr>
             <th>ID</th>
@@ -62,7 +63,7 @@ if (isset ($_GET['Delete'])){
                 <td><?php echo $donnees['price']/100 . "€"; ?></td>
                 <td><?php echo $donnees['x']; ?>, <?php echo $donnees['y']; ?></td>
                 <td><?php echo $donnees['z']; ?></td>
-                <?php $ModifyLink="cible.php?Modify=" . $donnees['product_id']; ?>
+                <?php $ModifyLink="ModifyProduct.php?Modify=" . $donnees['product_id']; ?>
                 <?php $DeleteLink="cible.php?Delete=" . $donnees['product_id']; ?>
                 <td><a href=<?php echo $ModifyLink; ?>>Modify</a> / <a href=<?php echo $DeleteLink; ?>>Delete</a></td>
             </tr>
