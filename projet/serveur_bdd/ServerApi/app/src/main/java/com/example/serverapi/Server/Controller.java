@@ -74,8 +74,6 @@ public class Controller {
                 double price = json_product.getDouble("price");
                 String description = json_product.getString("description");
 
-                Log.d("[DEBUG]", name+" "+imgUrl+" "+price+ " "+description);
-
                 products.add(new Product(name,imgUrl,price,description));
             }
             return products;
@@ -84,6 +82,43 @@ public class Controller {
         }
         return null;
     }
+
+
+    public static ArrayList<Market> getAllMarkets() {
+        addParam("action", "get_all_markets");
+
+        JSONArray answer = null;
+        try {
+            answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<Market> markets = new ArrayList<Market>();
+
+
+        try {
+            for(int i=0; i < answer.length(); i++) {
+                JSONObject json_market = answer.getJSONObject(i);
+
+                int marketId = json_market.getInt("market_id");
+                String marketName = json_market.getString("name");
+                String logoUrl = json_market.getString("logo");
+                String openHours = json_market.getString("open_hours");
+                String closeHours = json_market.getString("close_hours");
+
+                markets.add(new Market(marketId, marketName, logoUrl, openHours, closeHours));
+            }
+
+            return markets;
+        } catch (JSONException e){
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+
 
 
     public static String getUsername(int id) {
