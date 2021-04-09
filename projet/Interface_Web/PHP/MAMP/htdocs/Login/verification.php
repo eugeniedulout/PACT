@@ -30,7 +30,7 @@ else
     if ($isPasswordCorrect) {
         session_start();
         $_SESSION['username'] = $username;
-        $_SESSION['MarketID'] = (int) $resultat['market_id'];
+        $_SESSION['MarketID'] = $resultat['market_id'];
         header('Location: cible.php');
     }
     else {

@@ -1,13 +1,10 @@
 body{
     background: #191970;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 #container{
     width:400px;
-
-    margin-top:2%;
+    margin:0 auto;
+    margin-top:10%;
 }
 /* Bordered form */
 form {
@@ -47,11 +44,4 @@ input[type=submit]:hover {
     background-color: white;
     color: #B0C4DE;
     border: 1px solid #B0C4DE;
-}
-
-
-
-#logo img {
-    height:100px;
-    width: 100px;
 }

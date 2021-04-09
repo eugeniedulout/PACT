@@ -1,9 +1,52 @@
 body{
-    background: #191970;
+    background: #B0C4DE;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
+* espacement */
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #AEC5EB;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #cfe0f9;
+}
+
+table, th, td {
+        font-family: 'helvetica neue', helvetica, arial, sans-serif;
+        border: 1px solid white;
+        border-collapse: collapse;
+        }
+
+th, td {
+  padding: 20px;
+} 
 #container{
     width:400px;
 

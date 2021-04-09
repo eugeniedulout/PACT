@@ -5,6 +5,12 @@
         <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
     </head>
     <body>
+        
+        <div id="logo">
+            <img src="epokamp.png" />
+        </div>
+
+
         <div id="container">
             <!-- zone de connexion -->
             

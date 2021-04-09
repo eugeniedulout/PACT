@@ -22,17 +22,20 @@ if (isset ($_GET['Delete'])){
 <html>
     <style>
         table, th, td {
-        border: 1px solid black;
+        font-family: 'helvetica neue', helvetica, arial, sans-serif;
+        border: 1px solid white;
+        border-collapse: collapse;
         }
     </style>
 
-    <head><title> E-Pokamp Administrative Service </title></head>
+    <head><title> E-Pokamp Administrative Service </title>
+    <link rel="stylesheet" href="Styleprincipal.css" media="screen" type="text/css" /></head>
 
 <body>
 
 	<?php
 	if (isset ($_SESSION['username'])AND isset($_SESSION['MarketID'])){
-		echo "<p>" . $_SESSION['username'] . " est connecté avec l'ID " . $_SESSION['MarketID'] . "</p>";
+		echo "<p> Bienvenue dans l'espace administrateur de " . $_SESSION['username'] . ". Vous êtes connecté avec l'ID " . $_SESSION['MarketID'] . ".</p>";
     } else {
 	echo '<p> Accès refusé </p>';
     } 
