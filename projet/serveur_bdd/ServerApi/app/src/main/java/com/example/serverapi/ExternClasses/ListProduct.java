@@ -37,7 +37,7 @@ public class ListProduct {
     @NonNull
     @Override
     public String toString() {
-        String str ="";
+        String str ="LIST NAME: "+this.listName+"\n";
         for(Product p : this.listOfProducts) {
             str+="\t"+p.toString()+"\n";
         }
