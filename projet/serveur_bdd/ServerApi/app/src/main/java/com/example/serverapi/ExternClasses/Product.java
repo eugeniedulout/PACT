@@ -1,5 +1,8 @@
 package com.example.serverapi.ExternClasses;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Product {
     private String name;
     private String productImageUrl;
@@ -19,6 +22,19 @@ public class Product {
         this.productImageUrl = productImageUrl;
         this.price = price;
         this.description = description;
+    }
+
+    public Product(JSONObject json_product) {
+
+        try {
+            this.name = json_product.getString("name");
+            this.productImageUrl = json_product.getString("img_url");
+            this.price = json_product.getDouble("price");
+            this.description = json_product.getString("description");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getName() {
