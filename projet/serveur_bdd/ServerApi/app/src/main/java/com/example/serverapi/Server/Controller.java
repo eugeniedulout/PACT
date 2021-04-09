@@ -109,6 +109,42 @@ public class Controller {
      */
 
 
+    /**
+     *
+     * @param userId
+     * @return all the lists of userId
+     */
+    public static ArrayList<ListProduct> getUserLists(int userId) {
+        addParam("action", "get_user_list");
+        addParam("user_id", String.valueOf(userId));
+
+        JSONArray answer = null;
+        try {
+            answer = new JSONArray(post(SERVER_URL + USER_FONCTIONS));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<ListProduct> listProducts = new ArrayList<ListProduct>();
+        try {
+            for(int i=0; i<answer.length(); i++) {
+                JSONObject json_list = answer.getJSONObject(i);
+                listProducts.add(new ListProduct(json_list));
+            }
+            return listProducts;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     *
+     * @param friendId
+     * @param userId
+     * @return All the lists of friendId shared with userId
+     */
     public static ArrayList<ListProduct> getFriendLists(int friendId, int userId) {
         addParam("action", "get_friend_lists");
         addParam("friend_id", String.valueOf(friendId));
