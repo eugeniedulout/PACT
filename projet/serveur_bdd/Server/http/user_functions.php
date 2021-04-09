@@ -24,19 +24,30 @@ if(isset($_POST['action'])) {
 		$json_result = json_encode($answer);
 		print($json_result);
 		break;
-	}
 
-	        case "get_all_products":
+	case "get_all_products":
                 $req = "SELECT AllProductsRef.name, AllProductsRef.Image, ProductsInMarkets.price, AllProductsRef.description FROM AllProductsRef JOIN ProductsInMarkets ON AllProductsRef.product_barcode=ProductsInMarkets.barcode WHERE ProductsInMarkets.market=".$db->quote($_POST['market_id']);
                 $response = $db->query($req);
                 $array = array();
-                $i=0;
                 while($row = $response->fetch()) {
                         array_push($array, array("name" => $row["name"], "img_url" => $row["Image"], "price" => $row["price"], "description" => $row["description"]));
                 }
 
                 $json_result = json_encode($array);
                 print($json_result);
+		break;
+
+        case "get_all_markets":
+                $req = "SELECT market_id, name, open_hours, close_hours, logo FROM Markets";
+                $response = $db->query($req);
+                $array = array();
+                while($row = $response->fetch()) {
+                        array_push($array, array("market_id" => $row["market_id"], "name" => $row["name"], "open_hours" => $row["open_hours"], "close_hours" => $row["close_hours"], "logo" => $row["logo"]));
+                }
+
+                $json_result = json_encode($array);
+                print($json_result);
                 break;
+	}
 }
 ?>
