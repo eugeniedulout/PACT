@@ -6,9 +6,6 @@ public interface ControllerInterface {
     public String getUsername(int id);
 
     // Retourne si l'authentification a réussi ou non
-    public boolean login(String username, String password);
-
-    // Retourne vrai si le produit a bien été ajouté, false sinon
-    public boolean addToList(String product, int amount, int list_id);
+    public boolean connect(String username, String password);
 
 }
