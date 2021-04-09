@@ -33,6 +33,25 @@ public class Controller {
 
 
 
+    public static boolean connect(String mail, String password) {
+        keys.add("action");
+        values.add("connect");
+        keys.add("mail");
+        values.add(mail);
+        keys.add("password");
+        values.add(password);
+
+        JSONObject answer = post(SERVER_URL+USER_FONCTIONS);
+
+        try {
+            return answer.getString("valid").equals("true");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 
     public static String getUserName(int id) {
         keys.add("action");
