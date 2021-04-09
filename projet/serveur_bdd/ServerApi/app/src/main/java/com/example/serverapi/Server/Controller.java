@@ -2,7 +2,9 @@ package com.example.serverapi.Server;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.ViewGroup;
 
+import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
 
 import org.json.JSONArray;
@@ -32,12 +34,9 @@ public class Controller {
 
 
     public static boolean connect(String mail, String password) {
-        keys.add("action");
-        values.add("connect");
-        keys.add("mail");
-        values.add(mail);
-        keys.add("password");
-        values.add(password);
+        addParam("action", "connect");
+        addParam("mail",mail);
+        addParam("password",password);
 
         JSONObject answer = null;
         try {
@@ -55,10 +54,8 @@ public class Controller {
     }
 
     public static ArrayList<Product> getAllProducts(int marketId) {
-        keys.add("action");
-        values.add("get_all_products");
-        keys.add("market_id");
-        values.add(String.valueOf(marketId));
+        addParam("action","get_all_products");
+        addParam("market_id", String.valueOf(marketId));
 
         JSONArray answer = null;
         try {
@@ -90,10 +87,8 @@ public class Controller {
 
 
     public static String getUsername(int id) {
-        keys.add("action");
-        values.add("get_username");
-        keys.add("id");
-        values.add(String.valueOf(id));
+        addParam("action","username");
+        addParam("id", String.valueOf(id));
         JSONObject answer = null;
         try {
             answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
@@ -108,6 +103,11 @@ public class Controller {
         return null;
     }
 
+
+    private static void addParam(String key, String value) {
+        keys.add(key);
+        values.add(value);
+    }
 
 
     /**
