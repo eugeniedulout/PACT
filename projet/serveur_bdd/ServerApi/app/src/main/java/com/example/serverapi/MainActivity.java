@@ -39,10 +39,17 @@ public class MainActivity extends AppCompatActivity {
         for(Product p : Controller.getAllProducts(1)) {
             logs_tests += p.toString()+"\n--------\n";
         }
+        logs_tests += "***************************\n";
         logs_tests += "get_all_markets: \n";
         for(Market m : Controller.getAllMarkets()) {
             logs_tests += "\tid: " + m.getMarketId() +"\n\tname: "+m.getMarketName()+"\n\tlogo: " + m.getMarketLogoUrl() + "\n\topen_hours: "+ m.getOpenHour() + "\n\tclose_hours: "+m.getCloseHour()+"\n--------\n";
         }
+        logs_tests += "***************************\n";
+        logs_tests += "get_user_lists: \n";
+        for(ListProduct listProduct : Controller.getUserLists(1)) {
+            logs_tests += listProduct.toString() + "\n--------\n";
+        }
+        logs_tests += "***************************\n";
         logs_tests += "get_friend_lists: \n";
         for(ListProduct listProduct : Controller.getFriendLists(1,2)) {
             logs_tests += listProduct.toString() + "\n--------\n";
