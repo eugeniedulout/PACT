@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# <h1 style="text-align:center" > Plus court chemin dans un magasin </h1>
-
-# <h3> Importations </h3>
-
-# In[86]:
+# In[1]:
 
 
 import numpy as np
@@ -16,18 +12,12 @@ import sys
 import math
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
-from scipy.sparse import csr_matrix
-from scipy.sparse.csgraph import floyd_warshall
-import networkx as nx
-from scipy.sparse.csgraph import johnson
 
 
-# <h3> Création de la matrice pour représenter le graphe</h3>
-
-# In[87]:
+# In[2]:
 
 
-def generateAdjencyMatrix(coordonnees, produits):
+def generateDistanceMatrix(coordonnees, produits):
 
     pointNumber = []
     for i in range(len(coordonnees)):
@@ -37,16 +27,16 @@ def generateAdjencyMatrix(coordonnees, produits):
 
     df = pd.DataFrame(coordonnees + produits, columns=['xcord', 'ycord'], index=pointNumber)
     matrix =  pd.DataFrame(distance_matrix(df.values, df.values), index=df.index, columns=df.index)
-    return matrix.values.tolist()
+    return matrix
 
 
-# In[88]:
+# In[3]:
 
 
 def norme(a , b):
     return np.sqrt((b[0]- a[0])**2 + (b[1] - a[1])**2)
 
-def generateAdjencyMatrix2(coordonnees, produits):
+def generateDistanceMatrix2(coordonnees, produits):
 
     coordonneesTot = coordonnees + produits
     matrix = np.zeros((len(coordonneesTot), len(coordonneesTot)))
@@ -56,44 +46,55 @@ def generateAdjencyMatrix2(coordonnees, produits):
     return matrix.tolist()
 
 
-# In[89]:
+# In[4]:
 
 
-def transformMatrixToApplyJhonson(M):
+generateDistanceMatrix2([[5, 7], [7, 3], [8, 1]],[[10, 7], [8, 3]] )
+
+
+# In[6]:
+
+
+def getCoordonnees(numeroDuPoint, coordonnees, produits):
+
+    if(numeroDuPoint >= len(coordonnees)):
+        return produits[i - len(coordonnees)]
+    else:
+        return coordonnees[i]
+
+
+
+def transformMatrixToApplyDijkstra(M):
     B  = M.copy()
     for i in range(len(B)):
         for j in range(len(B[i])):
-            if(B[i][j] >1/11 + 0.01):
+            if(B[i][j] >1/11 + 0.01 ):
                 B[i][j] = 0
 
     return B
 
 
-# <h3> Création des différents points à placer dans la map</h3>
-#
 
-# In[106]:
+# In[10]:
 
 
 def generationCoordonnees():
     x = []
     y=  []
     a = 0
-    for k in range(0,100,3):
-        for i in range(0,150,3):
+    for k in range(0,100,2):
+        for i in range(0,150,2):
             x.append( k )
             y.append( i)
 
     coordonnes = []
-    nonCoordonnes = []
     for k in range(len(x)):
-        if(abs(x[k] - 20 ) < 15 and abs(y[k] - 60) < 10 or abs(x[k] - 20 ) < 15 and abs(y[k] - 20) < 10 or abs(x[k] - 60 ) < 10 and abs(y[k] - 70) < 20 or abs(x[k] - 70 ) < 10 and abs(y[k] - 30) < 10 or abs(x[k] - 20 ) < 15 and abs(y[k] - 85) < 10 or abs(x[k] - 40 ) < 15 and abs(y[k] - 120) < 10):
-            nonCoordonnes.append([x[k],y[k]])
+        if(abs(x[k] - 25 ) < 10 and abs(y[k] - 40) < 10 or abs(x[k] - 20 ) < 15 and abs(y[k] - 20) < 10 or abs(x[k] - 60 ) < 10 and abs(y[k] - 70) < 20 or abs(x[k] - 70 ) < 10 and abs(y[k] - 30) < 10 or abs(x[k] - 20 ) < 15 and abs(y[k] - 85) < 10 ):
+             continue
         else:
             coordonnes.append([x[k],y[k]])
 
-    return coordonnes, nonCoordonnes
-
+    return coordonnes
 
 def generationCoordonnees2():
     coor = []
@@ -108,6 +109,8 @@ def generationCoordonnees2():
 
     for i in range(1,18):
         coor.append([10/11,i/18])
+
+
     for i in range(2,10):
         coor.append([i/11,1/18])
     for i in range(2,10):
@@ -118,44 +121,122 @@ def generationCoordonnees2():
     return coor
 
 coordonnes2 = generationCoordonnees2()
-coordonnes = generationCoordonnees2()
 
-for i in range(10,17):
-    plt.scatter(2/11, i/18,  color='yellow')
-for i in range(10,17):
-    plt.scatter(3/11, i/18,  color='yellow')
-
-for i in range(10,17):
-    plt.scatter(5/11, i/18,  color='yellow')
-for i in range(10,17):
-    plt.scatter(6/11, i/18,  color='yellow')
-
-for i in range(10,17):
-    plt.scatter(8/11, i/18,  color='yellow')
-for i in range(10,17):
-    plt.scatter(9/11, i/18,  color='yellow')
+coordonnes = generationCoordonnees()
+# In[9]:
 
 
-for i in range(2,10):
-    plt.scatter(2/11, i/18,  color='yellow')
-for i in range(2,10):
-    plt.scatter(3/11, i/18,  color='yellow')
+from collections import defaultdict
 
-for i in range(2,10):
-    plt.scatter(5/11, i/18,  color='yellow')
-for i in range(2,10):
-    plt.scatter(6/11, i/18,  color='yellow')
+#Class to represent a graph
+class Graph:
+    ListeDesCoordonnes = [[]]
+    ListeDesDistances = []
 
-for i in range(2,10):
-    plt.scatter(8/11, i/18,  color='yellow')
-for i in range(2,10):
-    plt.scatter(9/11, i/18,  color='yellow')
+    # A utility function to find the
+    # vertex with minimum dist value, from
+    # the set of vertices still in queue
+    def minDistance(self,dist,queue):
+        # Initialize min value and min_index as -1
+        minimum = float("Inf")
+        min_index = -1
+
+        # from the dist array,pick one which
+        # has min value and is till in queue
+        for i in range(len(dist)):
+            if dist[i] < minimum and i in queue:
+                minimum = dist[i]
+                min_index = i
+        return min_index
 
 
-# <h3> Affichage des points </h3>
-#
+    # Function to print shortest path
+    # from source to j
+    # using parent array
+    def printPath(self, parent, j,compteur):
 
-# In[91]:
+        #Base Case : If j is source
+        if parent[j] == -1 :
+            # print(j)
+            self.ListeDesCoordonnes[compteur].append(j)
+            return
+        self.printPath(parent , parent[j], compteur)
+        # print(j)
+        self.ListeDesCoordonnes[compteur].append(j)
+
+
+    # A utility function to print
+    # the constructed distance
+    # array
+    def printSolution(self, src, dist, parent, tailleCoordonnees):
+        print("Vertex \t\tDistance from Source\tPath")
+        compteur = 0
+        for i in range(tailleCoordonnees, len(dist)):
+            print("\n%d --> %d \t\t%d \t\t\t\t\t" % (src, i, dist[i])),
+            self.ListeDesDistances.append(dist[i])
+            self.printPath(parent,i, compteur)
+            compteur = compteur + 1
+            self.ListeDesCoordonnes.append([])
+
+
+    '''Function that implements Dijkstra's single source shortest path
+    algorithm for a graph represented using adjacency matrix
+    representation'''
+    def dijkstra(self, graph, src, tailleCoordonnees):
+        self.ListeDesCoordonnes= [[]]
+        self.ListeDesDistances= []
+
+        compteur =  0
+
+        row = len(graph)
+        col = len(graph[0])
+
+        dist = [float("Inf")] * row
+
+        parent = [-1] * row
+
+
+        dist[src] = 0.0
+
+        # Add all vertices in queue
+        queue = []
+        for i in range(row):
+            queue.append(i)
+
+        while queue:
+
+            u = self.minDistance(dist,queue)
+
+            if( u >= len(coordonnes2)):
+                compteur += 1
+
+            queue.remove(u)
+
+
+            for i in range(col):
+                '''Update dist[i] only if it is in queue, there is
+                an edge from u to i, and total weight of path from
+                src to i through u is smaller than current value of
+                dist[i]'''
+                if graph[u][i] and i in queue:
+                    if dist[u] + graph[u][i] < dist[i]:
+                        dist[i] = dist[u] + graph[u][i]
+                        parent[i] = u
+            if(compteur == len(coordonnes2)):
+                self.printSolution(src, dist,parent, tailleCoordonnees)
+                return self.ListeDesCoordonnes[:-1], self.ListeDesDistances
+
+
+
+        # print the constructed distance array
+        self.printSolution(src, dist,parent, tailleCoordonnees)
+        return self.ListeDesCoordonnes[:-1], self.ListeDesDistances
+
+
+
+
+
+# In[11]:
 
 
 def affichageCoordonnes(coordonnes):
@@ -166,9 +247,17 @@ def affichageCoordonnes(coordonnes):
         xRouge.append(coordonnes[i][0])
         yRouge.append(coordonnes[i][1])
     plt.scatter(xRouge, yRouge,  color='red')
+    plt.show()
 
 
-# In[92]:
+
+# In[12]:
+
+
+affichageCoordonnes(coordonnes2)
+
+
+# In[13]:
 
 
 def affichageProduits(produits):
@@ -176,87 +265,89 @@ def affichageProduits(produits):
     xBleu = []
     yBleu = []
 
-    for i in range(len(produits)  - 2 ):
+    for i in range(len(produits)):
         xBleu.append(produits[i][0])
         yBleu.append(produits[i][1])
-
     plt.scatter(xBleu, yBleu,  color='blue')
-    plt.scatter(produits[-2][0], produits[-2][1],  color='grey')
-
-    plt.scatter(produits[-1][0], produits[-1][1],  color='black')
 
 
+# In[14]:
 
-# In[93]:
+
+
+produits = [[2/11,3/18], [5/11,15/18], [8/11,11/18],[5/11,15/18]    ,[9/11,3/18], [1/11,0], [10/11,0]]
+
+
+
+
+# In[15]:
+
+
+g = Graph()
+graph = transformMatrixToApplyDijkstra(generateDistanceMatrix2(coordonnes2, produits))
+print(len(coordonnes))
+A,distance  = g.dijkstra(graph,len(coordonnes2) + 5, len(coordonnes2))
+
+
+
+# In[16]:
 
 
 def displayPathFromCoordonnes(coordonnes):
     xfinal = []
     yfinal = []
 
-    for i in range(len(coordonnes)):
-        xfinal.append(coordonnes[i][0])
-        yfinal.append(coordonnes[i][1])
+    for i in range(len(CoordonneesCheminFinal)):
+        xfinal.append(CoordonneesCheminFinal[i][0])
+        yfinal.append(CoordonneesCheminFinal[i][1])
 
     plt.scatter(xfinal, yfinal, color='green')
 
 
 
-
-# <h3> Valeurs des coordonnées des produits </h3>
-#
-
-# In[94]:
-
-moy = 1/22
-produits = [[2/11 - moy ,3/18], [3/11 + moy,3/18],[5/11,15/18], [8/11,11/18],[5/11,15/18],[1/11,0] , [10/11,0]]
-
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#Pour les produits, verifier si cotes à cotes, sinno enlever 1/22
-
-# <h3> Matrice d'adjacence  </h3>
-#
-
-# In[95]:
+# In[17]:
 
 
-adjency_matrix = transformMatrixToApplyJhonson(generateAdjencyMatrix(coordonnes, produits))
+affichageCoordonnes(coordonnes2)
+
+affichageProduits(coordonnes2)
+
+a = []
+for i in range(0,len(A)):
+    for k in range(1, len(A[i]) -1 ):
+        if i != 0:
+            if ( A[i][k] < len(coordonnes2)):
+                a.append(coordonnes2[A[i][k]])
+
+b = []
+c = []
+for i in range(len(a)):
+    b.append(a[i][0])
+    c.append(a[i][1])
+
+plt.scatter(b, c, color='green')
+plt .show()
 
 
-# <h3> Application Johnson </h3>
-#
-
-# In[97]:
+# In[18]:
 
 
-dist_matrix, predecessors = johnson(csgraph=adjency_matrix, directed=False,indices=[i for i in range(len(coordonnes), len(coordonnes) + len(produits))], return_predecessors=True)
+allPaths= []
+allDistances= []
+for i in range(len(produits)):
+    paths, distances = g.dijkstra(graph,len(coordonnes2) + i, len(coordonnes2))
+    allPaths.append(paths)
+    allDistances.append(distances)
 
 
-# In[98]:
+# In[19]:
 
 
-def getPath(A,i,j):
-    L = []
-    a = A[i,j]
-    while(a != len(coordonnes) + i and a != -9999 ):
-        L.append(a)
-        a = A[i,a]
-    return L
+distance_matrix = allDistances.copy()
 
 
-# <h3> Construction de la distance matrix </h3>
+# In[20]:
 
-# In[99]:
-
-
-distance_matrix = dist_matrix[:, len(coordonnes):].tolist().copy()
-
-
-# In[100]:
-
-
-#Ajout du point fictif pour appliquer le problème du voyageur de commerce
 
 distance_matrix.append( [10**8] * (len(produits)-2) + [0] * 2)
 
@@ -266,12 +357,7 @@ for i in range(len(distance_matrix)):
     else:
         distance_matrix[i].append(10**8)
 
-
-
-
-# <h3> Résolution du problème du voyageur de commerce </h3>
-
-# In[101]:
+# In[21]:
 
 
 solutionOrder = []
@@ -293,7 +379,7 @@ def print_solution(manager, routing, solution):
     print('Objective: {} miles'.format(solution.ObjectiveValue()))
 
     index = routing.Start(0)
-    plan_output = ''
+    plan_output = 'Route for vehicle 0:\n'
     route_distance = 0
     while not routing.IsEnd(index):
         plan_output += ' {} ->'.format(manager.IndexToNode(index))
@@ -342,66 +428,82 @@ def main():
     if solution:
         print_solution(manager, routing, solution)
 
+main()
 
 
-
-
-# In[102]:
+# In[22]:
+print(solutionOrder)
 
 
 solutionOrder = [solutionOrder[0] ] + list(reversed(solutionOrder[2:]))
 
 
-# <h3> Construction du chemin final </h3>
+# In[23]:
 
-# In[103]:
 
+
+
+
+# In[24]:
+
+def test():
+    for i in range(1,len(coordonnes2)-1):
+        print(coordonnes2[i])
 
 CheminFinal  = []
 
 for i in range(len(solutionOrder) - 1):
-    #CheminFinal  = CheminFinal + allPaths[solutionOrder[i]][solutionOrder[i+1]]
-    CheminFinal  = CheminFinal + getPath(predecessors, solutionOrder[i+1], len(coordonnes)  + solutionOrder[i])
-
-# In[104]:
-
-def filtrer(coordonnes):
-    coordonnesPermises = [ [1/11, 17/18], [1/11,1/2], [1/11,1/18], [4/11,1/18], [4/11, 1/2], [4/11, 17/18], [7/11, 1/18], [7/11, 1/2], [7/11, 17/18] , [10/11, 17/18], [10/11, 1/2], [10/11, 1/18]]
-    coordonnesFiltre = []
-    for k in range(len(coordonnes)):
-        for i in range(len(coordonnesPermises)):
-            if(abs(coordonnes[k][0] - coordonnesPermises[i][0]) < 10**-3 and  abs(coordonnes[k][1] - coordonnesPermises[i][1]) < 10**-3):
-                coordonnesFiltre.append(coordonnes[k])
-
-    return coordonnesFiltre
+    CheminFinal  = CheminFinal + allPaths[solutionOrder[i]][solutionOrder[i+1]]
 
 
-
+# In[25]:
 
 
 CoordonneesCheminFinal = []
 for i in range(len(CheminFinal)):
-    if(CheminFinal[i] < len(coordonnes)):
-        CoordonneesCheminFinal.append(coordonnes[CheminFinal[i]])
+
+    if(CheminFinal[i] < len(coordonnes2)):
+
+        CoordonneesCheminFinal.append(coordonnes2[CheminFinal[i]])
 
 
-# print(CoordonneesCheminFinal)
-
-# <h3> Affichage du chemin final </h3>
-
-# In[105]:
-
-coordonnesFinalFiltre = filtrer(CoordonneesCheminFinal)
 
 
-affichageCoordonnes(coordonnes)
+# In[26]:
 
 
-displayPathFromCoordonnes(CoordonneesCheminFinal)
+def displayPathFromCoordonnes(coordonnes):
+    xfinal = []
+    yfinal = []
+
+    for i in range(len(coordonnes)):
+        xfinal.append(coordonnes[i][0])
+        yfinal.append(coordonnes[i][1])
+
+    plt.scatter(xfinal, yfinal, color='green')
+
+
+
+
+
+
+# In[27]:
+
+
+affichageCoordonnes(coordonnes2)
+
+plt.axis([-0.1, 1, -0.1, 1])
+
 
 affichageProduits(produits)
-plt.axis([-0.1, 1, -0.1, 1])
-plt.show()
+
+displayPathFromCoordonnes(CoordonneesCheminFinal)
+plt .show()
+
+print()
+print()
+print()
+
 
 def result():
     return CoordonneesCheminFinal
@@ -410,22 +512,15 @@ if __name__ == '__main__':
     result()
 
 
-# affichageCoordonnes(coordonnes)
-#
-# affichageProduits(produits)
-# A = getPath(predecessors, 1 ,len(coordonnes)+12)
-# print(A)
-#
-# a = []
-# for i in range(0,len(A)):
-#     a.append(coordonnes[A[i]])
-#
-# b = []
-# c = []
-# for i in range(len(a)):
-#     b.append(a[i][0])
-#     c.append(a[i][1])
-#
-# plt.scatter(b, c, color='green')
-# plt .show()
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
