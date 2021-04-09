@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.widget.TextView;
 
+import com.example.serverapi.ExternClasses.Product;
 import com.example.serverapi.Server.Controller;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,10 +29,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         result = findViewById(R.id.result);
 
-        logs_tests += "getUsername: " + Controller.getUserName(1)+"\n";
+        logs_tests += "getUsername: " + Controller.getUsername(1)+"\n";
         logs_tests += "connect (bad pass): " + Controller.connect("quentin.audinet@telecom-paris.fr","badpass")+ "\n";
         logs_tests += "connect (bad mail): " + Controller.connect("quentin.audinet@badmail.com","pass")+ "\n";
         logs_tests += "connect (good logs): " + Controller.connect("quentin.audinet@telecom-paris.fr","pass")+ "\n";
+        logs_tests += "get_all_products: \n";
+        for(Product p : Controller.getAllProducts(1)) {
+            logs_tests += "\tname: "+p.getName()+"\n\timg_url: " + p.getProductImageUrl() + "\n\tprice: "+p.getPrice() + "\n\tdesc: "+p.getDescription()+"\n--------\n";
+        }
 
 
         result.setText(logs_tests);
