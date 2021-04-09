@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.widget.TextView;
 
+import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
 import com.example.serverapi.Server.Controller;
 
@@ -36,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         logs_tests += "get_all_products: \n";
         for(Product p : Controller.getAllProducts(1)) {
             logs_tests += "\tname: "+p.getName()+"\n\timg_url: " + p.getProductImageUrl() + "\n\tprice: "+p.getPrice() + "\n\tdesc: "+p.getDescription()+"\n--------\n";
+        }
+        logs_tests += "get_all_markets: \n";
+        for(Market m : Controller.getAllMarkets()) {
+            logs_tests += "\tid: " + m.getMarketId() +"\n\tname: "+m.getMarketName()+"\n\tlogo: " + m.getMarketLogoUrl() + "\n\topen_hours: "+ m.getOpenHour() + "\n\tclose_hours: "+m.getCloseHour()+"\n--------\n";
         }
 
 
