@@ -6,11 +6,11 @@ catch (Exception $e) {
 	die('Erreur : '. $e->getMessage());
 }
 if (isset ($_GET['Delete'])){
-    $query = 'SELECT * FROM Products WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
+    $query = 'SELECT * FROM ProductsInMarket WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
     //echo $query;
     $reponse = $db->query($query);
     if  ($donnees = $reponse->fetch()){
-        $query = 'DELETE FROM Products WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
+        $query = 'DELETE FROM ProductsInMarket WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
         //echo $query;
         $db->query($query);
     }
@@ -40,7 +40,7 @@ if (isset ($_GET['Delete'])){
 	echo '<p> Accès refusé </p>';
     } 
 
-    $reponse = $db->query('SELECT * FROM Products WHERE market=' . $_SESSION["MarketID"]);
+    $reponse = $db->query('SELECT * FROM ProductsInMarket WHERE market=' . $_SESSION["MarketID"]);
     ?>
 
 
@@ -51,6 +51,7 @@ if (isset ($_GET['Delete'])){
             <th>Price</th>
             <th>Location</th>
             <th>Shelf</th>
+            <th>Barcode</th>
             <th>Modify</th>
         </tr>
 
@@ -63,6 +64,7 @@ if (isset ($_GET['Delete'])){
                 <td><?php echo $donnees['price']/100 . "€"; ?></td>
                 <td><?php echo $donnees['x']; ?>, <?php echo $donnees['y']; ?></td>
                 <td><?php echo $donnees['z']; ?></td>
+                <td><?php echo $donnees['barcode']; ?></td>
                 <?php $ModifyLink="ModifyProduct.php?Modify=" . $donnees['product_id']; ?>
                 <?php $DeleteLink="cible.php?Delete=" . $donnees['product_id']; ?>
                 <td><a href=<?php echo $ModifyLink; ?>>Modify</a> / <a href=<?php echo $DeleteLink; ?>>Delete</a></td>
