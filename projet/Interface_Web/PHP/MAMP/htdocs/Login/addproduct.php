@@ -6,8 +6,8 @@ catch (Exception $e) {
 	die('Erreur : '. $e->getMessage());
 }
 if (isset($_POST["label"])){
-    $query = "INSERT INTO `products` (`label`, `market`, `price`, `quality`, `x`, `y`, `z`) 
-    VALUES ('" . $_POST["label"] . "', '" . $_SESSION["MarketID"] . "', '" . $_POST["price"] . "', '0', '" . $_POST["x"] . "', '" . $_POST["y"] . "', '" . $_POST["z"] . "');";
+    $query = "INSERT INTO `ProductsInMarkets` (`label`, `market`, `price`, `barcode`, `x`, `y`, `z`) 
+    VALUES ('" . $_POST["label"] . "', '" . $_SESSION["MarketID"] . "', '" . $_POST["price"] . "', '" . $_POST["barcode"] . "', '" . $_POST["x"] . "', '" . $_POST["y"] . "', '" . $_POST["z"] . "');";
     echo $query;
     $db->query($query);
     header('Location: cible.php');
@@ -31,6 +31,7 @@ if (isset($_POST["label"])){
             Price (cents) : <input type="number" name="price"/></br>
             Location X coordinate : <input type="number" step="0.01" name="x"/></br>
             Location Y coordinate : <input type="number" step="0.01" name="y"/></br>
+            Barcode : <input type="number" name="barcode"/></br>
             Shelf : <input type="number" name="z"/></br>
             <input type="submit" value="Confirm"/>
         </p>

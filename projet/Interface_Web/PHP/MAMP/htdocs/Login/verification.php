@@ -13,7 +13,7 @@ try {
 $username = htmlspecialchars($_POST['username']); 
 $password = htmlspecialchars($_POST['password']);
 //  Récupération de l'utilisateur et de son pass hashé
-$req = $bdd->prepare('SELECT password, market_id FROM utilisateur WHERE username = :username');
+$req = $bdd->prepare('SELECT password, market_id FROM AdminUsers WHERE username = :username');
 $req->execute(array(
     'username' => $username));
 $resultat = $req->fetch();

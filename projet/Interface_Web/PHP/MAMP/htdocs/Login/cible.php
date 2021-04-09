@@ -6,11 +6,11 @@ catch (Exception $e) {
 	die('Erreur : '. $e->getMessage());
 }
 if (isset ($_GET['Delete'])){
-    $query = 'SELECT * FROM ProductsInMarket WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
+    $query = 'SELECT * FROM ProductsInMarkets WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
     //echo $query;
     $reponse = $db->query($query);
     if  ($donnees = $reponse->fetch()){
-        $query = 'DELETE FROM ProductsInMarket WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
+        $query = 'DELETE FROM ProductsInMarkets WHERE (market=' . $_SESSION["MarketID"] . ' AND product_id=' . $_GET['Delete'] . ")";
         //echo $query;
         $db->query($query);
     }
@@ -39,8 +39,9 @@ if (isset ($_GET['Delete'])){
     } else {
 	echo '<p> Accès refusé </p>';
     } 
-
-    $reponse = $db->query('SELECT * FROM ProductsInMarket WHERE market=' . $_SESSION["MarketID"]);
+    $query = "SELECT * FROM ProductsInMarkets WHERE market='" . $_SESSION["MarketID"] . "';";
+    //echo $query;
+    $reponse = $db->query($query);
     ?>
 
 
@@ -74,7 +75,7 @@ if (isset ($_GET['Delete'])){
     $reponse->closeCursor(); // Termine le traitement de la requête
     ?>
     </table>
-
+ 
     <a href='addproduct.php' class="button">Add a Product</a>
 </body>
 </html>

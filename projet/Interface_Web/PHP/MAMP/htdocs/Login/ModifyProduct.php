@@ -10,7 +10,7 @@ catch (Exception $e) {
 $item_id = $_GET["Modify"];
 
 if (isset($_POST["label"])){
-    $query = " UPDATE products 
+    $query = " UPDATE ProductsInMarkets 
                SET label='" . $_POST["label"] . "', price='" . $_POST["price"] . "', x='" . $_POST["x"] . "', y='" . $_POST["y"] . "', z='" . $_POST["z"] . "' WHERE product_id='" .  $_POST["product_id"] . "';";
     echo $query;
     $db->query($query);
@@ -30,7 +30,7 @@ if (isset($_POST["label"])){
         Modifier un produit
     </p>
     <?php
-    $query = 'SELECT * FROM Products WHERE product_id=' . $item_id . ';';
+    $query = 'SELECT * FROM ProductsInMarkets WHERE product_id=' . $item_id . ';';
     $product = $db->query($query)->fetch();
 
     ?>
@@ -41,6 +41,7 @@ if (isset($_POST["label"])){
             Location X coordinate : <input type="number" step="0.01" name="x" value='<?php echo $product["x"] ?>'/></br>
             Location Y coordinate : <input type="number" step="0.01" name="y" value='<?php echo $product["y"] ?>'/></br>
             Shelf : <input type="number" name="z" value='<?php echo $product["z"] ?>'/></br>
+            Barcode : <input type="number" name="barcode" value='<?php echo $product["barcode"]?>'/></br>
             <input type="hidden" name="product_id" value='<?php echo $item_id?>'/>
             <input type="submit" value="Confirm"/>
         </p>
