@@ -140,6 +140,15 @@ public class Controller {
     }
 
 
+    public static void addNewListOfProducts(int userId, ListProduct listProduct) {
+        addParam("action","add_new_list");
+        JSONObject json_list = listProduct.toJSON();
+        addParam("list",json_list.toString());
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
+
+
     /**
      *
      * @param friendId
