@@ -48,6 +48,27 @@ if(isset($_POST['action'])) {
                 $json_result = json_encode($array);
                 print($json_result);
                 break;
+
+        case "get_friend_lists":
+                $user_id = $_POST['user_id'];
+                $friend_id = $_POST['friend_id'];
+                $dir_name = "/var/www/html/data/lists/$friend_id/";
+                $dir = opendir($dir_name);
+
+                $list_array = array();
+                while($file = readdir($dir)) {
+                        if($file != '.' && $file != '..') {
+                                $array = json_decode(file_get_contents($dir_name.$file),true);
+                                if(in_array("*",$array['shared']) || in_array($user_id,$array['shared'])) {
+                                        array_push($list_array, $array["list"]);
+                                }
+                        }
+                }
+
+                print(json_encode($list_array));
+                closedir($dir);
+                break;
+
 	}
 }
 ?>
