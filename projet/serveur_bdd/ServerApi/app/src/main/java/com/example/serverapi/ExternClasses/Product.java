@@ -1,5 +1,7 @@
 package com.example.serverapi.ExternClasses;
 
+import androidx.annotation.NonNull;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,6 +37,17 @@ public class Product {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        String str = "";
+        str += "\tname: " + this.getName();
+        str += "\n\timg_url: " + this.getProductImageUrl();
+        str += "\n\tprice: " + this.getPrice();
+        str += "\n\tdescription: " + this.getDescription();
+        return str;
     }
 
     public String getName() {
