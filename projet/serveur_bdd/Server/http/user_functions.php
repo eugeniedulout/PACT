@@ -69,6 +69,23 @@ if(isset($_POST['action'])) {
                 closedir($dir);
                 break;
 
+	case "get_user_lists":
+		$user_id = $_POST['user_id'];
+		$dir_name = "/var/www/html/data/lists/$user_id/";
+		$dir = opendir($dir_name);
+
+		$list_array = array();
+		while($file = readdir($dir)) {
+			if($file != '.' && $file != '..') {
+				$array = json_decode(file_get_contents($dir_name.$file), true);
+				array_push($list_array, $array['list']);
+			}
+		}
+
+		print(json_encode($list_array));
+		closedir($dir);
+		break;
+
 	}
 }
 ?>
