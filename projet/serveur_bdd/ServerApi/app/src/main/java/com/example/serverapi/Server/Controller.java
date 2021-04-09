@@ -3,6 +3,9 @@ package com.example.serverapi.Server;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.serverapi.ExternClasses.Product;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,11 +31,6 @@ public class Controller {
     private static ArrayList<String> values = new ArrayList<String>();
 
 
-
-
-
-
-
     public static boolean connect(String mail, String password) {
         keys.add("action");
         values.add("connect");
@@ -41,7 +39,12 @@ public class Controller {
         keys.add("password");
         values.add(password);
 
-        JSONObject answer = post(SERVER_URL+USER_FONCTIONS);
+        JSONObject answer = null;
+        try {
+            answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         try {
             return answer.getString("valid").equals("true");
@@ -51,14 +54,52 @@ public class Controller {
         return false;
     }
 
+    public static ArrayList<Product> getAllProducts(int marketId) {
+        keys.add("action");
+        values.add("get_all_products");
+        keys.add("market_id");
+        values.add(String.valueOf(marketId));
+
+        JSONArray answer = null;
+        try {
+            answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<Product> products = new ArrayList<Product>();
+        try {
+            for(int i =0; i< answer.length(); i++) {
+                JSONObject json_product = answer.getJSONObject(i);
+
+                String name = json_product.getString("name");
+                String imgUrl = json_product.getString("img_url");
+                double price = json_product.getDouble("price");
+                String description = json_product.getString("description");
+
+                Log.d("[DEBUG]", name+" "+imgUrl+" "+price+ " "+description);
+
+                products.add(new Product(name,imgUrl,price,description));
+            }
+            return products;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
-    public static String getUserName(int id) {
+    public static String getUsername(int id) {
         keys.add("action");
         values.add("get_username");
         keys.add("id");
         values.add(String.valueOf(id));
-        JSONObject answer = post(SERVER_URL+USER_FONCTIONS);
+        JSONObject answer = null;
+        try {
+            answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         try {
             return answer.getString("username");
         } catch (Exception e) {
@@ -75,7 +116,7 @@ public class Controller {
      *
      * @return the server's answer
      */
-    public static JSONObject post(String address) {
+    public static String post(String address) {
         String result = "";
         OutputStreamWriter writer = null;
         BufferedReader reader = null;
@@ -113,16 +154,9 @@ public class Controller {
             try {reader.close();}catch (Exception e){}
         }
 
-        JSONObject json_result = null;
-        try {
-            json_result = new JSONObject(result);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         keys.clear();
         values.clear();
 
-        return json_result;
+        return result;
     }
 }
