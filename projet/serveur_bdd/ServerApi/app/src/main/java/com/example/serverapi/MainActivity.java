@@ -29,6 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         result = findViewById(R.id.result);
 
-        result.setText(Controller.getUserName(1));
+        result.setText(String.valueOf(Controller.connect("quentin.audinet@telecom-paris.fr", "pass")));
     }
 }
