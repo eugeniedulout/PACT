@@ -1,3 +1,11 @@
+package com.example.serverapi.Server;
+
+import android.os.AsyncTask;
+import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,39 +24,58 @@ public class Controller {
     public static final String USER_FONCTIONS = "http/user_functions.php";
 
     //ArrayList declaration
-    private ArrayList<String> keys = new ArrayList<String>();
-    private ArrayList<String> values = new ArrayList<String>();
+    private static ArrayList<String> keys = new ArrayList<String>();
+    private static ArrayList<String> values = new ArrayList<String>();
 
-    public String getUserName(int id) {
+
+
+
+
+
+
+    public static boolean connect(String mail, String password) {
+        keys.add("action");
+        values.add("connect");
+        keys.add("mail");
+        values.add(mail);
+        keys.add("password");
+        values.add(password);
+
+        JSONObject answer = post(SERVER_URL+USER_FONCTIONS);
+
+        try {
+            return answer.getString("valid").equals("true");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+
+    public static String getUserName(int id) {
         keys.add("action");
         values.add("get_username");
         keys.add("id");
         values.add(String.valueOf(id));
-        String[] answer = postTreatment(post(SERVER_URL+USER_FONCTIONS, keys, values));
-
-        return answer==null?null:answer[0];
+        JSONObject answer = post(SERVER_URL+USER_FONCTIONS);
+        try {
+            return answer.getString("username");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
-    public String hello_world() {
-        keys.add("var");
-        values.add("str");
-        String answer = post(SERVER_URL+"hello_world.php",keys, values);
-        keys.clear();
-        values.clear();
-
-        return answer;
-    }
 
 
     /**
      * Send a POST request to the server
      * @param address   the server address
-     * @param keys      the POST's variables keys
-     * @param values    the POST's variables values
      *
      * @return the server's answer
      */
-    public String post(String address, ArrayList<String> keys, ArrayList<String> values) {
+    public static JSONObject post(String address) {
         String result = "";
         OutputStreamWriter writer = null;
         BufferedReader reader = null;
@@ -86,15 +113,16 @@ public class Controller {
             try {reader.close();}catch (Exception e){}
         }
 
-        return result;
-    }
+        JSONObject json_result = null;
+        try {
+            json_result = new JSONObject(result);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-    private String[] postTreatment(String answer) {
-        String[] results = answer.split("%");
-        if(results[0].matches("false"))
-            return null;
         keys.clear();
         values.clear();
-        return Arrays.copyOfRange(results, 1, results.length);
+
+        return json_result;
     }
 }
