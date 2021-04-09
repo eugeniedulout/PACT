@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.view.ViewGroup;
 
+import com.example.serverapi.ExternClasses.ListProduct;
 import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
 
@@ -92,12 +93,8 @@ public class Controller {
             for(int i =0; i< answer.length(); i++) {
                 JSONObject json_product = answer.getJSONObject(i);
 
-                String name = json_product.getString("name");
-                String imgUrl = json_product.getString("img_url");
-                double price = json_product.getDouble("price");
-                String description = json_product.getString("description");
 
-                products.add(new Product(name,imgUrl,price,description));
+                products.add(new Product(json_product));
             }
             return products;
         } catch (JSONException e) {
@@ -111,6 +108,33 @@ public class Controller {
     FONCTIONS CONCERNANT LES LISTES
      */
 
+
+    public static ArrayList<ListProduct> getFriendLists(int friendId) {
+        addParam("action", "get_friend_lists");
+        addParam("friend_id", String.valueOf(friendId));
+
+        JSONArray answer = null;
+        try {
+            answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<ListProduct> listProducts = new ArrayList<ListProduct>();
+        try {
+            for(int i=0; i < answer.length(); i++) {
+                JSONObject json_list = answer.getJSONObject(i);
+
+                listProducts.add(new ListProduct(json_list));
+
+            }
+            return listProducts;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 
 
 
