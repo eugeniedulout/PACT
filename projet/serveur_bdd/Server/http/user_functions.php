@@ -10,7 +10,20 @@ if(isset($_POST['action'])) {
                 }
                 $json_result = json_encode($answer);
                 print($json_result);
-                break;
-        }
+                break;   
+
+	case "connect":
+		$response = $db->query("SELECT pass FROM Users WHERE mail=" . $db->quote($_POST['mail']));
+		$data = $response->fetch();
+		$answer = ['valid' => 'false'];
+		if ($data != null) {
+			if(password_verify($_POST['password'], $data['password'])) {
+				$answer['valid'] = 'true';
+			}
+		}
+		$json_result = json_encode($answer);
+		print($json_result);
+		break;
+	}
 }
 ?>
