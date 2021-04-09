@@ -9,12 +9,16 @@ import android.app.Activity;
 import android.net.Network;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.serverapi.ExternClasses.ListProduct;
 import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
 import com.example.serverapi.Server.Controller;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,7 +49,12 @@ public class MainActivity extends AppCompatActivity {
             logs_tests += "\tid: " + m.getMarketId() +"\n\tname: "+m.getMarketName()+"\n\tlogo: " + m.getMarketLogoUrl() + "\n\topen_hours: "+ m.getOpenHour() + "\n\tclose_hours: "+m.getCloseHour()+"\n--------\n";
         }
         logs_tests += "***************************\n";
-        logs_tests += "get_user_lists: \n";
+        logs_tests += "get_user_lists (user_id=0): \n";
+        for(ListProduct listProduct : Controller.getUserLists(0)) {
+            logs_tests += listProduct.toString() + "\n--------\n";
+        }
+        logs_tests += "***************************\n";
+        logs_tests += "get_user_lists (user_id=1): \n";
         for(ListProduct listProduct : Controller.getUserLists(1)) {
             logs_tests += listProduct.toString() + "\n--------\n";
         }
@@ -54,6 +63,21 @@ public class MainActivity extends AppCompatActivity {
         for(ListProduct listProduct : Controller.getFriendLists(1,2)) {
             logs_tests += listProduct.toString() + "\n--------\n";
         }
+
+        Product p1 = new Product("feutre", "feutre.png", 80, "Un feutre");
+        Product p2 = new Product("feuille", "feuille.png", 10, "Une feuille");
+        Product p3 = new Product("eau", "eau.png", 300, "De l'eau");
+
+        ArrayList<Product> productsList = new ArrayList<Product>();
+        productsList.add(p1);
+        productsList.add(p2);
+        productsList.add(p3);
+
+        ListProduct new_list = new ListProduct("Liste de test", productsList);
+
+        Log.d("[INFO]", new_list.toJSON().toString());
+
+
 
 
         result.setText(logs_tests);
