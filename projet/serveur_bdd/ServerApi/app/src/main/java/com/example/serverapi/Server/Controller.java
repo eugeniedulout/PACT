@@ -115,7 +115,7 @@ public class Controller {
      * @return all the lists of userId
      */
     public static ArrayList<ListProduct> getUserLists(int userId) {
-        addParam("action", "get_user_list");
+        addParam("action", "get_user_lists");
         addParam("user_id", String.valueOf(userId));
 
         JSONArray answer = null;
@@ -136,6 +136,7 @@ public class Controller {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
 
