@@ -33,6 +33,18 @@ public class Controller {
     private static ArrayList<String> values = new ArrayList<String>();
 
 
+
+
+    /*
+    FONCTIONS DE CONNECTION
+     */
+
+    /**
+     *
+     * @param mail
+     * @param password
+     * @return a boolean : true if the connexion success or false if it fail
+     */
     public static boolean connect(String mail, String password) {
         addParam("action", "connect");
         addParam("mail",mail);
@@ -53,6 +65,17 @@ public class Controller {
         return false;
     }
 
+
+
+    /*
+    FONCTIONS CONCERNANT LES PRODUITS
+     */
+
+    /**
+     *
+     * @param marketId
+     * @return the list of all the products in the market with the id marketId
+     */
     public static ArrayList<Product> getAllProducts(int marketId) {
         addParam("action","get_all_products");
         addParam("market_id", String.valueOf(marketId));
@@ -84,6 +107,21 @@ public class Controller {
     }
 
 
+    /*
+    FONCTIONS CONCERNANT LES LISTES
+     */
+
+
+
+
+    /*
+    FONCTIONS CONCERNANT LES MAGASINS
+     */
+
+    /**
+     *
+     * @return the list of all the market in the database
+     */
     public static ArrayList<Market> getAllMarkets() {
         addParam("action", "get_all_markets");
 
@@ -117,6 +155,10 @@ public class Controller {
 
         return null;
     }
+
+
+
+
 
 
 
