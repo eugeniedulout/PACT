@@ -30,12 +30,8 @@ else
     if ($isPasswordCorrect) {
         session_start();
         $_SESSION['username'] = $username;
-<<<<<<< HEAD
-        $_SESSION['MarketID'] = $resultat['market_id'];
-=======
         $_SESSION['MarketID'] = (int) $resultat['market_id'];
         //echo $_SESSION['MarketID'] . "from" . $resultat['market_id'];
->>>>>>> 5924370324508cc2b64cf65ff77daf5c704385c9
         header('Location: cible.php');
     }
     else {
