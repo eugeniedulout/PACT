@@ -34,6 +34,29 @@ public class ListProduct {
         }
     }
 
+    public JSONObject toJSON() {
+        JSONObject array = new JSONObject();
+        try {
+            JSONArray shared = new JSONArray();
+            shared.put(2);
+            array.put("shared", shared);
+
+            JSONObject list = new JSONObject();
+            list.put("name", this.listName);
+
+            JSONArray products = new JSONArray();
+            for(Product p : this.listOfProducts) {
+                products.put(p.toJSON());
+            }
+
+            list.put("products",products);
+            array.put("list", list);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return array;
+    }
+
     @NonNull
     @Override
     public String toString() {

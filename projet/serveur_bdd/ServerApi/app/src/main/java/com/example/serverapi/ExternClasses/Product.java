@@ -2,6 +2,7 @@ package com.example.serverapi.ExternClasses;
 
 import androidx.annotation.NonNull;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,6 +38,19 @@ public class Product {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+        try {
+            json.put("name", this.getName());
+            json.put("img_url", this.productImageUrl);
+            json.put("price", this.getPrice());
+            json.put("description", this.getDescription());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return json;
     }
 
     @NonNull
