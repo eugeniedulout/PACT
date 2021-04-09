@@ -109,9 +109,10 @@ public class Controller {
      */
 
 
-    public static ArrayList<ListProduct> getFriendLists(int friendId) {
+    public static ArrayList<ListProduct> getFriendLists(int friendId, int userId) {
         addParam("action", "get_friend_lists");
         addParam("friend_id", String.valueOf(friendId));
+        addParam("user_id",String.valueOf(userId));
 
         JSONArray answer = null;
         try {
@@ -124,7 +125,6 @@ public class Controller {
         try {
             for(int i=0; i < answer.length(); i++) {
                 JSONObject json_list = answer.getJSONObject(i);
-
                 listProducts.add(new ListProduct(json_list));
 
             }
