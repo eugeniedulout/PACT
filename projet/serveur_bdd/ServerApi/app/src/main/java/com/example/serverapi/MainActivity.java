@@ -16,6 +16,7 @@ import com.example.serverapi.Server.Controller;
 public class MainActivity extends AppCompatActivity {
 
     private TextView result;
+    private String logs_tests="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         result = findViewById(R.id.result);
 
-        result.setText(String.valueOf(Controller.connect("quentin.audinet@telecom-paris.fr", "pass")));
+        logs_tests += "getUsername: " + Controller.getUserName(1)+"\n";
+        logs_tests += "connect (bad pass): " + Controller.connect("quentin.audinet@telecom-paris.fr","badpass")+ "\n";
+        logs_tests += "connect (bad mail): " + Controller.connect("quentin.audinet@badmail.com","pass")+ "\n";
+        logs_tests += "connect (good logs): " + Controller.connect("quentin.audinet@telecom-paris.fr","pass")+ "\n";
+
+
+        result.setText(logs_tests);
     }
 }
