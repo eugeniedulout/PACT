@@ -35,7 +35,7 @@ if (isset ($_GET['Delete'])){
 
 	<?php
 	if (isset ($_SESSION['username'])AND isset($_SESSION['MarketID'])){
-		echo "<p> Bienvenue dans l'espace administrateur de " . $_SESSION['username'] . ". Vous êtes connecté avec l'ID " . $_SESSION['MarketID'] . ".</p>";
+		echo "<p> Bienvenue dans l'espace administrateur de " . $_SESSION['username'] . ". Vous êtes connecté avec l'ID " . $_SESSION['MarketID'] . ". <a href='disconnect.php'>Se déconnecter</a></p>";
     } else {
 	echo '<p> Accès refusé </p>';
     } 
