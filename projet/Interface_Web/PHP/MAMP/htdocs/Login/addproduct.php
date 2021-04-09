@@ -16,19 +16,22 @@ if (isset($_POST["label"])){
 
 <html>
 
-    <head><title> E-Pokamp Administrative Service </title></head>
+    <head>
+        <title> E-Pokamp Administrative Service </title>
+        <link rel="stylesheet" href="Styleprincipal.css" media="screen" type="text/css" />
+    </head>
 
 <body>
     <p>
-        Création d'article (WIP)
+        Ajouter un produit
     </p>
     <form method="post" action="addproduct.php">
         <p>            
             Label : <input type="text" name="label"/></br>
-            Price : <input type="text" name="price"/></br>
-            Location X coordinate : <input type="text" name="x"/></br>
-            Location Y coordinate : <input type="text" name="y"/></br>
-            Shelf : <input type="text" name="z"/></br>
+            Price (cents) : <input type="number" name="price"/></br>
+            Location X coordinate : <input type="number" step="0.01" name="x"/></br>
+            Location Y coordinate : <input type="number" step="0.01" name="y"/></br>
+            Shelf : <input type="number" name="z"/></br>
             <input type="submit" value="Confirm"/>
         </p>
     </form>

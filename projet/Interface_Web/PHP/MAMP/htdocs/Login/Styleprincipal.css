@@ -1,15 +1,16 @@
 body{
-    background: #B0C4DE;
+    background: white;
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
 }
 
 * espacement */
 
 table {
   table-layout: fixed;
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   border: 3px solid purple;
 }
@@ -54,7 +55,7 @@ th, td {
 }
 /* Bordered form */
 form {
-    width:100%;
+    width:60%;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
@@ -97,4 +98,18 @@ input[type=submit]:hover {
 #logo img {
     height:100px;
     width: 100px;
+}
+
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+
 }
