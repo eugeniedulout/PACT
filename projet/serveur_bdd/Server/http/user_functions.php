@@ -25,5 +25,18 @@ if(isset($_POST['action'])) {
 		print($json_result);
 		break;
 	}
+
+	        case "get_all_products":
+                $req = "SELECT AllProductsRef.name, AllProductsRef.Image, ProductsInMarkets.price, AllProductsRef.description FROM AllProductsRef JOIN ProductsInMarkets ON AllProductsRef.product_barcode=ProductsInMarkets.barcode WHERE ProductsInMarkets.market=".$db->quote($_POST['market_id']);
+                $response = $db->query($req);
+                $array = array();
+                $i=0;
+                while($row = $response->fetch()) {
+                        array_push($array, array("name" => $row["name"], "img_url" => $row["Image"], "price" => $row["price"], "description" => $row["description"]));
+                }
+
+                $json_result = json_encode($array);
+                print($json_result);
+                break;
 }
 ?>
