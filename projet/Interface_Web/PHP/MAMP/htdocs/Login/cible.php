@@ -72,6 +72,7 @@ if (isset ($_GET['Delete'])){
     $reponse->closeCursor(); // Termine le traitement de la requête
     ?>
     </table>
-    <a href='addproduct.php'>Add a Product</a>
+
+    <a href='addproduct.php' class="button">Add a Product</a>
 </body>
 </html>
