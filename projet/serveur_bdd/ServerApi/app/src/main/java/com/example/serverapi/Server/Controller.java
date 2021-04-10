@@ -176,6 +176,25 @@ public class Controller {
         String result = post(SERVER_URL+USER_FONCTIONS);
     }
 
+    public static ArrayList<Integer> getDemandsOfUser(int userId) {
+        addParam("action", "get_demands");
+        addParam("user_id", String.valueOf(userId));
+
+        ArrayList<Integer> demands = new ArrayList<Integer>();
+        try {
+            JSONArray json_demands = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+
+            for(int i = 0; i < json_demands.length(); i++) {
+                demands.add(json_demands.getInt(i));
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return demands;
+    }
+
 
 
 

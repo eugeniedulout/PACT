@@ -247,6 +247,15 @@ if(isset($_POST['action'])) {
 		}
 		break;
 
+
+	case "get_demands":
+		$user_id = $_POST['user_id'];
+
+		$req = "SELECT demands FROM Users WHERE id=$user_id";
+		$data = $db->query($req);
+		print($data->fetch()['demands']);
+		break;
+
 	}
 }
 ?>

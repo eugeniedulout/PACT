@@ -69,6 +69,10 @@ public interface ControllerInterface {
     //Envoi de demande à un User
     public void sendDemand(int id,User newFriend);
 
+    //Retourne la liste des demandes
+    public ArrayList<User> getDemandsOfUser(int id);
+
+
 
 
     /*
@@ -89,10 +93,6 @@ public interface ControllerInterface {
 
     // Retourne la liste des amis de user_id
     public ArrayList<User> getUserFriends(int user_id)
-
-    //Retourne la liste des demandes
-    public ArrayList<User> getDemandsOfUser(int id);
-
     //Refuser une demande
     public void refuseDemand(int id, User refusedFriend);
 ////////////////////////////////////////////////////
