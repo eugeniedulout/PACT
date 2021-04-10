@@ -12,10 +12,12 @@ import android.os.StrictMode;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.serverapi.ExternClasses.Ingredient;
 import com.example.serverapi.ExternClasses.ListProduct;
 import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
 import com.example.serverapi.ExternClasses.ProductOnSpecialOffer;
+import com.example.serverapi.ExternClasses.Recette;
 import com.example.serverapi.Server.Controller;
 
 import java.util.ArrayList;
@@ -97,7 +99,34 @@ public class MainActivity extends AppCompatActivity {
             logs_tests += "\t" + i + "\n";
         }
 
+        logs_tests += "***************************\n";
+        logs_tests += "[ADDING NEW RECIPE TO USER_ID 4]: \n";
 
+        Ingredient i1 = new Ingredient("pate sablée", "pate.png");
+        Ingredient i2 = new Ingredient("pommes", "pomme.png");
+        Ingredient i3 = new Ingredient("compote", "compote.png");
+
+        ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
+        ingredients.add(i1);
+        ingredients.add(i2);
+        ingredients.add(i3);
+
+        ArrayList<String> instructions = new ArrayList<String>();
+        instructions.add("Faire cuire la pate");
+        instructions.add("Couper les pommes");
+        instructions.add("Etaler la compote");
+        instructions.add("Faire à nouveau cuire");
+
+        Recette recipe = new Recette("Tarte aux pommes", ingredients, instructions);
+
+        Controller.addNewRecette(4, recipe);
+
+        logs_tests += "***************************\n";
+        logs_tests += "get_user_recipes: (user_id=4)\n";
+
+        for(Recette recette : Controller.getUserRecettes(4)) {
+            logs_tests += recette.toString() + "\n------------\n";
+        }
 
 
         result.setText(logs_tests);
