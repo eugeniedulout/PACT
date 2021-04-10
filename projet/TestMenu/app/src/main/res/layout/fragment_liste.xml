@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".fragments.ListFragment">
+
+
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/switchToListe"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="70"
+            app:cardBackgroundColor="#F6EE51">
+
+            <TextView
+                android:id="@+id/listeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Liste"
+                android:textSize="18sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/switchToRecette"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="30"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <TextView
+                android:id="@+id/listText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Recette"
+                android:textSize="18sp" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/addNewList"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/buttonContainer"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/circle_blue"
+        android:src="@drawable/ic_baseline_add_24" />
+
+    <TextView
+        android:id="@+id/nouvelleListText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/addNewList"
+        android:layout_alignParentRight="false"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_toRightOf="@id/addNewList"
+        android:gravity="center"
+        android:text="Nouvelle Liste"
+        android:textSize="30sp" />
+
+    <View
+        android:id="@+id/firstSeparation"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/addNewList"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="#c0c0c0" />
+
+    <ListView
+        android:id="@+id/listOflistOfProducts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/firstSeparation"
+        android:layout_marginTop="20dp" />
+
+
+</RelativeLayout>

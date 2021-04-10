@@ -1,0 +1,8 @@
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <style name="CardViewStyle" parent="CardView">
+    <item name="cardCornerRadius">4dp</item>
+    </style>
+</resources>
