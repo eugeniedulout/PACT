@@ -174,6 +174,15 @@ public class MainActivity extends AppCompatActivity {
             logs_tests += "\t" + i + "\n";
         }
 
+        logs_tests += "***************************\n";
+        logs_tests += "Sending a friend request from user_id 5 to friend_id 9\n";
+        Controller.sendDemand(5,9);
+
+        logs_tests += "Getting friend request of user_id 9\n";
+        for(Integer i : Controller.getDemandsOfUser(9)) {
+            logs_tests += "\t" + i + "\n";
+        }
+
         result.setText(logs_tests);
 
     }
