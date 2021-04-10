@@ -129,6 +129,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+        logs_tests += "***************************\n";
+        logs_tests += "get_user: (user_id=1)\n";
+        logs_tests += Controller.getUser(1).toString()+"\n";
+
+
         result.setText(logs_tests);
     }
 }
