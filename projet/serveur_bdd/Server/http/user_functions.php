@@ -27,11 +27,11 @@ if(isset($_POST['action'])) {
 		break;
 
 	case "get_all_products":
-                $req = "SELECT AllProductsRef.name, AllProductsRef.Image, ProductsInMarkets.price, AllProductsRef.description FROM AllProductsRef JOIN ProductsInMarkets ON AllProductsRef.product_barcode=ProductsInMarkets.barcode WHERE ProductsInMarkets.market=".$db->quote($_POST['market_id']);
+                $req = "SELECT AllProductsRef.name, AllProductsRef.Image, ProductsInMarkets.price, AllProductsRef.description, x, y, z FROM AllProductsRef JOIN ProductsInMarkets ON AllProductsRef.product_barcode=ProductsInMarkets.barcode WHERE ProductsInMarkets.market=".$db->quote($_POST['market_id']);
                 $response = $db->query($req);
                 $array = array();
                 while($row = $response->fetch()) {
-                        array_push($array, array("name" => $row["name"], "img_url" => $row["Image"], "price" => $row["price"], "description" => $row["description"]));
+                        array_push($array, array("name" => $row["name"], "img_url" => $row["Image"], "price" => $row["price"], "description" => $row["description"], "x" => $row['x'], "y" => $row['y'], "z" => $row['z']));
                 }
 
                 $json_result = json_encode($array);
@@ -169,7 +169,7 @@ if(isset($_POST['action'])) {
 
 	case "sign_up":
 		$mail = $db->quote($_POST['mail']);
-		$password = $db->quote($_POST['password']);
+		$password = $_POST['password'];
 		$firstname = $db->quote($_POST['firstname']);
 		$lastname = $db->quote($_POST['lastname']);
 
@@ -187,6 +187,16 @@ if(isset($_POST['action'])) {
 			$answer['user'] = $user;
 		}
 		print(json_encode($answer);
+		break;
+
+
+	case "update_password":
+		$user_id = $_POST['user_id'];
+		$new_pass = $_POST['new_password'];
+
+		$pass_hash = password_hash($new_pass, PASSWORD_DEFAULT);
+		$req = "UPDATE Users SET password=$pass_hash WHERE id=$user_id";
+		$db->exec($req);
 		break;
 
 	}

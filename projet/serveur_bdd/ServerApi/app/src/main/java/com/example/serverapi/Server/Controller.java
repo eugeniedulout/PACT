@@ -126,6 +126,16 @@ public class Controller {
     }
 
 
+    public static void updatePassword(int userId, String newPassword) {
+        addParam("action", "update_password");
+        addParam("user_id", String.valueOf(userId));
+        addParam("new_password", newPassword);
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
+
+
 
     /*
     FONCTIONS CONCERNANT LES PRODUITS
