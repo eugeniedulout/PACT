@@ -77,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("[INFO]", new_list.toJSON().toString());
 
+        Controller.addNewListOfProducts(6, new_list);
+        logs_tests += "get_user_lists (user_id=6): \n";
+        for(ListProduct listProduct : Controller.getUserLists(6)) {
+            logs_tests += listProduct.toString() + "\n--------\n";
+        }
+
 
 
 
