@@ -90,6 +90,27 @@ public class Controller {
         return null;
     }
 
+    public static User signUp(String firstname, String lastname, String mail, String password) {
+        addParam("action", "sign_up");
+        addParam("mail",mail);
+        addParam("password",password);
+        addParam("firstname",firstname);
+        addParam("lastname",lastname);
+
+        try {
+            JSONObject answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
+            if(answer.getBoolean("valid")) {
+                return new User(answer.getJSONObject("user"));
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        return null;
+    }
+
 
 
     /*

@@ -167,7 +167,27 @@ if(isset($_POST['action'])) {
 		break;
 
 
+	case "sign_up":
+		$mail = $db->quote($_POST['mail']);
+		$password = $db->quote($_POST['password']);
+		$firstname = $db->quote($_POST['firstname']);
+		$lastname = $db->quote($_POST['lastname']);
 
+		$answer = array("valid" => false);
+
+		$req = "SELECT * FROM Users WHERE mail=$mail";
+		$data = $db->query($req);
+		if(!($data->fetch())) {
+			$password_hash = password_hash($password, PASSWORD_DEFAULT);
+			$req = "INSERT INTO Users (`mail`, `password`, `firstname`, `lastname`);SELECT LAST_INSERT_ID();";
+			$data = $db->exec($req);
+			$id = $data->fetch()[0];
+
+			$user = array("id" => $id, "mail" => $_POST['mail'], "firstname" => $_POST['firstname'], "lastname" => $_POST['lastname']);
+			$answer['user'] = $user;
+		}
+		print(json_encode($answer);
+		break;
 
 	}
 }
