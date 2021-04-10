@@ -159,6 +159,11 @@ public class Controller {
      */
 
 
+    /**
+     * Accept a friend request
+     * @param userId
+     * @param friendId
+     */
     public static void addFriend(int userId, int friendId) {
         addParam("action","add_friend");
         addParam("user_id", String.valueOf(userId));
@@ -168,6 +173,11 @@ public class Controller {
     }
 
 
+    /**
+     * Send a friend request
+     * @param userId
+     * @param friendId
+     */
     public static void sendDemand(int userId, int friendId) {
         addParam("action", "send_demand");
         addParam("user_id", String.valueOf(userId));
@@ -176,6 +186,12 @@ public class Controller {
         String result = post(SERVER_URL+USER_FONCTIONS);
     }
 
+
+    /**
+     * Get all friend requests
+     * @param userId
+     * @return an ArrayList with all the id of the users who send a friend request
+     */
     public static ArrayList<Integer> getDemandsOfUser(int userId) {
         addParam("action", "get_demands");
         addParam("user_id", String.valueOf(userId));
@@ -196,6 +212,11 @@ public class Controller {
     }
 
 
+    /**
+     * Reject a friend demand
+     * @param userId
+     * @param friendId
+     */
     public static void refuseDemand(int userId, int friendId) {
         addParam("action", "refuse_demand");
         addParam("user_id", String.valueOf(userId));
