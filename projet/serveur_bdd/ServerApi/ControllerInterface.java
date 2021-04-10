@@ -48,6 +48,9 @@ public interface ControllerInterface {
     //Retourne la liste des produits d'une liste
     public ArrayList<Product> getProductOfList(ListProduct liste);
     
+  //Modifie le mdp
+    public void updatePassword(int id, String newPassword);
+    
 
 
   
@@ -64,9 +67,6 @@ public interface ControllerInterface {
     public ArrayList<User> getDemandsOfUser(int id);
 
 
-  //Modifie le mdp
-    public void updatePassword(int id, String newPassword);
-    
     //Modifie l'e-mail
     public void setEmail(int id,String email);
 
