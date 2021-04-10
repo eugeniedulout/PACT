@@ -13,6 +13,8 @@ public interface ControllerInterface {
     // Retourne le nom d'utilisateur
     public String getUsername(int id);
 
+    // Retourne un objet User à partir de son id
+    public User getUser(int userId);
 
     // Retourne la liste des produits d'un magasin particulier
     public  ArrayList<Product> getAllProducts(int marketId);
@@ -86,6 +88,14 @@ public interface ControllerInterface {
     public ArrayList<ArrayList<Product>> getFriendsProduct(int user_id);
 
 
+    /*
+     *
+     * Il est possible de faire appel à getUser(id) pour l'ensemble des id renvoyés par la fonction getUserFriends(int userId) déjà présente, afin de récupérer une liste de User.
+     *
+     */
+    // Retourne la liste des amis de user_id
+    public ArrayList<User> getUserFriends(int user_id)
+
   
 
         //////////////////////////////////////////////////////
@@ -93,8 +103,6 @@ public interface ControllerInterface {
     /////////////////////////////////////////////////////
 
 
-    // Retourne la liste des amis de user_id
-    public ArrayList<User> getUserFriends(int user_id)
 ////////////////////////////////////////////////////
 // Modification de la structure de la classe ListProduct
 /////////////////////////////////////////////////////
