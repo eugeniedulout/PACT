@@ -214,6 +214,33 @@ public class Controller {
     }
 
 
+    public static ArrayList<Recette> getUserRecettes(int user_id) {
+        addParam("action","get_user_recipes");
+        addParam("user_id",String.valueOf(user_id));
+
+        JSONArray answer = null;
+        try {
+            answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<Recette> recipes = new ArrayList<Recette>();
+
+        try {
+            for (int i = 0; i < answer.length(); i++) {
+                JSONObject recipe = answer.getJSONObject(i);
+                recipes.add(new Recette(recipe));
+            }
+
+            return recipes;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
+    }
 
 
 

@@ -130,6 +130,24 @@ if(isset($_POST['action'])) {
 		}
 		file_put_contents($dir_name.$name.'.json',$json_recipe);
 		break;
+		
+
+	case "get_user_recipes":
+		$user_id = $_POST['user_id'];
+		$dir_name = "/var/www/html/data/recipes/$user_id/";
+		$dir = opendir($dir_name);
+
+		$recipe_list = array();
+		while($file = readdir($dir)) {
+			if($file != '.' && $file != '..') {
+				$recipe = json_decode(file_get_contents($dir_name.$file), true);
+				array_push($recipe_list, $recipe);
+			}
+		}
+		print(json_encode($recipe_list));
+		closedir($dir);
+		break;
+
 	}
 }
 ?>
