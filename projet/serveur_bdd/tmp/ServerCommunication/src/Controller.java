@@ -1,3 +1,5 @@
+import netscape.javascript.JSObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -25,6 +27,9 @@ public class Controller {
         keys.add("id");
         values.add(String.valueOf(id));
         String[] answer = postTreatment(post(SERVER_URL+USER_FONCTIONS, keys, values));
+        System.out.println(answer.length);
+        keys.clear();
+        values.clear();
 
         return answer==null?null:answer[0];
     }
@@ -76,7 +81,7 @@ public class Controller {
             String line;
             while((line = reader.readLine()) != null)
                 result+=line;
-
+            System.out.println(result);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
