@@ -60,4 +60,10 @@ public interface ControllerInterface {
     
     //Modifie l'e-mail
     public void setEmail(int id,String email);
+
+    //Envoi de demande à un User
+    public void sendDemand(int id,User newFriend);
+
+    //Ajout d'ami
+    public void addFriend(int id, User friend);
 }
