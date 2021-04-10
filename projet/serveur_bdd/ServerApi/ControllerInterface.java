@@ -42,4 +42,22 @@ public interface ControllerInterface {
 
     // Récupère les recettes d'un utilisateur
     public ArrayList<Recette> getUserRecettes(int user_id);
+
+    //Retourne la liste des amis
+    public ArrayList<User> getFriendsOfUser(int id);
+
+    //Retourne La liste d'un User
+    public ArrayList<ListProduct> getListsOfUser(int id);
+
+    //Retourne la liste des produits d'une liste
+    public ArrayList<Product> getProductOfList(ListProduct liste);
+    
+    //Retourne la liste des demandes
+    public ArrayList<User> getDemandsOfUser(int id);
+
+    //Modifie le mdp
+    public void updatePassword(int id, String newPassword);
+    
+    //Modifie l'e-mail
+    public void setEmail(int id,String email);
 }
