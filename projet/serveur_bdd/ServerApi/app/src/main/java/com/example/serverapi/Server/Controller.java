@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import com.example.serverapi.ExternClasses.ListProduct;
 import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
+import com.example.serverapi.ExternClasses.ProductOnSpecialOffer;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -233,6 +234,33 @@ public class Controller {
         }
 
         return null;
+    }
+
+
+    public static ArrayList<ProductOnSpecialOffer> getMarketOffers(int market_id) {
+        addParam("action", "get_market_offers");
+        addParam("market_id", String.valueOf(market_id));
+
+        JSONArray answer = null;
+        try {
+            answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<ProductOnSpecialOffer> offers = new ArrayList<ProductOnSpecialOffer>();
+
+        try {
+            for(int i =0; i< answer.length(); i++) {
+                JSONObject json_product = answer.getJSONObject(i);
+                ProductOnSpecialOffer onSpecialOffer = new ProductOnSpecialOffer(json_product);
+
+                offers.add(onSpecialOffer);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return offers;
     }
 
 
