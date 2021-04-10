@@ -7,11 +7,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Product {
-    private String name;
-    private String productImageUrl;
-    private double price;
-    private String description;
-    private String productTags;
+    protected String name;
+    protected String productImageUrl;
+    protected double price;
+    protected String description;
+    protected String productTags;
 
 
     public Product(String name, String productImageUrl, double price) {
