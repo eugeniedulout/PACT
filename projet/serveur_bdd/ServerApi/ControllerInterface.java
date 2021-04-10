@@ -66,4 +66,7 @@ public interface ControllerInterface {
 
     //Ajout d'ami
     public void addFriend(int id, User friend);
+
+    //Retourne la liste de produits des listes des amis friendID de l'utilisateur (userId)
+    public ArrayList<ArrayList<Product>> getFriendsProduct(int user_id)
 }
