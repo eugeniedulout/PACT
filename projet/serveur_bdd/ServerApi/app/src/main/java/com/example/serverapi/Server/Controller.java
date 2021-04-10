@@ -63,13 +63,31 @@ public class Controller {
 
         User user = null;
         try {
-            if(answer.getString("valid").equals("true")) {
+            if(answer.getBoolean("valid")) {
                 user = new User(answer.getJSONObject("user"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return user;
+    }
+
+
+    public static User getUser(int userId) {
+        addParam("action", "get_user");
+        addParam("user_id", String.valueOf(userId));
+
+        try {
+            JSONObject answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
+            if(answer.getBoolean("valid")) {
+                User user = new User(answer.getJSONObject("user"));
+                return user;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
 
