@@ -86,6 +86,16 @@ if(isset($_POST['action'])) {
 		closedir($dir);
 		break;
 
+        case "add_new_list":
+                $user_id = $_POST['user_id'];
+                $list_name = $_POST['list_name'];
+                $dir_name = "/var/www/html/data/lists/$user_id/";
+                if(!file_exists($dir_name)) {
+                        mkdir($dir_name, 0755, true);
+                }
+                $list_json = $_POST['list'];
+                file_put_contents($dir_name.$list_name.'.json',$list_json);
+                break;
 	}
 }
 ?>
