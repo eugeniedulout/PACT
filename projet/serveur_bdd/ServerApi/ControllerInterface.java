@@ -13,8 +13,6 @@ public interface ControllerInterface {
     // Retourne le nom d'utilisateur
     public String getUsername(int id);
 
-    // Retourne si l'authentification a réussi ou non
-    public boolean connect(String username, String password);
 
     // Retourne la liste des produits d'un magasin particulier
     public  ArrayList<Product> getAllProducts(int marketId);
@@ -34,8 +32,7 @@ public interface ControllerInterface {
     // Retourne l'ensemble des promotions d'un magasin
     public ArrayList<ProductOnSpecialOffer> getMarketOffers(int market_id);
 
-    // Retourne la liste des amis de user_id
-    public ArrayList<Integer> getUserFriends(int user_id);
+
 
     // Ajoute une recette sur le serveur
     public void addNewRecette(int user_id, Recette recipe);
@@ -43,8 +40,7 @@ public interface ControllerInterface {
     // Récupère les recettes d'un utilisateur
     public ArrayList<Recette> getUserRecettes(int user_id);
 
-    //Retourne la liste des amis
-    public ArrayList<User> getFriendsOfUser(int id);
+
 
     //Retourne La liste d'un User
     public ArrayList<ListProduct> getListsOfUser(int id);
@@ -52,10 +48,23 @@ public interface ControllerInterface {
     //Retourne la liste des produits d'une liste
     public ArrayList<Product> getProductOfList(ListProduct liste);
     
+
+
+  
+
+        //////////////////////////////////////////////////////
+    //////////////TO DO ! ////////////////////////////////
+    /////////////////////////////////////////////////////
+
+
+    // Retourne la liste des amis de user_id
+    public ArrayList<User> getUserFriends(int user_id)
+
     //Retourne la liste des demandes
     public ArrayList<User> getDemandsOfUser(int id);
 
-    //Modifie le mdp
+
+  //Modifie le mdp
     public void updatePassword(int id, String newPassword);
     
     //Modifie l'e-mail
@@ -71,5 +80,12 @@ public interface ControllerInterface {
     public void addFriend(int id, User friend);
 
     //Retourne la liste de produits des listes des amis friendID de l'utilisateur (userId)
-    public ArrayList<ArrayList<Product>> getFriendsProduct(int user_id)
+    public ArrayList<ArrayList<Product>> getFriendsProduct(int user_id);
+
+     // Return null if the password and email are wrong
+     public User connect(String email, String password);
+
+    // Renvoie null si l'adresse email existe déjà dans la BDD, sinon renvoie objet de type User 
+     public User signUp(String email, String prenom, String nom, String password);
+
 }
