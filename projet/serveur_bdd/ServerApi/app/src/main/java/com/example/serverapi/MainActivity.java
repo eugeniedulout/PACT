@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         logs_tests += "connect (bad pass): " + Controller.connect("quentin.audinet@telecom-paris.fr","badpass")+ "\n";
         logs_tests += "connect (bad mail): " + Controller.connect("quentin.audinet@badmail.com","pass")+ "\n";
         logs_tests += "connect (good logs): " + Controller.connect("quentin.audinet@telecom-paris.fr","pass")+ "\n";
+        logs_tests += "***************************\n";
         logs_tests += "get_all_products: \n";
         for(Product p : Controller.getAllProducts(1)) {
             logs_tests += p.toString()+"\n--------\n";
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("[INFO]", new_list.toJSON().toString());
 
         Controller.addNewListOfProducts(6, new_list);
+        logs_tests += "[ADDING NEW LIST TO USER_ID 6]: \n";
         logs_tests += "get_user_lists (user_id=6): \n";
         for(ListProduct listProduct : Controller.getUserLists(6)) {
             logs_tests += listProduct.toString() + "\n--------\n";
