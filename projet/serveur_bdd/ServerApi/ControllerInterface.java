@@ -56,6 +56,23 @@ public interface ControllerInterface {
     public void setEmail(int id,String email);
 
 
+     // Return null if the password and email are wrong
+     public User connect(String email, String password);
+
+    // Renvoie null si l'adresse email existe déjà dans la BDD, sinon renvoie objet de type User 
+     public User signUp(String email, String prenom, String nom, String password);
+
+
+
+
+    /*
+     *
+     * Il ne suffit pas juste d'itérer sur chacunes des listes renvoyées par getFriendLists() ?
+     *
+     */
+    //Retourne la liste de produits des listes des amis friendID de l'utilisateur (userId)
+    public ArrayList<ArrayList<Product>> getFriendsProduct(int user_id);
+
 
   
 
@@ -78,16 +95,6 @@ public interface ControllerInterface {
 
     //Ajout d'ami
     public void addFriend(int id, User friend);
-
-    //Retourne la liste de produits des listes des amis friendID de l'utilisateur (userId)
-    public ArrayList<ArrayList<Product>> getFriendsProduct(int user_id);
-
-     // Return null if the password and email are wrong
-     public User connect(String email, String password);
-
-    // Renvoie null si l'adresse email existe déjà dans la BDD, sinon renvoie objet de type User 
-     public User signUp(String email, String prenom, String nom, String password);
-
 ////////////////////////////////////////////////////
 // Modification de la structure de la classe ListProduct
 /////////////////////////////////////////////////////
