@@ -117,6 +117,19 @@ if(isset($_POST['action'])) {
 		$data = $db->query($req);
 		print($data->fetch()['friends']);
 		break;
+
+
+	case "add_new_recipe":
+		$user_id = $_POST['user_id'];
+		$name = $_POST['recipe_name'];
+		$json_recipe = $_POST['recipe'];
+		$dir_name = "/var/www/html/data/recipes/$user_id/";
+
+		if(!file_exists($dir_name)) {
+			mkdir($dir_name, 0755, true);
+		}
+		file_put_contents($dir_name.$name.'.json',$json_recipe);
+		break;
 	}
 }
 ?>

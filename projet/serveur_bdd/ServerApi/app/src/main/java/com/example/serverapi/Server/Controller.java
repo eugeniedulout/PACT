@@ -8,6 +8,7 @@ import com.example.serverapi.ExternClasses.ListProduct;
 import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
 import com.example.serverapi.ExternClasses.ProductOnSpecialOffer;
+import com.example.serverapi.ExternClasses.Recette;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -191,6 +192,31 @@ public class Controller {
 
         return null;
     }
+
+
+    /*
+    FONCTIONS RELATIVES AUX RECETTES
+     */
+
+    public static void addNewRecette(int user_id, Recette recipe) {
+        try {
+            JSONObject json_recipe = recipe.toJSON();
+            addParam("action","add_new_recipe");
+            addParam("user_id",String.valueOf(user_id));
+            addParam("recipe_name", recipe.getRecetteName());
+            addParam("recipe",json_recipe.toString());
+
+            String result = post(SERVER_URL+USER_FONCTIONS);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
 
 
 
