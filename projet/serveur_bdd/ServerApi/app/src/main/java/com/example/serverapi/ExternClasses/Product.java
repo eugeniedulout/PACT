@@ -13,11 +13,22 @@ public class Product {
     protected String description;
     protected String productTags;
 
+    protected double x;
+    protected double y;
+    protected int z;
+
 
     public Product(String name, String productImageUrl, double price) {
         this.name = name;
         this.productImageUrl = productImageUrl;
         this.price = price;
+    }
+
+    public Product(String name, String productImageUrl, double price, double x, double y, int z) {
+        this(name, productImageUrl, price);
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
     public Product(String name, String productImageUrl, double price, String description) {
@@ -34,6 +45,9 @@ public class Product {
             this.productImageUrl = json_product.getString("img_url");
             this.price = json_product.getDouble("price");
             this.description = json_product.getString("description");
+            this.x = json_product.getDouble("x");
+            this.y = json_product.getDouble("y");
+            this.z = json_product.getInt("z");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -47,6 +61,9 @@ public class Product {
             json.put("img_url", this.productImageUrl);
             json.put("price", this.getPrice());
             json.put("description", this.getDescription());
+            json.put("x", this.getX());
+            json.put("y", this.getY());
+            json.put("z", this.getZ());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -61,6 +78,7 @@ public class Product {
         str += "\n\timg_url: " + this.getProductImageUrl();
         str += "\n\tprice: " + this.getPrice();
         str += "\n\tdescription: " + this.getDescription();
+        str += "\n\tcoords : x="+this.x + " y="+this.y + "z="+this.z;
         return str;
     }
 
@@ -102,5 +120,29 @@ public class Product {
 
     public void setProductTags(String productTags) {
         this.productTags = productTags;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public int getZ() {
+        return z;
+    }
+
+    public void setZ(int z) {
+        this.z = z;
     }
 }
