@@ -444,18 +444,16 @@ public class Controller {
         addParam("action", "get_user_friends");
         addParam("user_id", String.valueOf(user_id));
 
-        String answer = post(SERVER_URL+USER_FONCTIONS);
-
-        String[] friendList = null;
         ArrayList<Integer> friends = new ArrayList<Integer>();
-
-        if(answer.contains("%")) {
-           friendList = answer.split("%");
-            for(String num : friendList) {
-                friends.add(Integer.parseInt(num));
+        try {
+            JSONArray answer = new JSONArray(post(SERVER_URL + USER_FONCTIONS));
+            for(int i =0; i<answer.length(); i++) {
+                friends.add(answer.getInt(i));
             }
-       }
-       return friends;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return friends;
     }
 
 
