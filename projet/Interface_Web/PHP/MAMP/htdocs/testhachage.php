@@ -1,5 +1,5 @@
 <?php
 
 
-echo password_hash("pass", PASSWORD_DEFAULT);
+echo password_hash("carrefour", PASSWORD_DEFAULT);
 ?>

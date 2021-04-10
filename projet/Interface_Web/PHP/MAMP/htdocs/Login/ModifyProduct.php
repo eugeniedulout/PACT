@@ -11,7 +11,7 @@ $item_id = $_GET["Modify"];
 
 if (isset($_POST["label"])){
     $query = " UPDATE ProductsInMarkets 
-               SET label='" . $_POST["label"] . "', price='" . $_POST["price"] . "', x='" . $_POST["x"] . "', y='" . $_POST["y"] . "', z='" . $_POST["z"] . "' WHERE product_id='" .  $_POST["product_id"] . "';";
+               SET label='" . $_POST["label"] . "', price='" . $_POST["price"] . "', x='" . $_POST["x"] . "', y='" . $_POST["y"] . "', z='" . $_POST["z"] . "', barcode='" . $_POST["barcode"] . "' WHERE product_id='" .  $_POST["product_id"] . "';";
     echo $query;
     $db->query($query);
     header('Location: cible.php');
