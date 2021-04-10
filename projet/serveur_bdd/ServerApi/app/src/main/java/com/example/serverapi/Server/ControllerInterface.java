@@ -4,6 +4,7 @@ import com.example.serverapi.ExternClasses.ListProduct;
 import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
 import com.example.serverapi.ExternClasses.ProductOnSpecialOffer;
+import com.example.serverapi.ExternClasses.Recette;
 
 import java.util.ArrayList;
 
@@ -35,4 +36,10 @@ public interface ControllerInterface {
 
     // Retourne la liste des amis de user_id
     public ArrayList<Integer> getUserFriends(int user_id);
+
+    // Ajoute une recette sur le serveur
+    public void addNewRecette(int user_id, Recette recipe);
+
+    // Récupère les recettes d'un utilisateur
+    public ArrayList<Recette> getUserRecettes(int user_id);
 }
