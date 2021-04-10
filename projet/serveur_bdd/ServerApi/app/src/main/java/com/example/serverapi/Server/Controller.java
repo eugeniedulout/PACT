@@ -140,10 +140,19 @@ public class Controller {
     }
 
 
+    /**
+     * Ajoute une nouvelle liste listProduct sur le serveur pour userId
+     *
+     * @param userId
+     * @param listProduct
+     *
+     */
     public static void addNewListOfProducts(int userId, ListProduct listProduct) {
         addParam("action","add_new_list");
+        addParam("user_id", String.valueOf(userId));
         JSONObject json_list = listProduct.toJSON();
         addParam("list",json_list.toString());
+        addParam("list_name",listProduct.getListName());
         String result = post(SERVER_URL+USER_FONCTIONS);
     }
 
