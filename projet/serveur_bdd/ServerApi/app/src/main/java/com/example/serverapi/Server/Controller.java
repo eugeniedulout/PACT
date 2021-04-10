@@ -265,13 +265,30 @@ public class Controller {
 
 
 
+    public static ArrayList<Integer> getUserFriends(int user_id) {
+        addParam("action", "get_user_friends");
+        addParam("user_id", String.valueOf(user_id));
+
+        String answer = post(SERVER_URL+USER_FONCTIONS);
+
+        String[] friendList = null;
+        ArrayList<Integer> friends = new ArrayList<Integer>();
+
+        if(answer.contains("%")) {
+           friendList = answer.split("%");
+            for(String num : friendList) {
+                friends.add(Integer.parseInt(num));
+            }
+       }
+       return friends;
+    }
 
 
 
 
 
     public static String getUsername(int id) {
-        addParam("action","username");
+        addParam("action","get_username");
         addParam("id", String.valueOf(id));
         JSONObject answer = null;
         try {

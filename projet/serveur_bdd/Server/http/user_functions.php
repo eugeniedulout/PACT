@@ -13,7 +13,7 @@ if(isset($_POST['action'])) {
                 break;   
 
 	case "connect":
-		$response = $db->query("SELECT pass FROM Users WHERE mail=" . $db->quote($_POST['mail']));
+		$response = $db->query("SELECT password FROM Users WHERE mail=" . $db->quote($_POST['mail']));
 		$data = $response->fetch();
 		$answer = ['valid' => 'false'];
 		if ($data != null) {
@@ -109,6 +109,13 @@ if(isset($_POST['action'])) {
 
 		$json_result = json_encode($products);
 		print($json_result);
+		break;
+
+	case 'get_user_friends':
+		$user_id = $_POST['user_id'];
+		$req = "SELECT friends FROM Users WHERE id=$user_id";
+		$data = $db->query($req);
+		print($data->fetch()['friends']);
 		break;
 	}
 }
