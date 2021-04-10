@@ -72,6 +72,8 @@ public interface ControllerInterface {
     //Retourne la liste des demandes
     public ArrayList<User> getDemandsOfUser(int id);
 
+    //Refuser une demande
+    public void refuseDemand(int id, User refusedFriend);
 
 
 
@@ -93,8 +95,6 @@ public interface ControllerInterface {
 
     // Retourne la liste des amis de user_id
     public ArrayList<User> getUserFriends(int user_id)
-    //Refuser une demande
-    public void refuseDemand(int id, User refusedFriend);
 ////////////////////////////////////////////////////
 // Modification de la structure de la classe ListProduct
 /////////////////////////////////////////////////////

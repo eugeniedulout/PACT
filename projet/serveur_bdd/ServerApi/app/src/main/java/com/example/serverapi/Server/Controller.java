@@ -196,6 +196,15 @@ public class Controller {
     }
 
 
+    public static void refuseDemand(int userId, int friendId) {
+        addParam("action", "refuse_demand");
+        addParam("user_id", String.valueOf(userId));
+        addParam("friend_id", String.valueOf(friendId));
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
+
 
 
 

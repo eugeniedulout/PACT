@@ -256,6 +256,22 @@ if(isset($_POST['action'])) {
 		print($data->fetch()['demands']);
 		break;
 
+
+	case "refuse_demand":
+		$user_id = $_POST['user_id'];
+		$friend_id = $_POST['friend_id'];
+
+		$req = "SELECT demands FROM Users WHERE id=$user_id";
+		$data = $db->query($req);
+		$demands = json_decode($data->fetch()['demands'],true);
+		if(in_array($friend_id, $demands)) {
+			unset($demands[array_search($friend_id,$demands)]);
+			$json_demands = json_encode($demands);
+			$req = "UPDATE Users SET demands='$json_demands' WHERE id=$user_id";
+			$db->exec($req);
+		}
+		break;
+
 	}
 }
 ?>
