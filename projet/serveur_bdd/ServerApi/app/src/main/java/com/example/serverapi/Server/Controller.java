@@ -29,8 +29,8 @@ import java.util.Arrays;
 public class Controller {
 
     //URLS
-    public static final String SERVER_URL = "https://foodgps.r2.enst.fr/";
-    public static final String USER_FONCTIONS = "http/user_functions.php";
+    private static final String SERVER_URL = "https://foodgps.r2.enst.fr/";
+    private static final String USER_FONCTIONS = "http/user_functions.php";
 
     //ArrayList declaration
     private static ArrayList<String> keys = new ArrayList<String>();
