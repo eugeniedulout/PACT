@@ -57,6 +57,22 @@ public class ListProduct {
         return array;
     }
 
+    public String getListName() {
+        return listName;
+    }
+
+    public void setListName(String listName) {
+        this.listName = listName;
+    }
+
+    public ArrayList<Product> getListOfProducts() {
+        return listOfProducts;
+    }
+
+    public void setListOfProducts(ArrayList<Product> listOfProducts) {
+        this.listOfProducts = listOfProducts;
+    }
+
     @NonNull
     @Override
     public String toString() {
