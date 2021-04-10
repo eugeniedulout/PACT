@@ -52,6 +52,10 @@ public interface ControllerInterface {
     public void updatePassword(int id, String newPassword);
     
 
+    //Modifie l'e-mail
+    public void setEmail(int id,String email);
+
+
 
   
 
@@ -65,10 +69,6 @@ public interface ControllerInterface {
 
     //Retourne la liste des demandes
     public ArrayList<User> getDemandsOfUser(int id);
-
-
-    //Modifie l'e-mail
-    public void setEmail(int id,String email);
 
     //Envoi de demande à un User
     public void sendDemand(int id,User newFriend);
