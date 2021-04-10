@@ -42,4 +42,23 @@ public interface ControllerInterface {
 
     // Récupère les recettes d'un utilisateur
     public ArrayList<Recette> getUserRecettes(int user_id);
+
+    
+    
+    
+    //////////////////////////////////////////////////////
+    //////////////TO DO ! ////////////////////////////////
+    /////////////////////////////////////////////////////
+
+
+     // Return null if the password and email are wrong
+     public User connect(String email, String password);
+
+    // Renvoie null si l'adresse email existe déjà dans la BDD, sinon renvoie objet de type User 
+     public User signUp(String email, String prenom, String nom, String password);
+
+
+
+
+
 }
