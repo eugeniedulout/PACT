@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.serverapi.ExternClasses.ListProduct;
 import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
+import com.example.serverapi.ExternClasses.ProductOnSpecialOffer;
 import com.example.serverapi.Server.Controller;
 
 import java.util.ArrayList;
@@ -82,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
         for(ListProduct listProduct : Controller.getUserLists(6)) {
             logs_tests += listProduct.toString() + "\n--------\n";
         }
+        logs_tests += "***************************\n";
+        logs_tests += "get_market_offers (market_id=1):\n";
+        for (ProductOnSpecialOffer p : Controller.getMarketOffers(1)) {
+            logs_tests+= p.toString() + "\n";
+        }
+
 
 
 
