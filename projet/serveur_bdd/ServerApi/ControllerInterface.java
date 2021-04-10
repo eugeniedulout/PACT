@@ -88,4 +88,27 @@ public interface ControllerInterface {
     // Renvoie null si l'adresse email existe déjà dans la BDD, sinon renvoie objet de type User 
      public User signUp(String email, String prenom, String nom, String password);
 
+////////////////////////////////////////////////////
+// Modification de la structure de la classe ListProduct
+/////////////////////////////////////////////////////
+public class ListProduct {
+
+    private String listName;
+    private ArrayList<Product> listOfProducts;
+    private ArrayList<Integer> quantites; // Pour le produit à l'index i de listOfProducts , on lui associe une quantité( un entier ) à l'index i de quantites
+    private int market_id; // La liste de course est asssocié à un magasin
+
+
+      public ListProduct(String listName, ArrayList<Product> listOfProducts) {
+          this.listName = listName;
+          this.listOfProducts = listOfProducts;
+      }
+  }
+
+  //#################### Il faut donc modifier  la fonction getUserLists() ##########################
+
+}
+
+
+
 }
