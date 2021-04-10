@@ -183,6 +183,13 @@ public class MainActivity extends AppCompatActivity {
             logs_tests += "\t" + i + "\n";
         }
 
+        logs_tests += "user_id 9 refuse demands of user_id 5\n";
+        Controller.refuseDemand(9, 5);
+        logs_tests += "Getting friend request of user_id 9\n";
+        for(Integer i : Controller.getDemandsOfUser(9)) {
+            logs_tests += "\t" + i + "\n";
+        }
+
         result.setText(logs_tests);
 
     }
