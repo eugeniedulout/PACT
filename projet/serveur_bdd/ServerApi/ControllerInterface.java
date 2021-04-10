@@ -64,6 +64,9 @@ public interface ControllerInterface {
     //Envoi de demande à un User
     public void sendDemand(int id,User newFriend);
 
+    //Refuser une demande
+    public void refuseDemand(int id, User refusedFriend);
+
     //Ajout d'ami
     public void addFriend(int id, User friend);
 
