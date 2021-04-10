@@ -91,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
             logs_tests+= p.toString() + "\n";
         }
 
+        logs_tests += "***************************\n";
+        logs_tests += "get_user_friends (user_id=2):\n";
+        for(Integer i : Controller.getUserFriends(1)) {
+            logs_tests += "\t" + i + "\n";
+        }
 
 
 
