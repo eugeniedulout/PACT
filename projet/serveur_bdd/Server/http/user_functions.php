@@ -15,10 +15,10 @@ if(isset($_POST['action'])) {
 	case "connect":
 		$response = $db->query("SELECT * FROM Users WHERE mail=" . $db->quote($_POST['mail']));
 		$data = $response->fetch();
-		$answer = ['valid' => 'false'];
+		$answer = ['valid' => false];
 		if ($data != null) {
 			if(password_verify($_POST['password'], $data['password'])) {
-				$answer['valid'] = 'true';
+				$answer['valid'] = true;
 				$answer['user'] = array("id" => $data['id'], "mail" => $data['mail'], "firstname" => $data['firstname'], "lastname" => $data['lastname']);
 			}
 		}
@@ -158,7 +158,7 @@ if(isset($_POST['action'])) {
 		$answer = array('valid' => false);
 
 		if($row = $data->fetch()) {
-			$answer['valid'] = false;
+			$answer['valid'] = true;
 			$user = array("id" => $user_id, "mail" => $row['mail'], "firstname" => $row['firstname'], "lastname" => $row['lastname']);
 			$answer['user'] = $user;
 		}
