@@ -222,12 +222,30 @@ if(isset($_POST['action'])) {
 		if(!in_array($friend_id, $friends_array)) {
 			array_push($friends_array, $friend_id);
 			$new_json_friends = json_encode($friends_array);
-			$req = "UPDATE Users SET friends=$new_json_friends WHERE id=$user_id";
+			$req = "UPDATE Users SET friends='$new_json_friends' WHERE id=$user_id";
 			$db->exec($req);
 		}
 		break;
 		
 
+	case "send_demand":
+		$user_id = $_POST['user_id'];
+		$friend_id = $_POST['friend_id'];
+
+		$req = "SELECT friends,demands FROM Users WHERE id=$friend_id";
+		$data = $db->query($req);
+		$row = $data->fetch();
+		$json_friends = $row['friends'];
+		$friends_array = json_decode($json_friends, true);
+
+		if(!in_array($friend_id, $friends_array)) {
+			$demands = json_decode($row['demands'], true);
+			array_push($demands, $user_id);
+			$json_demands = json_encode($demands);
+			$req = "UPDATE Users SET demands='$json_demands' WHERE id=$friend_id";
+			$db->exec($req);
+		}
+		break;
 
 	}
 }
