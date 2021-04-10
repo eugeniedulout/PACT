@@ -100,12 +100,12 @@ if(isset($_POST['action'])) {
 
 	case "get_market_offers":
 		$market_id = $_POST['market_id'];
-		$req = "SELECT ProductsInMarkets.label, ProductsInMarkets.price, Promotions.new_price, Promotions.expire_date, AllProductsRef.Image, AllProductsRef.description FROM (ProductsInMarkets JOIN Promotions ON ProductsInMarkets.product_id = Promotions.product_id) JOIN AllProductsRef ON ProductsInMarkets.barcode = AllProductsRef.product_barcode WHERE ProductsInMarkets.market=$market_id";
+		$req = "SELECT ProductsInMarkets.label, ProductsInMarkets.price, Promotions.new_price, Promotions.expire_date, AllProductsRef.Image, AllProductsRef.description, x, y, z FROM (ProductsInMarkets JOIN Promotions ON ProductsInMarkets.product_id = Promotions.product_id) JOIN AllProductsRef ON ProductsInMarkets.barcode = AllProductsRef.product_barcode WHERE ProductsInMarkets.market=$market_id";
 
 		$data = $db->query($req);
 		$products = array();
 		while($row = $data->fetch()) {
-			array_push($products, array("name" => $row["label"], "img_url" => $row['Image'], "price" => $row['price'], "description" => $row['description'], "new_price" => $row['new_price'], "expiration_date" => $row['expire_date']));
+			array_push($products, array("name" => $row["label"], "img_url" => $row['Image'], "price" => $row['price'], "description" => $row['description'], "new_price" => $row['new_price'], "expiration_date" => $row['expire_date'], "x" => $row['x'], "y" => $row['y'], "z" => $row['z']));
 		}
 
 		$json_result = json_encode($products);
