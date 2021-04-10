@@ -9,6 +9,7 @@ import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
 import com.example.serverapi.ExternClasses.ProductOnSpecialOffer;
 import com.example.serverapi.ExternClasses.Recette;
+import com.example.serverapi.ExternClasses.User;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,7 +49,7 @@ public class Controller {
      * @param password
      * @return a boolean : true if the connexion success or false if it fail
      */
-    public static boolean connect(String mail, String password) {
+    public static User connect(String mail, String password) {
         addParam("action", "connect");
         addParam("mail",mail);
         addParam("password",password);
@@ -60,12 +61,15 @@ public class Controller {
             e.printStackTrace();
         }
 
+        User user = null;
         try {
-            return answer.getString("valid").equals("true");
+            if(answer.getString("valid").equals("true")) {
+                user = new User(answer.getJSONObject("user"));
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return false;
+        return user;
     }
 
 

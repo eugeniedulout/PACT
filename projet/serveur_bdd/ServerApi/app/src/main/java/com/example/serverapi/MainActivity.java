@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         result = findViewById(R.id.result);
 
         logs_tests += "getUsername: " + Controller.getUsername(1)+"\n";
-        logs_tests += "connect (bad pass): " + Controller.connect("quentin.audinet@telecom-paris.fr","badpass")+ "\n";
-        logs_tests += "connect (bad mail): " + Controller.connect("quentin.audinet@badmail.com","pass")+ "\n";
-        logs_tests += "connect (good logs): " + Controller.connect("quentin.audinet@telecom-paris.fr","pass")+ "\n";
+        logs_tests += "connect (bad pass): " + Controller.connect("quentin.audinet@telecom-paris.fr","badpass").toString()+ "\n";
+        logs_tests += "connect (bad mail): " + Controller.connect("quentin.audinet@badmail.com","pass").toString() + "\n";
+        logs_tests += "connect (good logs): " + Controller.connect("quentin.audinet@telecom-paris.fr","pass").toString() + "\n";
         logs_tests += "***************************\n";
         logs_tests += "get_all_products: \n";
         for(Product p : Controller.getAllProducts(1)) {
