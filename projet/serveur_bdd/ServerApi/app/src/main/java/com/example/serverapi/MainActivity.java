@@ -18,6 +18,7 @@ import com.example.serverapi.ExternClasses.Market;
 import com.example.serverapi.ExternClasses.Product;
 import com.example.serverapi.ExternClasses.ProductOnSpecialOffer;
 import com.example.serverapi.ExternClasses.Recette;
+import com.example.serverapi.ExternClasses.User;
 import com.example.serverapi.Server.Controller;
 
 import java.util.ArrayList;
@@ -133,6 +134,15 @@ public class MainActivity extends AppCompatActivity {
         logs_tests += "get_user: (user_id=1)\n";
         logs_tests += Controller.getUser(1).toString()+"\n";
 
+        logs_tests += "***************************\n";
+        logs_tests += "sign_up: (mail: test@gmail.com; pass: pass; firstname: E; lastname: Pokamp)\n";
+        User newUser = Controller.signUp("E", "Pokamp", "test@gmail.com", "pass");
+        logs_tests += "new user: ";
+        if(newUser != null) {
+            logs_tests += newUser.toString();
+        } else {
+            logs_tests += "null";
+        }
 
         result.setText(logs_tests);
     }
