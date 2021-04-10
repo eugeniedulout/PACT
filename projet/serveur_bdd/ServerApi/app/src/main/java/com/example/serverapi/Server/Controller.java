@@ -134,6 +134,14 @@ public class Controller {
         String result = post(SERVER_URL+USER_FONCTIONS);
     }
 
+    public static void setEmail(int userId, String newMail) {
+        addParam("action", "set_email");
+        addParam("user_id", String.valueOf(userId));
+        addParam("new_mail", newMail);
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
 
 
 

@@ -199,6 +199,16 @@ if(isset($_POST['action'])) {
 		$db->exec($req);
 		break;
 
+
+	case "set_email":
+		$user_id = $_POST['user_id'];
+		$new_mail = $db->quote($_POST['new_mail']);
+
+		$req = "UPDATE Users SET mail=$new_mail WHERE id=$user_id";
+		$db->exec($req);
+		break;
+
+
 	}
 }
 ?>
