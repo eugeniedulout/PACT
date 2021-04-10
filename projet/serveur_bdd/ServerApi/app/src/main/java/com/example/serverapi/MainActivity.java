@@ -165,6 +165,15 @@ public class MainActivity extends AppCompatActivity {
         logs_tests += "success: " + Controller.connect("new.mail@gmail.com","passw0rd") +"\n";
 
 
+        logs_tests += "***************************\n";
+        logs_tests += "Adding some new friends to user id 1 : (4,12)\n";
+        Controller.addFriend(1,4);
+        Controller.addFriend(1, 12);
+        logs_tests += "Getting user_id 1 friends:\n";
+        for(Integer i : Controller.getUserFriends(1)) {
+            logs_tests += "\t" + i + "\n";
+        }
+
         result.setText(logs_tests);
 
     }

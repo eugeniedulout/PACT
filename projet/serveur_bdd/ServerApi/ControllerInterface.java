@@ -63,6 +63,9 @@ public interface ControllerInterface {
      public User signUp(String email, String prenom, String nom, String password);
 
 
+    //Ajout d'ami
+    public void addFriend(int id, User friend);
+
 
 
     /*
@@ -92,9 +95,6 @@ public interface ControllerInterface {
 
     //Refuser une demande
     public void refuseDemand(int id, User refusedFriend);
-
-    //Ajout d'ami
-    public void addFriend(int id, User friend);
 ////////////////////////////////////////////////////
 // Modification de la structure de la classe ListProduct
 /////////////////////////////////////////////////////
