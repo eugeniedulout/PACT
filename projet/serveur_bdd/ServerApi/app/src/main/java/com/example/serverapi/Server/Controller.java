@@ -126,6 +126,11 @@ public class Controller {
     }
 
 
+    /**
+     * Change the password
+     * @param userId
+     * @param newPassword
+     */
     public static void updatePassword(int userId, String newPassword) {
         addParam("action", "update_password");
         addParam("user_id", String.valueOf(userId));
@@ -134,6 +139,11 @@ public class Controller {
         String result = post(SERVER_URL+USER_FONCTIONS);
     }
 
+    /**
+     * Change the mail
+     * @param userId
+     * @param newMail
+     */
     public static void setEmail(int userId, String newMail) {
         addParam("action", "set_email");
         addParam("user_id", String.valueOf(userId));
@@ -141,6 +151,23 @@ public class Controller {
 
         String result = post(SERVER_URL+USER_FONCTIONS);
     }
+
+
+
+    /*
+    FONCTIONS CONCERNANT LES AMIS
+     */
+
+
+    public static void addFriend(int userId, int friendId) {
+        addParam("action","add_friend");
+        addParam("user_id", String.valueOf(userId));
+        addParam("friend_id", String.valueOf(friendId));
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
+
 
 
 
