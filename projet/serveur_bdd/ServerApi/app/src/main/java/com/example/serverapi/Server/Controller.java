@@ -73,6 +73,11 @@ public class Controller {
     }
 
 
+    /**
+     * Get a user from his id
+     * @param userId
+     * @return the User
+     */
     public static User getUser(int userId) {
         addParam("action", "get_user");
         addParam("user_id", String.valueOf(userId));
@@ -90,6 +95,15 @@ public class Controller {
         return null;
     }
 
+
+    /**
+     * Create an account
+     * @param firstname
+     * @param lastname
+     * @param mail
+     * @param password
+     * @return null if the mail is already used and the User object if the account was created
+     */
     public static User signUp(String firstname, String lastname, String mail, String password) {
         addParam("action", "sign_up");
         addParam("mail",mail);
@@ -241,6 +255,12 @@ public class Controller {
     FONCTIONS RELATIVES AUX RECETTES
      */
 
+    /**
+     * Add a new recipe for user user_id
+     *
+     * @param user_id
+     * @param recipe
+     */
     public static void addNewRecette(int user_id, Recette recipe) {
         try {
             JSONObject json_recipe = recipe.toJSON();
@@ -257,6 +277,11 @@ public class Controller {
     }
 
 
+    /**
+     * Get all the recipes of the user with id user_id
+     * @param user_id
+     * @return an ArrayList of all recipes
+     */
     public static ArrayList<Recette> getUserRecettes(int user_id) {
         addParam("action","get_user_recipes");
         addParam("user_id",String.valueOf(user_id));
@@ -333,6 +358,11 @@ public class Controller {
     }
 
 
+    /**
+     * Get all the offers in the market with id market_id
+     * @param market_id
+     * @return an ArrayList of all products and the offer
+     */
     public static ArrayList<ProductOnSpecialOffer> getMarketOffers(int market_id) {
         addParam("action", "get_market_offers");
         addParam("market_id", String.valueOf(market_id));
@@ -360,7 +390,11 @@ public class Controller {
     }
 
 
-
+    /**
+     * Get the list of all the friends of the user user_id
+     * @param user_id
+     * @return an ArrayList with the friends id
+     */
     public static ArrayList<Integer> getUserFriends(int user_id) {
         addParam("action", "get_user_friends");
         addParam("user_id", String.valueOf(user_id));
@@ -378,9 +412,6 @@ public class Controller {
        }
        return friends;
     }
-
-
-
 
 
     public static String getUsername(int id) {
