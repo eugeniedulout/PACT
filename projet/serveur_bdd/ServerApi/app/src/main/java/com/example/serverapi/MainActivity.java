@@ -144,6 +144,18 @@ public class MainActivity extends AppCompatActivity {
             logs_tests += "null";
         }
 
+
+        logs_tests += "UPDATING PASWORD FOR User E POKAMP\n";
+        logs_tests += "\tTry log in with mail: test@gmail.com password: passw0rd\n";
+        logs_tests += "success: " + Controller.connect("test@gmail.com","passw0rd") +"\n";
+        logs_tests += "update_password for user_id: 7 new_pass: passw0rd\n";
+
+        Controller.updatePassword(7, "passw0rd");
+        logs_tests += "\tTry log in with mail: test@gmail.com password: passw0rd\n";
+        logs_tests += "success: " + Controller.connect("test@gmail.com","passw0rd") +"\n";
+
+
         result.setText(logs_tests);
+
     }
 }
