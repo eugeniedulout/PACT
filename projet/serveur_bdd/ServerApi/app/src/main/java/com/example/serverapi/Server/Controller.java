@@ -249,6 +249,25 @@ public class Controller {
     }
 
 
+    public static void updateProductLocation(int marketId, int productId, double newX, double newY, int newZ) {
+        addParam("action","update_product");
+        addParam("market_id", String.valueOf(marketId));
+        addParam("product_id", String.valueOf(productId));
+        JSONObject coords = new JSONObject();
+        try {
+            coords.put("x", newX);
+            coords.put("y", newY);
+            coords.put("z", newZ);
+            addParam("coords", coords.toString());
+
+            String result = post(SERVER_URL+USER_FONCTIONS);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     /*
     FONCTIONS CONCERNANT LES LISTES
      */

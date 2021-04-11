@@ -343,6 +343,18 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
+        try {
+
+            addSeparator();
+            logs_tests += "Sending a location changement to market_id: 1\n";
+            Controller.updateProductLocation(1, 2, 0, 0, 2);
+
+        } catch (Exception e) {
+            addErrorMessage("Adding locattion change");
+            e.printStackTrace();
+        }
+
         result.setText(logs_tests);
 
     }
