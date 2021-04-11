@@ -70,4 +70,4 @@ Le bouton "pause" fige la localisation. En mode pause, un bouton "code barre" ap
 
 ==== Interface Web
 
-L'Interface Web est en tout point la même que l'interface Android, mis à part qu'elle ne présente pas l'onglet plan.
+L'Interface Web est une interface administrateur basique et restreinte, qui permet aux propriétaires de magasins de modifier la base de données concernant leur magasin. Ils n'ont évidemment pas accès à celles de leurs concurrents et aux aspects jugeant leur service, comme la qualité des produits proposés.  
