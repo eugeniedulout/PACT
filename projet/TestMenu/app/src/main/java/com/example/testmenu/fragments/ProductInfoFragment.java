@@ -33,12 +33,12 @@ public class ProductInfoFragment extends Fragment {
         TextView productDescription = (TextView) v.findViewById(R.id.productDescriptionText);
         TextView environmentalScore = (TextView) v.findViewById(R.id.environmentalScoreText);
 
-        productPrice.setText(String.valueOf(product.getPrice()) + " €");
+        productPrice.setText(String.valueOf(product.getPrice()/100) + " €");
         productName.setText(product.getName());
         //productImage.setImageResource(getResources().getDrawable(R.id.));
         productDescription.setText(product.getDescription());
 
-
+        
 
         int id = getResources().getIdentifier(product.getProductImageUrl(), "drawable", getContext().getPackageName());
         productImage.setImageResource(id);

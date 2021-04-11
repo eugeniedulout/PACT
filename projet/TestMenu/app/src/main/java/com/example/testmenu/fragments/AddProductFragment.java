@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
+import com.example.testmenu.algorithmie.point.Point;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -53,12 +54,45 @@ public class AddProductFragment extends Fragment {
         addToListButton = (FloatingActionButton)v.findViewById(R.id.addToListButton);
         Log.e("TAG2", ""+marketId);
 
+
+        ArrayList<Product> productsFromMarket = new ArrayList<Product>();
+        initList(productsFromMarket);
+        int m = productsFromMarket.size();
+        for(int i=0; i< m; i++) {
+            arrayProductsName.add(productsFromMarket.get(i).getName());
+        }
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_selectable_list_item, arrayProductsName);
+        searchProduct.setAdapter(adapter);
+        searchProduct.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+                String name = searchProduct.getText().toString();
+                if( name != null) {
+                for(int i=0; i<m; i++) {
+                    if (name.equals(productsFromMarket.get(i).getName())) {
+                        foundProduct = productsFromMarket.get(i);
+                        FragmentController.swapFragment(new ProductInfoFragment(foundProduct), R.id.containerProductInfo, getContext());
+                    }
+                }
+
+                }
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+        });
+
+
         addToListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     Bundle result = new Bundle();
-
-                    Product productToAdd = new Product(searchProduct.getText().toString() + " x" + quantityNumberText.getText().toString(),searchProduct.getText().toString().toLowerCase(),1.2,"La pomme c'est cool");
+                    foundProduct.multiplyByQuantity(count);
+                    Product productToAdd = foundProduct;
                     result.putSerializable("productToAdd", productToAdd);
 
                     getParentFragmentManager().setFragmentResult("requestProductToAdd", result);
@@ -88,34 +122,20 @@ public class AddProductFragment extends Fragment {
         );
         //Fragment fragmentProductInfo = (Fragment)v.findViewById(R.id.fragmentProductInfo);
 
-        builderProductsName();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_selectable_list_item, arrayProductsName);
-        searchProduct.setAdapter(adapter);
-        searchProduct.addTextChangedListener(new TextWatcher() {
-            public void afterTextChanged(Editable s) {
-                String name = searchProduct.getText().toString();
-                if( name != null)
-                    foundProduct = new Product(name, name.toLowerCase(),18.2, getResources().getString(R.string.bigString));
-                    FragmentController.swapFragment(new ProductInfoFragment(foundProduct),R.id.containerProductInfo,getContext() );
-            }
-
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-        });
 
         return v;
     }
 
-    private void  builderProductsName() {
 
-        arrayProductsName.add("Pomme");
-        arrayProductsName.add("Nutella");
-        arrayProductsName.add("Pates");
-        arrayProductsName.add("Riz");
-        arrayProductsName.add("Beurre");
+
+    private void initList(ArrayList<Product> products){
+
+        products.add(new Product("Pomme", "pomme", 50, "La pomme c'est bon pour la santé !"));
+        products.add(new Product("Pates", "pates",70,  "Les pâtes c'est pas cher !"));
+        products.add(new Product("Beurre", "beurre", 100));
+        products.add(new Product("Riz", "riz", 130));
+        products.add(new Product("Nutella", "nutella", 300, "Le nutella c'est pas bon pour la santé !"));
+
 
     }
 }

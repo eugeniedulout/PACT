@@ -85,9 +85,12 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
 
         listViewOflistOfProducts = (ListView) v.findViewById(R.id.listOflistOfProducts);
 
-        /*listlistOfProducts.add(new ListProduct("Deuxieme liste",products));
-        listlistOfProducts.add(new ListProduct("Troisieme liste",products));*/
-
+        listlistOfProducts.add(new ListProduct("Deuxieme liste",products));
+        listlistOfProducts.add(new ListProduct("Troisieme liste",products));
+        ListAdapter adapter = new ListAdapter(getContext(), listlistOfProducts);
+        listViewOflistOfProducts.setAdapter(adapter);
+        loadLists loadLists = new loadLists();
+        loadLists.execute();
 
 
 

@@ -115,6 +115,11 @@ public class Product implements  Serializable {
         FragmentController.swapFragmentInMainContainer(new ProductInfoFragment(this), context);
     }
 
+    public void multiplyByQuantity(int quantite) {
+        this.price = price * quantite;
+
+    }
+
 }
 
 

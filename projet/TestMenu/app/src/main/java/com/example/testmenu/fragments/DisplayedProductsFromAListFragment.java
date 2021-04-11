@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ import com.example.testmenu.Ingredient;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
 import com.example.testmenu.Recette;
+import com.example.testmenu.adapters.ProductAdapter;
 import com.example.testmenu.adapters.RecetteAdapter;
 import com.example.testmenu.adapters.RecycleViewConsigneRecetteAdapter;
 
@@ -42,7 +44,17 @@ public class DisplayedProductsFromAListFragment extends Fragment {
         nameOfTheListSelectedTextView = (TextView)v.findViewById(R.id.nameOfTheListSelected);
         nameOfTheListSelectedTextView.setText(nameOfTheListSelected);
 
-        FragmentController.swapFragment(new ListOfProductsFragment(productsToDisplay), R.id.containerOfProdcutsFromListSelected, getContext() );
+        ListView listViewOfProducts = (ListView) v.findViewById(R.id.productListView);
+
+        ProductAdapter adapter = new ProductAdapter(getContext(), productsToDisplay);
+        listViewOfProducts.setAdapter(adapter);
+
+        listViewOfProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                productsToDisplay.get(position).displayInfo(getContext());
+            }
+        });
 
         return v;
     }

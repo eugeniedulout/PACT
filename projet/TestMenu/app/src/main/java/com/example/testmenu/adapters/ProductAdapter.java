@@ -50,7 +50,7 @@ public class ProductAdapter extends BaseAdapter {
         TextView nameProduct = convertView.findViewById(R.id.nameProduct);
         nameProduct.setText(productName);
         TextView priceProduct = convertView.findViewById(R.id.priceProduct);
-        priceProduct.setText(String.valueOf(productPrice ) + " €");
+        priceProduct.setText(String.valueOf(productPrice/100 ) + " €");
 
         int imageId = context.getResources().getIdentifier(productImage, "drawable", context.getPackageName());
 

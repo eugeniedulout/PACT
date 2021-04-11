@@ -55,11 +55,11 @@ public class PromotionMarketAdapter extends BaseAdapter {
         TextView nameProduct = (TextView) convertView.findViewById(R.id.nameProduct);
         nameProduct.setText(productName);
         TextView priceProduct = (TextView) convertView.findViewById(R.id.priceProduct);
-        priceProduct.setText(String.valueOf(productPrice ) + " €");
+        priceProduct.setText(String.valueOf(productPrice /100) + " €");
         priceProduct.setPaintFlags(priceProduct.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         TextView newPriceProduct = (TextView) convertView.findViewById(R.id.newPriceProduct);
-        newPriceProduct.setText(String.valueOf(newProductPrice ) + " €");
+        newPriceProduct.setText(String.valueOf(newProductPrice /100) + " €");
 
 
         TextView expirationDate = (TextView) convertView.findViewById(R.id.expirationDateText);
