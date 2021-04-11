@@ -15,11 +15,7 @@ public class SlopeOne {
     private static Map<User, HashMap<Item, Double>> inputData;
     private static Map<User, HashMap<Item, Double>> outputData = new HashMap<>();
 
-    public SlopeOne() {
-
-    }
-
-    public static void slopeOne(int numberOfUsers) {
+    public SlopeOne(int numberOfUsers) {
         inputData = ReceiveData.initializeData(numberOfUsers);
         System.out.println("Slope One - Before the Prediction\n");
         buildDifferencesMatrix(inputData);
