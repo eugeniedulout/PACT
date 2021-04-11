@@ -17,6 +17,11 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.testmenu.Controller;
+import com.example.testmenu.ListProduct;
+import com.example.testmenu.MainActivity;
+import com.example.testmenu.Market;
+import com.example.testmenu.Product;
 import com.example.testmenu.R;
 import com.example.testmenu.ScanActivity;
 import com.example.testmenu.algorithmie.PlusCourtChemin;
@@ -34,6 +39,7 @@ public class PlanFragment extends Fragment {
     private Button goButton;
     private Button scanButton;
     private TextView resultScan;
+    private ArrayList<Point> pointsProduits = new ArrayList<>();
 
 
 
@@ -45,14 +51,40 @@ public class PlanFragment extends Fragment {
 
         searchMarketName = (AutoCompleteTextView)v.findViewById(R.id.serachMarketName);
         searchListName = (AutoCompleteTextView)v.findViewById(R.id.serachListName);
-        TextView tv = (TextView)v.findViewById(R.id.planText);
 
         ArrayList<String> marketsName = builderMarketsName();
+
+
+        TextView tv = (TextView)v.findViewById(R.id.planText);
+
+        //################################################################
+        //################################################################
+        /*ArrayList<Market> marketArrayList =  Controller.getAllMarkets();
+        for(int i=0; i< marketArrayList.size(); i++){
+             marketsName.add(marketArrayList.get(i).getMarketName());
+        }*/
+        // ###############################################################
+        // ###############################################################
+
+        //################################################################
+        //################################################################
+        /*ArrayList<ListProduct> listProductsUser =  Controller.getUserLists(MainActivity.user.getId());
+        for(int i=0; i< listProductsUser.size(); i++){
+             marketsName.add(listProductsUser.get(i).getListName());
+        }*/
+
+        // ###############################################################
+        // ###############################################################
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, marketsName);
         searchMarketName.setAdapter(adapter);
 
         goButton = (Button)v.findViewById(R.id.goButton);
         scanButton = (Button)v.findViewById(R.id.scanButton);
+
+        // ##########################################
+        // ########## Requete#####################
+
 
         /*
         searchMarketName.addTextChangedListener(new TextWatcher() {
@@ -73,7 +105,17 @@ public class PlanFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), MainActivity2.class);
                 Bundle b = new Bundle();
-                ArrayList<Point> pointsProduits = new ArrayList<>();
+                // ################################################
+                // ################################################
+                /*ListProduct listSelected = new ListProduct();
+                for(ListProduct listProduct : listProductsUser ) {
+                    if(listProduct.getListName().equals(searchListName.getText().toString()))
+                        listSelected = listProduct;
+                }
+                for(Product product : listSelected.getListOfProducts())
+                    pointsProduits.add(new ProductPoint(product.getX(),product.getY()));*/
+                // ################################################
+                // ################################################
 
                 pointsProduits.add(new ProductPoint(2,3));
                 pointsProduits.add(new ProductPoint(4,10));

@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.Ingredient;
 import com.example.testmenu.R;
@@ -65,7 +66,7 @@ public class DisplayRecetteFragment extends Fragment {
         addRecetteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //  Controller.addNewRecette(MainActivity.user, new Recette(recetteNAme.getText().toString(),listOfIngredients, consignes)
                 SharedPreferences pref = getActivity().getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor edt = pref.edit();
                 edt.putString("titre_recette", titleHtmlPage);

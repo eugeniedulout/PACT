@@ -28,6 +28,9 @@ public class ListProduct {
         this.listName = listName;
         this.listOfProducts = listOfProducts;
     }
+    public ListProduct() {
+
+    }
 
     public ListProduct(JSONObject json_list) {
         this.listOfProducts = new ArrayList<Product>();

@@ -14,7 +14,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
+import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
+import com.example.testmenu.ListProduct;
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
 
@@ -82,6 +85,10 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
                 fragment = new AddProductFragment(marketId);
                 break;
             default:
+
+                // ##################################
+                // #################################
+                // Controller.addNewListOfProducts(MainActivity.user.getId(), new ListProduct(nameOfTheList.getText().toString(), displayedListOfProducts));
                 fragment = new ListFragment();
                 if (v.getId() == R.id.addTheList) {
                     displayedListOfProducts.clear();

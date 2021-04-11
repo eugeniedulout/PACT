@@ -164,6 +164,7 @@ public class Product implements Serializable{
 
     public void multiplyByQuantity(int quantite) {
         this.price = price * quantite;
+        this.name = name + " x" + String.valueOf(quantite);
     }
 }
 
