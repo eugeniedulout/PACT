@@ -7,7 +7,7 @@ public class Trajet {
 
     public Trajet (){
         this.listeSommets = new ArrayList<Point>() ;
-        this.listeSommets.add(new Point (3,0));
+
     }
 
     void addSommet (Point p){

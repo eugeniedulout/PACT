@@ -6,47 +6,47 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml
+8-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml
+9-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml
 10
 11    <uses-feature
-11-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:5:5-78
+11-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:5:5-78
 12        android:glEsVersion="0x00020000"
-12-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:5:19-51
+12-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:5:19-51
 13        android:required="true" />
-13-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:5:52-75
+13-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:5:52-75
 14
 15    <application
-15-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:7:5-21:19
+15-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:7:5-21:19
 16        android:allowBackup="true"
-16-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:8:9-35
+16-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:8:9-35
 17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 17-->[androidx.core:core:1.1.0] /Users/victorbakache/.gradle/caches/transforms-2/files-2.1/e601daed4ba62929db8b322b2974c8f8/core-1.1.0/AndroidManifest.xml:24:18-86
 18        android:debuggable="true"
 19        android:icon="@mipmap/ic_launcher"
-19-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:9:9-43
+19-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:9:9-43
 20        android:label="@string/app_name"
-20-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:10:9-41
+20-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:10:9-41
 21        android:roundIcon="@mipmap/ic_launcher_round"
-21-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:11:9-54
+21-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:11:9-54
 22        android:supportsRtl="true"
-22-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:12:9-35
+22-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:12:9-35
 23        android:testOnly="true"
 24        android:theme="@style/Theme.PlanDynamiqueV2" >
-24-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:13:9-53
+24-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:13:9-53
 25        <activity android:name="com.example.plandynamiquev2.MainActivity" >
-25-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:14:9-20:20
-25-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:14:19-47
+25-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:14:9-20:20
+25-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:14:19-47
 26            <intent-filter>
-26-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:15:13-19:29
+26-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:15:13-19:29
 27                <action android:name="android.intent.action.MAIN" />
-27-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:16:17-69
-27-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:16:25-66
+27-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:16:17-69
+27-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:16:25-66
 28
 29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:18:17-77
-29-->/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:18:27-74
+29-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:18:17-77
+29-->/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/AndroidManifest.xml:18:27-74
 30            </intent-filter>
 31        </activity>
 32    </application>

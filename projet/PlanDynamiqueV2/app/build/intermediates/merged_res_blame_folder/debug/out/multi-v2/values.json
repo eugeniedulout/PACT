@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/victorbakache/Downloads/PlanDynamiqueV2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/victorbakache/.gradle/caches/transforms-2/files-2.1/dd5a17c1008fb18b92564321c063363b/constraintlayout-1.1.3/res/values/values.xml",
@@ -135,6 +135,23 @@
                     }
                 },
                 {
+                    "source": "/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "52",
+                        "endOffsets": "64"
+                    },
+                    "to": {
+                        "startLines": "785",
+                        "startColumns": "4",
+                        "startOffsets": "48068",
+                        "endColumns": "52",
+                        "endOffsets": "48116"
+                    }
+                },
+                {
                     "source": "/Users/victorbakache/.gradle/caches/transforms-2/files-2.1/939730d5a02951a4e6900dbf39441da5/jetified-viewpager2-1.0.0/res/values/values.xml",
                     "from": {
                         "startLines": "2",
@@ -173,24 +190,7 @@
                     }
                 },
                 {
-                    "source": "/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "52",
-                        "endOffsets": "64"
-                    },
-                    "to": {
-                        "startLines": "785",
-                        "startColumns": "4",
-                        "startOffsets": "48068",
-                        "endColumns": "52",
-                        "endOffsets": "48116"
-                    }
-                },
-                {
-                    "source": "/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/res/values/colors.xml",
+                    "source": "/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/res/values/colors.xml",
                     "from": {
                         "startLines": "7,2,3,4,5,6,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -226,7 +226,7 @@
                     }
                 },
                 {
-                    "source": "/Users/victorbakache/Downloads/PlanDynamiqueV2/app/src/main/res/values/themes.xml",
+                    "source": "/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/src/main/res/values/themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

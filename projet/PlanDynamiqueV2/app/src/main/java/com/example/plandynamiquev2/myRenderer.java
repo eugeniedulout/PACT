@@ -19,12 +19,15 @@ import android.hardware.SensorEventListener ;
 
 public class myRenderer implements GLSurfaceView.Renderer {
     private  Trajet monTrajet;
+    private Trajet produits;
     private int mWidth;
     private int mHeight;
     private static String TAG = "myRenderer";
     public Cube cube ;
     public Triangle triangle ;
+    public Products product;
     public Square square ;
+    public Position position;
     private static final float Z_NEAR = 1f;
     private static final float Z_FAR = 40f;
 
@@ -38,6 +41,7 @@ public class myRenderer implements GLSurfaceView.Renderer {
 
     public void construction(){
         /**
+         * TEST
         monTrajet.addSommet(new Point(3,1));
         monTrajet.addSommet(new Point(3,2));
         monTrajet.addSommet(new Point(3,3));
@@ -46,17 +50,39 @@ public class myRenderer implements GLSurfaceView.Renderer {
         monTrajet.addSommet(new Point(3,6));
         monTrajet.addSommet(new Point(4,6));
          */
+        monTrajet.addSommet(new Point(3,1));
+        monTrajet.addSommet(new Point(3,2));
+        monTrajet.addSommet(new Point(3,3));
+        monTrajet.addSommet(new Point(3,4));
+        monTrajet.addSommet(new Point(3,5));
+        monTrajet.addSommet(new Point(3,6));
+        monTrajet.addSommet(new Point(3,7));
+        monTrajet.addSommet(new Point(4,7));
+        monTrajet.addSommet(new Point(5,7));
+
+
+        // ICI la fonction qui renvoie les sommets du plus court chemin
+
+
+
+        produits.addSommet(new Point(4,6));
+        produits.addSommet(new Point(2,13));
+        produits.addSommet(new Point(7,13));
 
 
     }
 
 
-
+    //Cnstructor of the products and of the path
     public myRenderer(Context context) {
-        //cube can not be instianated here, because of "no egl context"  no clue.
-        //do it in onSurfaceCreate and it is fine.  odd, but workable solution.
+
         monTrajet = new Trajet() ;
+        produits = new Trajet();
         construction();
+
+
+
+
     }
 
 
@@ -115,6 +141,8 @@ public class myRenderer implements GLSurfaceView.Renderer {
         triangle = new Triangle();
         cube = new Cube();
         square = new Square();
+        product = new Products();
+        position = new Position();
 
     }
 
@@ -129,8 +157,12 @@ public class myRenderer implements GLSurfaceView.Renderer {
         GLES30.glEnable(GLES30.GL_DEPTH_TEST);
 
         // Set the camera position (View matrix)
-        Matrix.setLookAtM(mViewMatrix, 0, 5f, 7f, -10f, 5f, -4f, 5f, 0f, 1.0f, 0.0f);
+        Matrix.setLookAtM(mViewMatrix, 0, 1f, 7f, -10f, 3f, -4f, 5f, 0f, 1.0f, 0.0f);
         // Création des rayons
+
+
+
+
 
         Matrix.setIdentityM(mRotationMatrix, 0); // Create a rotation and translation for the cube
         Matrix.translateM(mRotationMatrix, 0, 1.5f, 0.5f, 1f);
@@ -320,11 +352,75 @@ public class myRenderer implements GLSurfaceView.Renderer {
                 orientation=0;
             }
         }
+
+        for (int i =0; i < produits.size(); i++) {
+
+            int x= produits.get(i).getAbscisse();
+            int z= produits.get(i).getOrdonnee();
+
+            Matrix.setIdentityM(mRotationMatrix, 0);
+            Matrix.translateM(mRotationMatrix, 0,x, 0.5f,  z) ;
+            Matrix.scaleM(mRotationMatrix,0,0.3f,0.3f,0.3f);
+            //Matrix.rotateM(mRotationMatrix, 0, 90, 0, 0, 1);
+            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+            product.draw(mMVPMatrix);
+        }
+
+        // affichage de la posiion
+        // Reception des coordonnées en temps réels depuis le module de localisation
+        //Puis on translate
+
+        /**
+         * Code de l'affichage de la position (il faut la fonction qui renvoie les coordonnées
+         */
+        // x et z sont ici choisis arbitrairement, lors de l'intégration ils proviendront de la fonction
+        // renvoyant les coordonnées réelles de l'utilisateur
+        double x= 1.6;
+        double z=4.9;
+
+        if (x<1.5){
+            Matrix.setIdentityM(mRotationMatrix, 0);
+            Matrix.translateM(mRotationMatrix, 0,0, 0f, (float) z) ;
+            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+            position.draw(mMVPMatrix);
+
+        }
+
+
+        if (1.5<x && x<=4.5){
+            Matrix.setIdentityM(mRotationMatrix, 0);
+            Matrix.translateM(mRotationMatrix, 0,3, 0f, (float) z) ;
+            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+            position.draw(mMVPMatrix);
+
+        }
+
+        if (4.5<x && x<7.5){
+            Matrix.setIdentityM(mRotationMatrix, 0);
+            Matrix.translateM(mRotationMatrix, 0,6, 0f, (float) z) ;
+            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+            position.draw(mMVPMatrix);
+
+        }
+        if (7.5<x){
+            Matrix.setIdentityM(mRotationMatrix, 0);
+            Matrix.translateM(mRotationMatrix, 0,9, 0f, (float) z) ;
+            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+            position.draw(mMVPMatrix);
+
+        }
+
+
+
+
+
+
     }
-
-
-
-
 
     public void onSurfaceChanged(GL10 glUnused, int width, int height) {
         mWidth = width;

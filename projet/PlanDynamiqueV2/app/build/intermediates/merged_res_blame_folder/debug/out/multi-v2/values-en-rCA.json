@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/victorbakache/Downloads/PlanDynamiqueV2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "/Users/victorbakache/Documents/pact33/projet/PlanDynamiqueV2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
                     "source": "/Users/victorbakache/.gradle/caches/transforms-2/files-2.1/49a425eb020aa8d9cffc945a2839e23d/appcompat-1.1.0/res/values-en-rCA/values-en-rCA.xml",
