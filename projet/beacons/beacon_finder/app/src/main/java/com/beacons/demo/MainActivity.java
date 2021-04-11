@@ -209,16 +209,16 @@ public class MainActivity extends AppCompatActivity
         double [] coords = new double[2];
         switch (uuid) {
             case "1cad5144-5bda-11eb-ae93-0242ac130002":
-                coords[0] = 0.6;
-                coords[1] = 4;
+                coords[0] = -3.38;
+                coords[1] = 3.61;
                 break;
             case "2d68cb07-d277-465e-8a44-bf509eccf6de":
-                coords[0] = 0;
-                coords[1] = 2.2;
+                coords[0] = 8;
+                coords[1] = 3.8;
                 break;
             case "8ec76ea3-6668-48da-9866-75be8bc86fbb":
-                coords[0] = 0;
-                coords[1] = 0;
+                coords[0] = -4;
+                coords[1] = -4;
                 break;
             default:
                 coords[0] = -50;
