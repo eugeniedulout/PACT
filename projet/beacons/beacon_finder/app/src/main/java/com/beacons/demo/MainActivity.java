@@ -27,29 +27,38 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.beacons.demo.bluetooth.BeaconModel;
+import com.beacons.demo.bluetooth.Trilateration;
+
 public class MainActivity extends AppCompatActivity
 {
+
+    // Permissions du bluetooth
     private final static int BT_REQUEST_ID = 1;
     private final static int REQUEST_LOCATION = 0;
 
-    private static final String[] PERMISSION_LOCATION = {Manifest.permission.ACCESS_FINE_LOCATION};
     private boolean permissions_granted = false;
-    private Toast toast;
 
+    // Pour afficher les appareils (pas utile pour l'appli finale)
     private final BeaconsAdapter mAdapter = new BeaconsAdapter();
     private BluetoothAdapter mBtAdapter = null;
+
     //Before Lollipop
     private BluetoothAdapter.LeScanCallback mLeOldCallback = null;
     //After Lollipop
     private ScanCallback mLeNewCallback = null;
     TextView x_coord, y_coord;
 
+
+    //Objet calculant la position de l'utilisateur par trilatération
     Trilateration t = new Trilateration();
+    //Le point de départ (loin par défaut)
     private Point p = new Point(100,100);
 
     // smoothing constant for low-pass filter 0 - 1 ; a smaller
     public static float ALPHA = 0.03f;
 
+    // Liste des packets bluetooth reçus
     public ArrayMap<BluetoothDevice, byte[]> previous = new ArrayMap<BluetoothDevice, byte[]>();
 
     @Override
@@ -57,10 +66,10 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*
         ListView tmpListView = (ListView) findViewById(R.id.list_view);
         tmpListView.setAdapter(mAdapter);
-
+*/
         x_coord = (TextView) findViewById(R.id.x_coord);
         y_coord = (TextView) findViewById(R.id.y_coord);
 
@@ -189,7 +198,10 @@ public class MainActivity extends AppCompatActivity
         }
 
         if(beacon!=null) {
-            updateCoords(beacon);
+            Point p = getCoords(beacon);
+
+            x_coord.setText("x: "+p.getX());
+            y_coord.setText("y: "+p.getY());
         }
 
         runOnUiThread(new Runnable() {
@@ -231,7 +243,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    private void updateCoords(BeaconModel beacon) {
+    private Point getCoords(BeaconModel beacon) {
         //beacon.setCoords(Controller.getBeaconsCoords(beacon.uuid));
         Point coords = getCoords(beacon.uuid);
         beacon.setCoords(coords.getX(), coords.getY());
@@ -240,8 +252,7 @@ public class MainActivity extends AppCompatActivity
         t.updateBeacon(beacon);
         p = t.getPosition(100, p);
         Log.d("[POSITION]", "x: " + p.getX() + " ---- y: " + p.getY());
-        x_coord.setText("x: "+p.getX());
-        y_coord.setText("y: "+p.getY());
+        return p;
     }
     
     //Public method call by plan
