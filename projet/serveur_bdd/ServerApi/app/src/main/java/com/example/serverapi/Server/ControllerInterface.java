@@ -35,7 +35,7 @@ public interface ControllerInterface {
     public ArrayList<ProductOnSpecialOffer> getMarketOffers(int market_id);
 
     // Retourne la liste des amis de user_id
-    public ArrayList<Integer> getUserFriends(int user_id);
+    public ArrayList<User> getUserFriends(int user_id);
 
     // Ajoute une recette sur le serveur
     public void addNewRecette(int user_id, Recette recipe);
@@ -57,6 +57,8 @@ public interface ControllerInterface {
     // Renvoie null si l'adresse email existe déjà dans la BDD, sinon renvoie objet de type User 
      public User signUp(String email, String prenom, String nom, String password);
 
+     // Retourne la liste des amis de user_id
+    public ArrayList<User> getUserFriends(int user_id);
 
 
 
