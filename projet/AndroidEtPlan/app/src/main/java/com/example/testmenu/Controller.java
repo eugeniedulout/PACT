@@ -1,8 +1,5 @@
 package com.example.testmenu;
 
-
-import androidx.annotation.NonNull;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,8 +17,8 @@ import java.util.ArrayList;
 public class Controller {
 
     //URLS
-    public static final String SERVER_URL = "https://foodgps.r2.enst.fr/";
-    public static final String USER_FONCTIONS = "http/user_functions.php";
+    private static final String SERVER_URL = "https://foodgps.r2.enst.fr/";
+    private static final String USER_FONCTIONS = "http/user_functions.php";
 
     //ArrayList declaration
     private static ArrayList<String> keys = new ArrayList<String>();
@@ -38,26 +35,175 @@ public class Controller {
      *
      * @param mail
      * @param password
-     * @return a boolean : true if the connexion success or false if it fail
+     * @return the User object if the connexion successes or null if it fails
      */
-    public static boolean connect(String mail, String password) {
+    public static User connect(String mail, String password) {
         addParam("action", "connect");
         addParam("mail",mail);
         addParam("password",password);
 
-        JSONObject answer = null;
+        User user = null;
         try {
-            answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
+            JSONObject answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
+            if(answer.getBoolean("valid")) {
+                user = new User(answer.getJSONObject("user"));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+
+    /**
+     * Get a user from his id
+     * @param userId
+     * @return the User
+     */
+    public static User getUser(int userId) {
+        addParam("action", "get_user");
+        addParam("user_id", String.valueOf(userId));
+
+        try {
+            JSONObject answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
+            if(answer.getBoolean("valid")) {
+                User user = new User(answer.getJSONObject("user"));
+                return user;
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
+        return null;
+    }
+
+
+    /**
+     * Create an account
+     * @param firstname
+     * @param lastname
+     * @param mail
+     * @param password
+     * @return null if the mail is already used and the User object if the account was created
+     */
+    public static User signUp(String firstname, String lastname, String mail, String password) {
+        addParam("action", "sign_up");
+        addParam("mail",mail);
+        addParam("password",password);
+        addParam("firstname",firstname);
+        addParam("lastname",lastname);
+
         try {
-            return answer.getString("valid").equals("true");
+            JSONObject answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
+            if(answer.getBoolean("valid")) {
+                return new User(answer.getJSONObject("user"));
+            }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return false;
+
+        return null;
+    }
+
+
+    /**
+     * Change the password
+     * @param userId
+     * @param newPassword
+     */
+    public static void updatePassword(int userId, String newPassword) {
+        addParam("action", "update_password");
+        addParam("user_id", String.valueOf(userId));
+        addParam("new_password", newPassword);
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
+    /**
+     * Change the mail
+     * @param userId
+     * @param newMail
+     */
+    public static void setEmail(int userId, String newMail) {
+        addParam("action", "set_email");
+        addParam("user_id", String.valueOf(userId));
+        addParam("new_mail", newMail);
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
+
+
+    /*
+    FONCTIONS CONCERNANT LES AMIS
+     */
+
+
+    /**
+     * Accept a friend request
+     * @param userId
+     * @param friendId
+     */
+    public static void addFriend(int userId, int friendId) {
+        addParam("action","add_friend");
+        addParam("user_id", String.valueOf(userId));
+        addParam("friend_id", String.valueOf(friendId));
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
+
+    /**
+     * Send a friend request
+     * @param userId
+     * @param friendId
+     */
+    public static void sendDemand(int userId, int friendId) {
+        addParam("action", "send_demand");
+        addParam("user_id", String.valueOf(userId));
+        addParam("friend_id", String.valueOf(friendId));
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
+
+    /**
+     * Get all friend requests
+     * @param userId
+     * @return an ArrayList with all the id of the users who send a friend request
+     */
+    public static ArrayList<Integer> getDemandsOfUser(int userId) {
+        addParam("action", "get_demands");
+        addParam("user_id", String.valueOf(userId));
+
+        ArrayList<Integer> demands = new ArrayList<Integer>();
+        try {
+            JSONArray json_demands = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+
+            for(int i = 0; i < json_demands.length(); i++) {
+                demands.add(json_demands.getInt(i));
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return demands;
+    }
+
+
+    /**
+     * Reject a friend demand
+     * @param userId
+     * @param friendId
+     */
+    public static void refuseDemand(int userId, int friendId) {
+        addParam("action", "refuse_demand");
+        addParam("user_id", String.valueOf(userId));
+        addParam("friend_id", String.valueOf(friendId));
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
     }
 
 
@@ -75,26 +221,19 @@ public class Controller {
         addParam("action","get_all_products");
         addParam("market_id", String.valueOf(marketId));
 
-        JSONArray answer = null;
-        try {
-            answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         ArrayList<Product> products = new ArrayList<Product>();
+
         try {
+            JSONArray answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+
             for(int i =0; i< answer.length(); i++) {
                 JSONObject json_product = answer.getJSONObject(i);
-
-
                 products.add(new Product(json_product));
             }
-            return products;
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return null;
+        return products;
     }
 
 
@@ -112,25 +251,20 @@ public class Controller {
         addParam("action", "get_user_lists");
         addParam("user_id", String.valueOf(userId));
 
-        JSONArray answer = null;
-        try {
-            answer = new JSONArray(post(SERVER_URL + USER_FONCTIONS));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         ArrayList<ListProduct> listProducts = new ArrayList<ListProduct>();
+
         try {
+            JSONArray answer = new JSONArray(post(SERVER_URL + USER_FONCTIONS));
+
             for(int i=0; i<answer.length(); i++) {
                 JSONObject json_list = answer.getJSONObject(i);
                 listProducts.add(new ListProduct(json_list));
             }
-            return listProducts;
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return null;
+
+        return listProducts;
     }
 
 
@@ -163,28 +297,73 @@ public class Controller {
         addParam("friend_id", String.valueOf(friendId));
         addParam("user_id",String.valueOf(userId));
 
-        JSONArray answer = null;
-        try {
-            answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         ArrayList<ListProduct> listProducts = new ArrayList<ListProduct>();
         try {
+            JSONArray answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+
             for(int i=0; i < answer.length(); i++) {
                 JSONObject json_list = answer.getJSONObject(i);
                 listProducts.add(new ListProduct(json_list));
-
             }
-            return listProducts;
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return null;
+        return listProducts;
     }
 
+
+    /*
+    FONCTIONS RELATIVES AUX RECETTES
+     */
+
+    /**
+     * Add a new recipe for user user_id
+     *
+     * @param userId
+     * @param recipe
+     */
+  /*  public static void addNewRecette(int userId, Recette recipe) {
+        try {
+            JSONObject json_recipe = recipe.toJSON();
+            addParam("action","add_new_recipe");
+            addParam("user_id",String.valueOf(userId));
+            addParam("recipe_name", recipe.getRecetteName());
+            addParam("recipe",json_recipe.toString());
+
+            String result = post(SERVER_URL+USER_FONCTIONS);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Get all the recipes of the user with id user_id
+     * @param userId
+     * @return an ArrayList of all recipes
+     */
+ /*   public static ArrayList<Recette> getUserRecettes(int userId) {
+        addParam("action","get_user_recipes");
+        addParam("user_id",String.valueOf(userId));
+
+        ArrayList<Recette> recipes = new ArrayList<Recette>();
+
+        try {
+            JSONArray answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+
+            for (int i = 0; i < answer.length(); i++) {
+                JSONObject recipe = answer.getJSONObject(i);
+                recipes.add(new Recette(recipe));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return recipes;
+
+    }*/
 
 
     /*
@@ -198,52 +377,39 @@ public class Controller {
     public static ArrayList<Market> getAllMarkets() {
         addParam("action", "get_all_markets");
 
-        JSONArray answer = null;
-        try {
-            answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         ArrayList<Market> markets = new ArrayList<Market>();
 
-
         try {
+            JSONArray answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+
             for(int i=0; i < answer.length(); i++) {
                 JSONObject json_market = answer.getJSONObject(i);
 
-                int marketId = json_market.getInt("market_id");
-                String marketName = json_market.getString("name");
-                String logoUrl = json_market.getString("logo");
-                String openHours = json_market.getString("open_hours");
-                String closeHours = json_market.getString("close_hours");
-
-                markets.add(new Market(marketId, marketName, logoUrl, openHours, closeHours));
+                markets.add(new Market(json_market));
             }
 
-            return markets;
-        } catch (JSONException e){
-            e.printStackTrace();
-        }
-
-        return null;
-    }
-
-
-    public static ArrayList<ProductOnSpecialOffer> getMarketOffers(int market_id) {
-        addParam("action", "get_market_offers");
-        addParam("market_id", String.valueOf(market_id));
-
-        JSONArray answer = null;
-        try {
-            answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        return markets;
+    }
+
+
+    /**
+     * Get all the offers in the market with id market_id
+     * @param marketId
+     * @return an ArrayList of all products and the offer
+     */
+    public static ArrayList<ProductOnSpecialOffer> getMarketOffers(int marketId) {
+        addParam("action", "get_market_offers");
+        addParam("market_id", String.valueOf(marketId));
 
         ArrayList<ProductOnSpecialOffer> offers = new ArrayList<ProductOnSpecialOffer>();
 
         try {
+            JSONArray answer = new JSONArray(post(SERVER_URL+USER_FONCTIONS));
+
             for(int i =0; i< answer.length(); i++) {
                 JSONObject json_product = answer.getJSONObject(i);
                 ProductOnSpecialOffer onSpecialOffer = new ProductOnSpecialOffer(json_product);
@@ -253,33 +419,32 @@ public class Controller {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         return offers;
     }
 
 
+    /**
+     * Get the list of all the friends of the user user_id
+     * @param userId
+     * @return an ArrayList with the friends id
+     */
+    public static ArrayList<Integer> getUserFriends(int userId) {
+        addParam("action", "get_user_friends");
+        addParam("user_id", String.valueOf(userId));
 
-
-
-
-
-
-    public static String getUsername(int id) {
-        addParam("action","username");
-        addParam("id", String.valueOf(id));
-        JSONObject answer = null;
+        ArrayList<Integer> friends = new ArrayList<Integer>();
         try {
-            answer = new JSONObject(post(SERVER_URL+USER_FONCTIONS));
+            JSONArray answer = new JSONArray(post(SERVER_URL + USER_FONCTIONS));
+
+            for(int i =0; i<answer.length(); i++) {
+                friends.add(answer.getInt(i));
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        try {
-            return answer.getString("username");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+        return friends;
     }
-
 
     private static void addParam(String key, String value) {
         keys.add(key);
@@ -335,88 +500,5 @@ public class Controller {
         values.clear();
 
         return result;
-    }
-
-    public static class User {
-
-        private int id;
-        private String mail;
-        private String firstname;
-        private String lastname;
-
-        public User(int id, String mail, String firstname, String lastname) {
-            this.id = id;
-            this.mail = mail;
-            this.firstname = firstname;
-            this.lastname = lastname;
-        }
-
-        public User(JSONObject json_user) {
-            try {
-                this.id = json_user.getInt("id");
-                this.mail = json_user.getString("mail");
-                this.firstname = json_user.getString("mail");
-                this.lastname = json_user.getString("lastname");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getMail() {
-            return mail;
-        }
-
-        public void setMail(String mail) {
-            this.mail = mail;
-        }
-
-        public String getFirstname() {
-            return firstname;
-        }
-
-        public void setFirstname(String firstname) {
-            this.firstname = firstname;
-        }
-
-        public String getLastname() {
-            return lastname;
-        }
-
-        public void setLastname(String lastname) {
-            this.lastname = lastname;
-        }
-
-        public JSONObject toJSON() {
-            JSONObject json_user = new JSONObject();
-            try {
-                json_user.put("id", this.getId());
-                json_user.put("mail", this.getMail());
-                json_user.put("firstname", this.getFirstname());
-                json_user.put("lastname", this.getLastname());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return json_user;
-        }
-
-        @NonNull
-        @Override
-        public String toString() {
-            String str = "";
-            str += "user_id: " + this.getId() + "\n";
-            str += "mail: " + this.getMail() +"\n";
-            str += "firstname: " + this.getFirstname() + "\n";
-            str += "lastname: " + this.getLastname();
-
-            return str;
-        }
     }
 }

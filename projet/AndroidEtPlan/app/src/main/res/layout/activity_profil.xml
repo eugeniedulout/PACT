@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilActivity">
+
+    <TextView
+        android:id="@+id/txtProfil"
+        android:layout_width="108dp"
+        android:layout_height="24dp"
+        android:text="Bonjour Nom,"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.057" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="336dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProfil"
+        app:srcCompat="@drawable/profil" />
+
+    <LinearLayout
+        android:layout_width="349dp"
+        android:layout_height="269dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <Button
+            android:id="@+id/preferences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mes préférences"
+            app:backgroundTint="#009688"
+            app:icon="@drawable/ic_baseline_auto_awesome_24"
+            app:iconGravity="end" />
+
+        <Button
+            android:id="@+id/friends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mes amis"
+            app:backgroundTint="#009688"
+            app:icon="@drawable/ic_baseline_groups_24"
+            app:iconGravity="end" />
+
+        <Button
+            android:id="@+id/parameters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mes paramètres"
+            app:backgroundTint="#009688"
+            app:icon="@drawable/ic_baseline_miscellaneous_services_24"
+            app:iconGravity="end" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"></LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
