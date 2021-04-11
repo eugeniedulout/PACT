@@ -55,7 +55,7 @@
                     android:id="@+id/listdemandes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:clickable="true"></ListView>
+                    android:choiceMode="multipleChoice"></ListView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button22"
+                        android:id="@+id/btnAccept"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -73,7 +73,7 @@
                         app:iconTint="#39AE3E" />
 
                     <Button
-                        android:id="@+id/button8"
+                        android:id="@+id/btnRefuse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -88,6 +88,7 @@
                     android:layout_height="42dp" />
 
                 <ListView
+                    android:id="@+id/listesamis"
                     android:layout_width="match_parent"
                     android:layout_height="352dp" />
 
