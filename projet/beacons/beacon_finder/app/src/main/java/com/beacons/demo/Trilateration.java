@@ -39,14 +39,20 @@ public class Trilateration {
     public double normalize(double x, double y){
         return Math.sqrt(x * x + y * y);
     }
-
+    
+    public Point add(Point p,Point P){
+        Point pAdd = null;
+        pAdd.setX(p.getX() + P.getX());
+        pAdd.setX(p.getX() + P.getX());
+        return pAdd;
+    }
+    
     public Point trilateration(Point p){
         Point px = null;
         int ln = beacons.size();
         for(int i=0; i<ln-1;i++){
             px = PX(p,beacons.valueAt(i));
-            p.setX(p.getX() + px.getX());
-            p.setX(p.getX() + px.getX());
+            p = add(p,px);
         }
         p.setX(p.getX() / ln);
         p.setX(p.getY() / ln);
@@ -54,19 +60,10 @@ public class Trilateration {
     }
     
     public Point getPosition(int n,Point p) {
-        ArrayList<Point> sommets = new ArrayList<Point>();
-        for(int i=0; i< beacons.size()-1; i++) {
-            for(int j=i+1; j <beacons.size(); j++) {
-                Beacon b1 = beacons.valueAt(i);
-                Beacon b2 = beacons.valueAt(j);
-                Log.d("[INFOS]", "B1 -> " + b1.toString() + " / B2 -> " + b2.toString());
-
-                sommets.add(getPos2Beacons(b1,b2));
-            }
+        for(int i=0; i<n-1;i++){
+            p = add(p, trilateration(p));
         }
-        Point G = gravityCenter(sommets);
-        Log.d("Centre G --------", G.getX() +" " + G.getY());
-        return P;
+        return p;
     }
 
 }
