@@ -11,6 +11,5 @@ aux modules :
 
 * Interface Web
 
-* etc... Si deux modules le juge pertinent, il est possible qu'ils partagent un dossier 
+* etc... Si deux modules le juge pertinent, il est possible qu'ils partagent un dossier
 (par exemple le module Android et le module Plan dynamique).
-
