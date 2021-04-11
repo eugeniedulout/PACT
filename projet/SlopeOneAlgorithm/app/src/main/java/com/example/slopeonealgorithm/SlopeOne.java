@@ -59,7 +59,7 @@ public class SlopeOne {
                 diff.get(j).put(i, oldValue / count);
             }
         }
-        printData(data);
+        //printData(data);
     }
 
     /**
@@ -94,7 +94,7 @@ public class SlopeOne {
                     clean.put(j, uPred.get(j).doubleValue() / uFreq.get(j).intValue());
                 }
             }
-            for (Item j : InputData.items) {
+            for (Item j : ReceiveData.items) {
                 if (e.getValue().containsKey(j)) {
                     clean.put(j, e.getValue().get(j));
                 } else if (!clean.containsKey(j)) {
@@ -103,10 +103,10 @@ public class SlopeOne {
             }
             outputData.put(e.getKey(), clean);
         }
-        printData(outputData);
+        //printData(outputData);
     }
 
-    private static void printData(Map<User, HashMap<Item, Double>> data) {
+/*    private static void printData(Map<User, HashMap<Item, Double>> data) {
         for (User user : data.keySet()) {
             System.out.println(user.getUsername() + ":");
             print(data.get(user));
@@ -118,7 +118,7 @@ public class SlopeOne {
         for (Item j : hashMap.keySet()) {
             System.out.println(" " + j.getItemName() + " --> " + formatter.format(hashMap.get(j).doubleValue()));
         }
-    }
+    }*/
 
 }
 
