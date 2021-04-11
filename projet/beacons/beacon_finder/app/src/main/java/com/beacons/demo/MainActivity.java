@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity
     TextView x_coord, y_coord;
 
     Trilateration t = new Trilateration();
+    private Point p = new Point(3,1);
+
     // smoothing constant for low-pass filter 0 - 1 ; a smaller
     public static float ALPHA = 0.03f;
     public ArrayMap<BluetoothDevice, byte[]> previous = new ArrayMap<BluetoothDevice, byte[]>();
@@ -238,9 +240,9 @@ public class MainActivity extends AppCompatActivity
 
         Log.d("[DEBUG]", "Entering trilateration");
         t.updateBeacon(beacon);
-        Point G = t.getPosition();
-        x_coord.setText("x: "+G.getX());
-        y_coord.setText("y: "+G.getY());
+        p = t.getPosition(100, p);
+        x_coord.setText("x: "+p.getX());
+        y_coord.setText("y: "+p.getY());
     }
 
 
