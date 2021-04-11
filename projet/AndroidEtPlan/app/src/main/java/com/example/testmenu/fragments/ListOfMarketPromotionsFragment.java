@@ -52,7 +52,7 @@ public class ListOfMarketPromotionsFragment extends Fragment {
 
        /* int id = getResources().getIdentifier(market.getMarketLogo(), "drawable", getContext().getPackageName());
         marketImage.setImageResource(id);*/
-        Glide.with(getContext()).load(market.getMarketLogo()).into(marketImage);
+        Glide.with(getContext()).load(market.getMarketLogoUrl()).into(marketImage);
 
         ListView liste = (ListView) v.findViewById(R.id.listViewOfPromotions);
 

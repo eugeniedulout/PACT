@@ -15,14 +15,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.testmenu.Controller;
+import com.example.testmenu.FragmentController;
+import com.example.testmenu.R;
+import com.example.testmenu.fragments.ProfilFragment;
+
 import java.util.ArrayList;
 
-import zineb.epokamp.profilapp.Controller.Controller;
-import zineb.epokamp.profilapp.FragmentController;
-import zineb.epokamp.profilapp.MainActivity;
-import zineb.epokamp.profilapp.R;
 
-import static zineb.epokamp.profilapp.Controller.Controller.getUser;
 
 public class FriendsActivity extends Fragment {
     private Button retour;
@@ -52,13 +52,13 @@ public class FriendsActivity extends Fragment {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentController.swapFragmentInMainContainer(new MainActivity(), getContext());
+                FragmentController.swapFragmentInMainContainer(new ProfilFragment(), getContext());
             }
         });
         ajoutami.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentController.swapFragmentInMainContainer(new MainActivity2(), getContext());
+                FragmentController.swapFragmentInMainContainer(new AddFriendActivity(), getContext());
             }
         });
         demandes.setOnClickListener(new View.OnClickListener() {

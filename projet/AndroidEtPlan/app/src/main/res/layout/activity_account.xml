@@ -20,14 +20,14 @@
             android:id="@+id/textView6"
             android:layout_width="297dp"
             android:layout_height="79dp"
-            android:drawableStart="@drawable/ic_baseline_person_pin_24"
             android:drawableLeft="@drawable/ic_baseline_person_pin_24"
             android:gravity="center"
             android:singleLine="false"
             android:text="Mon compte"
             android:textColor="@color/colorbg"
             android:textSize="36dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_baseline_person_pin_24" />
 
         <Space
             android:layout_width="match_parent"

@@ -50,7 +50,7 @@ public class OffresFragment extends Fragment {
             Log.e("Logo", " " + markets.get(i).getMarketId());
             Log.e("eeeeeeeeeeeeeeeeeee", "eeeeee");
 
-            marketLogoUrlArray.add(markets.get(i).getMarketLogo());
+            marketLogoUrlArray.add(markets.get(i).getMarketLogoUrl());
         }
         for (int i =0; i<markets.size(); i++) {
             marketNameArray.add(markets.get(i).getMarketName());

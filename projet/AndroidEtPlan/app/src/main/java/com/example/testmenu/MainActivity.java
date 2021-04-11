@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-
+import com.example.testmenu.Friends.FriendsActivity;
 import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.fragments.AddRecetteFragment;
 import com.example.testmenu.fragments.ListFragment;
