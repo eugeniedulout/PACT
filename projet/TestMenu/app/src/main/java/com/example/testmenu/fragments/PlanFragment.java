@@ -39,6 +39,7 @@ public class PlanFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, marketsName);
         searchMarketName.setAdapter(adapter);
 
+
         goButton = (Button)v.findViewById(R.id.goButton);
         /*
         searchMarketName.addTextChangedListener(new TextWatcher() {

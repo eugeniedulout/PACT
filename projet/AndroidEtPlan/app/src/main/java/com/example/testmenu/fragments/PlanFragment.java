@@ -1,7 +1,10 @@
 package com.example.testmenu.fragments;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,13 +14,17 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.testmenu.R;
+import com.example.testmenu.ScanActivity;
 import com.example.testmenu.algorithmie.PlusCourtChemin;
 import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.algorithmie.point.ProductPoint;
 import com.example.testmenu.plan_dynamique.MainActivity2;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
 
@@ -25,12 +32,16 @@ public class PlanFragment extends Fragment {
     private AutoCompleteTextView searchMarketName;
     private AutoCompleteTextView searchListName;
     private Button goButton;
+    private Button scanButton;
+    private TextView resultScan;
+
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_plan, container, false);
+        ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CAMERA}, PackageManager.PERMISSION_GRANTED);
 
         searchMarketName = (AutoCompleteTextView)v.findViewById(R.id.serachMarketName);
         searchListName = (AutoCompleteTextView)v.findViewById(R.id.serachListName);
@@ -41,6 +52,8 @@ public class PlanFragment extends Fragment {
         searchMarketName.setAdapter(adapter);
 
         goButton = (Button)v.findViewById(R.id.goButton);
+        scanButton = (Button)v.findViewById(R.id.scanButton);
+
         /*
         searchMarketName.addTextChangedListener(new TextWatcher() {
 
@@ -73,8 +86,21 @@ public class PlanFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        scanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ScanButton(v);
+            }
+        });
         return v;
     }
+
+    public void ScanButton(View view){
+        IntentIntegrator intentIntegrator = new IntentIntegrator(getActivity());
+        intentIntegrator.initiateScan();
+
+    }
+
 
 
     private ArrayList<String> builderMarketsName (){

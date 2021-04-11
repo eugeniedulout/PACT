@@ -1,9 +1,11 @@
 package com.example.testmenu;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,9 +15,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chaquo.python.PyObject;
-import com.chaquo.python.Python;
-import com.chaquo.python.android.AndroidPlatform;
+
+
 import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.fragments.AddRecetteFragment;
 import com.example.testmenu.fragments.ListFragment;
@@ -25,6 +26,8 @@ import com.example.testmenu.fragments.ProfilFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -152,5 +155,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+
+        if (intentResult != null){
+            if (intentResult.getContents() == null){
+                Log.e("eoeo","cancelled");
+            }
+            else {
+                Log.e("code bar", intentResult.getContents());
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    int i=0;//position à récupérer
+    int j=0;//position à récupérer
+    int k=0;//position à récupérer
+    public void placeHolder(int i ,int j, int k, int resultCode ){
+        //Envoi de la position d'un produit en scannant son code
+    }
 
 }

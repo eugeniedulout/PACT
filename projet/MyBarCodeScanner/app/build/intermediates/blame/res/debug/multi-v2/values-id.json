@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\user\\AndroidStudioProjects\\MyBarCodeScanner\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
+            "outputFile": "C:\\Users\\maroc\\OneDrive\\Bureau\\PACT\\pact33\\projet\\MyBarCodeScanner\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\0f2c9f583a248dd1408403ab621b58f6\\jetified-zxing-android-embedded-4.0.2\\res\\values-id\\values-id.xml",
+                    "source": "C:\\Users\\maroc\\.gradle\\caches\\transforms-2\\files-2.1\\0f2c9f583a248dd1408403ab621b58f6\\jetified-zxing-android-embedded-4.0.2\\res\\values-id\\values-id.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
