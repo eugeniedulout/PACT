@@ -20,6 +20,7 @@ import android.hardware.SensorEventListener ;
 public class myRenderer implements GLSurfaceView.Renderer {
     private  Trajet monTrajet;
     private Trajet produits;
+    private Trajet listPositions;
     private int mWidth;
     private int mHeight;
     private static String TAG = "myRenderer";
@@ -57,15 +58,48 @@ public class myRenderer implements GLSurfaceView.Renderer {
         monTrajet.addSommet(new Point(3,5));
         monTrajet.addSommet(new Point(3,6));
         monTrajet.addSommet(new Point(3,7));
-        monTrajet.addSommet(new Point(4,7));
-        monTrajet.addSommet(new Point(5,7));
+        monTrajet.addSommet(new Point(3,8));
+        monTrajet.addSommet(new Point(3,9));
+        monTrajet.addSommet(new Point(3,10));
+        monTrajet.addSommet(new Point(3,11));
+        monTrajet.addSommet(new Point(3,12));
+        monTrajet.addSommet(new Point(3,13));
+        monTrajet.addSommet(new Point(3,14));
+        monTrajet.addSommet(new Point(4,14));
+        monTrajet.addSommet(new Point(5,14));
+        monTrajet.addSommet(new Point(6,14));
+        monTrajet.addSommet(new Point(6,13));
+        monTrajet.addSommet(new Point(6,12));
+        monTrajet.addSommet(new Point(6,13));
+        monTrajet.addSommet(new Point(6,14));
+        monTrajet.addSommet(new Point(7,14));
+        monTrajet.addSommet(new Point(8,14));
+        monTrajet.addSommet(new Point(9,14));
+        monTrajet.addSommet(new Point(9,13));
+        monTrajet.addSommet(new Point(9,12));
+        monTrajet.addSommet(new Point(9,11));
+        monTrajet.addSommet(new Point(9,10));
+        monTrajet.addSommet(new Point(9,9));
+        monTrajet.addSommet(new Point(9,8));
+        monTrajet.addSommet(new Point(9,7));
+        monTrajet.addSommet(new Point(8,7));
+        monTrajet.addSommet(new Point(7,7));
+        monTrajet.addSommet(new Point(6,7));
+        monTrajet.addSommet(new Point(6,6));
+        monTrajet.addSommet(new Point(6,5));
+        monTrajet.addSommet(new Point(6,4));
+        monTrajet.addSommet(new Point(6,3));
+        monTrajet.addSommet(new Point(6,2));
+        monTrajet.addSommet(new Point(6,1));
+
+
 
 
         // ICI la fonction qui renvoie les sommets du plus court chemin
 
 
 
-        produits.addSommet(new Point(4,6));
+        produits.addSommet(new Point(4,4));
         produits.addSommet(new Point(2,13));
         produits.addSommet(new Point(7,13));
 
@@ -78,6 +112,7 @@ public class myRenderer implements GLSurfaceView.Renderer {
 
         monTrajet = new Trajet() ;
         produits = new Trajet();
+        listPositions = new Trajet();
         construction();
 
 
@@ -157,11 +192,75 @@ public class myRenderer implements GLSurfaceView.Renderer {
         GLES30.glEnable(GLES30.GL_DEPTH_TEST);
 
         // Set the camera position (View matrix)
-        Matrix.setLookAtM(mViewMatrix, 0, 1f, 7f, -10f, 3f, -4f, 5f, 0f, 1.0f, 0.0f);
+        //Matrix.setLookAtM(mViewMatrix, 0, 1f, 6f, -10f, 4.5f, -4f, 5f, 0f, 1.0f, 0.0f);
         // Création des rayons
 
 
+        /**
+         * Code de l'affichage de la position (il faut la fonction qui renvoie les coordonnées
+         */
+        // x et z sont ici choisis arbitrairement, lors de l'intégration ils proviendront de la fonction
+        // renvoyant les coordonnées réelles de l'utilisateur
+        // listPosition.addSommet();
+        double x= 3;
+        double z=5;
+        double z_cam1 = z-6;
 
+
+
+        // Création des rayons
+
+        // affichage de la posiion
+        // Reception des coordonnées en temps réels depuis le module de localisation
+        //Puis on translate
+
+        if (x<1.5){
+            Matrix.setLookAtM(mViewMatrix, 0, 0, 2f, (float) z_cam1, 0, -0.6f, (float) z, 0f, 1.0f, 0.0f);
+            Matrix.setIdentityM(mRotationMatrix, 0);
+            Matrix.translateM(mRotationMatrix, 0,0, 0f, (float) z) ;
+            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+            position.draw(mMVPMatrix);
+
+        }
+
+
+        if (1.5<x && x<=4.5){
+            Matrix.setLookAtM(mViewMatrix, 0, 3, 2f, (float) z_cam1, 3, -0.6f, (float) z, 0f, 1.0f, 0.0f);
+            Matrix.setIdentityM(mRotationMatrix, 0);
+            Matrix.translateM(mRotationMatrix, 0,3, 0f, (float) z) ;
+            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+            position.draw(mMVPMatrix);
+
+        }
+
+        if (4.5<x && x<7.5){
+            Matrix.setLookAtM(mViewMatrix, 0, 6, 2f, (float) z_cam1, 6, -0.6f, (float) z, 0f, 1.0f, 0.0f);
+            Matrix.setIdentityM(mRotationMatrix, 0);
+            Matrix.translateM(mRotationMatrix, 0,6, 0f, (float) z) ;
+            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+            position.draw(mMVPMatrix);
+
+        }
+        if (7.5<x){
+            Matrix.setLookAtM(mViewMatrix, 0, 9, 2f, (float) z_cam1, 9, -0.6f, (float) z, 0f, 1.0f, 0.0f);
+            Matrix.setIdentityM(mRotationMatrix, 0);
+            Matrix.translateM(mRotationMatrix, 0,9, 0f, (float) z) ;
+            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+            position.draw(mMVPMatrix);
+
+        }
+
+
+        Matrix.setIdentityM(mRotationMatrix, 0);
+        Matrix.translateM(mRotationMatrix, 0, 6f, 0f, 0.3f);
+        Matrix.rotateM(mRotationMatrix, 0, 180, 0, 1, 0);
+        Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
+        Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
+        triangle.draw(mMVPMatrix);
 
 
         Matrix.setIdentityM(mRotationMatrix, 0); // Create a rotation and translation for the cube
@@ -194,6 +293,7 @@ public class myRenderer implements GLSurfaceView.Renderer {
         Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
         Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
         triangle.draw(mMVPMatrix);
+
 
 
         //première case = toujours l'entrée
@@ -355,11 +455,11 @@ public class myRenderer implements GLSurfaceView.Renderer {
 
         for (int i =0; i < produits.size(); i++) {
 
-            int x= produits.get(i).getAbscisse();
-            int z= produits.get(i).getOrdonnee();
+            int xp= produits.get(i).getAbscisse();
+            int zp= produits.get(i).getOrdonnee();
 
             Matrix.setIdentityM(mRotationMatrix, 0);
-            Matrix.translateM(mRotationMatrix, 0,x, 0.5f,  z) ;
+            Matrix.translateM(mRotationMatrix, 0,xp, 0.5f,  zp) ;
             Matrix.scaleM(mRotationMatrix,0,0.3f,0.3f,0.3f);
             //Matrix.rotateM(mRotationMatrix, 0, 90, 0, 0, 1);
             Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
@@ -367,53 +467,9 @@ public class myRenderer implements GLSurfaceView.Renderer {
             product.draw(mMVPMatrix);
         }
 
-        // affichage de la posiion
-        // Reception des coordonnées en temps réels depuis le module de localisation
-        //Puis on translate
-
-        /**
-         * Code de l'affichage de la position (il faut la fonction qui renvoie les coordonnées
-         */
-        // x et z sont ici choisis arbitrairement, lors de l'intégration ils proviendront de la fonction
-        // renvoyant les coordonnées réelles de l'utilisateur
-        double x= 1.6;
-        double z=4.9;
-
-        if (x<1.5){
-            Matrix.setIdentityM(mRotationMatrix, 0);
-            Matrix.translateM(mRotationMatrix, 0,0, 0f, (float) z) ;
-            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
-            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
-            position.draw(mMVPMatrix);
-
-        }
 
 
-        if (1.5<x && x<=4.5){
-            Matrix.setIdentityM(mRotationMatrix, 0);
-            Matrix.translateM(mRotationMatrix, 0,3, 0f, (float) z) ;
-            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
-            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
-            position.draw(mMVPMatrix);
 
-        }
-
-        if (4.5<x && x<7.5){
-            Matrix.setIdentityM(mRotationMatrix, 0);
-            Matrix.translateM(mRotationMatrix, 0,6, 0f, (float) z) ;
-            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
-            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
-            position.draw(mMVPMatrix);
-
-        }
-        if (7.5<x){
-            Matrix.setIdentityM(mRotationMatrix, 0);
-            Matrix.translateM(mRotationMatrix, 0,9, 0f, (float) z) ;
-            Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
-            Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
-            position.draw(mMVPMatrix);
-
-        }
 
 
 
