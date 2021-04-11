@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/My_Bar_Code_Scanner.iml" filepath="$PROJECT_DIR$/.idea/modules/My_Bar_Code_Scanner.iml" group="My_Bar_Code_Scanner" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="My Bar Code Scanner/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/My_Bar_Code_Scanner.iml" filepath="$PROJECT_DIR$/.idea/modules/My_Bar_Code_Scanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/My_Bar_Code_Scanner.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/My_Bar_Code_Scanner.app.iml" />
     </modules>
   </component>
 </project>

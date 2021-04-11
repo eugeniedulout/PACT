@@ -790,6 +790,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id container
 id content
 id contentPanel
 id custom
@@ -961,7 +962,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_test
 layout custom_dialog
+layout fragment_controller_activity
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
