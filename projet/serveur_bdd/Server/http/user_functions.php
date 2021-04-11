@@ -2,16 +2,8 @@
 include("db_connect.php");
 if(isset($_POST['action'])) {
         switch($_POST['action']) {
-        case "get_username":
-                $response = $db->query("SELECT firstname, lastname FROM Users WHERE id=".$_POST['id']);
-                $data = $response->fetch();
-                if($data != null) {
-                        $answer = ['ok' => true, 'username' => $data['username'] . " " . $data['lastname']];
-                }
-                $json_result = json_encode($answer);
-                print($json_result);
-                break;   
 
+	// Connection avec mail et mot de passe. Retourne deux valeur : valid (la connection a réussi ou non) et user (l'utilisateur si la connection a réussi)
 	case "connect":
 		$response = $db->query("SELECT * FROM Users WHERE mail=" . $db->quote($_POST['mail']));
 		$data = $response->fetch();
@@ -26,6 +18,7 @@ if(isset($_POST['action'])) {
 		print($json_result);
 		break;
 
+	// Récupérer tous les produits dans un magasin donné. Une liste encodée en JSON est retournée
 	case "get_all_products":
                 $req = "SELECT AllProductsRef.name, AllProductsRef.Image, ProductsInMarkets.price, AllProductsRef.description, x, y, z FROM AllProductsRef JOIN ProductsInMarkets ON AllProductsRef.product_barcode=ProductsInMarkets.barcode WHERE ProductsInMarkets.market=".$db->quote($_POST['market_id']);
                 $response = $db->query($req);
@@ -38,6 +31,7 @@ if(isset($_POST['action'])) {
                 print($json_result);
 		break;
 
+	// Retourne la liste en JSON de tous les magasins
         case "get_all_markets":
                 $req = "SELECT market_id, name, open_hours, close_hours, logo FROM Markets";
                 $response = $db->query($req);
@@ -50,6 +44,8 @@ if(isset($_POST['action'])) {
                 print($json_result);
                 break;
 
+
+	// Retourne les listes d'un ami
         case "get_friend_lists":
                 $user_id = $_POST['user_id'];
                 $friend_id = $_POST['friend_id'];
@@ -70,6 +66,8 @@ if(isset($_POST['action'])) {
                 closedir($dir);
                 break;
 
+	
+	// Retourne les listes d'un utilisateur
 	case "get_user_lists":
 		$user_id = $_POST['user_id'];
 		$dir_name = "/var/www/html/data/lists/$user_id/";
@@ -87,6 +85,8 @@ if(isset($_POST['action'])) {
 		closedir($dir);
 		break;
 
+
+	// Ajoute une nouvelle liste
         case "add_new_list":
                 $user_id = $_POST['user_id'];
                 $list_name = $_POST['list_name'];
@@ -98,6 +98,8 @@ if(isset($_POST['action'])) {
                 file_put_contents($dir_name.$list_name.'.json',$list_json);
 		break;
 
+
+	// Récupérer toutes les promotions d'un magasin
 	case "get_market_offers":
 		$market_id = $_POST['market_id'];
 		$req = "SELECT ProductsInMarkets.label, ProductsInMarkets.price, Promotions.new_price, Promotions.expire_date, AllProductsRef.Image, AllProductsRef.description, x, y, z FROM (ProductsInMarkets JOIN Promotions ON ProductsInMarkets.product_id = Promotions.product_id) JOIN AllProductsRef ON ProductsInMarkets.barcode = AllProductsRef.product_barcode WHERE ProductsInMarkets.market=$market_id";
@@ -112,6 +114,8 @@ if(isset($_POST['action'])) {
 		print($json_result);
 		break;
 
+
+	// Récupérer les amis d'un utilisateur
 	case 'get_user_friends':
 		$user_id = $_POST['user_id'];
 		$req = "SELECT friends FROM Users WHERE id=$user_id";
@@ -120,6 +124,7 @@ if(isset($_POST['action'])) {
 		break;
 
 
+	// Ajoute une recette sur l'espace de l'utilisateur
 	case "add_new_recipe":
 		$user_id = $_POST['user_id'];
 		$name = $_POST['recipe_name'];
@@ -133,6 +138,8 @@ if(isset($_POST['action'])) {
 		break;
 		
 
+
+	// Retourne l'ensemble des recettes d'un utilisateur
 	case "get_user_recipes":
 		$user_id = $_POST['user_id'];
 		$dir_name = "/var/www/html/data/recipes/$user_id/";
@@ -150,6 +157,7 @@ if(isset($_POST['action'])) {
 		break;
 
 
+	// Retourne un utilisateur en JSON à partur de son id
 	case "get_user":
 		$user_id = $_POST['user_id'];
 		$req = "SELECT mail, firstname, lastname FROM Users WHERE id=$user_id";
@@ -167,6 +175,7 @@ if(isset($_POST['action'])) {
 		break;
 
 
+	// Enregistre un utilisateur sur la base de donnée. Les données retournées sont valid (si le mail est déjà pris ou non) et user (l'utilisateur si l'enregistrement a réussi)
 	case "sign_up":
 		$mail = $db->quote($_POST['mail']);
 		$password = $_POST['password'];
@@ -177,9 +186,9 @@ if(isset($_POST['action'])) {
 
 		$req = "SELECT * FROM Users WHERE mail=$mail";
 		$data = $db->query($req);
-		if(!($data->fetch())) {
+		if(!($data->fetch())) {		//Le mail n'est pas présent dans la base de donnée
 			$password_hash = password_hash($password, PASSWORD_DEFAULT);
-			$req = "INSERT INTO Users (`mail`, `password`, `firstname`, `lastname`);SELECT LAST_INSERT_ID();";
+			$req = "INSERT INTO Users (`mail`, `password`, `firstname`, `lastname`) VALUES ($mail, '$password_hash', $firstname, $lastname);SELECT LAST_INSERT_ID();";
 			$data = $db->exec($req);
 			$id = $data->fetch()[0];
 
@@ -190,16 +199,18 @@ if(isset($_POST['action'])) {
 		break;
 
 
+	// Met à jour le mot de passe
 	case "update_password":
 		$user_id = $_POST['user_id'];
 		$new_pass = $_POST['new_password'];
 
 		$pass_hash = password_hash($new_pass, PASSWORD_DEFAULT);
-		$req = "UPDATE Users SET password=$pass_hash WHERE id=$user_id";
+		$req = "UPDATE Users SET password='$pass_hash' WHERE id=$user_id";
 		$db->exec($req);
 		break;
 
 
+	// Met à jour l'adresse mail
 	case "set_email":
 		$user_id = $_POST['user_id'];
 		$new_mail = $db->quote($_POST['new_mail']);
@@ -210,6 +221,7 @@ if(isset($_POST['action'])) {
 
 
 
+	// Ajoute un ami à la liste d'amis
 	case "add_friend":
 		$user_id = $_POST['user_id'];
 		$friend_id = $_POST['friend_id'];
@@ -228,18 +240,24 @@ if(isset($_POST['action'])) {
 		break;
 		
 
+	// Ajoute une demande à la liste des demandes d'ami d'un autre utilisateur
 	case "send_demand":
 		$user_id = $_POST['user_id'];
 		$friend_id = $_POST['friend_id'];
 
-		$req = "SELECT friends,demands FROM Users WHERE id=$friend_id";
+		// On vérifie qu'ils ne sont pas déjà amis
+		$req = "SELECT friends FROM Users WHERE id=$user_id";
 		$data = $db->query($req);
 		$row = $data->fetch();
-		$json_friends = $row['friends'];
-		$friends_array = json_decode($json_friends, true);
+		$friends_array = json_decode($row['friends'], true);
 
-		if(!in_array($friend_id, $friends_array)) {
-			$demands = json_decode($row['demands'], true);
+		// On vérifie que la demande n'est pas déjà prise en compte
+		$req = "SELECT demands FROM Users WHERE id=$friend_id";
+		$data = $db->query($req);
+		$row = $data->fetch();
+		$demands = json_decode($row['demands'], true);
+
+		if(!in_array($friend_id, $friends_array) && !in_array($user_id, $demands)) {
 			array_push($demands, $user_id);
 			$json_demands = json_encode($demands);
 			$req = "UPDATE Users SET demands='$json_demands' WHERE id=$friend_id";
