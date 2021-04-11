@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Friends.mesdemandesActivityPrime">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/retour"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="#009688"
+            android:text="Amis"
+            app:backgroundTint="#009688"
+            app:icon="@drawable/ic_baseline_replay_24" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/mesamis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_horizontal"
+                    android:text="Ajouter un ami"
+                    app:backgroundTint="#009688"
+                    app:icon="@drawable/ic_baseline_person_add_24" />
+
+                <Button
+                    android:id="@+id/demandes2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="67dp"
+                    android:text="Mes demandes"
+                    app:backgroundTint="#009688"
+                    app:icon="@drawable/ic_baseline_contact_mail_24" />
+
+                <ListView
+                    android:id="@+id/listdemandes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"></ListView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Accepter"
+                        app:backgroundTint="#64C8B9"
+                        app:icon="@android:drawable/ic_input_add"
+                        app:iconTint="#39AE3E" />
+
+                    <Button
+                        android:id="@+id/button8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Refuser"
+                        app:backgroundTint="#64C8B9"
+                        app:icon="@android:drawable/ic_delete"
+                        app:iconTint="#F44336" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp" />
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="352dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

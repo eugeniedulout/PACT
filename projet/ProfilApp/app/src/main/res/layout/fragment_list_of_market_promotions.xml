@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/marketNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="18dp"
+        android:text="Promotion en cours chez"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imageMarket"
+        android:layout_width="35dp"
+        android:layout_height="45dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/marketNameText"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ListView
+        android:id="@+id/listViewOfPromotions"
+        android:name="com.example.testmenu.ListOfProductsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_below="@id/imageMarket"
+        android:layout_marginTop="15dp" />
+</RelativeLayout>

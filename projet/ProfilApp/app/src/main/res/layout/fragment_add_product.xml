@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginStart="0dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginBottom="0dp"
+    android:layout_toRightOf="@id/quantiteText"
+    tools:context=".fragments.AddProductFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/addProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Ajouter un produit dans la liste"
+        android:textSize="20sp" />
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:id="@+id/serachProduct"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+
+        android:layout_below="@id/addProduct"
+        android:layout_marginStart="15dp"
+        android:paddingLeft="3dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="Recherchez un produit"
+        android:background="@drawable/style_edit_text"
+        android:queryHint="Recherchez un produit"
+        android:completionThreshold="1"
+        >
+    </AutoCompleteTextView>
+
+    <LinearLayout
+        android:id="@+id/QuantityAndButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/serachProduct"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/quantiteText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="5"
+            android:text="Quantité"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/addNewRecette"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_blue"
+            android:src="@drawable/ic_baseline_add_24" />
+
+        <TextView
+            android:id="@+id/quantiteNumberText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:text="1"
+            android:textSize="30sp" />
+
+        <ImageButton
+            android:id="@+id/minusButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_blue"
+            android:src="@drawable/ic_baseline_remove_24" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/firstSep"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/QuantityAndButtons"
+        android:layout_marginTop="15dp"
+        android:background="#c0c0c0" />
+
+    <FrameLayout
+        android:id="@+id/containerProductInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/firstSep">
+
+    </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addToListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_baseline_check_24"
+        android:text="ADD"
+        app:backgroundTint="#F41D1D" />
+
+</RelativeLayout>
