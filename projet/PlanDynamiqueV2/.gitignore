@@ -7,7 +7,7 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-/app/build/intermediates/incremental/debug-mergeNativeLibs
+/app/build/intermediates/incremental/
 .DS_Store
 /build
 /captures
