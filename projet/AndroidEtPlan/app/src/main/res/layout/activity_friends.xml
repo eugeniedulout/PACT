@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FriendsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/retour"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Mes amis"
+            app:backgroundTint="#009688"
+            app:icon="@drawable/ic_baseline_replay_24" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="47dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/ajoutami"
+                    android:layout_width="wrap_content"
+                    android:layout_height="61dp"
+                    android:gravity="center|center_horizontal"
+                    android:text="Ajouter un ami"
+                    app:backgroundTint="#009688"
+                    app:icon="@drawable/ic_baseline_person_add_24" />
+
+                <Button
+                    android:id="@+id/demandes"
+                    android:layout_width="198dp"
+                    android:layout_height="67dp"
+                    android:text="Mes demandes"
+                    app:backgroundTint="#009688"
+                    app:icon="@drawable/ic_baseline_contact_mail_24" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp" />
+
+                <ListView
+                    android:id="@+id/listeamis"
+                    android:layout_width="match_parent"
+                    android:layout_height="352dp" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

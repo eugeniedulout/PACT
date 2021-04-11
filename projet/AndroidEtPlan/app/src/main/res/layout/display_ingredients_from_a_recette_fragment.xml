@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/rName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:text="TextView"
+        android:textColor="#009688"
+        android:textSize="24sp" />
+
+    <ListView
+        android:id="@+id/listViewIngre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/consigneRecycle"
+        android:layout_below="@id/rName"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="0dp">
+
+    </ListView>
+
+    <View
+        android:id="@+id/sp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/consigneRecycle"
+        android:layout_below="@id/listViewIngre"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:background="#c0c0c0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/consigneRecycle"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_baseline_add_shopping_cart_24" />
+</RelativeLayout>
