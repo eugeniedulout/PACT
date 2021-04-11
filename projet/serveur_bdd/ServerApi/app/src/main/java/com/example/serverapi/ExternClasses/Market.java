@@ -1,5 +1,8 @@
 package com.example.serverapi.ExternClasses;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Market {
     private int marketId;
     private String marketName;
@@ -54,4 +57,33 @@ public class Market {
         this.openHour = openHour;
         this.closeHour = closeHour;
     }
+
+    public Market(JSONObject json_market) {
+        try {
+            this.marketId = json_market.getInt("market_id");
+            this.marketName = json_market.getString("name");
+            this.marketLogoUrl = json_market.getString("logo");
+            this.openHour = json_market.getString("open_hours");
+            this.closeHour = json_market.getString("close_hours");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public JSONObject toJSON() {
+        JSONObject json_market = new JSONObject();
+        try {
+            json_market.put("market_id", this.marketId);
+            json_market.put("name", this.marketName);
+            json_market.put("logo", this.marketLogoUrl);
+            json_market.put("open_hours", this.openHour);
+            json_market.put("close_hours", this.closeHour);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return json_market;
+    }
+
+
 }
