@@ -1,5 +1,10 @@
 package com.example.testmenu;
 
+import android.content.Context;
+
+import com.example.testmenu.fragments.DisplayIngredientsFromRecetteFragment;
+import com.example.testmenu.fragments.DisplayedProductsFromAListFragment;
+
 import java.util.ArrayList;
 
 public class Recette {
@@ -24,6 +29,10 @@ public class Recette {
 
     public ArrayList<String> getCookingInstructions() {
         return cookingInstructions;
+    }
+
+    public void displayIngredientsInTheRecette(Context context) {
+        FragmentController.swapFragmentInMainContainer(new DisplayIngredientsFromRecetteFragment(this), context);
     }
 
 }

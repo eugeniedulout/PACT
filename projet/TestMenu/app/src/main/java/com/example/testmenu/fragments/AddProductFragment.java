@@ -3,6 +3,7 @@ package com.example.testmenu.fragments;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,11 +31,15 @@ public class AddProductFragment extends Fragment {
     private  Fragment fragmentProductInfo;
     private int count = 1;
     private FloatingActionButton addToListButton;
+    private int marketId;
 
     private ArrayList<String> arrayProductsName = new ArrayList<String>();
 
     private int dataSentCounter = 0;
 
+    public  AddProductFragment(int marketId) {
+        this.marketId = marketId;
+    }
 
 
     @Nullable
@@ -46,6 +51,7 @@ public class AddProductFragment extends Fragment {
         quantityNumberText = (TextView)v.findViewById(R.id.quantiteNumberText);
         searchProduct = (AutoCompleteTextView)v.findViewById(R.id.serachProduct);
         addToListButton = (FloatingActionButton)v.findViewById(R.id.addToListButton);
+        Log.e("TAG2", ""+marketId);
 
         addToListButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,9 +62,8 @@ public class AddProductFragment extends Fragment {
                     result.putSerializable("productToAdd", productToAdd);
 
                     getParentFragmentManager().setFragmentResult("requestProductToAdd", result);
-                    if(!BuildingListFragment.getInstance().isAdded()) {
-                        FragmentController.swapFragmentInMainContainer(BuildingListFragment.getInstance(), getContext());
-                    }
+                    FragmentController.swapFragmentInMainContainer(new BuildingListFragment(marketId), getContext());
+
 
             }
         });

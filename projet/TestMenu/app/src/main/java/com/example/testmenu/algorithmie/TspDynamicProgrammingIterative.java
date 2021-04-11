@@ -147,7 +147,7 @@ public class TspDynamicProgrammingIterative {
         }
     }
 
-    public static List<Integer> main(double[][] distanceMatrix, int startNode  ) {
+    public static List<Integer> getOrdre(double[][] distanceMatrix, int startNode  ) {
         // Create adjacency matrix
         /*for (double[] row : distanceMatrix) java.util.Arrays.fill(row, 10000);
         distanceMatrix[5][0] = 10;

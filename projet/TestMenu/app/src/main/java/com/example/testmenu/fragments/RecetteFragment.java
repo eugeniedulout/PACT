@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -55,6 +56,15 @@ public class RecetteFragment extends Fragment implements  View.OnClickListener {
         listViewRecettes.setAdapter(adapter);
 
 
+        listViewRecettes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Log.e("click" , " a" + listOfRecette.get(position).getRecetteName());
+
+                listOfRecette.get(position).displayIngredientsInTheRecette(getContext());
+            }
+        });
         return v;
     }
     private void initRecette(){

@@ -1,24 +1,33 @@
 package com.example.testmenu.fragments;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
+import com.example.testmenu.Ingredient;
 import com.example.testmenu.ListProduct;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
 import com.example.testmenu.adapters.ListAdapter;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 
@@ -27,7 +36,9 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
     private ImageButton addNewListe;
     private ArrayList<ListProduct> listlistOfProducts = new ArrayList<>();
     private ArrayList<Product> products = new ArrayList<>();
+    private DialogMarket dialogMarket ;
 
+    private  ListView listViewOflistOfProducts;
     /*
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -51,36 +62,42 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        ArrayList<ListProduct> listProducts = Controller.getUserLists(1);
 
         View v = inflater.inflate(R.layout.fragment_liste, container, false);
+
+
 
 
         switchToRecette = (CardView) (v.findViewById(R.id.switchToRecette));
         switchToRecette.setOnClickListener(this::onClick);
 
         addNewListe = (ImageButton)v.findViewById(R.id.addNewList);
-        addNewListe.setOnClickListener(this::onClick);
+        addNewListe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new DialogMarket().show(getParentFragmentManager(),"Dialog !");
+
+            }
+        });
 
         initList();
 
-        ListView listViewOflistOfProducts = (ListView) v.findViewById(R.id.listOflistOfProducts);
+        listViewOflistOfProducts = (ListView) v.findViewById(R.id.listOflistOfProducts);
 
-        /*listlistOfProducts.add(listProducts.get(0));
-        listlistOfProducts.add(new ListProduct("Deuxieme liste",products));
+        /*listlistOfProducts.add(new ListProduct("Deuxieme liste",products));
         listlistOfProducts.add(new ListProduct("Troisieme liste",products));*/
 
-        for(ListProduct listProduct : listProducts)
-            listlistOfProducts.add(listProduct);
 
-        ListAdapter adapter = new ListAdapter(getContext(), listlistOfProducts);
-        listViewOflistOfProducts.setAdapter(adapter);
+
+
 
 
         listViewOflistOfProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
+                Log.e("click" , " a" + listlistOfProducts.get(position).getListName());
                 listlistOfProducts.get(position).displayProductsInTheList(getContext());
             }
         });
@@ -94,6 +111,9 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
         listlistOfProducts.clear();
     }
 
+    private void openDialog() {
+
+    }
     private void initList(){
 
         products.add(new Product("Pomme", "pomme", 0.5, "La pomme c'est bon pour la santé !"));
@@ -116,12 +136,27 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.addNewList:
-                if(!BuildingListFragment.getInstance().isAdded())
-                    FragmentController.swapFragmentInMainContainer(BuildingListFragment.getInstance(), getContext());
+               /* if(!BuildingListFragment.getInstance().isAdded())
+                    FragmentController.swapFragmentInMainContainer(BuildingListFragment.getInstance(), getContext());*/
                 break;
             case R.id.switchToRecette:
                 FragmentController.swapFragmentInMainContainer(new RecetteFragment(), getContext());
                 break;
+        }
+    }
+
+
+    private class loadLists extends AsyncTask<Void,Void,Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            ArrayList<ListProduct> listProducts = Controller.getUserLists(1);
+            for(ListProduct listProduct : listProducts)
+                listlistOfProducts.add(listProduct);
+            ListAdapter adapter = new ListAdapter(getContext(), listlistOfProducts);
+            listViewOflistOfProducts.setAdapter(adapter);
+            return null;
         }
     }
 }

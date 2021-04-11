@@ -1,6 +1,7 @@
 package com.example.testmenu.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,17 +27,12 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
     private ImageView addTheList;
     private EditText nameOfTheList;
     private ImageView returnTodisplayList;
+    private int marketId;
 
-    private static final BuildingListFragment buildingListFragment = new BuildingListFragment();
-
-    private BuildingListFragment(){
-        setArguments(new Bundle());
-
+    public BuildingListFragment(int marketId){
+        this.marketId = marketId;
     }
 
-    public static BuildingListFragment getInstance() {
-        return buildingListFragment;
-    }
 
     public void setDisplayedListOfProducts(ArrayList<Product> displayedListOfProducts) {
         this.displayedListOfProducts = displayedListOfProducts;
@@ -45,6 +41,8 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        Log.e("TAG", ""+marketId);
 
         getParentFragmentManager().setFragmentResultListener("requestProductToAdd", this, new FragmentResultListener() {
             @Override
@@ -75,18 +73,13 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
         return v;
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        getArguments().putSerializable("displayedProducts", displayedListOfProducts);
-    }
 
     @Override
     public void onClick(View v) {
         Fragment fragment;
         switch (v.getId()) {
             case R.id.addProductButton:
-                fragment = new AddProductFragment();
+                fragment = new AddProductFragment(marketId);
                 break;
             default:
                 fragment = new ListFragment();

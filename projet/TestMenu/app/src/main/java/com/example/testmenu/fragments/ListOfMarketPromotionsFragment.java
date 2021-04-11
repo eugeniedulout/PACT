@@ -48,7 +48,7 @@ public class ListOfMarketPromotionsFragment extends Fragment {
 
         marketNameText.setText("Promotions chez " + market.getMarketName());
 
-        ArrayList<ProductOnSpecialOffer> productOnSpecialOffers = Controller.getMarketOffers(1);
+        ArrayList<ProductOnSpecialOffer> productOnSpecialOffers = Controller.getMarketOffers(market.getMarketId());
 
        /* int id = getResources().getIdentifier(market.getMarketLogo(), "drawable", getContext().getPackageName());
         marketImage.setImageResource(id);*/

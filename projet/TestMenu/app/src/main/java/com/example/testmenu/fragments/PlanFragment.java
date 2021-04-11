@@ -14,6 +14,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.testmenu.R;
+import com.example.testmenu.algorithmie.PlusCourtChemin;
+import com.example.testmenu.algorithmie.point.Point;
+import com.example.testmenu.algorithmie.point.ProductPoint;
 
 import java.util.ArrayList;
 
@@ -55,6 +58,16 @@ public class PlanFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), TestPlan.class);
+                Bundle b = new Bundle();
+                ArrayList<Point> pointsProduits = new ArrayList<>();
+                pointsProduits.add(new ProductPoint(2,3));
+                pointsProduits.add(new ProductPoint(4,11));
+                pointsProduits.add(new ProductPoint(5,12));
+                pointsProduits.add(new ProductPoint(8,11));
+                pointsProduits.add(new ProductPoint(7,11));
+                pointsProduits.add(new ProductPoint(8,2));
+                b.putSerializable("produits coordonnees",pointsProduits);
+                intent.putExtras(b);
                 startActivity(intent);
             }
         });
