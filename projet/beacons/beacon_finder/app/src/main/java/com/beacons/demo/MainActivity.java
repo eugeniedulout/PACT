@@ -12,7 +12,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.os.Handler;
 import android.os.Bundle;
 import android.util.ArrayMap;
 import android.util.Log;
@@ -24,7 +23,6 @@ import java.util.Date;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -34,7 +32,7 @@ public class MainActivity extends AppCompatActivity
     private final static int BT_REQUEST_ID = 1;
     private final static int REQUEST_LOCATION = 0;
 
-    private static String[] PERMISSION_LOCATION = {Manifest.permission.ACCESS_FINE_LOCATION};
+    private static final String[] PERMISSION_LOCATION = {Manifest.permission.ACCESS_FINE_LOCATION};
     private boolean permissions_granted = false;
     private Toast toast;
 
@@ -47,9 +45,12 @@ public class MainActivity extends AppCompatActivity
     TextView x_coord, y_coord;
 
     Trilateration t = new Trilateration();
+    private Point p = new Point(3,1);
+
     // smoothing constant for low-pass filter 0 - 1 ; a smaller
     public static float ALPHA = 0.03f;
-    public ArrayMap <Integer,Byte[]> previous = new ArrayMap<>();
+
+    public ArrayMap<BluetoothDevice, byte[]> previous = new ArrayMap<BluetoothDevice, byte[]>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -160,8 +161,13 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void handleNewBeaconDiscovered(final BluetoothDevice device, final int rssi, final byte[] advertisement) {
+    private void handleNewBeaconDiscovered(final BluetoothDevice device, final int rssi, byte[] advertisement) {
         //Here in a thread not blocking UI
+        
+        if (previous.containsKey(device)){
+            Log.d("Filter", "FILTER");
+            advertisement = filter(advertisement,previous.get(device),ALPHA);
+        }
         
         if(BeaconModel.isAltBeacon(advertisement)) {
             Log.d("BEACON", "------------------------  ALT BEACON  -----------------------");
@@ -204,16 +210,16 @@ public class MainActivity extends AppCompatActivity
         double [] coords = new double[2];
         switch (uuid) {
             case "1cad5144-5bda-11eb-ae93-0242ac130002":
-                coords[0] = 0.6;
-                coords[1] = 4;
+                coords[0] = -3.38;
+                coords[1] = 3.61;
                 break;
             case "2d68cb07-d277-465e-8a44-bf509eccf6de":
-                coords[0] = 0;
-                coords[1] = 2.2;
+                coords[0] = 8;
+                coords[1] = 3.8;
                 break;
             case "8ec76ea3-6668-48da-9866-75be8bc86fbb":
-                coords[0] = 0;
-                coords[1] = 0;
+                coords[0] = -4;
+                coords[1] = -4;
                 break;
             default:
                 coords[0] = -50;
@@ -225,7 +231,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
     private void updateCoords(BeaconModel beacon) {
         //beacon.setCoords(Controller.getBeaconsCoords(beacon.uuid));
         double [] coords = getCoords(beacon.uuid);
@@ -233,21 +238,25 @@ public class MainActivity extends AppCompatActivity
 
         Log.d("[DEBUG]", "Entering trilateration");
         t.updateBeacon(beacon);
-        Point G = t.getPosition();
-        x_coord.setText("x: "+G.getX());
-        y_coord.setText("y: "+G.getY());
+        p = t.getPosition(100, p);
+        x_coord.setText("x: "+p.getX());
+        y_coord.setText("y: "+p.getY());
+    }
+    
+    //Public method call by plan
+    public Point getPosition(){
+        return p;
     }
 
 
-
-    public static float[] filter(float[] input, float[] prev, float alpha) {
+    public static byte[] filter(byte[] input, byte[] prev, float alpha) {
 		if (input == null || prev == null)
 			throw new NullPointerException("input and prev float arrays must be non-NULL");
 		if (input.length != prev.length)
 			throw new IllegalArgumentException("input and prev must be the same length");
 
 		for (int i = 0; i < input.length; i++) {
-			prev[i] = prev[i] + alpha * (input[i] - prev[i]);
+			prev[i] = (byte) (prev[i] + alpha * (input[i] - prev[i]));
 		}
 		return prev;
 	}
@@ -282,8 +291,6 @@ public class MainActivity extends AppCompatActivity
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
         }
     }
-
-
 
 
     @Override
