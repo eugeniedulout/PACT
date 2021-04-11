@@ -7,6 +7,7 @@ import com.example.testmenu.algorithmie.dijkstra.PathAndDistances;
 import com.example.testmenu.algorithmie.dijkstra.VertexInterface;
 import com.example.testmenu.algorithmie.point.Plan;
 import com.example.testmenu.algorithmie.point.Point;
+import com.example.testmenu.algorithmie.point.PointE;
 import com.example.testmenu.algorithmie.point.ProductPoint;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class PlusCourtChemin {
 
 
 
-    public static ArrayList<Point>  getCoordonnesChemin(ArrayList<Point> pointProduits)  {
+    public static ArrayList<PointE>  getCoordonnesChemin(ArrayList<Point> pointProduits)  {
 
 
         ArrayList<Point> coordonnes = new ArrayList();
@@ -197,8 +198,14 @@ public class PlusCourtChemin {
                 coordonnesCheminFinal.add((Point)pointts.get(j));
             }
 
+        }
 
+        m = coordonnesCheminFinal.size();
+        ArrayList<PointE> coordonnesCheminFinalE = new ArrayList<PointE>();
 
+        for(int i = 0; i<m; i++) {
+            coordonnesCheminFinalE.add(new PointE((int) coordonnesCheminFinal.get(i).getX(), (int) coordonnesCheminFinal.get(i).getY()));
+            Log.e("entier: " , coordonnesCheminFinalE.get(i).getLabel());
         }
 
 
@@ -215,7 +222,7 @@ public class PlusCourtChemin {
 
 		for (VertexInterface vertex : vertices)
 			Log.e("Test" ,vertex.getLabel());*/
-        return coordonnesCheminFinal;
+        return coordonnesCheminFinalE;
     }
 
 

@@ -15,13 +15,14 @@ import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
 import com.example.testmenu.algorithmie.PlusCourtChemin;
 import com.example.testmenu.algorithmie.point.Point;
+import com.example.testmenu.algorithmie.point.PointE;
 import com.example.testmenu.algorithmie.point.ProductPoint;
 
 import java.util.ArrayList;
 
 public class TestPlan extends AppCompatActivity {
 
-    private ArrayList<Point> coordonnesPlusCourtChemin;
+    private ArrayList<PointE> coordonnesPlusCourtChemin;
     private ArrayList<Point> pointsProduits;
     private ProgressBar progressBar;
     @Override
