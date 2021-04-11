@@ -31,8 +31,8 @@ public class Trilateration {
        Point px = null, pn = null;
        px.setX(b.getCoord().getX() - p.getX());
        px.setY(b.getCoord().getY() - p.getY());
-       pn.setX(px.getX()*(b.getRadius()/normalize(px.getX(),px.getY()));
-       pn.setY(px.getY()*(b.getRadius()/));
+       pn.setX(px.getX()*(b.getRadius()/normalize(px.getX(),px.getY())));
+       pn.setY(px.getY()*(b.getRadius()/normalize(px.getX(),px.getY())));
        return pn;
     }
 
@@ -40,6 +40,19 @@ public class Trilateration {
         return Math.sqrt(x * x + y * y);
     }
 
+    public Point trilateration(Point p){
+        Point px = null;
+        int ln = beacons.size();
+        for(int i=0; i<ln-1;i++){
+            px = PX(p,beacons.valueAt(i));
+            p.setX(p.getX() + px.getX());
+            p.setX(p.getX() + px.getX());
+        }
+        p.setX(p.getX() / ln);
+        p.setX(p.getY() / ln);
+        return p;
+    }
+    
     public Point getPosition(int n,Point p) {
         ArrayList<Point> sommets = new ArrayList<Point>();
         for(int i=0; i< beacons.size()-1; i++) {
