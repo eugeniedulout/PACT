@@ -206,15 +206,18 @@ public class myRenderer implements GLSurfaceView.Renderer {
         double z=5;
         double z_cam1 = z-6;
 
+        //code intégré
+        //double x = getPosition().get(0);
+        //double z = getPosition().get(1);
+        //double z_cam1 = z-6;
+        //listPositions.addSommet(new Point((int) x, (int) z));
 
-
-        // Création des rayons
 
         // affichage de la posiion
         // Reception des coordonnées en temps réels depuis le module de localisation
         //Puis on translate
 
-        if (x<1.5){
+        if (x<=1.5){
             Matrix.setLookAtM(mViewMatrix, 0, 0, 2f, (float) z_cam1, 0, -0.6f, (float) z, 0f, 1.0f, 0.0f);
             Matrix.setIdentityM(mRotationMatrix, 0);
             Matrix.translateM(mRotationMatrix, 0,0, 0f, (float) z) ;
@@ -235,7 +238,7 @@ public class myRenderer implements GLSurfaceView.Renderer {
 
         }
 
-        if (4.5<x && x<7.5){
+        if (4.5<x && x<=7.5){
             Matrix.setLookAtM(mViewMatrix, 0, 6, 2f, (float) z_cam1, 6, -0.6f, (float) z, 0f, 1.0f, 0.0f);
             Matrix.setIdentityM(mRotationMatrix, 0);
             Matrix.translateM(mRotationMatrix, 0,6, 0f, (float) z) ;
@@ -261,6 +264,9 @@ public class myRenderer implements GLSurfaceView.Renderer {
         Matrix.multiplyMM(mMVPMatrix, 0, mViewMatrix, 0, mRotationMatrix, 0);// combine the model with the view matrix
         Matrix.multiplyMM(mMVPMatrix, 0, mProjectionMatrix, 0, mMVPMatrix, 0);  // combine the model-view with the projection matrix
         triangle.draw(mMVPMatrix);
+
+
+        // Création des rayons
 
 
         Matrix.setIdentityM(mRotationMatrix, 0); // Create a rotation and translation for the cube
