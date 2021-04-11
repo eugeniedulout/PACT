@@ -90,7 +90,7 @@ public class BeaconModel
     }
 
     public void updateDistance() {
-        double d = Math.exp(Math.log(10)*(this.txPower-this.rssi)/70);
+        double d = Math.exp(Math.log(10)*(this.txPower-this.rssi)/40);
         Log.d("distance", ""+d);
         this.distance = d;
     }

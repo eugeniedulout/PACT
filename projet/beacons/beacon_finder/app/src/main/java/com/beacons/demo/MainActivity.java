@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
     TextView x_coord, y_coord;
 
     Trilateration t = new Trilateration();
-    private Point p = new Point(3,1);
+    private Point p = new Point(100,100);
 
     // smoothing constant for low-pass filter 0 - 1 ; a smaller
     public static float ALPHA = 0.03f;
@@ -206,39 +206,40 @@ public class MainActivity extends AppCompatActivity
     }
 
     //*FONCTION A REMPLACER PAR LES RESULTATS DU SERVEUR *//
-    private double[] getCoords(String uuid) {
-        double [] coords = new double[2];
+    private Point getCoords(String uuid) {
+        Point coords;
         switch (uuid) {
             case "1cad5144-5bda-11eb-ae93-0242ac130002":
-                coords[0] = -3.38;
-                coords[1] = 3.61;
+                //coords = new Point(-3.38,3.61);
+                coords = new Point(3, 0);
                 break;
             case "2d68cb07-d277-465e-8a44-bf509eccf6de":
-                coords[0] = 8;
-                coords[1] = 3.8;
+                //coords = new Point(8,3.8);
+
+                coords = new Point(1.3, 2);
                 break;
             case "8ec76ea3-6668-48da-9866-75be8bc86fbb":
-                coords[0] = -4;
-                coords[1] = -4;
+                coords = new Point(0,0);
+                //coords = new Point(-4, -4);
                 break;
             default:
-                coords[0] = -50;
-                coords[1] = -100;
+                coords = new Point(-100,-100); // Valeur par défaut aberrantes;
                 break;
         }
-        Log.d("[getCoords]",""+coords[0]+" "+coords[1]);
+        Log.d("[getCoords]",""+coords.getX()+" "+coords.getY());
         return coords;
     }
 
 
     private void updateCoords(BeaconModel beacon) {
         //beacon.setCoords(Controller.getBeaconsCoords(beacon.uuid));
-        double [] coords = getCoords(beacon.uuid);
-        beacon.setCoords(coords[0], coords[1]);
+        Point coords = getCoords(beacon.uuid);
+        beacon.setCoords(coords.getX(), coords.getY());
 
         Log.d("[DEBUG]", "Entering trilateration");
         t.updateBeacon(beacon);
         p = t.getPosition(100, p);
+        Log.d("[POSITION]", "x: " + p.getX() + " ---- y: " + p.getY());
         x_coord.setText("x: "+p.getX());
         y_coord.setText("y: "+p.getY());
     }

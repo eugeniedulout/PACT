@@ -27,43 +27,47 @@ public class Trilateration {
     }
 
 
-    public Point PX(Point p, Beacon b){
-       Point px = null, pn = null;
-       px.setX(b.getCoord().getX() - p.getX());
-       px.setY(b.getCoord().getY() - p.getY());
-       pn.setX(px.getX()*(b.getRadius()/normalize(px.getX(),px.getY())));
-       pn.setY(px.getY()*(b.getRadius()/normalize(px.getX(),px.getY())));
+    public Point PN(Point p, Beacon b){
+       Point px = new Point(b.getCoord().getX() - p.getX(), b.getCoord().getY() - p.getY());
+
+       double norme = normalize(px);
+
+       Point pn = new Point(px.getX()*(1 - b.getRadius()/norme), px.getY()*(1 - b.getRadius()/norme));
+       Log.d("POSITION --> Beacons]", "x: " + b.getCoord().getX() + " // y: " + b.getCoord().getY());
+       Log.d("[POSITION -- > PN]", "x : " + pn.getX() + " ---- y: "+pn.getY());
        return pn;
     }
 
-    public double normalize(double x, double y){
-        return Math.sqrt(x * x + y * y);
+    public double normalize(Point p){
+        return Math.sqrt(p.getX() * p.getX() + p.getY() * p.getY());
     }
     
     public Point add(Point p,Point P){
-        Point pAdd = null;
-        pAdd.setX(p.getX() + P.getX());
-        pAdd.setX(p.getX() + P.getX());
-        return pAdd;
+        return new Point(p.getX() + P.getX(), p.getY() + P.getY());
     }
     
-    public Point trilateration(Point p){
-        Point px = null;
+    public Point trilateration(Point orig){
+        Point pn = null;
+        Point sum = new Point(0, 0);
         int ln = beacons.size();
-        for(int i=0; i<ln-1;i++){
-            px = PX(p,beacons.valueAt(i));
-            p = add(p,px);
+
+
+        for(int i=0; i<ln;i++){
+            Log.d("[POSITION --> ORIG]", "x: " + orig.getX() + " ---- y: " + orig.getY());
+            pn = PN(orig,beacons.valueAt(i));
+            sum = add(sum,pn);
         }
-        p.setX(p.getX() / ln);
-        p.setX(p.getY() / ln);
-        return p;
+        Point trans = new Point(sum.getX() / ln, sum.getY() / ln);
+        return trans;
     }
     
     public Point getPosition(int n,Point p) {
+        Point pos = new Point(p.getX(), p.getY());
         for(int i=0; i<n-1;i++){
-            p = add(p, trilateration(p));
+            Log.d("\n\n[POSITION]", " ---> TOUR "+i);
+            pos = add(pos, trilateration(pos));
         }
-        return p;
+        return pos;
     }
 
 }
