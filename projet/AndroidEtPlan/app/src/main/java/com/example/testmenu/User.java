@@ -8,14 +8,16 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
-public class User  implements Serializable {
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class User implements Serializable{
 
     private int id;
     private String mail;
     private String firstname;
     private String lastname;
-
-
 
     public User(int id, String mail, String firstname, String lastname) {
         this.id = id;
@@ -92,3 +94,4 @@ public class User  implements Serializable {
         return str;
     }
 }
+

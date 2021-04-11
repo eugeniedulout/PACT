@@ -86,6 +86,8 @@ public class PlanFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
         scanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -190,18 +190,38 @@ public class PlusCourtChemin {
         ArrayList<Point> coordonnesCheminFinal = new ArrayList<Point>();
 
 
-        for (int i =0; i<size-1; i++) {
-            ArrayList<VertexInterface> pointts = result.get(realOrderSolution.get(i+1)).getPath().get(realOrderSolution.get(i));
+        /*
+		for (int i =0; i<size-1; i++) {
+			 ArrayList<VertexInterface> pointts = result.get(realOrderSolution.get(i+1)).getPath().get(realOrderSolution.get(i));
+			 m = pointts.size();
+			 for(int j=0; j< m; j++) {
+				 System.out.println("iteration i= " + i + (pointts).get(j).getLabel() );
+				 coordonnesCheminFinal.add((Point)pointts.get(j));
+			 }
+
+		}*/
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        List<VertexInterface> pointts = result.get(realOrderSolution.get(1)).getPath().get(realOrderSolution.get(0));
+        m = pointts.size();
+        for(int j=0; j< m; j++) {
+            System.out.println("iteration i= " + 0 + (pointts).get(j).getLabel() );
+            coordonnesCheminFinal.add((Point)pointts.get(j));
+        }
+        for (int i =1; i<size-1; i++) {
+            pointts = result.get(realOrderSolution.get(i+1)).getPath().get(realOrderSolution.get(i)).subList(1, result.get(realOrderSolution.get(i+1)).getPath().get(realOrderSolution.get(i)).size());
             m = pointts.size();
             for(int j=0; j< m; j++) {
-                Log.e("Test" ,"iteration i= " + i + (pointts).get(j).getLabel() );
+                System.out.println("iteration i= " + i + (pointts).get(j).getLabel() );
                 coordonnesCheminFinal.add((Point)pointts.get(j));
             }
 
         }
 
-        m = coordonnesCheminFinal.size();
-        ArrayList<PointE> coordonnesCheminFinalE = new ArrayList<PointE>();
+        System.out.println();
+        System.out.println();
+        System.out.println();
 
         /**
 
