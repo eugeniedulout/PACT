@@ -1,0 +1,115 @@
+body{
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+* espacement */
+
+table {
+  table-layout: fixed;
+  width: 90%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #AEC5EB;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #cfe0f9;
+}
+
+table, th, td {
+        font-family: 'helvetica neue', helvetica, arial, sans-serif;
+        border: 1px solid white;
+        border-collapse: collapse;
+        }
+
+th, td {
+  padding: 20px;
+} 
+#container{
+    width:400px;
+
+    margin-top:2%;
+}
+/* Bordered form */
+form {
+    width:60%;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#container h1{
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: #B0C4DE;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: white;
+    color: #B0C4DE;
+    border: 1px solid #B0C4DE;
+}
+
+
+
+#logo img {
+    height:100px;
+    width: 100px;
+}
+
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+
+}
