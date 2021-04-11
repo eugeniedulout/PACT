@@ -91,18 +91,5 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
         }
         FragmentController.swapFragmentInMainContainer(fragment, getContext());
     }
-    private void initList() {
-        displayedListOfProducts.add(new Product("Pomme", "pomme", 0.5, "La pomme c'est bon pour la santé !"));
-        displayedListOfProducts.add(new Product("Pates", "pates", 0.7, "Les pâtes c'est pas cher !"));
-        displayedListOfProducts.add(new Product("Beurre", "beurre", 1));
-        displayedListOfProducts.add(new Product("Riz", "riz", 1.3));
-        displayedListOfProducts.add(new Product("Nutella", "nutella", 3,  "Le nutella c'est pas bon pour la santé !"));
-        displayedListOfProducts.add(new Product("Pates", "pates", 0.7));
-        displayedListOfProducts.add(new Product("Riz", "riz", 1.3));
-        displayedListOfProducts.add(new Product("Pomme", "pomme", 0.5));
-        displayedListOfProducts.add(new Product("Nutella", "nutella", 3));
-        displayedListOfProducts.add(new Product("Beurre", "ic_baseline_check_24", 0.5));
-        displayedListOfProducts.add(new Product("Pates", "pates", 0.7));
-        displayedListOfProducts.add(new Product("Riz", "riz", 1.3));
-    }
+
 }

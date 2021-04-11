@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestMenu">
         <activity android:name=".fragments.TestPlan"></activity>
+        <activity android:name=".connection.Login"></activity>
+        <activity android:name=".connection.SignUp"></activity>
+        <activity android:name=".connection.SplashScreen"></activity>
+        <activity android:name=".connection.Reception"/>
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

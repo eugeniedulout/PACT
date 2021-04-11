@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -15,19 +16,26 @@ import android.widget.Toast;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
+import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.fragments.AddRecetteFragment;
 import com.example.testmenu.fragments.ListFragment;
 import com.example.testmenu.fragments.OffresFragment;
 import com.example.testmenu.fragments.PlanFragment;
 import com.example.testmenu.fragments.ProfilFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
+    public static User user;
 
     /*static Fragment listFragment = new ListFragment();
     static Fragment planFragment = new PlanFragment();
@@ -41,6 +49,22 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences sharedPreferences = getSharedPreferences("connectionState", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("userValue", null);
+
+        Type type = new TypeToken<ArrayList<User>>() {}.getType();
+
+        // in below line we are getting data from gson
+        // and saving it to our array list
+        user = gson.fromJson(json, type);
+
+        // checking below if the array list is empty or not
+        if (user == null) {
+            // if the array list is empty
+            // creating a new array list.
+            user = new User(9999, "error","error","error");
+        }
 
         /*fm.beginTransaction().add(R.id.container, profilFragment, "4").hide(profilFragment).commit();
         fm.beginTransaction().add(R.id.container, offresFragment, "3").hide(offresFragment).commit();
