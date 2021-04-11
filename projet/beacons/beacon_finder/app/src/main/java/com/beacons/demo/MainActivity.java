@@ -232,7 +232,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
     private void updateCoords(BeaconModel beacon) {
         //beacon.setCoords(Controller.getBeaconsCoords(beacon.uuid));
         double [] coords = getCoords(beacon.uuid);
@@ -244,7 +243,11 @@ public class MainActivity extends AppCompatActivity
         x_coord.setText("x: "+p.getX());
         y_coord.setText("y: "+p.getY());
     }
-
+    
+    //Public method call by plan
+    public Point getPosition(){
+        return p;
+    }
 
 
     public static byte[] filter(byte[] input, byte[] prev, float alpha) {
@@ -289,8 +292,6 @@ public class MainActivity extends AppCompatActivity
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
         }
     }
-
-
 
 
     @Override
