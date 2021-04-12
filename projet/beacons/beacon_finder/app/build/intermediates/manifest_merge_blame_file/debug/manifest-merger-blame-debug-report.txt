@@ -1,0 +1,57 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.beacons.demo"
+4    android:versionCode="1"
+5    android:versionName="1.2" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.BLUETOOTH" />
+11-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:5:5-68
+11-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:5:22-65
+12    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+12-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:6:5-74
+12-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:6:22-71
+13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+13-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:7:5-79
+13-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:7:22-76
+14
+15    <application
+15-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:9:5-22:19
+16        android:allowBackup="true"
+16-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:10:9-35
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.0.0] /root/.gradle/caches/transforms-2/files-2.1/99b069d38755a7bf0e814174e8baea61/core-1.0.0/AndroidManifest.xml:22:18-86
+18        android:debuggable="true"
+19        android:extractNativeLibs="false"
+20        android:icon="@mipmap/ic_launcher"
+20-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:11:9-43
+21        android:label="@string/app_name"
+21-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:12:9-41
+22        android:testOnly="true"
+23        android:theme="@style/AppTheme" >
+23-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:13:9-40
+24        <activity
+24-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:14:9-21:20
+25            android:name="com.beacons.demo.MainActivity"
+25-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:15:13-41
+26            android:label="@string/app_name" >
+26-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:16:13-45
+27            <intent-filter>
+27-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:17:13-20:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:18:17-69
+28-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:18:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:19:17-77
+30-->/home/quentin/Documents/pact33/projet/beacons/beacon_finder/app/src/main/AndroidManifest.xml:19:27-74
+31            </intent-filter>
+32        </activity>
+33    </application>
+34
+35</manifest>
