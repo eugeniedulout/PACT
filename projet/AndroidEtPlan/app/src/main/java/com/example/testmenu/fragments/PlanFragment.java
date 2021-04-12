@@ -56,6 +56,7 @@ public class PlanFragment extends Fragment {
 
 
         TextView tv = (TextView)v.findViewById(R.id.planText);
+        TextView resultScan = (TextView)v.findViewById(R.id.resultScann);
 
         //################################################################
         //################################################################
@@ -145,6 +146,25 @@ public class PlanFragment extends Fragment {
 
     }
 
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (intentResult != null){
+            if (intentResult.getContents() == null){
+                Log.e("eoeo","cancelled");
+                resultScan.setText("cancelled");
+
+            }
+            else {
+                Log.e("code bar", intentResult.getContents());
+                resultScan.setText(intentResult.getContents());
+
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
 
     private ArrayList<String> builderMarketsName (){

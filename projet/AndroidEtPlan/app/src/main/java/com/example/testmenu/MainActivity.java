@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new OffresFragment();
                             break;
                         case R.id.nav_profil:
-                            selectedFragment = new FriendsActivity();
+                            selectedFragment = new ProfilActivity();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.container,
@@ -156,27 +156,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
-        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-
-        if (intentResult != null){
-            if (intentResult.getContents() == null){
-                Log.e("eoeo","cancelled");
-            }
-            else {
-                Log.e("code bar", intentResult.getContents());
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    int i=0;//position à récupérer
-    int j=0;//position à récupérer
-    int k=0;//position à récupérer
-    public void placeHolder(int i ,int j, int k, int resultCode ){
-        //Envoi de la position d'un produit en scannant son code
-    }
 
 }

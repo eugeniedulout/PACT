@@ -25,14 +25,14 @@ public class ProfilActivity extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.activity_main, container, false);
+        View v = inflater.inflate(R.layout.activity_profil, container, false);
 
         this.preferences = v.findViewById(R.id.preferences);
         this.friends = v.findViewById(R.id.friends);
         this.parameters = v.findViewById(R.id.parameters);
         this.txtProfil=v.findViewById(R.id.txtProfil);
 
-        txtProfil.setText("Bonjour "+ Controller.getUser(1).getLastname()+" "+ Controller.getUser(1).getFirstname());
+       //   txtProfil.setText("Bonjour "+ Controller.getUser(1).getLastname()+" "+ Controller.getUser(1).getFirstname());
         preferences.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
