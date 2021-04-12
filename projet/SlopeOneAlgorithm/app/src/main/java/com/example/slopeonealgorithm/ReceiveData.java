@@ -13,9 +13,9 @@ import java.util.Set;
  *
  */
 public class ReceiveData {
-
-    protected static List<Item> items = Arrays.asList(new Item("Halal"), new Item("Bio"), new Item("Vegetarien"), new Item("qualite"));
-
+	
+	protected static List<Item> items = Arrays.asList(new Item("Halal"), new Item("Bio"), new Item("Vegetarien"), new Item("Qualite A"));
+	
     public static Map<User, HashMap<Item, Double>> initializeData(int numberOfUsers) {
         Map<User, HashMap<Item, Double>> data = new HashMap<>();
         HashMap<Item, Double> newUser;
