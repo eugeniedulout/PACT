@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SecondActivity">
+
+    <LinearLayout
+        android:id="@+id/PommeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkPomme"
+            android:layout_width="20dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Pomme" />
+
+        <ImageView
+            android:id="@+id/pommeImage"
+            android:layout_width="20dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/pomme" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nutellaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PommeLayout"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkNutella"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Nutella" />
+
+        <ImageView
+            android:id="@+id/nutellaImage"
+            android:layout_width="20dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/nutella" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/beurreLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nutellaLayout"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBeurre"
+            android:layout_width="223dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Beurre" />
+
+        <ImageView
+            android:id="@+id/beurreIamge"
+            android:layout_width="20dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/beurre" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/revenir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/beurreLayout"
+        android:layout_centerHorizontal="true"
+        android:text="Revenir" />
+
+</RelativeLayout>

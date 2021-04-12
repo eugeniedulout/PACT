@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProductInfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/infosText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Infos"
+        android:textSize="26sp" />
+
+    <ImageView
+        android:id="@+id/productOnSpecialOfferImage"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_below="@id/infosText"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="15dp"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/productOnSpecialOfferName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/productOnSpecialOfferImage"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@id/productOnSpecialOfferImage"
+        android:text="Name "
+        android:textColor="#000000"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/productOnSpecialOfferPriceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/productOnSpecialOfferName"
+        android:layout_alignLeft="@id/productOnSpecialOfferName"
+        android:layout_marginTop="15dp"
+        android:text="0 €"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/productOnSpecialOfferNewPriceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/productOnSpecialOfferPriceText"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/productOnSpecialOfferPriceText"
+        android:text="1 €"
+        android:textColor="#FF0000"
+        android:textSize="36sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/expirationDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/productOnSpecialOfferImage"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:text="Promotion expire le 09/10/2000"
+        android:textColor="#2196F3"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/productOnSpecialOfferDescriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expirationDateText"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Description du produit"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/environmentalScoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/productOnSpecialOfferDescriptionText"
+        android:layout_alignLeft="@id/productOnSpecialOfferDescriptionText"
+        android:layout_marginTop="20dp"
+        android:text="A"
+        android:textColor="#27A82C"
+        android:textSize="55sp" />
+
+</RelativeLayout>

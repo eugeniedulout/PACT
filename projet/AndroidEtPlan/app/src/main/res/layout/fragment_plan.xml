@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/planText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:text="@string/plan"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/serachMarketName"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_below="@id/planText"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/style_edit_text"
+        android:completionThreshold="1"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:hint="Nom du Magasin"
+        android:paddingLeft="3dp"
+        android:queryHint="Nom du Magasin" />
+
+    <AutoCompleteTextView
+        android:id="@+id/serachListName"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_below="@id/serachMarketName"
+        android:layout_marginStart="15dp"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/style_edit_text"
+        android:completionThreshold="1"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:hint="Choisir ma Liste"
+        android:paddingLeft="3dp"
+        android:queryHint="Choisir ma Liste">
+
+    </AutoCompleteTextView>
+
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/serachListName"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/Colorrg"
+        android:text="C'est parti !"
+        android:textColor="#000000"
+        app:backgroundTint="#FFFFFF" />
+
+    <Button
+        android:id="@+id/scanButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/goButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="SCAN"
+        android:textColor="#000000"
+        app:backgroundTint="@color/Colorrg" />
+
+    <TextView
+        android:id="@+id/resultScann"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scanButton"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/scanButton"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="15dp"
+        app:srcCompat="@drawable/manshopping"
+        tools:ignore="VectorDrawableCompat" />
+
+
+</RelativeLayout>

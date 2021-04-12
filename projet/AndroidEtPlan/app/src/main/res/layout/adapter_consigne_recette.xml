@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="#F8CBBC"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="1dp"
+        app:cardMaxElevation="2dp"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorbf">
+
+            <TextView
+                android:id="@+id/stepNumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="1"
+                android:textColor="#DCD228"
+                android:textColorHighlight="#B83D3D"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/consigneText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/stepNumberText"
+                android:text="TextView"
+                android:textColor="#DCD228"
+                android:textSize="18sp"
+                app:autoSizeMaxTextSize="14sp"
+                app:autoSizeMinTextSize="10sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
