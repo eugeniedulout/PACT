@@ -32,10 +32,19 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
     private ImageView returnTodisplayList;
     private int marketId;
 
-    public BuildingListFragment(int marketId){
+   /* public BuildingListFragment(int marketId){
         this.marketId = marketId;
+    }*/
+    private static final BuildingListFragment buildingListFragment = new BuildingListFragment();
+
+    private BuildingListFragment(){
+        setArguments(new Bundle());
+
     }
 
+    public static BuildingListFragment getInstance() {
+        return buildingListFragment;
+    }
 
     public void setDisplayedListOfProducts(ArrayList<Product> displayedListOfProducts) {
         this.displayedListOfProducts = displayedListOfProducts;
@@ -88,7 +97,7 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
 
                 // ##################################
                 // #################################
-                // Controller.addNewListOfProducts(MainActivity.user.getId(), new ListProduct(nameOfTheList.getText().toString(), displayedListOfProducts));
+                Controller.addNewListOfProducts(1, new ListProduct(nameOfTheList.getText().toString(), displayedListOfProducts, new ArrayList<Integer>(), 2 ));
                 fragment = new ListFragment();
                 if (v.getId() == R.id.addTheList) {
                     displayedListOfProducts.clear();
@@ -98,5 +107,11 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
         }
         FragmentController.swapFragmentInMainContainer(fragment, getContext());
     }
+    @Override
+    public void onPause() {
+        super.onPause();
+        getArguments().putSerializable("displayedProducts", displayedListOfProducts);
+    }
+
 
 }

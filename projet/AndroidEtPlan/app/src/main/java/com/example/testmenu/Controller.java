@@ -1,5 +1,10 @@
 package com.example.testmenu;
 
+import android.os.AsyncTask;
+import android.util.Log;
+import android.view.ViewGroup;
+
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,6 +18,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Controller {
 
@@ -237,6 +243,25 @@ public class Controller {
     }
 
 
+    public static void updateProductLocation(int marketId, int productId, double newX, double newY, int newZ) {
+        addParam("action","update_product");
+        addParam("market_id", String.valueOf(marketId));
+        addParam("product_id", String.valueOf(productId));
+        JSONObject coords = new JSONObject();
+        try {
+            coords.put("x", newX);
+            coords.put("y", newY);
+            coords.put("z", newZ);
+            addParam("coords", coords.toString());
+
+            String result = post(SERVER_URL+USER_FONCTIONS);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     /*
     FONCTIONS CONCERNANT LES LISTES
      */
@@ -279,6 +304,8 @@ public class Controller {
         addParam("action","add_new_list");
         addParam("user_id", String.valueOf(userId));
         JSONObject json_list = listProduct.toJSON();
+
+        Log.d("[DEBUG]", json_list.toString());
         addParam("list",json_list.toString());
         addParam("list_name",listProduct.getListName());
         String result = post(SERVER_URL+USER_FONCTIONS);
@@ -323,7 +350,7 @@ public class Controller {
      * @param userId
      * @param recipe
      */
-  /*  public static void addNewRecette(int userId, Recette recipe) {
+    public static void addNewRecette(int userId, Recette recipe) {
         try {
             JSONObject json_recipe = recipe.toJSON();
             addParam("action","add_new_recipe");
@@ -344,7 +371,7 @@ public class Controller {
      * @param userId
      * @return an ArrayList of all recipes
      */
- /*   public static ArrayList<Recette> getUserRecettes(int userId) {
+    public static ArrayList<Recette> getUserRecettes(int userId) {
         addParam("action","get_user_recipes");
         addParam("user_id",String.valueOf(userId));
 
@@ -363,7 +390,7 @@ public class Controller {
 
         return recipes;
 
-    }*/
+    }
 
 
     /*
@@ -495,6 +522,10 @@ public class Controller {
             try {writer.close();}catch (Exception e){}
             try {reader.close();}catch (Exception e){}
         }
+
+        Log.d("[RESULTS]", values.get(0));
+        Log.d("[RESULTS]", "-->"+result);
+
 
         keys.clear();
         values.clear();

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
 
@@ -40,8 +41,9 @@ public class ProductInfoFragment extends Fragment {
 
         
 
-        int id = getResources().getIdentifier(product.getProductImageUrl(), "drawable", getContext().getPackageName());
-        productImage.setImageResource(id);
+       /* int id = getResources().getIdentifier(product.getProductImageUrl(), "drawable", getContext().getPackageName());
+        productImage.setImageResource(id);*/
+        Glide.with(getContext()).load(product.getProductImageUrl()).into(productImage);
 
 
 

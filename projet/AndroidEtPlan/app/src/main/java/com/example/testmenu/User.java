@@ -17,13 +17,17 @@ public class User implements Serializable{
     private int id;
     private String mail;
     private String firstname;
-    private String lastname;
+        private String lastname;
 
     public User(int id, String mail, String firstname, String lastname) {
         this.id = id;
         this.mail = mail;
         this.firstname = firstname;
         this.lastname = lastname;
+    }
+
+    public User(String firstname) {
+        this.firstname = firstname;
     }
 
     public User(JSONObject json_user) {

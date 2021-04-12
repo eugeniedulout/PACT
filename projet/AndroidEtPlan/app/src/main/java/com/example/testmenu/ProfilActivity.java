@@ -1,5 +1,7 @@
 package com.example.testmenu;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +14,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.testmenu.Friends.FriendsActivity;
+import com.example.testmenu.connection.Reception;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class ProfilActivity extends Fragment {
     private Button preferences;
     private Button friends;
     private Button parameters;
+    private Button deconnexion;
+
 
     TextView txtProfil;
 
@@ -31,8 +38,8 @@ public class ProfilActivity extends Fragment {
         this.friends = v.findViewById(R.id.friends);
         this.parameters = v.findViewById(R.id.parameters);
         this.txtProfil=v.findViewById(R.id.txtProfil);
-
-       //   txtProfil.setText("Bonjour "+ Controller.getUser(1).getLastname()+" "+ Controller.getUser(1).getFirstname());
+        deconnexion = (Button)v.findViewById(R.id.parameters2);
+        txtProfil.setText("Bonjour "+ Controller.getUser(1).getLastname()+" "+ Controller.getUser(1).getFirstname());
         preferences.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +54,21 @@ public class ProfilActivity extends Fragment {
                 FragmentController.swapFragmentInMainContainer(new FriendsActivity(), getContext());
 
 
+            }
+        });
+
+        deconnexion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("connectionState", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                editor.putBoolean("isConnected", false);
+                editor.apply();
+
+
+                Intent intent = new Intent(getContext(), Reception.class);
+                startActivity(intent);
             }
         });
 

@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
 
@@ -54,9 +55,10 @@ public class ProductAdapter extends BaseAdapter {
 
         int imageId = context.getResources().getIdentifier(productImage, "drawable", context.getPackageName());
 
-        ImageView iconProduct= convertView.findViewById(R.id.iconRecette);
-        iconProduct.setImageResource(imageId);
 
+        ImageView iconProduct= convertView.findViewById(R.id.iconRecette);
+
+        Glide.with(context).load(productImage).into(iconProduct);
 
         return convertView;
     }

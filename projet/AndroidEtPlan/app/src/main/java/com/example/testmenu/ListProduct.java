@@ -17,6 +17,16 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 public class ListProduct {
 
     private String listName;
@@ -24,16 +34,20 @@ public class ListProduct {
     private ArrayList<Integer> quantities;
     private int marketId;
 
-    public ListProduct(String listName, ArrayList<Product> listOfProducts) {
+    public ListProduct(String listName, ArrayList<Product> listOfProducts, ArrayList<Integer> quantities, int marketId) {
         this.listName = listName;
         this.listOfProducts = listOfProducts;
+        this.marketId = marketId;
+        this.quantities = quantities;
     }
+
     public ListProduct() {
 
     }
 
     public ListProduct(JSONObject json_list) {
         this.listOfProducts = new ArrayList<Product>();
+        this.quantities = new ArrayList<Integer>();
         try {
             this.listName = json_list.getString("name");
             this.marketId = json_list.getInt("market_id");
@@ -44,6 +58,7 @@ public class ListProduct {
             }
 
             JSONArray json_quantities = json_list.getJSONArray("quantities");
+            Log.d("[DEBUG]", this.listName);
             for (int i = 0; i < json_quantities.length(); i++) {
                 this.quantities.add(json_quantities.getInt(i));
             }
@@ -60,20 +75,20 @@ public class ListProduct {
 
             JSONObject list = new JSONObject();
             list.put("name", this.listName);
-            list.put("market_id", this.marketId);
+            list.put("market_id",this.marketId);
 
             JSONArray products = new JSONArray();
-            for (Product p : this.listOfProducts) {
+            for(Product p : this.listOfProducts) {
                 products.put(p.toJSON());
             }
 
             JSONArray quantities = new JSONArray();
-            for (int i : this.quantities) {
+            for(int i : this.quantities) {
                 quantities.put(i);
             }
 
-            list.put("products", products);
-            list.put("quantities", quantities);
+            list.put("products",products);
+            list.put("quantities",quantities);
             array.put("list", list);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -100,14 +115,14 @@ public class ListProduct {
     @NonNull
     @Override
     public String toString() {
-        String str = "LIST NAME: " + this.listName + " market: " + this.marketId + "\n";
-        for (int i = 0; i < this.listOfProducts.size(); i++) {
-            str += "\t" + this.listOfProducts.get(i) + " x " + this.quantities.get(i) + "\n";
+        String str ="LIST NAME: "+this.listName+" market: " + this.marketId + "\n";
+        for(int i =0; i < this.listOfProducts.size(); i++) {
+            str+="\t"+this.listOfProducts.get(i)+ " x " + this.quantities.get(i) +"\n";
         }
         return str;
     }
-
     public void displayProductsInTheList(Context context) {
         FragmentController.swapFragmentInMainContainer(new DisplayedProductsFromAListFragment(listOfProducts, listName), context);
     }
 }
+

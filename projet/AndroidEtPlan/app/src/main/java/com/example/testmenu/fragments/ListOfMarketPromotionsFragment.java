@@ -49,7 +49,7 @@ public class ListOfMarketPromotionsFragment extends Fragment {
         marketNameText.setText("Promotions chez " + market.getMarketName());
 
         // ##########################
-       // ArrayList<ProductOnSpecialOffer> productOnSpecialOffers = Controller.getMarketOffers(market.getMarketId());
+        ArrayList<ProductOnSpecialOffer> productOnSpecialOffers = Controller.getMarketOffers(market.getMarketId());
        // ###################################
 
        /* int id = getResources().getIdentifier(market.getMarketLogo(), "drawable", getContext().getPackageName());
@@ -58,14 +58,16 @@ public class ListOfMarketPromotionsFragment extends Fragment {
 
         ListView liste = (ListView) v.findViewById(R.id.listViewOfPromotions);
 
-        /*for (ProductOnSpecialOffer product : productOnSpecialOffers)
-            products.add(product);*/
+        for (ProductOnSpecialOffer product : productOnSpecialOffers)
+            products.add(product);
 
-        products.add(new ProductOnSpecialOffer("Pomme", "pomme", 50,  "La pomme c'est bon pour la santé !", 20, "28/02/2021"));
+        /*products.add(new ProductOnSpecialOffer("Pomme", "pomme", 50,  "La pomme c'est bon pour la santé !", 20, "28/02/2021"));
         products.add(new ProductOnSpecialOffer("Pates", "pates",70,  "Les pâtes c'est pas cher !",50, "29/03/2021"));
         products.add(new ProductOnSpecialOffer("Beurre", "beurre", 100,30, "18/04/2021"));
         products.add(new ProductOnSpecialOffer("Riz", "riz", 130,80, "25/03/2021"));
+     */
      //   products.add(new ProductOnSpecialOffer("Nutella", "nutella", 300,  "Le nutella c'est pas bon pour la santé !",2.2,"05/03/2021" ));
+
 
 
         liste.setOnItemClickListener(new AdapterView.OnItemClickListener() {

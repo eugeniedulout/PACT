@@ -4,6 +4,8 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +55,8 @@ public class PlanFragment extends Fragment {
         searchMarketName = (AutoCompleteTextView)v.findViewById(R.id.serachMarketName);
         searchListName = (AutoCompleteTextView)v.findViewById(R.id.serachListName);
 
-        ArrayList<String> marketsName = builderMarketsName();
+        ArrayList<String> marketsName =new ArrayList<String>();
+        ArrayList<String> listnames =new ArrayList<String>();
 
 
         TextView tv = (TextView)v.findViewById(R.id.planText);
@@ -61,25 +64,28 @@ public class PlanFragment extends Fragment {
 
         //################################################################
         //################################################################
-        /*ArrayList<Market> marketArrayList =  Controller.getAllMarkets();
+        ArrayList<Market> marketArrayList =  Controller.getAllMarkets();
         for(int i=0; i< marketArrayList.size(); i++){
              marketsName.add(marketArrayList.get(i).getMarketName());
-        }*/
+        }
         // ###############################################################
         // ###############################################################
 
         //################################################################
         //################################################################
-        /*ArrayList<ListProduct> listProductsUser =  Controller.getUserLists(MainActivity.user.getId());
+        ArrayList<ListProduct> listProductsUser =  Controller.getUserLists(1);
         for(int i=0; i< listProductsUser.size(); i++){
-             marketsName.add(listProductsUser.get(i).getListName());
-        }*/
+            listnames.add(listProductsUser.get(i).getListName());
+        }
 
         // ###############################################################
         // ###############################################################
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, marketsName);
         searchMarketName.setAdapter(adapter);
+
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, listnames);
+        searchListName.setAdapter(adapter2);
 
         goButton = (Button)v.findViewById(R.id.goButton);
         scanButton = (Button)v.findViewById(R.id.scanButton);
@@ -109,21 +115,25 @@ public class PlanFragment extends Fragment {
                 Bundle b = new Bundle();
                 // ################################################
                 // ################################################
-                /*ListProduct listSelected = new ListProduct();
+                ListProduct listSelected = new ListProduct();
                 for(ListProduct listProduct : listProductsUser ) {
                     if(listProduct.getListName().equals(searchListName.getText().toString()))
                         listSelected = listProduct;
                 }
                 for(Product product : listSelected.getListOfProducts())
-                    pointsProduits.add(new ProductPoint(product.getX(),product.getY()));*/
+                    pointsProduits.add(new ProductPoint(product.getX(),product.getY()));
+
+                for(Point productPoint : pointsProduits)
+                    Log.e("hheuu", productPoint.getLabel());
+
                 // ################################################
                 // ################################################
 
-                pointsProduits.add(new ProductPoint(2,3));
+                /*pointsProduits.add(new ProductPoint(2,3));
                 pointsProduits.add(new ProductPoint(4,10));
                 pointsProduits.add(new ProductPoint(7,12));
                 pointsProduits.add(new ProductPoint(8,11));
-                pointsProduits.add(new ProductPoint(7,2));
+                pointsProduits.add(new ProductPoint(7,2));*/
                 //pointsProduits.add(new ProductPoint(8,2));
                 b.putSerializable("produits coordonnees",pointsProduits);
                 intent.putExtras(b);

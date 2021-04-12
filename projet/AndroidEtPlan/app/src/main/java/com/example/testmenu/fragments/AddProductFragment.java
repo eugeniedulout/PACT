@@ -20,6 +20,7 @@ import com.example.testmenu.FragmentController;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
 import com.example.testmenu.algorithmie.point.Point;
+import com.example.testmenu.suggestion.SlopeOne;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -54,10 +55,15 @@ public class AddProductFragment extends Fragment {
         searchProduct = (AutoCompleteTextView)v.findViewById(R.id.serachProduct);
         addToListButton = (FloatingActionButton)v.findViewById(R.id.addToListButton);
         Log.e("TAG2", ""+marketId);
+        TextView suggestionText = (TextView)v.findViewById(R.id.suggestonText);
 
-       // ArrayList<Product> productsFromMarket = Controller.getAllProducts(marketId);
-        ArrayList<Product> productsFromMarket = new ArrayList<Product>();
-        initList(productsFromMarket);
+        SlopeOne slopeOne = new SlopeOne();
+        String result = slopeOne.getSlopeOne();
+        suggestionText.setText("Produit suggeré " + result);
+
+        ArrayList<Product> productsFromMarket = Controller.getAllProducts(2);
+        //ArrayList<Product> productsFromMarket = new ArrayList<Product>();
+        //initList(productsFromMarket);
         int m = productsFromMarket.size();
         for(int i=0; i< m; i++) {
             arrayProductsName.add(productsFromMarket.get(i).getName());
@@ -97,7 +103,7 @@ public class AddProductFragment extends Fragment {
                     result.putSerializable("productToAdd", productToAdd);
 
                     getParentFragmentManager().setFragmentResult("requestProductToAdd", result);
-                    FragmentController.swapFragmentInMainContainer(new BuildingListFragment(marketId), getContext());
+                    FragmentController.swapFragmentInMainContainer(BuildingListFragment.getInstance(), getContext());
 
 
             }

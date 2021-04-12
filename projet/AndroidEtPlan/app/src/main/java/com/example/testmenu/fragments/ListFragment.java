@@ -85,14 +85,18 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
 
         listViewOflistOfProducts = (ListView) v.findViewById(R.id.listOflistOfProducts);
 
-        listlistOfProducts.add(new ListProduct("Deuxieme liste",products));
-        listlistOfProducts.add(new ListProduct("Troisieme liste",products));
+        /*listlistOfProducts.add(new ListProduct("Deuxieme liste",products));
+        listlistOfProducts.add(new ListProduct("Troisieme liste",products));*/
         ListAdapter adapter = new ListAdapter(getContext(), listlistOfProducts);
         listViewOflistOfProducts.setAdapter(adapter);
         //loadLists loadLists = new loadLists();
         //loadLists.execute();
 
-
+       ArrayList<ListProduct> listProducts = Controller.getUserLists(1);
+        for(ListProduct listProduct : listProducts)
+            listlistOfProducts.add(listProduct);
+        adapter = new ListAdapter(getContext(), listlistOfProducts);
+        listViewOflistOfProducts.setAdapter(adapter);
 
 
 
@@ -148,7 +152,6 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
         }
     }
 
-    /**
 
 
     private class loadLists extends AsyncTask<Void,Void,Void> {
@@ -156,13 +159,9 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            ArrayList<ListProduct> listProducts = Controller.getUserLists(1);
-            for(ListProduct listProduct : listProducts)
-                listlistOfProducts.add(listProduct);
-            ListAdapter adapter = new ListAdapter(getContext(), listlistOfProducts);
-            listViewOflistOfProducts.setAdapter(adapter);
+
             return null;
         }
     }
-     */
+
 }

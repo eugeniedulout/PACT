@@ -25,11 +25,11 @@ public class Reception extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("connectionState", MODE_PRIVATE);
 
         boolean isConnected = sharedPreferences.getBoolean("isConnected", false);
-        /*
+
         if(isConnected) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
-        }*/
+        }
         signUpButton = (Button)findViewById(R.id.buttonSignUp);
         signUpButton.setOnClickListener(accesOthersActivities);
 

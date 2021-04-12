@@ -41,11 +41,19 @@
         >
     </AutoCompleteTextView>
 
+    <TextView
+        android:id="@+id/suggestonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/serachProduct"
+        android:text="TextView" />
+
     <LinearLayout
         android:id="@+id/QuantityAndButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/serachProduct"
+        android:layout_below="@id/suggestonText"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <TextView

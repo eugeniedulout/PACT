@@ -45,7 +45,7 @@ public class OffresFragment extends Fragment {
         StrictMode.setThreadPolicy(policy);
         View v = inflater.inflate(R.layout.fragment_offres, container, false);
 
-       // markets = Controller.getAllMarkets();
+        markets = Controller.getAllMarkets();
         for (int i =0; i<markets.size(); i++) {
             Log.e("Logo", " " + markets.get(i).getMarketId());
             Log.e("eeeeeeeeeeeeeeeeeee", "eeeeee");
@@ -64,6 +64,8 @@ public class OffresFragment extends Fragment {
 
         // initImages();
         initImages2();
+
+
 
         /*loadMarkets loadMarkets = new loadMarkets();
         loadMarkets.execute();*/
