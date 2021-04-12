@@ -290,6 +290,30 @@ if(isset($_POST['action'])) {
 		}
 		break;
 
+
+	case "update_product":
+		$market_id = $_POST['market_id'];
+		$product_id = $_POST['product_id'];
+		$coord = json_decode($_POST['coords'], true);
+		$x=$coord['x'];
+		$y=$coord['y'];
+		$z=$coord['z'];
+
+		$req = "SELECT loc_requests FROM Markets WHERE market_id=$market_id";
+
+		$data = $db->query($req);
+		$requests = json_decode($data->fetch()['loc_requests'], true);
+
+		array_push($requests, array('product_id' => $product_id, 'x' => $x, 'y' => $y, 'z' => $z));
+
+		$json_requests = json_encode($requests);
+
+		$req = "UPDATE Markets SET loc_requests='$json_requests' WHERE market_id=$market_id";
+
+		$db->exec($req);
+		break;
+
+
 	}
 }
 ?>

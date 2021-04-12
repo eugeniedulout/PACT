@@ -17,13 +17,16 @@ public class ListProduct {
     private ArrayList<Integer> quantities;
     private int marketId;
 
-    public ListProduct(String listName, ArrayList<Product> listOfProducts) {
+    public ListProduct(String listName, ArrayList<Product> listOfProducts, ArrayList<Integer> quantities, int marketId) {
         this.listName = listName;
         this.listOfProducts = listOfProducts;
+        this.marketId = marketId;
+        this.quantities = quantities;
     }
 
     public ListProduct(JSONObject json_list) {
         this.listOfProducts = new ArrayList<Product>();
+        this.quantities = new ArrayList<Integer>();
         try {
             this.listName = json_list.getString("name");
             this.marketId = json_list.getInt("market_id");
@@ -34,6 +37,7 @@ public class ListProduct {
             }
 
             JSONArray json_quantities = json_list.getJSONArray("quantities");
+            Log.d("[DEBUG]", this.listName);
             for (int i = 0; i < json_quantities.length(); i++) {
                 this.quantities.add(json_quantities.getInt(i));
             }

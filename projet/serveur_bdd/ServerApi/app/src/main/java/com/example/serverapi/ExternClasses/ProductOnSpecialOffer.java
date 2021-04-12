@@ -17,11 +17,10 @@ public class ProductOnSpecialOffer extends Product {
         this.expirationDate = expirationDate;
     }
 
-    public ProductOnSpecialOffer(String name, String productImage, double price, String description, double newPrice, String expirationDate) {
-        super(name, productImage, price, description);
+    public ProductOnSpecialOffer(String name, String productImage, double price, String description, double newPrice, String expirationDate, double x, double y, int z) {
+        super(name, productImage, price, description, x, y, z);
         this.newPrice = newPrice;
         this.expirationDate = expirationDate;
-
     }
 
     public ProductOnSpecialOffer(JSONObject json_product) {

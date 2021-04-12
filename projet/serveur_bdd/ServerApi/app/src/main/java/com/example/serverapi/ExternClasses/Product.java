@@ -31,11 +31,14 @@ public class Product {
         this.z = z;
     }
 
-    public Product(String name, String productImageUrl, double price, String description) {
+    public Product(String name, String productImageUrl, double price, String description, double x, double y, int z) {
         this.name = name;
         this.productImageUrl = productImageUrl;
         this.price = price;
         this.description = description;
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
     public Product(JSONObject json_product) {
