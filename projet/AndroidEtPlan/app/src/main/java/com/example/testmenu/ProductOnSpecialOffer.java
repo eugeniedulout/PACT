@@ -9,11 +9,22 @@ import androidx.annotation.NonNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class ProductOnSpecialOffer extends Product {
 
     private double newPrice;
     private String expirationDate;
 
+
+    public double getNewPrice() {
+        return newPrice;
+    }
+
+    public String getExpirationDate() {
+        return expirationDate;
+    }
 
     public ProductOnSpecialOffer(String name, String productImage, double price, double newPrice, String expirationDate) {
         super(name, productImage, price);
@@ -51,12 +62,5 @@ public class ProductOnSpecialOffer extends Product {
     public void displayInfo(Context context) {
         FragmentController.swapFragmentInMainContainer(new ProductOnSpecialOfferInfoFragment(this), context);
     }
-
-    public double getNewPrice() {
-        return newPrice;
-    }
-
-    public String getExpirationDate() {
-        return expirationDate;
-    }
 }
+

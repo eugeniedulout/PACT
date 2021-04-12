@@ -19,7 +19,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="112dp"
             android:gravity="center"
             android:text="Epokamp"
             android:textColor="#009688"
@@ -28,9 +28,9 @@
 
         <ImageView
             android:id="@+id/img_logo"
-            android:layout_width="match_parent"
-            android:layout_height="489dp"
-            android:src="@drawable/logo" />
+            android:layout_width="261dp"
+            android:layout_height="279dp"
+            android:src="@mipmap/epokamp_round" />
 
         <ProgressBar
             android:layout_width="match_parent"

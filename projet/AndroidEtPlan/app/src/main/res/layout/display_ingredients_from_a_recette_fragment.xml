@@ -26,19 +26,6 @@
 
     </ListView>
 
-    <View
-        android:id="@+id/sp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@id/consigneRecycle"
-        android:layout_below="@id/listViewIngre"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="20dp"
-        android:background="#c0c0c0" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/consigneRecycle"
         android:layout_width="match_parent"

@@ -69,7 +69,12 @@ public class RecetteFragment extends Fragment implements  View.OnClickListener {
     }
     private void initRecette(){
             ArrayList<Ingredient> ingredients = new ArrayList<>();
-            for (int k = 0; k < 8; k++){
+            ingredients.add(new Ingredient("oeufs","https://e7.pngegg.com/pngimages/997/205/png-clipart-egg-white-caesar-salad-chicken-scrambled-eggs-egg-food-recipe.png" ));
+            ingredients.add(new Ingredient("beuure","https://img2.freepng.fr/20180810/use/kisspng-clarified-butter-portable-network-graphics-cheese-butter-name-png-ready-made-logo-effect-images-png-5b6d4bffb2ba80.3878457015338895357321.jpg" ));
+            ingredients.add(new Ingredient("ingredient 3","https://e7.pngegg.com/pngimages/997/205/png-clipart-egg-white-caesar-salad-chicken-scrambled-eggs-egg-food-recipe.png" ));
+
+
+        for (int k = 0; k < 8; k++){
                 Recette recette = new Recette("Recette" + String.valueOf(k), ingredients, new ArrayList<String>());
                 listOfRecette.add(recette);
             }

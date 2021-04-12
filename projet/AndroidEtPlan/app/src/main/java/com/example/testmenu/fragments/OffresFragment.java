@@ -45,22 +45,22 @@ public class OffresFragment extends Fragment {
         StrictMode.setThreadPolicy(policy);
         View v = inflater.inflate(R.layout.fragment_offres, container, false);
 
-        markets = Controller.getAllMarkets();
+       // markets = Controller.getAllMarkets();
         for (int i =0; i<markets.size(); i++) {
             Log.e("Logo", " " + markets.get(i).getMarketId());
             Log.e("eeeeeeeeeeeeeeeeeee", "eeeeee");
 
-            marketLogoUrlArray.add(markets.get(i).getMarketLogo());
+            marketLogoUrlArray.add(markets.get(i).getMarketLogoUrl());
         }
         for (int i =0; i<markets.size(); i++) {
             marketNameArray.add(markets.get(i).getMarketName());
 
         }
 
-        ArrayList<Product> products = Controller.getAllProducts(markets.get(2).getMarketId());
+       // ArrayList<Product> products = Controller.getAllProducts(markets.get(2).getMarketId());
 
-        for(Product product : products)
-            Log.e("ProductName : ", product.getName());
+        /*for(Product product : products)
+            Log.e("ProductName : ", product.getName());*/
 
         // initImages();
         initImages2();

@@ -1,0 +1,1 @@
+Ce dossier contient l'essentiel du code en rapport avec les beacons et les informations utiles.

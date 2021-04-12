@@ -48,5 +48,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+        placeHolder(i,j,k,Integer.getInteger(textView.getText().toString()));
+    }
+
+    int i=0;//position à récupérer
+    int j=0;//position à récupérer
+    int k=0;//position à récupérer
+    public void placeHolder(int i ,int j, int k, int resultCode ){
+        //Envoi de la position d'un produit en scannant son code
     }
 }

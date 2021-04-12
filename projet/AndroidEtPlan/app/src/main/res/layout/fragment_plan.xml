@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6D8CE"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     android:orientation="vertical">
 
     <TextView
@@ -66,16 +67,35 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
+        android:backgroundTint="@color/Colorrg"
         android:text="C'est parti !"
         android:textColor="#000000"
         app:backgroundTint="#FFFFFF" />
+
+    <Button
+        android:id="@+id/scanButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/goButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="SCAN"
+        android:textColor="#000000"
+        app:backgroundTint="@color/Colorrg" />
+
+    <TextView
+        android:id="@+id/resultScann"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scanButton"
+        android:text="TextView" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/goButton"
-        android:layout_marginTop="15dp"
+        android:layout_below="@id/scanButton"
+        android:layout_marginTop="20dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="15dp"

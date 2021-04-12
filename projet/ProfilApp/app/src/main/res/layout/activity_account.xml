@@ -44,7 +44,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/txtNom"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:text="    Nom"
@@ -52,7 +52,7 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/txtPrénom"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
                     android:text="    Prénom"
@@ -65,7 +65,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/txtIdentifiant"
                         android:layout_width="315dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -81,7 +81,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/txtEmail"
                         android:layout_width="315dp"
                         android:layout_height="32dp"
                         android:layout_weight="1"
@@ -98,14 +98,6 @@
                         app:icon="@drawable/ic_baseline_edit_24" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="match_parent"
-                    android:layout_height="57dp"
-                    android:text="    Date de naissance"
-                    android:textColor="@color/colorbc"
-                    android:textSize="24sp" />
-
                 <LinearLayout
                     android:layout_width="358dp"
                     android:layout_height="58dp"
@@ -117,7 +109,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView14"
+                        android:id="@+id/txtMdp"
                         android:layout_width="315dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

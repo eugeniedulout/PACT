@@ -16,5 +16,8 @@
     <color name="colorLightGray">#a6abae</color>
     <color name="colorBackroundWhite">#f0f2ea</color>
     <color name="colorGray">#495C67</color>
-
+    <color name="Colorrg">#D13F31</color>
+    <color name="colorbg">#DEDBA7</color>
+    <color name="colorbc">#72B095</color>
+    <color name="colorbf">#1F7872</color>
 </resources>

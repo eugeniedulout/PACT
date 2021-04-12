@@ -47,7 +47,7 @@ public class RecetteAdapter extends BaseAdapter {
 
         Ingredient ingredient = getItem(position);
         String ingredientName  = ingredient.getName();
-        String ingredientImageUrl  = ingredient.getImageUrl();
+        String ingredientImageUrl  = ingredient.getIngredientImageUrl();
 
         TextView nameProduct = convertView.findViewById(R.id.recetteNameText);
         nameProduct.setText(ingredientName);
@@ -55,7 +55,7 @@ public class RecetteAdapter extends BaseAdapter {
         ImageView iconIngredient= convertView.findViewById(R.id.iconRecette);
 
         Glide.with(context)
-                .load(ingredient.getImageUrl())
+                .load(ingredient.getIngredientImageUrl())
                 .into(iconIngredient);
 
         return convertView;

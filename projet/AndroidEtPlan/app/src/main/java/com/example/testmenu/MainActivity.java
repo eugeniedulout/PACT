@@ -1,9 +1,11 @@
 package com.example.testmenu;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,9 +15,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chaquo.python.PyObject;
-import com.chaquo.python.Python;
-import com.chaquo.python.android.AndroidPlatform;
+
+import com.example.testmenu.Friends.FriendsActivity;
 import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.fragments.AddRecetteFragment;
 import com.example.testmenu.fragments.ListFragment;
@@ -25,6 +26,8 @@ import com.example.testmenu.fragments.ProfilFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -103,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new OffresFragment();
                             break;
                         case R.id.nav_profil:
-                            selectedFragment = new FriendsActivity();
+                            selectedFragment = new ProfilActivity();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.container,
@@ -151,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }

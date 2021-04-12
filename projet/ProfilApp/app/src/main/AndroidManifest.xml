@@ -11,14 +11,16 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@mipmap/epokamp_round"
+        android:label="EPOKAMP"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ProfilApp">
+        android:theme="@style/Theme.ProfilApp"
+        >
 
         <activity
             android:name=".SplashScreenActivity"
+            android:theme="@style/AppT"
             tools:ignore="WrongManifestParent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

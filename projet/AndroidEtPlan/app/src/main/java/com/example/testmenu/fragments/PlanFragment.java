@@ -1,7 +1,10 @@
 package com.example.testmenu.fragments;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,13 +14,22 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.testmenu.Controller;
+import com.example.testmenu.ListProduct;
+import com.example.testmenu.MainActivity;
+import com.example.testmenu.Market;
+import com.example.testmenu.Product;
 import com.example.testmenu.R;
+import com.example.testmenu.ScanActivity;
 import com.example.testmenu.algorithmie.PlusCourtChemin;
 import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.algorithmie.point.ProductPoint;
 import com.example.testmenu.plan_dynamique.MainActivity2;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
 
@@ -25,22 +37,56 @@ public class PlanFragment extends Fragment {
     private AutoCompleteTextView searchMarketName;
     private AutoCompleteTextView searchListName;
     private Button goButton;
+    private Button scanButton;
+    private TextView resultScan;
+    private ArrayList<Point> pointsProduits = new ArrayList<>();
+
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_plan, container, false);
+        ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CAMERA}, PackageManager.PERMISSION_GRANTED);
 
         searchMarketName = (AutoCompleteTextView)v.findViewById(R.id.serachMarketName);
         searchListName = (AutoCompleteTextView)v.findViewById(R.id.serachListName);
-        TextView tv = (TextView)v.findViewById(R.id.planText);
 
         ArrayList<String> marketsName = builderMarketsName();
+
+
+        TextView tv = (TextView)v.findViewById(R.id.planText);
+        TextView resultScan = (TextView)v.findViewById(R.id.resultScann);
+
+        //################################################################
+        //################################################################
+        /*ArrayList<Market> marketArrayList =  Controller.getAllMarkets();
+        for(int i=0; i< marketArrayList.size(); i++){
+             marketsName.add(marketArrayList.get(i).getMarketName());
+        }*/
+        // ###############################################################
+        // ###############################################################
+
+        //################################################################
+        //################################################################
+        /*ArrayList<ListProduct> listProductsUser =  Controller.getUserLists(MainActivity.user.getId());
+        for(int i=0; i< listProductsUser.size(); i++){
+             marketsName.add(listProductsUser.get(i).getListName());
+        }*/
+
+        // ###############################################################
+        // ###############################################################
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, marketsName);
         searchMarketName.setAdapter(adapter);
 
         goButton = (Button)v.findViewById(R.id.goButton);
+        scanButton = (Button)v.findViewById(R.id.scanButton);
+
+        // ##########################################
+        // ########## Requete#####################
+
+
         /*
         searchMarketName.addTextChangedListener(new TextWatcher() {
 
@@ -60,7 +106,17 @@ public class PlanFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), MainActivity2.class);
                 Bundle b = new Bundle();
-                ArrayList<Point> pointsProduits = new ArrayList<>();
+                // ################################################
+                // ################################################
+                /*ListProduct listSelected = new ListProduct();
+                for(ListProduct listProduct : listProductsUser ) {
+                    if(listProduct.getListName().equals(searchListName.getText().toString()))
+                        listSelected = listProduct;
+                }
+                for(Product product : listSelected.getListOfProducts())
+                    pointsProduits.add(new ProductPoint(product.getX(),product.getY()));*/
+                // ################################################
+                // ################################################
 
                 pointsProduits.add(new ProductPoint(2,3));
                 pointsProduits.add(new ProductPoint(4,10));
@@ -73,7 +129,41 @@ public class PlanFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
+        scanButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ScanButton(v);
+            }
+        });
         return v;
+    }
+
+    public void ScanButton(View view){
+        IntentIntegrator intentIntegrator = new IntentIntegrator(getActivity());
+        intentIntegrator.initiateScan();
+
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+
+        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (intentResult != null){
+            if (intentResult.getContents() == null){
+                Log.e("eoeo","cancelled");
+                resultScan.setText("cancelled");
+
+            }
+            else {
+                Log.e("code bar", intentResult.getContents());
+                resultScan.setText(intentResult.getContents());
+
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
 

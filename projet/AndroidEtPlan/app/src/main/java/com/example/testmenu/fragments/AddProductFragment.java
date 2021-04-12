@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
@@ -54,7 +55,7 @@ public class AddProductFragment extends Fragment {
         addToListButton = (FloatingActionButton)v.findViewById(R.id.addToListButton);
         Log.e("TAG2", ""+marketId);
 
-
+       // ArrayList<Product> productsFromMarket = Controller.getAllProducts(marketId);
         ArrayList<Product> productsFromMarket = new ArrayList<Product>();
         initList(productsFromMarket);
         int m = productsFromMarket.size();
