@@ -188,14 +188,16 @@ if(isset($_POST['action'])) {
 		$data = $db->query($req);
 		if(!($data->fetch())) {		//Le mail n'est pas présent dans la base de donnée
 			$password_hash = password_hash($password, PASSWORD_DEFAULT);
-			$req = "INSERT INTO Users (`mail`, `password`, `firstname`, `lastname`) VALUES ($mail, '$password_hash', $firstname, $lastname);SELECT LAST_INSERT_ID();";
-			$data = $db->exec($req);
+			$req = "INSERT INTO Users (`mail`, `password`, `firstname`, `lastname`) VALUES ($mail, '$password_hash', $firstname, $lastname)";
+			$db->exec($req);
+			$req = "SELECT LAST_INSERT_ID()";
+			$data = $db->query($req);
 			$id = $data->fetch()[0];
-
 			$user = array("id" => $id, "mail" => $_POST['mail'], "firstname" => $_POST['firstname'], "lastname" => $_POST['lastname']);
 			$answer['user'] = $user;
+			$answer['valid'] = true;
 		}
-		print(json_encode($answer);
+		print(json_encode($answer));
 		break;
 
 
