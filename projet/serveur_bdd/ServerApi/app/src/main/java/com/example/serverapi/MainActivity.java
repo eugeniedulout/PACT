@@ -291,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
 
             logs_tests += "set_email for user_id: " + newUser.getId() + " new_mail: new.mail@gmail.com\n";
             Controller.setEmail(newUser.getId(), "new.mail@gmail.com");
-    
+
         } catch (Exception e) {
             addErrorMessage("Changing mail");
             e.printStackTrace();
@@ -326,8 +326,8 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             addSeparator();
-            logs_tests += "Sending a friend request from user_id 5 to friend_id 9\n";
-            Controller.sendDemand(5,9);
+            logs_tests += "Sending a friend request from user_id 1 to friend_id 22\n";
+            Controller.sendDemand(1,22);
 
         } catch (Exception e) {
             addErrorMessage("Sending friend request");
@@ -336,8 +336,8 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 
-            logs_tests += "Getting friend request of user_id 9\n";
-            for(Integer i : Controller.getDemandsOfUser(9)) {
+            logs_tests += "Getting friend request of user_id 22\n";
+            for(Integer i : Controller.getDemandsOfUser(22)) {
                 logs_tests += "\t" + i + "\n";
             }
 
@@ -348,10 +348,10 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 
-            logs_tests += "user_id 9 refuse demands of user_id 5\n";
-            Controller.refuseDemand(9, 5);
-            logs_tests += "Getting friend request of user_id 9\n";
-            for(Integer i : Controller.getDemandsOfUser(9)) {
+            logs_tests += "user_id 22 refuse demands of user_id 1\n";
+            Controller.refuseDemand(22, 1);
+            logs_tests += "Getting friend request of user_id 22\n";
+            for(Integer i : Controller.getDemandsOfUser(22)) {
                 logs_tests += "\t" + i + "\n";
             }
 
