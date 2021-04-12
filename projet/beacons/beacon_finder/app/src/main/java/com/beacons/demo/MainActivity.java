@@ -223,16 +223,16 @@ public class MainActivity extends AppCompatActivity
         switch (uuid) {
             case "1cad5144-5bda-11eb-ae93-0242ac130002":
                 //coords = new Point(-3.38,3.61);
-                coords = new Point(7.5*0.5, 9*0.5);
+                coords = new Point(7.5*0.5, 5*0.5);
 
                 break;
             case "2d68cb07-d277-465e-8a44-bf509eccf6de":
                 //coords = new Point(8,3.8);
-                coords = new Point(12*0.5, 1*0.5);
+                coords = new Point(7.5*0.5, 6*0.5);
                 break;
             case "8ec76ea3-6668-48da-9866-75be8bc86fbb":
                 //coords = new Point(0,0);
-                coords = new Point(4*0.5,3*0.5);
+                coords = new Point(4.5*0.5,3*0.5);
                 break;
             default:
                 coords = new Point(-100,-100); // Valeur par défaut aberrantes;
