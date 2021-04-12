@@ -528,7 +528,7 @@ public class Controller {
         }
 
         Log.d("[RESULTS]", values.get(0));
-        Log.d("[RESULTS]", "-->"+result.length() );
+        Log.d("[RESULTS]", "-->"+result);
 
 
         keys.clear();

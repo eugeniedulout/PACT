@@ -41,9 +41,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Test de connection
         try {
-            logs_tests += "connect (bad pass): " + Controller.connect("quentin.audinet@telecom-paris.fr","badpass").toString()+ "\n";
-            logs_tests += "connect (bad mail): " + Controller.connect("quentin.audinet@badmail.com","pass").toString() + "\n";
-            logs_tests += "connect (good logs): " + Controller.connect("quentin.audinet@telecom-paris.fr","pass").toString() + "\n";
+            User user;
+            user = Controller.connect("quentin.audinet@telecom-paris.fr","badpass");
+            logs_tests += "connect (bad pass): " + ((user==null)?"false":user.toString()) + "\n";
+
+            user = Controller.connect("quentin.audinet@badmail.com","pass");
+            logs_tests += "connect (bad mail): " + ((user==null)?"false":user.toString()) + "\n";
+
+            user = Controller.connect("quentin.audinet@telecom-paris.fr","pass");
+            logs_tests += "connect (good logs): " + ((user==null)?"false":user.toString())  + "\n";
         } catch (Exception e) {
             addErrorMessage("Connecting");
             e.printStackTrace();
