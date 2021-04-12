@@ -527,6 +527,10 @@ public class Controller {
             try {reader.close();}catch (Exception e){}
         }
 
+        Log.d("[RESULTS]", values.get(0));
+        Log.d("[RESULTS]", "-->"+result.length() );
+
+
         keys.clear();
         values.clear();
 
