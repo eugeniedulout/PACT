@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             addSeparator();
-            logs_tests += "get_user_friends (user_id=2):\n";
+            logs_tests += "get_user_friends (user_id=1):\n";
             for(Integer i : Controller.getUserFriends(1)) {
                 logs_tests += "\t" + i + "\n";
             }

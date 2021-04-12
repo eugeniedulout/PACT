@@ -21,7 +21,6 @@ public class ProductOnSpecialOffer extends Product {
         super(name, productImage, price, description, x, y, z);
         this.newPrice = newPrice;
         this.expirationDate = expirationDate;
-
     }
 
     public ProductOnSpecialOffer(JSONObject json_product) {
