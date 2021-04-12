@@ -1,6 +1,7 @@
 package com.example.testmenu.fragments;
 
 import android.graphics.Paint;
+import android.icu.number.Precision;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.testmenu.ProductOnSpecialOffer;
 import com.example.testmenu.R;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+import static java.lang.Math.round;
 
 public class ProductOnSpecialOfferInfoFragment extends Fragment {
     private ProductOnSpecialOffer productOnSpecialOffer;
@@ -36,14 +42,19 @@ public class ProductOnSpecialOfferInfoFragment extends Fragment {
         TextView productNewPrice = (TextView) v.findViewById(R.id.productOnSpecialOfferNewPriceText);
         TextView expirationDateText = (TextView) v.findViewById(R.id.expirationDateText);
 
-        productPrice.setText(String.valueOf(productOnSpecialOffer.getPrice()) + " €");
+        BigDecimal bd = new BigDecimal(productOnSpecialOffer.getPrice()/100).setScale(2, RoundingMode.HALF_UP);
+        double salary = bd.doubleValue();
+        productPrice.setText(String.valueOf(salary + " €"));
         productPrice.setPaintFlags(productPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
         productName.setText(productOnSpecialOffer.getName());
 
         productDescription.setText(productOnSpecialOffer.getDescription());
 
-        productNewPrice.setText(String.valueOf(productOnSpecialOffer.getNewPrice()) + " €");
+        bd = new BigDecimal(productOnSpecialOffer.getNewPrice()/100).setScale(2, RoundingMode.HALF_UP);
+        salary = bd.doubleValue();
+
+        productNewPrice.setText(String.valueOf(salary) + " €");
 
         expirationDateText.setText("Promotion expire le " + productOnSpecialOffer.getExpirationDate());
 
