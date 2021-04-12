@@ -27,6 +27,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+<<<<<<< HEAD
 public class MainActivity extends AppCompatActivity
 {
     private final static int BT_REQUEST_ID = 1;
@@ -38,18 +39,47 @@ public class MainActivity extends AppCompatActivity
 
     private final BeaconsAdapter mAdapter = new BeaconsAdapter();
     private BluetoothAdapter mBtAdapter = null;
+=======
+import com.beacons.demo.bluetooth.BeaconModel;
+import com.beacons.demo.bluetooth.Trilateration;
+
+public class MainActivity extends AppCompatActivity
+{
+
+    // Permissions du bluetooth
+    private final static int BT_REQUEST_ID = 1;
+    private final static int REQUEST_LOCATION = 0;
+
+    private boolean permissions_granted = false;
+
+    // Pour afficher les appareils (pas utile pour l'appli finale)
+    private final BeaconsAdapter mAdapter = new BeaconsAdapter();
+    private BluetoothAdapter mBtAdapter = null;
+
+>>>>>>> bluetooth
     //Before Lollipop
     private BluetoothAdapter.LeScanCallback mLeOldCallback = null;
     //After Lollipop
     private ScanCallback mLeNewCallback = null;
     TextView x_coord, y_coord;
 
+<<<<<<< HEAD
     Trilateration t = new Trilateration();
+=======
+
+    //Objet calculant la position de l'utilisateur par trilatération
+    Trilateration t = new Trilateration();
+    //Le point de départ (loin par défaut)
+>>>>>>> bluetooth
     private Point p = new Point(100,100);
 
     // smoothing constant for low-pass filter 0 - 1 ; a smaller
     public static float ALPHA = 0.03f;
 
+<<<<<<< HEAD
+=======
+    // Liste des packets bluetooth reçus
+>>>>>>> bluetooth
     public ArrayMap<BluetoothDevice, byte[]> previous = new ArrayMap<BluetoothDevice, byte[]>();
 
     @Override
@@ -189,7 +219,14 @@ public class MainActivity extends AppCompatActivity
         }
 
         if(beacon!=null) {
+<<<<<<< HEAD
             updateCoords(beacon);
+=======
+            Point p = getCoords(beacon);
+
+            x_coord.setText("x: "+p.getX());
+            y_coord.setText("y: "+p.getY());
+>>>>>>> bluetooth
         }
 
         runOnUiThread(new Runnable() {
@@ -211,6 +248,7 @@ public class MainActivity extends AppCompatActivity
         switch (uuid) {
             case "1cad5144-5bda-11eb-ae93-0242ac130002":
                 //coords = new Point(-3.38,3.61);
+<<<<<<< HEAD
                 coords = new Point(3, 0);
                 break;
             case "2d68cb07-d277-465e-8a44-bf509eccf6de":
@@ -221,6 +259,18 @@ public class MainActivity extends AppCompatActivity
             case "8ec76ea3-6668-48da-9866-75be8bc86fbb":
                 coords = new Point(0,0);
                 //coords = new Point(-4, -4);
+=======
+                coords = new Point(7.5*0.5, 5*0.5);
+
+                break;
+            case "2d68cb07-d277-465e-8a44-bf509eccf6de":
+                //coords = new Point(8,3.8);
+                coords = new Point(7.5*0.5, 6*0.5);
+                break;
+            case "8ec76ea3-6668-48da-9866-75be8bc86fbb":
+                //coords = new Point(0,0);
+                coords = new Point(4.5*0.5,3*0.5);
+>>>>>>> bluetooth
                 break;
             default:
                 coords = new Point(-100,-100); // Valeur par défaut aberrantes;
@@ -231,7 +281,11 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+<<<<<<< HEAD
     private void updateCoords(BeaconModel beacon) {
+=======
+    private Point getCoords(BeaconModel beacon) {
+>>>>>>> bluetooth
         //beacon.setCoords(Controller.getBeaconsCoords(beacon.uuid));
         Point coords = getCoords(beacon.uuid);
         beacon.setCoords(coords.getX(), coords.getY());
@@ -240,8 +294,12 @@ public class MainActivity extends AppCompatActivity
         t.updateBeacon(beacon);
         p = t.getPosition(100, p);
         Log.d("[POSITION]", "x: " + p.getX() + " ---- y: " + p.getY());
+<<<<<<< HEAD
         x_coord.setText("x: "+p.getX());
         y_coord.setText("y: "+p.getY());
+=======
+        return p;
+>>>>>>> bluetooth
     }
     
     //Public method call by plan

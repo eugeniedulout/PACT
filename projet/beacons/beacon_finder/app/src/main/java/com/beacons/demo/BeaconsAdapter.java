@@ -1,15 +1,24 @@
 package com.beacons.demo;
 
+<<<<<<< HEAD
 import android.util.Log;
+=======
+>>>>>>> bluetooth
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ListIterator;
 import java.util.Random;
+=======
+import com.beacons.demo.bluetooth.BeaconModel;
+
+import java.util.ArrayList;
+>>>>>>> bluetooth
 
 class BeaconsAdapter extends BaseAdapter
 {

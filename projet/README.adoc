@@ -11,5 +11,9 @@ aux modules :
 
 * Interface Web
 
+<<<<<<< HEAD
 * etc... Si deux modules le juge pertinent, il est possible qu'ils partagent un dossier
+=======
+* etc... Si deux modules le juge pertinent, il est possible qu'ils partagent un dossier 
+>>>>>>> bluetooth
 (par exemple le module Android et le module Plan dynamique).
