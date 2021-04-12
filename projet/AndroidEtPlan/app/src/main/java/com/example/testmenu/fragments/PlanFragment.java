@@ -24,6 +24,7 @@ import com.example.testmenu.Market;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
 import com.example.testmenu.ScanActivity;
+import com.example.testmenu.Test;
 import com.example.testmenu.algorithmie.PlusCourtChemin;
 import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.algorithmie.point.ProductPoint;
@@ -134,37 +135,13 @@ public class PlanFragment extends Fragment {
         scanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ScanButton(v);
+                Intent i = new Intent(getActivity(), Test.class);
+                startActivity(i);
             }
         });
         return v;
     }
 
-    public void ScanButton(View view){
-        IntentIntegrator intentIntegrator = new IntentIntegrator(getActivity());
-        intentIntegrator.initiateScan();
-
-    }
-
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
-        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (intentResult != null){
-            if (intentResult.getContents() == null){
-                Log.e("eoeo","cancelled");
-                resultScan.setText("cancelled");
-
-            }
-            else {
-                Log.e("code bar", intentResult.getContents());
-                resultScan.setText(intentResult.getContents());
-
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
 
     private ArrayList<String> builderMarketsName (){

@@ -23,14 +23,22 @@ import com.google.zxing.integration.android.IntentResult;
 public class Test extends AppCompatActivity {
 
     private TextView textView;
-
+    private Button btnScanCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test);
 
-        textView = findViewById(R.id.text);
+        btnScanCode = (Button)findViewById(R.id.btnScanCode);
+        btnScanCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ScanButton(v);
+            }
+        });
+
+        textView = findViewById(R.id.resultScan);
         ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, PackageManager.PERMISSION_GRANTED);
     }
 
@@ -39,6 +47,8 @@ public class Test extends AppCompatActivity {
         intentIntegrator.initiateScan();
 
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -54,7 +64,7 @@ public class Test extends AppCompatActivity {
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
-        placeHolder(i,j,k,Integer.getInteger(textView.getText().toString()));
+        //placeHolder(i,j,k,Integer.getInteger(textView.getText().toString()));
     }
 
     int i=0;//position à récupérer

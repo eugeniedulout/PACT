@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 User user = null;
-                if(user != null) {
+                /*if(user != null) {
 
                     SharedPreferences sharedPreferences = getSharedPreferences("connectionState", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -46,7 +46,18 @@ public class Login extends AppCompatActivity {
 
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
-                }
+                }*/
+                SharedPreferences sharedPreferences = getSharedPreferences("connectionState", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                editor.putBoolean("isConnected", true);
+                Gson gson = new Gson();
+                String userJson = gson.toJson(user);
+                editor.putString("userValue", userJson);
+                editor.apply();
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
         goSignUp.setOnClickListener(new View.OnClickListener() {
