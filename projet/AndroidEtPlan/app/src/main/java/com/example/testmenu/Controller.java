@@ -1,9 +1,15 @@
-package com.example.testmenu;
+package com.example.serverapi.Server;
 
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.ViewGroup;
 
+import com.example.serverapi.ExternClasses.ListProduct;
+import com.example.serverapi.ExternClasses.Market;
+import com.example.serverapi.ExternClasses.Product;
+import com.example.serverapi.ExternClasses.ProductOnSpecialOffer;
+import com.example.serverapi.ExternClasses.Recette;
+import com.example.serverapi.ExternClasses.User;
 
 import org.json.JSONArray;
 import org.json.JSONException;
