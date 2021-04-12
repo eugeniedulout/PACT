@@ -1,6 +1,6 @@
 package com.example.slopeonealgorithm;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -14,19 +14,23 @@ public class SlopeOne {
     private static Map<Item, Map<Item, Integer>> freq = new HashMap<>();
     private static Map<User, HashMap<Item, Double>> inputData;
     private static Map<User, HashMap<Item, Double>> outputData = new HashMap<>();
-
-    public SlopeOne(int numberOfUsers) {
+    private final int numberOfUsers;
+    
+    public SlopeOne() {
+    	numberOfUsers = 5;
+    }
+    
+    public String getSlopeOne() {
         inputData = ReceiveData.initializeData(numberOfUsers);
-        System.out.println("Slope One - Before the Prediction\n");
         buildDifferencesMatrix(inputData);
-        System.out.println("\nSlope One - With Predictions\n");
-        predict(inputData);
+        //System.out.println("\nSlope One - With Predictions\n");
+        return predict(inputData);
     }
 
     /**
      * Based on the available data, calculate the relationships between the
      * items and number of occurences
-     *
+     * 
      * @param data
      *            existing user data and their items' ratings
      */
@@ -59,17 +63,16 @@ public class SlopeOne {
                 diff.get(j).put(i, oldValue / count);
             }
         }
-        //printData(data);
     }
 
     /**
      * Based on existing data predict all missing ratings. If prediction is not
      * possible, the value will be equal to -1
-     *
+     * 
      * @param data
      *            existing user data and their items' ratings
      */
-    private static void predict(Map<User, HashMap<Item, Double>> data) {
+    private static String predict(Map<User, HashMap<Item, Double>> data) {
         HashMap<Item, Double> uPred = new HashMap<Item, Double>();
         HashMap<Item, Integer> uFreq = new HashMap<Item, Integer>();
         for (Item j : diff.keySet()) {
@@ -103,22 +106,39 @@ public class SlopeOne {
             }
             outputData.put(e.getKey(), clean);
         }
-        //printData(outputData);
+        return print(outputData);
     }
 
-/*    private static void printData(Map<User, HashMap<Item, Double>> data) {
+    private static String print(Map<User, HashMap<Item, Double>> data) {
+    	String promo = null;
         for (User user : data.keySet()) {
-            System.out.println(user.getUsername() + ":");
-            print(data.get(user));
+        	if (user.getUsername().equals("User 0")){
+        		promo = dataPrinter(data.get(user));
+        	}
         }
+        return promo;
     }
 
-    private static void print(HashMap<Item, Double> hashMap) {
-        NumberFormat formatter = new DecimalFormat("#0.000");
+    private static String dataPrinter(HashMap<Item, Double> hashMap) {
+        //NumberFormat formatter = new DecimalFormat("#0.000");
+    	ArrayList<String> sugg = new ArrayList<String>();
+    	double val;
         for (Item j : hashMap.keySet()) {
-            System.out.println(" " + j.getItemName() + " --> " + formatter.format(hashMap.get(j).doubleValue()));
+        	val = hashMap.get(j).doubleValue();
+        	if (val > 0.7) {
+        		sugg.add(j.getItemName());
+        	}
+            //System.out.println(" " + j.getItemName() + " --> " + formatter.format(hashMap.get(j).doubleValue()));
         }
-    }*/
+        if(sugg.size() == 0) {
+        	sugg.add(null);
+        }
+        int a = (int) (Math.random() * (sugg.size()-1));
+        System.out.println(a);
+        return sugg.get(a);
+        
+    }
 
 }
+
 
