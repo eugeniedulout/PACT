@@ -25,8 +25,4 @@ public class Point {
         this.y = y;
     }
 
-    public void translatePol(double R, double alpha) {
-        this.x += R*Math.cos(alpha);
-        this.y += R*Math.sin(alpha);
-    }
 }
