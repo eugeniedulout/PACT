@@ -57,8 +57,12 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             addSeparator();
-            logs_tests += "get_all_products: \n";
+            logs_tests += "get_all_products in market_id: 1\n";
             for(Product p : Controller.getAllProducts(1)) {
+                logs_tests += p.toString()+"\n--------\n";
+            }
+            logs_tests += "get_all_products in market_id: 2\n";
+            for(Product p : Controller.getAllProducts(2)) {
                 logs_tests += p.toString()+"\n--------\n";
             }
 
@@ -110,16 +114,22 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
-            Product p1 = new Product("feutre", "feutre.png", 80, "Un feutre");
-            Product p2 = new Product("feuille", "feuille.png", 10, "Une feuille");
-            Product p3 = new Product("eau", "eau.png", 300, "De l'eau");
+            Product p1 = new Product("feutre", "feutre.png", 80, "Un feutre", 1,5,6 );
+            Product p2 = new Product("feuille", "feuille.png", 10, "Une feuille", 4, 6, 9);
+            Product p3 = new Product("eau", "eau.png", 300, "De l'eau", 7, 6, 3);
 
             ArrayList<Product> productsList = new ArrayList<Product>();
             productsList.add(p1);
             productsList.add(p2);
             productsList.add(p3);
 
-            ListProduct new_list = new ListProduct("Liste de test", productsList);
+            ArrayList<Integer> quantities = new ArrayList<Integer>();
+            quantities.add(5);
+            quantities.add(2);
+            quantities.add(8);
+
+
+            ListProduct new_list = new ListProduct("Liste de test", productsList, quantities, 1);
 
             Log.d("[INFO]", new_list.toJSON().toString());
 

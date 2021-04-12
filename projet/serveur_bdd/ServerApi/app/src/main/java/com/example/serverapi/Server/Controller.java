@@ -310,6 +310,8 @@ public class Controller {
         addParam("action","add_new_list");
         addParam("user_id", String.valueOf(userId));
         JSONObject json_list = listProduct.toJSON();
+
+        Log.d("[DEBUG]", json_list.toString());
         addParam("list",json_list.toString());
         addParam("list_name",listProduct.getListName());
         String result = post(SERVER_URL+USER_FONCTIONS);
