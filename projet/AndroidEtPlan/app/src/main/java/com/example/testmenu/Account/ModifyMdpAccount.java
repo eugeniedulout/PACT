@@ -42,7 +42,7 @@ public class ModifyMdpAccount extends Fragment {
 
         this.identifiant=v.findViewById(R.id.txtIdentifiant);
         this.nom=v.findViewById(R.id.txtNom);
-        this.prénom=v.findViewById(R.id.txtPrénom);
+        this.prénom=v.findViewById(R.id.txtPrenom);
         this.email=v.findViewById(R.id.txtEmail);
         this.newMdp=v.findViewById(R.id.editTextTextPassword);
 

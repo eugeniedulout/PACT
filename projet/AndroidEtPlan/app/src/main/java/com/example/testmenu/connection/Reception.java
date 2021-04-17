@@ -29,6 +29,7 @@ public class Reception extends AppCompatActivity {
         if(isConnected) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
+            finish();
         }
         signUpButton = (Button)findViewById(R.id.buttonSignUp);
         signUpButton.setOnClickListener(accesOthersActivities);
@@ -46,12 +47,10 @@ public class Reception extends AppCompatActivity {
                 case R.id.buttonConnect:
                     Intent intent = new Intent(getApplicationContext(), Login.class);
                     startActivity(intent);
-                    finish();
                     break;
                 default:
                     Intent intent2 = new Intent(getApplicationContext(), SignUp.class);
                     startActivity(intent2);
-                    finish();
                     break;
             }
         }

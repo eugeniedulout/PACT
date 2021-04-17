@@ -39,7 +39,7 @@ public class ProfilActivity extends Fragment {
         this.parameters = v.findViewById(R.id.parameters);
         this.txtProfil=v.findViewById(R.id.txtProfil);
         deconnexion = (Button)v.findViewById(R.id.parameters2);
-        txtProfil.setText("Bonjour "+ Controller.getUser(1).getLastname()+" "+ Controller.getUser(1).getFirstname());
+        txtProfil.setText("Bonjour "+ MainActivity.user.getFirstname()+" "+ MainActivity.user.getLastname());
         preferences.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

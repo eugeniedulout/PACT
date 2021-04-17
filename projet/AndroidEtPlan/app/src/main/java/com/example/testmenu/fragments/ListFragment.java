@@ -21,6 +21,7 @@ import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.Ingredient;
 import com.example.testmenu.ListProduct;
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
 import com.example.testmenu.adapters.ListAdapter;
@@ -89,10 +90,10 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
         listlistOfProducts.add(new ListProduct("Troisieme liste",products));*/
         ListAdapter adapter = new ListAdapter(getContext(), listlistOfProducts);
         listViewOflistOfProducts.setAdapter(adapter);
-        //loadLists loadLists = new loadLists();
-        //loadLists.execute();
+        /*loadLists loadLists = new loadLists();
+        loadLists.execute();*/
 
-       ArrayList<ListProduct> listProducts = Controller.getUserLists(1);
+       ArrayList<ListProduct> listProducts = Controller.getUserLists(MainActivity.user.getId());
         for(ListProduct listProduct : listProducts)
             listlistOfProducts.add(listProduct);
         adapter = new ListAdapter(getContext(), listlistOfProducts);
@@ -159,6 +160,9 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
         @Override
         protected Void doInBackground(Void... voids) {
 
+            ArrayList<ListProduct> listProducts = Controller.getUserLists(MainActivity.user.getId());
+            for(ListProduct listProduct : listProducts)
+                listlistOfProducts.add(listProduct);
 
             return null;
         }

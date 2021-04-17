@@ -57,12 +57,11 @@ public class MainActivity extends AppCompatActivity {
         String json = sharedPreferences.getString("userValue", null);
 
         Type type = new TypeToken<ArrayList<User>>() {}.getType();
-
+        user = gson.fromJson(json, User.class);
         // in below line we are getting data from gson
         // and saving it to our array list
-        user = (User) getIntent().getSerializableExtra("userValue");
-
-         // Log.e("jejeje", user.getFirstname());
+        //user = (User) getIntent().getSerializableExtra("userValue");
+         Log.e("jejeje", ""+user);
         // checking below if the array list is empty or not
         if (user == null) {
             // if the array list is empty

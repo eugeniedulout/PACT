@@ -2,6 +2,7 @@ package com.example.testmenu.Friends;
 
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.R;
+import com.example.testmenu.User;
 import com.example.testmenu.fragments.ProfilFragment;
 
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ public class FriendsActivity extends Fragment {
     private Button ajoutami;
     private Button demandes;
 
-    private ArrayList<Integer> listFriends;
+    private ArrayList<Integer> listFriends = new ArrayList<Integer>();
     public String textName;
     ArrayList<String> listNameOfFriend=new ArrayList<String>();
     private ListView listeamis;
@@ -71,11 +73,13 @@ public class FriendsActivity extends Fragment {
 
 
 
-       listFriends=  Controller.getUserFriends(1);
-       //for(Integer e: listFriends){
-        for(int i=0;i<listFriends.size();i++)  {
-            listNameOfFriend.add(Controller.getUser(listFriends.get(i)).getFirstname()+" "+Controller.getUser(listFriends.get(i)).getLastname());
-        }
+       // listFriends=  Controller.getUserFriends(1);
+
+
+        /*for(int i=0;i<listFriends.size();i++)  {
+            User us = Controller.getUser(listFriends.get(i));
+            listNameOfFriend.add(us.getFirstname()+" "+us.getLastname());
+        }*/
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext() , android.R.layout.simple_list_item_1, listNameOfFriend);
 

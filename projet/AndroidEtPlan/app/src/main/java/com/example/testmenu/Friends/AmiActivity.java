@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.ListProduct;
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class AmiActivity extends Fragment {
 
        txtAmi.setText(Controller.getUser(id).getFirstname()+Controller.getUser(id).getLastname());
         ArrayList<String> sesListes=new ArrayList<String>();
-        ArrayList<ListProduct> lists= Controller.getUserLists(id);
+        ArrayList<ListProduct> lists= Controller.getUserLists(MainActivity.user.getId());
         for(ListProduct l: lists){
             sesListes.add(l.getListName());
         }

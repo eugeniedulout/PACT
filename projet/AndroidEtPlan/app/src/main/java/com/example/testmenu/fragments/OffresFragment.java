@@ -33,6 +33,7 @@ import static com.example.testmenu.Controller.getAllMarkets;
 public class OffresFragment extends Fragment {
     private ArrayList<String> marketLogoUrlArray = new ArrayList<String>() ;
     private ArrayList<String> marketNameArray = new ArrayList<String>() ;
+    private ArrayList<Integer> marketIdArray= new ArrayList<Integer>() ;
 
     private ArrayList<String> marketLogoUrlArrayTwo = new ArrayList<String>() ;
     private ArrayList<String> marketNameArrayTwo = new ArrayList<String>() ;
@@ -57,6 +58,16 @@ public class OffresFragment extends Fragment {
 
         }
 
+        for (int i =0; i<markets.size(); i++) {
+            marketLogoUrlArray.add(markets.get(i).getMarketLogoUrl());
+        }
+
+        for (int i =0; i<markets.size(); i++) {
+            marketIdArray.add(markets.get(i).getMarketId());
+        }
+
+
+
        // ArrayList<Product> products = Controller.getAllProducts(markets.get(2).getMarketId());
 
         /*for(Product product : products)
@@ -75,7 +86,7 @@ public class OffresFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.recycleViewMarkets);
         recyclerView.setLayoutManager(layoutManager);
-        RecycleViewMarketsAdapter adapter = new RecycleViewMarketsAdapter(marketLogoUrlArray, marketNameArray, getContext());
+        RecycleViewMarketsAdapter adapter = new RecycleViewMarketsAdapter(marketLogoUrlArray, marketNameArray, marketIdArray, getContext());
         recyclerView.setAdapter(adapter);
 
         LinearLayoutManager layoutManagerTwo =  new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);

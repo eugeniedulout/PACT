@@ -34,7 +34,7 @@ public class User implements Serializable{
         try {
             this.id = json_user.getInt("id");
             this.mail = json_user.getString("mail");
-            this.firstname = json_user.getString("mail");
+            this.firstname = json_user.getString("firstname");
             this.lastname = json_user.getString("lastname");
         } catch (JSONException e) {
             e.printStackTrace();

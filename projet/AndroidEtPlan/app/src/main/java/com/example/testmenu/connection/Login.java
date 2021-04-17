@@ -42,16 +42,16 @@ public class Login extends AppCompatActivity {
                     Log.e("eee", "password good");
                     SharedPreferences sharedPreferences = getSharedPreferences("connectionState", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-
                     editor.putBoolean("isConnected", true);
                     Gson gson = new Gson();
                     String userJson = gson.toJson(user);
-                    //editor.putString("userValue", userJson);
+                    editor.putString("userValue", userJson);
                     editor.apply();
                     Log.e("ekkeke",user.getFirstname());
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("userValue", user);
                     startActivity(intent);
+                    finish();
 
                 }
                 else

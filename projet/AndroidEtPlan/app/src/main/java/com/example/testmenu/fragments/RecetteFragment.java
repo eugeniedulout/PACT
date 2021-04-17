@@ -15,8 +15,10 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.Ingredient;
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
 import com.example.testmenu.Recette;
 import com.example.testmenu.adapters.ListOfRecettesAdapter;
@@ -28,15 +30,6 @@ public class RecetteFragment extends Fragment implements  View.OnClickListener {
     private ImageButton addNewRecette;
     private ArrayList<Recette> listOfRecette = new ArrayList<>();
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        SharedPreferences pref = getActivity().getPreferences(Context.MODE_PRIVATE);
-        String titreRecette = pref.getString("titre_recette", "empty");
-        ArrayList<Ingredient> ingredients = new ArrayList<>();
-        listOfRecette.add(new Recette(titreRecette, ingredients, new ArrayList<String>()));
-        Log.e("onCreate", "On rentre dans le fragment");
-    }
 
     @Nullable
     @Override
@@ -50,11 +43,15 @@ public class RecetteFragment extends Fragment implements  View.OnClickListener {
         addNewRecette.setOnClickListener(this::onClick);
 
         ListView listViewRecettes = (ListView) v.findViewById(R.id.listOflistOfRecette);
-        initRecette();
+        //initRecette();
 
         ListOfRecettesAdapter adapter = new ListOfRecettesAdapter(getContext(), listOfRecette);
         listViewRecettes.setAdapter(adapter);
 
+        ArrayList<Recette> recettes = Controller.getUserRecettes(MainActivity.user.getId());
+        for (Recette recette : recettes) {
+            listOfRecette.add(recette);
+        }
 
         listViewRecettes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -67,7 +64,7 @@ public class RecetteFragment extends Fragment implements  View.OnClickListener {
         });
         return v;
     }
-    private void initRecette(){
+   /* private void initRecette(){
             ArrayList<Ingredient> ingredients = new ArrayList<>();
             ingredients.add(new Ingredient("oeufs","https://e7.pngegg.com/pngimages/997/205/png-clipart-egg-white-caesar-salad-chicken-scrambled-eggs-egg-food-recipe.png" ));
             ingredients.add(new Ingredient("beuure","https://img2.freepng.fr/20180810/use/kisspng-clarified-butter-portable-network-graphics-cheese-butter-name-png-ready-made-logo-effect-images-png-5b6d4bffb2ba80.3878457015338895357321.jpg" ));
@@ -78,7 +75,7 @@ public class RecetteFragment extends Fragment implements  View.OnClickListener {
                 Recette recette = new Recette("Recette" + String.valueOf(k), ingredients, new ArrayList<String>());
                 listOfRecette.add(recette);
             }
-    }
+    }*/
 
     @Override
     public void onClick(View v) {
@@ -92,4 +89,10 @@ public class RecetteFragment extends Fragment implements  View.OnClickListener {
         }
         FragmentController.swapFragmentInMainContainer(destinationFragment, getContext());
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        listOfRecette.clear();
+            }
 }

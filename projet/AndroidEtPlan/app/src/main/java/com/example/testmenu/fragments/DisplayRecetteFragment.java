@@ -22,7 +22,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.Ingredient;
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
+import com.example.testmenu.Recette;
 import com.example.testmenu.adapters.RecetteAdapter;
 import com.example.testmenu.adapters.RecycleViewConsigneRecetteAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -66,11 +68,13 @@ public class DisplayRecetteFragment extends Fragment {
         addRecetteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //  Controller.addNewRecette(MainActivity.user, new Recette(recetteNAme.getText().toString(),listOfIngredients, consignes)
-                SharedPreferences pref = getActivity().getPreferences(Context.MODE_PRIVATE);
+
+                Log.e("eee",recetteName.getText().toString());
+                Controller.addNewRecette(MainActivity.user.getId(), new Recette(recetteName.getText().toString(),listOfIngredients, consignes));
+                /*SharedPreferences pref = getActivity().getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor edt = pref.edit();
                 edt.putString("titre_recette", titleHtmlPage);
-                edt.commit();
+                edt.commit();*/
                 FragmentController.swapFragmentInMainContainer(new RecetteFragment(), getContext());
             }
         });

@@ -24,11 +24,24 @@ import java.util.ArrayList;
 public class RecycleViewMarketsAdapter extends  RecyclerView.Adapter<RecycleViewMarketsAdapter.ViewHolder> {
     private ArrayList<String> marketLogoUrlArray;
     private ArrayList<String> marketNameArray;
+    private ArrayList<Integer> marketIdArray;
+
     private Context mContext;
+
+    public RecycleViewMarketsAdapter(ArrayList<String> marketLogoUrlArray, ArrayList<String> marketNameArray,ArrayList<Integer> marketIdArray, Context mContext) {
+        this.marketLogoUrlArray = marketLogoUrlArray;
+        this.marketNameArray = marketNameArray;
+        this.marketIdArray = marketIdArray;
+
+        this.mContext = mContext;
+    }
 
     public RecycleViewMarketsAdapter(ArrayList<String> marketLogoUrlArray, ArrayList<String> marketNameArray, Context mContext) {
         this.marketLogoUrlArray = marketLogoUrlArray;
         this.marketNameArray = marketNameArray;
+        this.marketIdArray =  new ArrayList<Integer>();
+        for (int i =0; i<marketLogoUrlArray.size(); i++)
+            marketIdArray.add(1);
         this.mContext = mContext;
     }
 
@@ -55,7 +68,7 @@ public class RecycleViewMarketsAdapter extends  RecyclerView.Adapter<RecycleView
                 Log.e("hey", marketNameArray.get(position));
                 Log.e("hey2", marketLogoUrlArray.get(position));
 
-                Market market = new Market(2,marketNameArray.get(position), marketLogoUrlArray.get(position), "", "");
+                Market market = new Market(marketIdArray.get(position),marketNameArray.get(position), marketLogoUrlArray.get(position), "", "");
                 /*FragmentTransaction fr = getActivity().getSupportFragmentManager().beginTransaction();
                 fr.replace(R.id.container, new ListOfMarketPromotions(market) );
                 fr.addToBackStack(null).commit();*/

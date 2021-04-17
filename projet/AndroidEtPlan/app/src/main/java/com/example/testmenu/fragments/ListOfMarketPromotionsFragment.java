@@ -2,6 +2,7 @@ package com.example.testmenu.fragments;
 
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,6 +53,7 @@ public class ListOfMarketPromotionsFragment extends Fragment {
         ArrayList<ProductOnSpecialOffer> productOnSpecialOffers = Controller.getMarketOffers(market.getMarketId());
        // ###################################
 
+        Log.e("marketId", ""+market.getMarketId());
        /* int id = getResources().getIdentifier(market.getMarketLogo(), "drawable", getContext().getPackageName());
         marketImage.setImageResource(id);*/
         Glide.with(getContext()).load(market.getMarketLogoUrl()).into(marketImage);

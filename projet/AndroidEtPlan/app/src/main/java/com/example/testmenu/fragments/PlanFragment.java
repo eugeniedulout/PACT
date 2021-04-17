@@ -73,7 +73,7 @@ public class PlanFragment extends Fragment {
 
         //################################################################
         //################################################################
-        ArrayList<ListProduct> listProductsUser =  Controller.getUserLists(1);
+        ArrayList<ListProduct> listProductsUser =  Controller.getUserLists(MainActivity.user.getId());
         for(int i=0; i< listProductsUser.size(); i++){
             listnames.add(listProductsUser.get(i).getListName());
         }

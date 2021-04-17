@@ -42,7 +42,7 @@ public class ModifyAdressEAccount extends Fragment {
         View v = inflater.inflate(R.layout.activity_modify_adress_e_account, container, false);
         this.identifiant=v.findViewById(R.id.txtIdentifiant);
         this.nom=v.findViewById(R.id.txtNom);
-        this.prénom=v.findViewById(R.id.txtPrénom);
+        this.prénom=v.findViewById(R.id.txtPrenom);
         this.btnValid=v.findViewById(R.id.btnValid);
         this.btnMdp=v.findViewById(R.id.btnMdpAccount);
 
