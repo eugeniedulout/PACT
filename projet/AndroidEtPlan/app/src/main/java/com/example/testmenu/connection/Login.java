@@ -26,6 +26,9 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        TextView falseMdpTextView = (TextView)findViewById(R.id.falseMdpTextView);
+        falseMdpTextView.setVisibility(View.INVISIBLE);
+
         TextView goSignUp = (TextView)findViewById(R.id.goSignUp);
 
         TextView login  = (TextView)findViewById(R.id.login);
@@ -54,9 +57,10 @@ public class Login extends AppCompatActivity {
                     finish();
 
                 }
-                else
+                else {
                     Log.e("Tets", "password false");
-
+                    falseMdpTextView.setVisibility(View.VISIBLE);
+                }
 
 
                 /*SharedPreferences sharedPreferences = getSharedPreferences("connectionState", MODE_PRIVATE);

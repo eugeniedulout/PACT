@@ -34,7 +34,7 @@
                     android:layout_marginLeft="15dp"
                     android:background="#00000000"
                     android:hint="Email Address"
-                    android:inputType="text"
+                    android:inputType="textEmailAddress"
                     android:letterSpacing="0.1"
                     android:textColor="#000000"
                     android:textColorHint="#000000"
@@ -74,6 +74,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#4a5a71"></LinearLayout>
+
+            <TextView
+                android:id="@+id/falseMdpTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Mot de passe ou email incorrecte"
+                android:textColor="#BC0303"
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -84,19 +94,21 @@
         android:orientation="vertical"
         android:gravity="bottom"
         android:layout_marginBottom="20dp">
+
         <TextView
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="50dp"
             android:background="#000000"
+            android:gravity="center"
+            android:letterSpacing="0.2"
+            android:padding="16dp"
             android:text="Login"
             android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_gravity="bottom"
-            android:padding="16dp"
-            android:layout_marginBottom="50dp"
-            android:letterSpacing="0.2"/>
+            android:textSize="14sp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/goSignUp"
             android:layout_width="match_parent"

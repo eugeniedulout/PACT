@@ -1,8 +1,8 @@
 package com.example.testmenu.algorithmie;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class TspDynamicProgrammingIterative {
 

@@ -2,6 +2,7 @@
 package com.example.testmenu.algorithmie.dijkstra;
 
 import java.util.HashSet;
+
 /**
  * Class of the set A which is used in Dijkstra algorithm.
  * A is a set of vertices

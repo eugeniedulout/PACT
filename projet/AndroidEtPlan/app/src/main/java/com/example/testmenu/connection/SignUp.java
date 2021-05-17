@@ -30,6 +30,9 @@ public class SignUp extends AppCompatActivity {
 
         TextView signUp = (TextView)findViewById(R.id.signUp);
 
+        TextView emailAlreadyExistTextView = (TextView)findViewById(R.id.emailAlreadyExistTextView);
+        emailAlreadyExistTextView.setVisibility(View.INVISIBLE);
+
         EditText email = (EditText)findViewById(R.id.email) ;
         EditText nom = (EditText)findViewById(R.id.nomUser) ;
         EditText prenom = (EditText)findViewById(R.id.prenomUser) ;
@@ -60,6 +63,10 @@ public class SignUp extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     finish();
+                }
+                else {
+                    emailAlreadyExistTextView.setVisibility(View.VISIBLE);
+
                 }
 
 

@@ -10,7 +10,7 @@ public class myGlSurfaceView extends GLSurfaceView {
     public myGlSurfaceView(Context context) {
         super(context);
         // Create acontext
-        setEGLContextClientVersion(3);
+        setEGLContextClientVersion(2);
 
         super.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
 

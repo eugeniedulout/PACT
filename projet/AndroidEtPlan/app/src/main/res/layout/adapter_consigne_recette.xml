@@ -19,7 +19,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorbf">
+            android:background="@color/colorm">
 
             <TextView
                 android:id="@+id/stepNumberText"
@@ -29,7 +29,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 android:text="1"
-                android:textColor="#DCD228"
+                android:textColor="#FFFFFF"
                 android:textColorHighlight="#B83D3D"
                 android:textSize="40sp" />
 
@@ -41,7 +41,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_toRightOf="@id/stepNumberText"
                 android:text="TextView"
-                android:textColor="#DCD228"
+                android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 app:autoSizeMaxTextSize="14sp"
                 app:autoSizeMinTextSize="10sp" />

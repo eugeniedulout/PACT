@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/iconRecette"
-        android:layout_width="50dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="10dp"
         android:layout_weight="10"
@@ -19,14 +19,17 @@
 
     <TextView
         android:id="@+id/recetteNameText"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_weight="10"
+        android:ellipsize="end"
         android:fontFamily="@font/contrail_one"
         android:paddingTop="5dp"
+        android:singleLine="true"
         android:text="Nom de la Recette"
-        android:textColor="#009688"
+
+        android:textColor="@color/colorm"
         android:textSize="26sp" />
 
 

@@ -9,21 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.Ingredient;
 import com.example.testmenu.R;
-import com.example.testmenu.adapters.RecetteAdapter;
-import com.example.testmenu.adapters.RecycleViewConsigneRecetteAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jsoup.Jsoup;
@@ -65,7 +59,7 @@ public class AddRecetteFragment extends Fragment {
             }
         });
 
-        FragmentController.swapFragment(new WebViewFragment(),R.id.containerWebView, getContext());
+        FragmentController.swapFragment(new WebViewFragment(), R.id.containerWebView, getContext());
 
         importButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -42,7 +42,7 @@ public class PromotionMarketAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = inflater.inflate(R.layout.adapter_view_promotion_market, null);
+        convertView = inflater.inflate(R.layout.adapter_view_promotions, null);
 
         ProductOnSpecialOffer currentProduct = getItem(position);
 
@@ -67,7 +67,7 @@ public class PromotionMarketAdapter extends BaseAdapter {
 
         int imageId = context.getResources().getIdentifier(productImage, "drawable", context.getPackageName());
 
-        ImageView iconProduct= convertView.findViewById(R.id.iconRecette);
+        ImageView iconProduct= convertView.findViewById(R.id.iconnProduct);
         iconProduct.setImageResource(imageId);
 
 

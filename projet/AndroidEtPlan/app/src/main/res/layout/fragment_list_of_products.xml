@@ -6,11 +6,13 @@
 
 
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listViewOfProducts"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:divider="@null"
+        android:dividerHeight="0dp"
         >
-    </ListView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

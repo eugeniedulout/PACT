@@ -1,6 +1,7 @@
 package com.example.testmenu.algorithmie.dijkstra;
 
 import java.util.Hashtable;
+
 /**
  * Class of the Pi function used in Dijkstra algorithm
  * @author Sofiene Boutaj
@@ -36,7 +37,7 @@ public class Pi implements PiInterface {
 	 * @param g : the graph, type: GraphInterface
 	 * @param r : the root of the graph, type: VertexInterface
 	 */
-	public void initToInfiniteValue(GraphInterface g,VertexInterface r) {
+	public void initToInfiniteValue(GraphInterface g, VertexInterface r) {
 		p.put(r, 0.0);
 
 		for (int j =0; j < g.sizeGraph(); j++) {

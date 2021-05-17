@@ -1,7 +1,6 @@
 package com.example.testmenu.fragments;
 
 import android.graphics.Paint;
-import android.icu.number.Precision;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +16,6 @@ import com.example.testmenu.R;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-
-import static java.lang.Math.round;
 
 public class ProductOnSpecialOfferInfoFragment extends Fragment {
     private ProductOnSpecialOffer productOnSpecialOffer;

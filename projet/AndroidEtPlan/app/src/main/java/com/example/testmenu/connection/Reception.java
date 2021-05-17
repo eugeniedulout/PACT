@@ -4,17 +4,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
-import com.google.gson.Gson;
 
 public class Reception extends AppCompatActivity {
-    private Button connectButton;
-    private Button signUpButton;
+    private TextView connectButton;
+    private TextView signUpButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +30,10 @@ public class Reception extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        signUpButton = (Button)findViewById(R.id.buttonSignUp);
+        signUpButton = (TextView)findViewById(R.id.buttonSignUp);
         signUpButton.setOnClickListener(accesOthersActivities);
 
-        connectButton = (Button)findViewById(R.id.buttonConnect);
+        connectButton = (TextView)findViewById(R.id.buttonConnect);
         connectButton.setOnClickListener(accesOthersActivities);
 
 

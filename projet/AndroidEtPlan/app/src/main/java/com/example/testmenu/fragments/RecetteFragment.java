@@ -1,27 +1,23 @@
 package com.example.testmenu.fragments;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
-import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
-import com.example.testmenu.Ingredient;
 import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
 import com.example.testmenu.Recette;
-import com.example.testmenu.adapters.ListOfRecettesAdapter;
+import com.example.testmenu.adapters.RecycleViewRecipeAdapter;
 
 import java.util.ArrayList;
 
@@ -42,26 +38,17 @@ public class RecetteFragment extends Fragment implements  View.OnClickListener {
         addNewRecette = (ImageButton)v.findViewById(R.id.addNewRecette);
         addNewRecette.setOnClickListener(this::onClick);
 
-        ListView listViewRecettes = (ListView) v.findViewById(R.id.listOflistOfRecette);
+        RecyclerView listViewRecettes = (RecyclerView) v.findViewById(R.id.listOflistOfRecette);
         //initRecette();
 
-        ListOfRecettesAdapter adapter = new ListOfRecettesAdapter(getContext(), listOfRecette);
-        listViewRecettes.setAdapter(adapter);
-
         ArrayList<Recette> recettes = Controller.getUserRecettes(MainActivity.user.getId());
-        for (Recette recette : recettes) {
-            listOfRecette.add(recette);
-        }
 
-        listViewRecettes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long id) {
-                Log.e("click" , " a" + listOfRecette.get(position).getRecetteName());
+        LinearLayoutManager layoutManager =  new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
-                listOfRecette.get(position).displayIngredientsInTheRecette(getContext());
-            }
-        });
+        RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.listOflistOfRecette);
+        recyclerView.setLayoutManager(layoutManager);
+        RecycleViewRecipeAdapter adapter = new RecycleViewRecipeAdapter(recettes, getContext());
+        recyclerView.setAdapter(adapter);
         return v;
     }
    /* private void initRecette(){

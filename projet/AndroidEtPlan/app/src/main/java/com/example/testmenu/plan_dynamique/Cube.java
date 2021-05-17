@@ -1,5 +1,6 @@
 package com.example.testmenu.plan_dynamique;
 
+import android.opengl.GLES20;
 import android.opengl.GLES30;
 import android.util.Log;
 
@@ -144,22 +145,22 @@ public class Cube {
             return;
         }
 
-        GLES30.glAttachShader(programObject, vertexShader);
-        GLES30.glAttachShader(programObject, fragmentShader);
+        GLES20.glAttachShader(programObject, vertexShader);
+        GLES20.glAttachShader(programObject, fragmentShader);
 
         // Bind vPosition to attribute 0
-        GLES30.glBindAttribLocation(programObject, 0, "vPosition");
+        GLES20.glBindAttribLocation(programObject, 0, "vPosition");
 
         // Link the program
-        GLES30.glLinkProgram(programObject);
+        GLES20.glLinkProgram(programObject);
 
         // Check the link status
-        GLES30.glGetProgramiv(programObject, GLES30.GL_LINK_STATUS, linked, 0);
+        GLES20.glGetProgramiv(programObject, GLES20.GL_LINK_STATUS, linked, 0);
 
         if (linked[0] == 0) {
             Log.e(TAG, "Error linking program:");
-            Log.e(TAG, GLES30.glGetProgramInfoLog(programObject));
-            GLES30.glDeleteProgram(programObject);
+            Log.e(TAG, GLES20.glGetProgramInfoLog(programObject));
+            GLES20.glDeleteProgram(programObject);
             return;
         }
 
@@ -174,60 +175,60 @@ public class Cube {
     public void draw(float[] mvpMatrix) {
 
         // Use the program object
-        GLES30.glUseProgram(mProgramObject);
+        GLES20.glUseProgram(mProgramObject);
 
         // get handle to shape's transformation matrix
-        mMVPMatrixHandle = GLES30.glGetUniformLocation(mProgramObject, "uMVPMatrix");
+        mMVPMatrixHandle = GLES20.glGetUniformLocation(mProgramObject, "uMVPMatrix");
         myRenderer.checkGlError("glGetUniformLocation");
 
         // get handle to fragment shader's vColor member
-        mColorHandle = GLES30.glGetUniformLocation(mProgramObject, "vColor");
+        mColorHandle = GLES20.glGetUniformLocation(mProgramObject, "vColor");
 
 
         // Apply projection and view transformation
-        GLES30.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mvpMatrix, 0);
+        GLES20.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mvpMatrix, 0);
         myRenderer.checkGlError("glUniformMatrix4fv");
 
         int VERTEX_POS_INDX = 0;
         mVertices.position(VERTEX_POS_INDX);  //just in case.  We did it already though.
 
         //add all the points to the space
-        GLES30.glVertexAttribPointer(VERTEX_POS_INDX, 3, GLES30.GL_FLOAT,
+        GLES20.glVertexAttribPointer(VERTEX_POS_INDX, 3, GLES20.GL_FLOAT,
                 false, 0, mVertices);
-        GLES30.glEnableVertexAttribArray(VERTEX_POS_INDX);
+        GLES20.glEnableVertexAttribArray(VERTEX_POS_INDX);
 
 
         int startPos =0;
         int verticesPerface = 6;
 
         //draw front face
-        GLES30.glUniform4fv(mColorHandle, 1, color1, 0);
-        GLES30.glDrawArrays(GLES30.GL_TRIANGLES,startPos,verticesPerface);
+        GLES20.glUniform4fv(mColorHandle, 1, color1, 0);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES,startPos,verticesPerface);
         startPos += verticesPerface;
 
         //draw back face
-        GLES30.glUniform4fv(mColorHandle, 1, color1, 0);
-        GLES30.glDrawArrays(GLES30.GL_TRIANGLES, startPos, verticesPerface);
+        GLES20.glUniform4fv(mColorHandle, 1, color1, 0);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, startPos, verticesPerface);
         startPos += verticesPerface;
 
         //draw left face
-        GLES30.glUniform4fv(mColorHandle, 1, color2, 0);
-        GLES30.glDrawArrays(GLES30.GL_TRIANGLES,startPos,verticesPerface);
+        GLES20.glUniform4fv(mColorHandle, 1, color2, 0);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES,startPos,verticesPerface);
         startPos += verticesPerface;
 
         //draw right face
-        GLES30.glUniform4fv(mColorHandle, 1, color2, 0);
-        GLES30.glDrawArrays(GLES30.GL_TRIANGLES,startPos,verticesPerface);
+        GLES20.glUniform4fv(mColorHandle, 1, color2, 0);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES,startPos,verticesPerface);
         startPos += verticesPerface;
 
         //draw top face
-        GLES30.glUniform4fv(mColorHandle, 1, color3, 0);
-        GLES30.glDrawArrays(GLES30.GL_TRIANGLES,startPos,verticesPerface);
+        GLES20.glUniform4fv(mColorHandle, 1, color3, 0);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES,startPos,verticesPerface);
         startPos += verticesPerface;
 
         //draw bottom face
-        GLES30.glUniform4fv(mColorHandle, 1, color3, 0);
-        GLES30.glDrawArrays(GLES30.GL_TRIANGLES,startPos,verticesPerface);
+        GLES20.glUniform4fv(mColorHandle, 1, color3, 0);
+        GLES20.glDrawArrays(GLES20.GL_TRIANGLES,startPos,verticesPerface);
 
 
     }

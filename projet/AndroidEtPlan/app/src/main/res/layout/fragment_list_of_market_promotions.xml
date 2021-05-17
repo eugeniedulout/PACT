@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorback">
 
     <TextView
         android:id="@+id/marketNameText"
@@ -12,7 +13,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="18dp"
+        android:fontFamily="@font/carrois_gothic"
         android:text="Promotion en cours chez"
+        android:textColor="#000000"
         android:textSize="24sp" />
 
     <ImageView

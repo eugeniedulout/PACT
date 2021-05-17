@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+
 import com.bumptech.glide.Glide;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
@@ -54,12 +56,11 @@ public class ProductAdapter extends BaseAdapter {
         priceProduct.setText(String.valueOf(productPrice/100 ) + " €");
 
         int imageId = context.getResources().getIdentifier(productImage, "drawable", context.getPackageName());
-
+        CardView cardView = (CardView)convertView.findViewById(R.id.cardVV);
 
         ImageView iconProduct= convertView.findViewById(R.id.iconRecette);
 
         Glide.with(context).load(productImage).into(iconProduct);
-
         return convertView;
     }
 }

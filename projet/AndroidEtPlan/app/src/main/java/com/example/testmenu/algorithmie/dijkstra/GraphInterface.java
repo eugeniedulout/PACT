@@ -1,5 +1,6 @@
 package com.example.testmenu.algorithmie.dijkstra;
 import java.util.ArrayList;
+
 /**
  * Interface to create a graph
  * @author Sofiene Boutaj
@@ -20,7 +21,7 @@ public interface GraphInterface {
 	 * @param v2, type:VertexInterface
 	 * @return the weight of the edge
 	 */
-	public double getWeight(VertexInterface v1,VertexInterface v2);
+	public double getWeight(VertexInterface v1, VertexInterface v2);
 	/**
 	 * Method which returns all the vertices of the Graph
 	 * @return all the vertices of the graph

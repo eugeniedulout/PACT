@@ -1,8 +1,8 @@
 package com.example.testmenu.algorithmie.dijkstra;
 
 import java.util.ArrayList;
-
 import java.util.Hashtable;
+
 /**
  * Class of the pere function in the Dijkstra algorithm
  *@author Sofiene Boutaj
@@ -12,16 +12,18 @@ public class Previous implements PreviousInterface {
 	private final VertexInterface root;
 	private ArrayList<VertexInterface> shortestPath = new ArrayList<VertexInterface>();
 	private String finalMessage = "The maze is solved ! Look at the file: 'LabyrintheResolu.txt' in the folder 'data' to see the result" ;
-
-	
-   /** 
+	private ArrayList<VertexInterface> allVertices = new ArrayList<>();
+	private GraphInterface g;
+	/**
     * Constructor of the Previous Class
     * @param root : the root of the graph
     */
-	public Previous(VertexInterface root) {
+	public Previous(VertexInterface root, GraphInterface g) {
 
 		this.root = root;
 		this.h.put(root, root);
+		this.g = g;
+		allVertices = g.getAllVertices();
 
 	}
 	/**
@@ -80,10 +82,16 @@ public class Previous implements PreviousInterface {
 
 		ArrayList<VertexInterface> shortPath = new ArrayList<VertexInterface>();
 		VertexInterface a = v;
-		while(a != null && !getPrevious(a).equals(root)) {
-			if( !a.equals(v))
-				shortPath.add(a);
-			a = getPrevious(a);
+		while(a != null) {
+			if (getPrevious(a) == null)
+				break;
+			if(!getPrevious(a).equals(root)) {
+				if( !a.equals(v))
+					shortPath.add(a);
+				a = getPrevious(a);
+				}
+			else
+				break;
 		}
 		shortPath.add(a);
 		return shortPath;
@@ -92,14 +100,13 @@ public class Previous implements PreviousInterface {
 	/**
 	 * Method which updates the Pi value and the previous vertex of all the successors
 	 * of the vertex 'pivot' in Dijkstra algorithm.
-	 * @param g : the graph 
 	 * @param aset : the set of vertices of Dijkstra algorithm
 	 * @param pi :  the pi function of Dijkstra algorithm
 	 * @param previous : the previous function of Dijkstra algorithm
 	 * @param pivot : the vertex 'pivot' in Dijkstra algorithm
 	 */
-	public void updatePiAndPrevious(GraphInterface g, ASet aset, Pi pi, Previous previous, VertexInterface pivot ) {
-		ArrayList<VertexInterface> allVertices = g.getAllVertices();
+	public void updatePiAndPrevious(ASet aset, Pi pi, Previous previous, VertexInterface pivot ) {
+
 		for(VertexInterface vertex : allVertices) {
 			if( (!aset.contains(vertex)) && g.getSuccessors(pivot).contains(vertex)) {
 

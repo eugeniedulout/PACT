@@ -1,33 +1,20 @@
 package com.example.testmenu;
 
 import android.content.Context;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import com.example.testmenu.fragments.DisplayedProductsFromAListFragment;
 
-import java.util.ArrayList;
-
-import android.util.Log;
-
-import androidx.annotation.NonNull;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-
-import android.util.Log;
-
-import androidx.annotation.NonNull;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
-public class ListProduct {
+public class ListProduct implements Serializable {
 
     private String listName;
     private ArrayList<Product> listOfProducts;
@@ -122,7 +109,7 @@ public class ListProduct {
         return str;
     }
     public void displayProductsInTheList(Context context) {
-        FragmentController.swapFragmentInMainContainer(new DisplayedProductsFromAListFragment(listOfProducts, listName), context);
+        FragmentController.swapFragmentInMainContainer(new DisplayedProductsFromAListFragment(listOfProducts, listName, marketId), context);
     }
 }
 

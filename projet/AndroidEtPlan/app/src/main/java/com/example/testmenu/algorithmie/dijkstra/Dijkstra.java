@@ -1,6 +1,10 @@
 package com.example.testmenu.algorithmie.dijkstra;
 
 
+import android.util.Log;
+
+import java.util.ArrayList;
+
 /**
  * Dijkstra algorithm class 
  * @author Sofiene Boutaj
@@ -21,17 +25,27 @@ public class Dijkstra {
 		
 		ASet aset = new ASet();
 		Pi pi = new Pi();
-		Previous previous = new Previous(r);
+		Previous previous = new Previous(r,g);
 		aset.add(r);
 		VertexInterface pivot = r;
-		//System.out.println(r.getLabel());
+		System.out.println(r.getLabel());
+
+		ArrayList<VertexInterface> succ = g.getSuccessors(pivot);
+		for(VertexInterface vert : succ)
+			Log.e("Successeurs de " + pivot.getLabel(), "      " + vert.getLabel());
 		pi.initToInfiniteValue(g,r); 
 		//System.out.println("heyyy");
 		int sizeGraph = g.sizeGraph();
 		for (int j = 1; j< sizeGraph; j++ ){
 
-			previous.updatePiAndPrevious(g, aset, pi, previous, pivot);
+			previous.updatePiAndPrevious(aset, pi, previous, pivot);
 			pivot = pi.min(aset, g, pivot);
+			// Log.e("ppp " , pivot.getLabel());
+
+			/*ArrayList<VertexInterface> successors = g.getSuccessors(pivot);
+			for(VertexInterface vertex : successors)
+				Log.e("successor de" + pivot.getLabel(), vertex.getLabel());*/
+
 			 // System.out.println(pivot.getLabel());
 			 // System.out.println(pivot.getLabel());
 			/*System.out.println();
@@ -44,7 +58,7 @@ public class Dijkstra {
 				compteurProduct++;
 			}
 			if(compteurProduct ==numberOfProducts +1)
-				new PreviousAndPi(previous, pi);
+				return new PreviousAndPi(previous, pi);
 				
 			//System.out.println(pi.getPi(pivot));
 

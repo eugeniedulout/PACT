@@ -1,6 +1,7 @@
 package com.example.testmenu.algorithmie.dijkstra;
 
 import java.util.ArrayList;
+
 /**
  * Interface of the pere function used in the Dijkstra algorithm
  * @author Sofiene Boutaj

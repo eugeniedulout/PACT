@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="3dp"
     android:layout_marginEnd="0dp"
     android:layout_marginRight="0dp"
+    android:background="#FAFAFA"
     android:orientation="vertical"
-    android:paddingBottom="20dp"
+    android:paddingBottom="8dp"
     tools:context=".fragments.BuildingListFragment">
 
     <ImageView
@@ -16,6 +16,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_baseline_keyboard_return_24" />
+
 
     <TextView
         android:id="@+id/addList"
@@ -29,22 +30,36 @@
         android:textColor="@color/black"
         android:textSize="24sp" />
 
-    <ImageView
-        android:id="@+id/addTheList"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/addTheListCardView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignRight="@id/addList"
         android:layout_alignParentLeft="false"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:src="@drawable/ic_baseline_check_24" />
+        android:background="@color/black"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/colorm"
+        app:cardCornerRadius="50dp">
+
+        <ImageView
+            android:id="@+id/addTheList"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="false"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_check_24" />
+    </androidx.cardview.widget.CardView>
+
 
     <EditText
         android:id="@+id/editNameListe"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/addTheList"
+        android:layout_below="@id/addTheListCardView"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
@@ -57,29 +72,13 @@
         android:inputType="textShortMessage"
         android:paddingLeft="10dp" />
 
-    <View
-        android:id="@+id/firstSeparation"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@id/editNameListe"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:background="#c0c0c0" />
-
-    <FrameLayout
-        android:id="@+id/listOfProductsContainer"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listViewOfProducts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/impotyButton"
-        android:layout_below="@id/firstSeparation"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_above="@id/cardViewImportRecipe"
+        android:layout_below="@id/editNameListe"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="0dp" />
 
 
@@ -87,44 +86,78 @@
         android:id="@+id/SecondSeparation"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@id/listOfProductsContainer"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="20dp"
+        android:layout_below="@id/listViewOfProducts"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#c0c0c0" />
 
 
-    <ImageView
-        android:id="@+id/impotyButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewImportRecipe"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_baseline_menu_book_24" />
+        android:layout_marginTop="15dp"
+        android:background="@color/black"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/colorm"
+        app:cardCornerRadius="50dp">
 
-    <ImageView
-        android:id="@+id/shareFriendsButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        <ImageView
+            android:id="@+id/importRecipe"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="false"
+            android:layout_gravity="center"
+            android:layout_marginBottom="2dp"
+            android:src="@drawable/ic_baseline_menu_book_24" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewAddProductButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_baseline_mobile_screen_share_24" />
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/black"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/colorm"
+        app:cardCornerRadius="50dp">
 
-    <ImageView
-        android:id="@+id/addProductButton"
-        android:layout_width="35dp"
+        <ImageView
+            android:id="@+id/addProductButton"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="false"
+            android:layout_gravity="center"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/ic_baseline_add_shopping_cart_242" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/totalPriceText"
+        android:layout_width="75dp"
         android:layout_height="35dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="15dp"
 
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginRight="55dp"
-        android:src="@drawable/ic_baseline_add_shopping_cart_24" />
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/contrail_one"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_baseline_add_shopping_cart_24"
+        android:text="0 €"
+        android:textColor="#000000"
+        android:textSize="25sp" />
 
 </RelativeLayout>

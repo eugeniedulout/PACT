@@ -3,5 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/alef</item>
         <item>@font/amiri</item>
+        <item>@font/carrois_gothic</item>
     </array>
 </resources>

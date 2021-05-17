@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ProductInfoFragment">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/infosText"
@@ -13,18 +15,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
+        android:fontFamily="@font/alef"
         android:text="Infos"
+        android:textColor="#272727"
         android:textSize="26sp" />
 
-    <ImageView
-        android:id="@+id/productImage"
-        android:layout_width="120dp"
-        android:layout_height="110dp"
-        android:layout_below="@id/infosText"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="15dp"
-        tools:src="@tools:sample/avatars" />
+
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:layout_below="@id/infosText"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="15dp"
+            tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/productName"
@@ -34,42 +40,44 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_toRightOf="@id/productImage"
+        android:fontFamily="@font/carrois_gothic"
         android:text="Name "
         android:textColor="#000000"
         android:textSize="26sp" />
 
-    <TextView
-        android:id="@+id/productPriceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/productName"
-        android:layout_alignLeft="@id/productName"
-        android:layout_marginTop="15dp"
-        android:text="0 €"
-        android:textColor="#000000"
-        android:textSize="36sp"
-        android:textStyle="bold|italic" />
+        <TextView
+            android:id="@+id/productPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productName"
+            android:layout_alignLeft="@id/productName"
+            android:layout_marginTop="15dp"
+            android:text="0 €"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/productDescriptionText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/productPriceText"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="25dp"
         android:text="Description du produit"
+        android:textColor="#272727"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/environmentalScoreText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/productDescriptionText"
-        android:layout_alignLeft="@id/productDescriptionText"
-        android:layout_marginTop="20dp"
-        android:text="A"
-        android:textColor="#27A82C"
-        android:textSize="55sp" />
-
+        <TextView
+            android:id="@+id/environmentalScoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productDescriptionText"
+            android:layout_alignLeft="@id/productDescriptionText"
+            android:layout_marginTop="20dp"
+            android:text="A"
+            android:textColor="#27A82C"
+            android:textSize="55sp" />
 </RelativeLayout>
+</ScrollView>

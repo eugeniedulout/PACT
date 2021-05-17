@@ -5,49 +5,54 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentResultListener;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
+import com.example.testmenu.ImportRecipe;
+import com.example.testmenu.Ingredient;
 import com.example.testmenu.ListProduct;
 import com.example.testmenu.MainActivity;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
+import com.example.testmenu.adapters.RecycleViewProductAdapter;
+import com.example.testmenu.dialogs.DialogRecettes;
+import com.example.testmenu.dialogs.DialogSuggestedProduct;
 
 import java.util.ArrayList;
 
-public class BuildingListFragment extends Fragment implements View.OnClickListener{
-    private Button testButton;
-    private ImageView addProduct;
+public class BuildingListFragment extends Fragment implements View.OnClickListener, DialogSuggestedProduct.OnInputListener {
+
+    private CardView addProduct;
     private ArrayList<Product> displayedListOfProducts = new ArrayList<Product>();
-    private ImageView addTheList;
+    private CardView addTheList;
     private EditText nameOfTheList;
     private ImageView returnTodisplayList;
     private int marketId;
-
-   /* public BuildingListFragment(int marketId){
+    private CardView importRecipeBtn;
+    private TextView totalPriceText;
+    private String listeNameTexte;
+    private double totalPrice = 0;
+    public BuildingListFragment(int marketId) {
+        super();
         this.marketId = marketId;
-    }*/
-    private static final BuildingListFragment buildingListFragment = new BuildingListFragment();
-
-    private BuildingListFragment(){
-        setArguments(new Bundle());
-
     }
 
-    public static BuildingListFragment getInstance() {
-        return buildingListFragment;
-    }
 
-    public void setDisplayedListOfProducts(ArrayList<Product> displayedListOfProducts) {
+    public BuildingListFragment(ArrayList<Product> displayedListOfProducts, String listeNameTexte, int marketId ) {
+        super();
         this.displayedListOfProducts = displayedListOfProducts;
+        this.listeNameTexte = listeNameTexte;
+        this.marketId = marketId;
+
     }
 
     @Nullable
@@ -56,31 +61,100 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
 
         Log.e("TAG", ""+marketId);
 
-        getParentFragmentManager().setFragmentResultListener("requestProductToAdd", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
+        View v = inflater.inflate(R.layout.fragment_building_list, container, false);
+        totalPriceText = (TextView)v.findViewById(R.id.totalPriceText);
+        Log.e("zjzjzjzjzj" , ""+displayedListOfProducts.size());
 
-                Product productToAdd = (Product) bundle.getSerializable("productToAdd");
-                if(productToAdd != null) displayedListOfProducts.add(productToAdd);
+        if(totalPriceText != null) {
+            for (int i = 0; i < displayedListOfProducts.size(); i++) {
+                totalPrice += displayedListOfProducts.get(i).getPrice();
+            }
+            String value = String.valueOf(totalPrice / 100);
+            totalPriceText.setText(value + " €");
+        }
+
+        //FragmentController.swapFragment(new ListOfProductsFragment(displayedListOfProducts),R.id.listOfProductsContainer,getContext());
+
+        LinearLayoutManager layoutManager =  new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+
+        RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.listViewOfProducts);
+        recyclerView.setLayoutManager(layoutManager);
+        RecycleViewProductAdapter adapter = new RecycleViewProductAdapter(displayedListOfProducts, getContext());
+        recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new RecycleViewProductAdapter.OnItemClickListener() {
+
+
+            @Override
+            public void onDeleteClick(int position) {
+              //  Log.e("jeuuu", "VLIIIIIVKKKKKKK");
+                totalPrice = totalPrice - displayedListOfProducts.get(position).getPrice();
+                String value = String.valueOf(totalPrice / 100);
+                totalPriceText.setText(value + " €");
+
+                displayedListOfProducts.remove(position);
+               /* RecycleViewProductAdapter adapter = new RecycleViewProductAdapter(displayedListOfProducts, getContext());
+                recyclerView.setAdapter(adapter);*/
+                adapter.notifyItemRemoved(position);
+
+
+            }
+
+            @Override
+            public void onItemClick(int position) {
+                Log.e("Clicckk From Displayed ", " "+position);
+                displayedListOfProducts.get(position).displayInfo( getContext(), R.id.container);
             }
         });
 
-        View v = inflater.inflate(R.layout.fragment_building_list, container, false);
-
-        FragmentController.swapFragment(new ListOfProductsFragment(displayedListOfProducts),R.id.listOfProductsContainer,getContext());
-
         nameOfTheList = v.findViewById(R.id.editNameListe);
+        nameOfTheList.setText(listeNameTexte);
 
         returnTodisplayList = (ImageView)v.findViewById(R.id.returnToDisplayList);
         returnTodisplayList.setOnClickListener(this::onClick);
 
-        addTheList = (ImageView)v.findViewById(R.id.addTheList);
+        addTheList = (CardView)v.findViewById(R.id.addTheListCardView);
         addTheList.setOnClickListener(this::onClick);
 
 
-        addProduct = (ImageView) (v.findViewById(R.id.addProductButton));
+        addProduct = (CardView) (v.findViewById(R.id.cardViewAddProductButton));
         addProduct.setOnClickListener(this::onClick);
 
+
+        ArrayList<Product> products = Controller.getAllProducts(marketId);
+
+        ArrayList<Ingredient> ingredients = Controller.getUserRecettes(MainActivity.user.getId()).get(2).getListOfIngredients();
+
+
+        ArrayList<String> ingredientsName= new ArrayList<>();
+
+        for(int i=0; i< ingredients.size(); i++)
+            ingredientsName.add(ingredients.get(i).getName());
+
+        ImportRecipe importRecipe = new ImportRecipe(ingredientsName, products);
+
+        ArrayList<ArrayList<Product>> arrayProductImpoerted = new ArrayList<>();
+        for(int i=0; i< ingredients.size(); i++) {
+            arrayProductImpoerted.add(importRecipe.getImportProduct(i));
+        }
+
+        for(int i=0; i<arrayProductImpoerted.size(); i++) {
+            for(int j=0; j<arrayProductImpoerted.get(i).size(); j++) {
+                Log.e("Products for ingredient " + ingredients.get(i).getName(), arrayProductImpoerted.get(i).get(j).getName());
+                Log.e("Products for ingredient " + ingredients.get(i).getName(), "eee");
+            }
+
+        }
+
+        importRecipeBtn = (CardView)v.findViewById(R.id.cardViewImportRecipe);
+        importRecipeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new DialogRecettes(marketId, displayedListOfProducts, nameOfTheList.getText().toString()).show(getParentFragmentManager(),"Dialog Recette !");
+
+            }
+        });
 
         return v;
     }
@@ -90,14 +164,12 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
     public void onClick(View v) {
         Fragment fragment;
         switch (v.getId()) {
-            case R.id.addProductButton:
-                fragment = new AddProductFragment(marketId);
+            case R.id.cardViewAddProductButton:
+                fragment = new AddProductFragment(marketId, nameOfTheList.getText().toString(), displayedListOfProducts, true);
                 break;
             default:
 
-                // ##################################
-                // #################################
-                Controller.addNewListOfProducts(1, new ListProduct(nameOfTheList.getText().toString(), displayedListOfProducts, new ArrayList<Integer>(), 2 ));
+                Controller.addNewListOfProducts(MainActivity.user.getId(), new ListProduct(nameOfTheList.getText().toString(), displayedListOfProducts, new ArrayList<Integer>(), marketId ));
                 fragment = new ListFragment();
                 if (v.getId() == R.id.addTheList) {
                     displayedListOfProducts.clear();
@@ -107,11 +179,23 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
         }
         FragmentController.swapFragmentInMainContainer(fragment, getContext());
     }
+
+
     @Override
     public void onPause() {
         super.onPause();
-        getArguments().putSerializable("displayedProducts", displayedListOfProducts);
+        totalPrice  = 0;
     }
 
 
+    @Override
+    public void sendInput(ArrayList<ArrayList<Product>> input) {
+        for(int i=0; i< input.size(); i++) {
+            if(input.get(i)!= null) {
+                for (int j = 0; j < input.get(i).size(); j++) {
+                    displayedListOfProducts.add(input.get(i).get(j));
+                }
+            }
+        }
+    }
 }

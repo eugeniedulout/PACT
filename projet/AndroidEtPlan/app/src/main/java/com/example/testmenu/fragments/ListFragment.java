@@ -3,32 +3,26 @@ package com.example.testmenu.fragments;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
-import com.example.testmenu.Ingredient;
 import com.example.testmenu.ListProduct;
 import com.example.testmenu.MainActivity;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
-import com.example.testmenu.adapters.ListAdapter;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
+import com.example.testmenu.adapters.RecycleViewListAdapter;
+import com.example.testmenu.dialogs.DialogMarket;
 
 import java.util.ArrayList;
 
@@ -84,31 +78,25 @@ public class ListFragment extends Fragment implements View.OnClickListener   {
 
         initList();
 
-        listViewOflistOfProducts = (ListView) v.findViewById(R.id.listOflistOfProducts);
+       /* listViewOflistOfProducts = (ListView) v.findViewById(R.id.listOflistOfProducts);
 
-        /*listlistOfProducts.add(new ListProduct("Deuxieme liste",products));
-        listlistOfProducts.add(new ListProduct("Troisieme liste",products));*/
+        listlistOfProducts.add(new ListProduct("Deuxieme liste",products));
+        listlistOfProducts.add(new ListProduct("Troisieme liste",products));
         ListAdapter adapter = new ListAdapter(getContext(), listlistOfProducts);
-        listViewOflistOfProducts.setAdapter(adapter);
+        listViewOflistOfProducts.setAdapter(adapter);*/
         /*loadLists loadLists = new loadLists();
         loadLists.execute();*/
 
+
+
        ArrayList<ListProduct> listProducts = Controller.getUserLists(MainActivity.user.getId());
-        for(ListProduct listProduct : listProducts)
-            listlistOfProducts.add(listProduct);
-        adapter = new ListAdapter(getContext(), listlistOfProducts);
-        listViewOflistOfProducts.setAdapter(adapter);
 
+        LinearLayoutManager layoutManager =  new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
-
-        listViewOflistOfProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long id) {
-                Log.e("click" , " a" + listlistOfProducts.get(position).getListName());
-                listlistOfProducts.get(position).displayProductsInTheList(getContext());
-            }
-        });
+        RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.listOflistOfProducts);
+        recyclerView.setLayoutManager(layoutManager);
+        RecycleViewListAdapter adapter = new RecycleViewListAdapter(listProducts, getContext());
+        recyclerView.setAdapter(adapter);
 
         return v;
     }

@@ -20,4 +20,7 @@
     <color name="colorbg">#DEDBA7</color>
     <color name="colorbc">#72B095</color>
     <color name="colorbf">#1F7872</color>
+    <color name="colorm">#272727</color>
+    <color name="colorback">#FAFAFA</color>
+
 </resources>

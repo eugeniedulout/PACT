@@ -1,5 +1,6 @@
 package com.example.testmenu.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -7,19 +8,21 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
 import com.example.testmenu.Product;
+import com.example.testmenu.ProductOnSpecialOffer;
 import com.example.testmenu.R;
-import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.suggestion.SlopeOne;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -31,18 +34,33 @@ public class AddProductFragment extends Fragment {
     private TextView quantityNumberText;
     private AutoCompleteTextView searchProduct;
     private Product foundProduct;
-    private  Fragment fragmentProductInfo;
     private int count = 1;
     private FloatingActionButton addToListButton;
     private int marketId;
-
+    private String listeNameTexte;
+    private  TextView priceTotalTextView;
+    private double totalPrice = 0;
     private ArrayList<String> arrayProductsName = new ArrayList<String>();
-
-    private int dataSentCounter = 0;
-
-    public  AddProductFragment(int marketId) {
+    private ArrayList<Product> displayedListOfProducts = new ArrayList<Product>();
+    private CardView goToSeeCart;
+    private boolean isFromBuildingFragment;
+    private  int compteurDispalyedProductFromAlistFragment;
+    public  AddProductFragment(int marketId, String listeNameTexte, ArrayList<Product> displayedListOfProducts, boolean isFromBuildingFragment ) {
         this.marketId = marketId;
+        this.listeNameTexte = listeNameTexte;
+        this.displayedListOfProducts = displayedListOfProducts;
+        this.isFromBuildingFragment = isFromBuildingFragment;
+
     }
+
+    public  AddProductFragment(int marketId, String listeNameTexte, ArrayList<Product> displayedListOfProducts, boolean isFromBuildingFragment, int compteurDispalyedProductFromAlistFragment) {
+        this.marketId = marketId;
+        this.listeNameTexte = listeNameTexte;
+        this.displayedListOfProducts = displayedListOfProducts;
+        this.isFromBuildingFragment = isFromBuildingFragment;
+        this.compteurDispalyedProductFromAlistFragment =compteurDispalyedProductFromAlistFragment;
+    }
+
 
 
     @Nullable
@@ -55,19 +73,51 @@ public class AddProductFragment extends Fragment {
         searchProduct = (AutoCompleteTextView)v.findViewById(R.id.serachProduct);
         addToListButton = (FloatingActionButton)v.findViewById(R.id.addToListButton);
         Log.e("TAG2", ""+marketId);
+        Log.e("TAG2", ""+marketId);
+
         TextView suggestionText = (TextView)v.findViewById(R.id.suggestonText);
+
 
         SlopeOne slopeOne = new SlopeOne();
         String result = slopeOne.getSlopeOne();
         suggestionText.setText("Produit suggeré " + result);
 
-        ArrayList<Product> productsFromMarket = Controller.getAllProducts(2);
+        ArrayList<Product> productsFromMarket = Controller.getAllProducts(marketId);
+        ArrayList<ProductOnSpecialOffer> productsFromMarketPromotions = Controller.getMarketOffers(marketId);
+
+        for(int i =0; i<productsFromMarketPromotions.size();i++){
+            productsFromMarket.add(productsFromMarketPromotions.get(i));
+        }
         //ArrayList<Product> productsFromMarket = new ArrayList<Product>();
         //initList(productsFromMarket);
         int m = productsFromMarket.size();
         for(int i=0; i< m; i++) {
             arrayProductsName.add(productsFromMarket.get(i).getName());
         }
+
+        goToSeeCart = (CardView)v.findViewById(R.id.goToSeeCart);
+
+
+        goToSeeCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isFromBuildingFragment)
+                    FragmentController.swapFragmentInMainContainer(new BuildingListFragment(displayedListOfProducts, listeNameTexte, marketId), getContext());
+                else
+                    FragmentController.swapFragmentInMainContainer(new DisplayedProductsFromAListFragment(displayedListOfProducts, listeNameTexte, marketId, compteurDispalyedProductFromAlistFragment), getContext());
+
+            }
+        });
+
+        priceTotalTextView = (TextView)v.findViewById(R.id.priceTotalTextView);
+
+
+        for (int i = 0; i < displayedListOfProducts.size(); i++) {
+            totalPrice += displayedListOfProducts.get(i).getPrice();
+        }
+        String value = String.valueOf(totalPrice / 100);
+        priceTotalTextView.setText(value + " €");
+
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_selectable_list_item, arrayProductsName);
@@ -79,11 +129,17 @@ public class AddProductFragment extends Fragment {
                 for(int i=0; i<m; i++) {
                     if (name.equals(productsFromMarket.get(i).getName())) {
                         foundProduct = productsFromMarket.get(i);
-                        FragmentController.swapFragment(new ProductInfoFragment(foundProduct), R.id.containerProductInfo, getContext());
+                        foundProduct.displayInfo(getContext(), R.id.containerProductInfo);
+                        View view = getActivity().getCurrentFocus();
+                        if (view != null) {
+                            InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
                     }
                 }
 
+                    }
                 }
+
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -97,13 +153,34 @@ public class AddProductFragment extends Fragment {
         addToListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Bundle result = new Bundle();
-                    foundProduct.multiplyByQuantity(count);
-                    Product productToAdd = foundProduct;
-                    result.putSerializable("productToAdd", productToAdd);
+                    if(foundProduct != null) {
+                        Product productToAdd = foundProduct;
+                        productToAdd.multiplyByQuantity(count);
+                        int indiceAlreadyInTheList = productsFromMarket.size() + 1;
+                        for(int i =0; i<displayedListOfProducts.size(); i++) {
+                            if(foundProduct.getProductImageUrl().equals(displayedListOfProducts.get(i).getProductImageUrl())){
+                                indiceAlreadyInTheList = i;
+                            }
+                        }
+                        if(indiceAlreadyInTheList == productsFromMarket.size() + 1) {
 
-                    getParentFragmentManager().setFragmentResult("requestProductToAdd", result);
-                    FragmentController.swapFragmentInMainContainer(BuildingListFragment.getInstance(), getContext());
+                            displayedListOfProducts.add(productToAdd);
+                            totalPrice += foundProduct.getPrice();
+
+                        }
+                        else{
+                            displayedListOfProducts.set(indiceAlreadyInTheList, productToAdd);
+                            totalPrice = 0;
+                            for (int i = 0; i < displayedListOfProducts.size(); i++) {
+                                totalPrice += displayedListOfProducts.get(i).getPrice();
+                            }
+                        }
+                        String value = String.valueOf(totalPrice / 100);
+                        priceTotalTextView.setText(value + " €");
+                        searchProduct.setText("");
+                        count = 1;
+                        quantityNumberText.setText("" + count);
+                    }
 
 
             }

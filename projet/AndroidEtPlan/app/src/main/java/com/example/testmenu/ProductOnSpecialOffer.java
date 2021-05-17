@@ -2,12 +2,9 @@ package com.example.testmenu;
 
 import android.content.Context;
 
-import com.example.testmenu.fragments.ProductOnSpecialOfferInfoFragment;
-
 import androidx.annotation.NonNull;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.testmenu.fragments.ProductOnSpecialOfferInfoFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -59,8 +56,8 @@ public class ProductOnSpecialOffer extends Product {
         str += "\n\texpiration_date: " + this.expirationDate;
         return str;
     }
-    public void displayInfo(Context context) {
-        FragmentController.swapFragmentInMainContainer(new ProductOnSpecialOfferInfoFragment(this), context);
+    public void displayInfo(Context context, int containerId) {
+        FragmentController.swapFragment(new ProductOnSpecialOfferInfoFragment(this), containerId, context);
     }
 }
 

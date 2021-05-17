@@ -4,8 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,14 +23,9 @@ import com.example.testmenu.MainActivity;
 import com.example.testmenu.Market;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
-import com.example.testmenu.ScanActivity;
-import com.example.testmenu.Test;
-import com.example.testmenu.algorithmie.PlusCourtChemin;
 import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.algorithmie.point.ProductPoint;
 import com.example.testmenu.plan_dynamique.MainActivity2;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
 
@@ -41,7 +34,6 @@ public class PlanFragment extends Fragment {
     private AutoCompleteTextView searchListName;
     private Button goButton;
     private Button scanButton;
-    private TextView resultScan;
     private ArrayList<Point> pointsProduits = new ArrayList<>();
 
 
@@ -60,7 +52,7 @@ public class PlanFragment extends Fragment {
 
 
         TextView tv = (TextView)v.findViewById(R.id.planText);
-        TextView resultScan = (TextView)v.findViewById(R.id.resultScann);
+
 
         //################################################################
         //################################################################
@@ -88,7 +80,6 @@ public class PlanFragment extends Fragment {
         searchListName.setAdapter(adapter2);
 
         goButton = (Button)v.findViewById(R.id.goButton);
-        scanButton = (Button)v.findViewById(R.id.scanButton);
 
         // ##########################################
         // ########## Requete#####################
@@ -120,8 +111,9 @@ public class PlanFragment extends Fragment {
                     if(listProduct.getListName().equals(searchListName.getText().toString()))
                         listSelected = listProduct;
                 }
-                for(Product product : listSelected.getListOfProducts())
-                    pointsProduits.add(new ProductPoint(product.getX(),product.getY()));
+                for(Product product : listSelected.getListOfProducts()) {
+                    pointsProduits.add(new ProductPoint(product.getX(), product.getY()));
+                }
 
                 for(Point productPoint : pointsProduits)
                     Log.e("hheuu", productPoint.getLabel());
@@ -136,47 +128,14 @@ public class PlanFragment extends Fragment {
                 pointsProduits.add(new ProductPoint(7,2));*/
                 //pointsProduits.add(new ProductPoint(8,2));
                 b.putSerializable("produits coordonnees",pointsProduits);
+                b.putSerializable("produitsOject" , listSelected);
                 intent.putExtras(b);
                 startActivity(intent);
             }
         });
 
 
-        scanButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), Test.class);
-                startActivity(i);
-            }
-        });
+
         return v;
-    }
-
-
-
-    private ArrayList<String> builderMarketsName (){
-        ArrayList<String> marketsName = new ArrayList<String>();
-        marketsName.add("Auchan");
-        marketsName.add("Auphan");
-
-        marketsName.add("Auchann");
-        marketsName.add("Auchannn");
-        marketsName.add("Auchannnn");
-        marketsName.add("Auchannnnn");
-        marketsName.add("Auchannnnnn");
-        marketsName.add("Auchannnnnnn");
-        marketsName.add("Auchannnnnnnnn");
-        marketsName.add("Auchannnnnnnnnn");
-        marketsName.add("Auchannnnnnnnnnnnnn");
-        marketsName.add("Auchannnnnnnnnnnnnnnnnnnn");
-        marketsName.add("Auchannnnnnnnnnnnnnnnnnnnnnn");
-
-        marketsName.add("Aachann");
-        marketsName.add("Lidl");
-        marketsName.add("Monoprix");
-        marketsName.add("Franprix");
-        marketsName.add("Carrefour");
-        return marketsName;
-
     }
 }

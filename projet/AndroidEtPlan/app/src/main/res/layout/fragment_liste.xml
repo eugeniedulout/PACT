@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/grdnt"
     tools:context=".fragments.ListFragment">
 
 
@@ -17,10 +17,11 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/switchToListe"
+
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_weight="70"
-            app:cardBackgroundColor="#F6EE51">
+            android:layout_weight="50"
+            android:background="@drawable/ic_launcher_background">
 
             <TextView
                 android:id="@+id/listeText"
@@ -28,15 +29,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Liste"
-                android:textSize="18sp" />
+                android:textColor="#131313"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/switchToRecette"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_weight="30"
+            android:layout_weight="50"
             app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/left_bottom_corner"
+                android:orientation="horizontal"></LinearLayout>
 
             <TextView
                 android:id="@+id/listText"
@@ -75,26 +84,15 @@
         android:layout_toRightOf="@id/addNewList"
         android:gravity="center"
         android:text="Nouvelle Liste"
+        android:textColor="#272727"
         android:textSize="30sp" />
 
-    <View
-        android:id="@+id/firstSeparation"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@id/addNewList"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:background="#c0c0c0" />
-
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listOflistOfProducts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/firstSeparation"
-        android:layout_marginTop="20dp" />
+        android:layout_below="@id/nouvelleListText"
+        android:layout_marginTop="10dp" />
 
 
 </RelativeLayout>

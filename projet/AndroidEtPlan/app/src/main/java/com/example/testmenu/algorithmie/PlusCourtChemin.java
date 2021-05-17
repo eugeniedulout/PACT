@@ -2,22 +2,15 @@ package com.example.testmenu.algorithmie;
 
 import android.util.Log;
 
-import com.example.testmenu.Product;
 import com.example.testmenu.algorithmie.dijkstra.PathAndDistances;
 import com.example.testmenu.algorithmie.dijkstra.VertexInterface;
 import com.example.testmenu.algorithmie.point.Plan;
 import com.example.testmenu.algorithmie.point.Point;
-import com.example.testmenu.algorithmie.point.PointE;
 import com.example.testmenu.algorithmie.point.ProductPoint;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-
-
 
 
 /**

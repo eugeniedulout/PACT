@@ -8,10 +8,6 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 public class User implements Serializable{
 
     private int id;

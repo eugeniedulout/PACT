@@ -1,7 +1,7 @@
 package com.example.testmenu.plan_dynamique;
 
 
-import android.opengl.GLES30;
+import android.opengl.GLES20;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -68,56 +68,56 @@ public class Position {
 
         // prepare shaders and OpenGL program
         int vertexShader = myRenderer.loadShader(
-                GLES30.GL_VERTEX_SHADER,
+                GLES20.GL_VERTEX_SHADER,
                 vertexShaderCode);
         int fragmentShader = myRenderer.loadShader(
-                GLES30.GL_FRAGMENT_SHADER,
+                GLES20.GL_FRAGMENT_SHADER,
                 fragmentShaderCode);
 
-        mProgram = GLES30.glCreateProgram();             // create empty OpenGL Program
-        GLES30.glAttachShader(mProgram, vertexShader);   // add the vertex shader to program
-        GLES30.glAttachShader(mProgram, fragmentShader); // add the fragment shader to program
-        GLES30.glLinkProgram(mProgram);                  // create OpenGL program executables
+        mProgram = GLES20.glCreateProgram();             // create empty OpenGL Program
+        GLES20.glAttachShader(mProgram, vertexShader);   // add the vertex shader to program
+        GLES20.glAttachShader(mProgram, fragmentShader); // add the fragment shader to program
+        GLES20.glLinkProgram(mProgram);                  // create OpenGL program executables
     }
 
 
     public void draw(float[] mvpMatrix) {
         // Add program to OpenGL environment
-        GLES30.glUseProgram(mProgram);
+        GLES20.glUseProgram(mProgram);
 
         // get handle to vertex shader's vPosition member
-        mPositionHandle = GLES30.glGetAttribLocation(mProgram, "vPosition");
+        mPositionHandle = GLES20.glGetAttribLocation(mProgram, "vPosition");
 
         // Enable a handle to the triangle vertices
-        GLES30.glEnableVertexAttribArray(mPositionHandle);
+        GLES20.glEnableVertexAttribArray(mPositionHandle);
 
         // Prepare the triangle coordinate data
-        GLES30.glVertexAttribPointer(
+        GLES20.glVertexAttribPointer(
                 mPositionHandle, COORDS_PER_VERTEX,
-                GLES30.GL_FLOAT, false,
+                GLES20.GL_FLOAT, false,
                 vertexStride, vertexBuffer);
 
         // get handle to fragment shader's vColor member
-        mColorHandle = GLES30.glGetUniformLocation(mProgram, "vColor");
+        mColorHandle = GLES20.glGetUniformLocation(mProgram, "vColor");
 
         // Set color for drawing the triangle
-        GLES30.glUniform4fv(mColorHandle, 1, color, 0);
+        GLES20.glUniform4fv(mColorHandle, 1, color, 0);
 
         // get handle to shape's transformation matrix
-        mMVPMatrixHandle = GLES30.glGetUniformLocation(mProgram, "uMVPMatrix");
+        mMVPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
         myRenderer.checkGlError("glGetUniformLocation");
 
         // Apply the projection and view transformation
-        GLES30.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mvpMatrix, 0);
+        GLES20.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mvpMatrix, 0);
         myRenderer.checkGlError("glUniformMatrix4fv");
 
         // Draw the position
-        GLES30.glDrawElements(
-                GLES30.GL_TRIANGLES, drawOrder.length,
-                GLES30.GL_UNSIGNED_SHORT, drawListBuffer);
+        GLES20.glDrawElements(
+                GLES20.GL_TRIANGLES, drawOrder.length,
+                GLES20.GL_UNSIGNED_SHORT, drawListBuffer);
 
         // Disable vertex array
-        GLES30.glDisableVertexAttribArray(mPositionHandle);
+        GLES20.glDisableVertexAttribArray(mPositionHandle);
     }
 
 }

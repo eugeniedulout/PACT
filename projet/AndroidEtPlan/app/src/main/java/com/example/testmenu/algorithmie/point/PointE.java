@@ -1,9 +1,5 @@
 package com.example.testmenu.algorithmie.point;
 
-import com.example.testmenu.algorithmie.dijkstra.VertexInterface;
-
-import java.io.Serializable;
-
 public class PointE  {
 
     private final int x;

@@ -5,7 +5,6 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 
 import com.example.testmenu.fragments.DisplayIngredientsFromRecetteFragment;
-import com.example.testmenu.fragments.DisplayedProductsFromAListFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;

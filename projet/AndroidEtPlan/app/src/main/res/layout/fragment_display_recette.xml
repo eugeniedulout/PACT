@@ -12,7 +12,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/carrois_gothic"
         android:text="Ajouter la recette ! "
+        android:textColor="#000000"
         android:textColorHint="#000000"
         android:textSize="24sp" />
 
@@ -36,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="2dp"
         android:text="TextView"
-        android:textColor="#009688"
+        android:textColor="@color/colorm"
         android:textSize="24sp" />
 
     <ListView

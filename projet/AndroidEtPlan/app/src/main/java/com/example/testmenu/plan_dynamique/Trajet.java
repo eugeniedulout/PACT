@@ -5,13 +5,13 @@ import com.example.testmenu.algorithmie.point.Point;
 import java.util.ArrayList;
 
 public class Trajet {
-    ArrayList<com.example.testmenu.algorithmie.point.Point> listeSommets ;
+    ArrayList<Point> listeSommets ;
 
     public Trajet (){
-        this.listeSommets = new ArrayList<com.example.testmenu.algorithmie.point.Point>() ;
+        this.listeSommets = new ArrayList<Point>() ;
 
     }
-    public Trajet (ArrayList<com.example.testmenu.algorithmie.point.Point> listeSommets){
+    public Trajet (ArrayList<Point> listeSommets){
         this.listeSommets = listeSommets ;
 
     }
@@ -20,7 +20,7 @@ public class Trajet {
         this.listeSommets.add(p);
     }
 
-    com.example.testmenu.algorithmie.point.Point get (int i){
+    Point get (int i){
         return this.listeSommets.get(i) ;
     }
 

@@ -75,7 +75,7 @@ public class ListOfMarketPromotionsFragment extends Fragment {
         liste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                products.get(position).displayInfo(getContext());
+                products.get(position).displayInfo(getContext(), R.id.container);
             }
         });
         PromotionMarketAdapter adapter = new PromotionMarketAdapter(getContext(), products);

@@ -12,28 +12,52 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.annotation.GlideModule;
-import com.bumptech.glide.module.AppGlideModule;
+
 import com.bumptech.glide.Glide;
-import com.example.testmenu.fragments.ListOfMarketPromotionsFragment;
 import com.example.testmenu.Market;
 import com.example.testmenu.R;
+import com.example.testmenu.fragments.ListOfMarketPromotionsFragment;
 
 import java.util.ArrayList;
 
 public class RecycleViewMarketsAdapter extends  RecyclerView.Adapter<RecycleViewMarketsAdapter.ViewHolder> {
-    private ArrayList<String> marketLogoUrlArray;
-    private ArrayList<String> marketNameArray;
-    private ArrayList<Integer> marketIdArray;
+    private ArrayList<String> marketLogoUrlArray = new ArrayList<>();
+    private ArrayList<String> marketNameArray= new ArrayList<>();
+    private ArrayList<Integer> marketIdArray= new ArrayList<>();
+    private ArrayList<String> marketOpenHour= new ArrayList<>();
+    private ArrayList<String> marketCloseHour= new ArrayList<>();
 
+    private ArrayList<Market> markets = new ArrayList<>();;
     private Context mContext;
 
-    public RecycleViewMarketsAdapter(ArrayList<String> marketLogoUrlArray, ArrayList<String> marketNameArray,ArrayList<Integer> marketIdArray, Context mContext) {
-        this.marketLogoUrlArray = marketLogoUrlArray;
-        this.marketNameArray = marketNameArray;
-        this.marketIdArray = marketIdArray;
+    public RecycleViewMarketsAdapter(ArrayList<Market> markets, Context mContext) {
+
 
         this.mContext = mContext;
+        this.markets = markets;
+
+        for(int i = 0; i<markets.size(); i++) {
+            marketLogoUrlArray.add(markets.get(i).getMarketLogoUrl());
+            marketNameArray.add(markets.get(i).getMarketName());
+            marketIdArray.add(markets.get(i).getMarketId());
+            marketOpenHour.add(markets.get(i).getOpenHour());
+            marketCloseHour.add(markets.get(i).getCloseHour());
+
+
+        }
+        if(marketCloseHour.isEmpty()) {
+            for(int i = 0; i<markets.size(); i++) {
+
+                marketCloseHour.add("17");
+            }
+        }
+
+        if(marketOpenHour.isEmpty()) {
+            for(int i = 0; i<markets.size(); i++) {
+
+                marketOpenHour.add("17");
+            }
+        }
     }
 
     public RecycleViewMarketsAdapter(ArrayList<String> marketLogoUrlArray, ArrayList<String> marketNameArray, Context mContext) {
@@ -48,7 +72,7 @@ public class RecycleViewMarketsAdapter extends  RecyclerView.Adapter<RecycleView
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_offres_market, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_offres_market_better, parent, false);
 
         return new ViewHolder(view);
     }
@@ -56,29 +80,10 @@ public class RecycleViewMarketsAdapter extends  RecyclerView.Adapter<RecycleView
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        //Glide.with(mContext).asBitmap().load(marketLogoUrlArray.get(position)).into(holder.marketLogo);
+
         holder.marketName.setText(marketNameArray.get(position));
-        int imageId = mContext.getResources().getIdentifier(marketLogoUrlArray.get(position), "drawable", mContext.getPackageName());
-        //holder.marketLogo.setImageResource(imageId);
+
         Glide.with(mContext).load(marketLogoUrlArray.get(position)).into(holder.marketLogo);
-        holder.marketLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Log.e("hey", marketNameArray.get(position));
-                Log.e("hey2", marketLogoUrlArray.get(position));
-
-                Market market = new Market(marketIdArray.get(position),marketNameArray.get(position), marketLogoUrlArray.get(position), "", "");
-                /*FragmentTransaction fr = getActivity().getSupportFragmentManager().beginTransaction();
-                fr.replace(R.id.container, new ListOfMarketPromotions(market) );
-                fr.addToBackStack(null).commit();*/
-                FragmentTransaction fr = ((AppCompatActivity)mContext).getSupportFragmentManager().beginTransaction();
-                fr.replace(R.id.container, new ListOfMarketPromotionsFragment(market));
-                fr.addToBackStack(null).commit();
-
-
-            }
-        });
 
     }
 
@@ -91,11 +96,28 @@ public class RecycleViewMarketsAdapter extends  RecyclerView.Adapter<RecycleView
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView marketLogo;
         TextView marketName;
-
+        TextView marketHour;
         public ViewHolder(View itemView) {
             super(itemView);
             marketLogo = (ImageView) itemView.findViewById(R.id.marketLogo);
             marketName = (TextView) itemView.findViewById(R.id.marketName);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    Log.e("hey", marketNameArray.get(position));
+                    Log.e("hey2", marketLogoUrlArray.get(position));
+
+                    Market market = new Market(marketIdArray.get(position),marketNameArray.get(position), marketLogoUrlArray.get(position), "", "");
+                    FragmentTransaction fr = ((AppCompatActivity)mContext).getSupportFragmentManager().beginTransaction();
+                    fr.replace(R.id.container, new ListOfMarketPromotionsFragment(market));
+                    fr.addToBackStack(null).commit();
+
+
+                }
+            });
+
 
         }
     }

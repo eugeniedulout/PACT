@@ -1,16 +1,15 @@
 package com.example.testmenu.plan_dynamique;
 
 import android.content.Context;
+import android.opengl.GLES20;
 import android.opengl.GLES30;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
 
 import com.example.testmenu.algorithmie.PlusCourtChemin;
 import com.example.testmenu.algorithmie.point.Point;
-import com.example.testmenu.algorithmie.point.ProductPoint;
 
 import java.util.ArrayList;
 
@@ -32,7 +31,7 @@ public class myRenderer implements GLSurfaceView.Renderer {
     private static final float Z_NEAR = 1f;
     private static final float Z_FAR = 40f;
     private ArrayList<Point> pointsProduits = new ArrayList<>();
-
+    private ArrayList<Point> coordonee = new ArrayList<Point>();
 
 
     //Model View Projection Matrix
@@ -99,18 +98,18 @@ public class myRenderer implements GLSurfaceView.Renderer {
 
 
 
+        calculPlusCourtChemin calculPlusCourtChemin = new calculPlusCourtChemin();
+        calculPlusCourtChemin.execute();
 
 
-
-        pointsProduits=MainActivity2.pointsProduits;
+        /*pointsProduits=MainActivity2.pointsProduits;
         monTrajet = new Trajet();
         produits = new Trajet();
         ArrayList<Point> coordonee= PlusCourtChemin.getCoordonnesChemin(pointsProduits);
-        monTrajet = new Trajet(coordonee);
         pointsProduits.remove(pointsProduits.size()-1);
         pointsProduits.remove(pointsProduits.size()-1);
 
-        produits = new Trajet(pointsProduits);
+        produits = new Trajet(pointsProduits);*/
 
 
 
@@ -153,8 +152,8 @@ public class myRenderer implements GLSurfaceView.Renderer {
 
         if (compiled[0] == 0) {
             Log.e(TAG, "Erorr!!!!");
-            Log.e(TAG, GLES30.glGetShaderInfoLog(shader));
-            GLES30.glDeleteShader(shader);
+            Log.e(TAG, GLES20.glGetShaderInfoLog(shader));
+            GLES20.glDeleteShader(shader);
             return 0;
         }
 
@@ -166,7 +165,7 @@ public class myRenderer implements GLSurfaceView.Renderer {
      */
     public static void checkGlError(String glOperation) {
         int error;
-        while ((error = GLES30.glGetError()) != GLES30.GL_NO_ERROR) {
+        while ((error = GLES20.glGetError()) != GLES20.GL_NO_ERROR) {
             Log.e(TAG, glOperation + ": glError " + error);
             throw new RuntimeException(glOperation + ": glError " + error);
         }
@@ -179,9 +178,9 @@ public class myRenderer implements GLSurfaceView.Renderer {
 
 
         //set the clear buffer color to light gray.
-        //GLES30.glClearColor(0.9f, .9f, 0.9f, 0.9f);
+        //GLES20.glClearColor(0.9f, .9f, 0.9f, 0.9f);
         //set the clear buffer color to a dark grey.
-        GLES30.glClearColor(0.1f, .1f, 0.1f, 0.9f);
+        GLES20.glClearColor(0.1f, .1f, 0.1f, 0.9f);
 
         triangle = new Triangle();
         cube = new Cube();
@@ -196,10 +195,10 @@ public class myRenderer implements GLSurfaceView.Renderer {
         //Log.d(TAG, "drawing scene");
         int orientation=0;
         // Clear the color buffer  set above by glClearColor.
-        GLES30.glClear(GLES30.GL_COLOR_BUFFER_BIT | GLES30.GL_DEPTH_BUFFER_BIT);
+        GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
 
         //need this otherwise, it will over right stuff and the cube will look wrong!
-        GLES30.glEnable(GLES30.GL_DEPTH_TEST);
+        GLES20.glEnable(GLES20.GL_DEPTH_TEST);
 
         // Set the camera position (View matrix)
         Matrix.setLookAtM(mViewMatrix, 0, 1f, 6f, -10f, 4.5f, -4f, 5f, 0f, 1.0f, 0.0f);
@@ -500,7 +499,7 @@ public class myRenderer implements GLSurfaceView.Renderer {
         mWidth = width;
         mHeight = height;
         // Set the viewport
-        GLES30.glViewport(0, 0, mWidth, mHeight);
+        GLES20.glViewport(0, 0, mWidth, mHeight);
         float aspect = (float) width / height;
 
 
@@ -509,13 +508,13 @@ public class myRenderer implements GLSurfaceView.Renderer {
 
     public static int loadShader(int type, String shaderCode){
 
-        // create a vertex shader type (GLES30.GL_VERTEX_SHADER)
-        // or a fragment shader type (GLES30.GL_FRAGMENT_SHADER)
-        int shader = GLES30.glCreateShader(type);
+        // create a vertex shader type (GLES20.GL_VERTEX_SHADER)
+        // or a fragment shader type (GLES20.GL_FRAGMENT_SHADER)
+        int shader = GLES20.glCreateShader(type);
 
         // add the source code to the shader and compile it
-        GLES30.glShaderSource(shader, shaderCode);
-        GLES30.glCompileShader(shader);
+        GLES20.glShaderSource(shader, shaderCode);
+        GLES20.glCompileShader(shader);
 
         return shader;
     }
@@ -525,7 +524,17 @@ public class myRenderer implements GLSurfaceView.Renderer {
         @Override
         protected String doInBackground(Integer... integers) {
 
-            //coordonnesPlusCourtChemin = PlusCourtChemin.getCoordonnesChemin(pointsProduits);
+            pointsProduits= MainActivity2.pointsProduits;
+            monTrajet = new Trajet();
+            produits = new Trajet();
+            coordonee= PlusCourtChemin.getCoordonnesChemin(pointsProduits);
+            produits = new Trajet(pointsProduits);
+            pointsProduits.remove(pointsProduits.size()-1);
+            pointsProduits.remove(pointsProduits.size()-1);
+            monTrajet = new Trajet(coordonee);
+
+            for(int i=0;i< coordonee.size(); i++)
+                Log.e("coordonnes ", coordonee.get(i).getLabel());
 
 
             return "finished";
@@ -534,8 +543,6 @@ public class myRenderer implements GLSurfaceView.Renderer {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-
-
 
         }
 

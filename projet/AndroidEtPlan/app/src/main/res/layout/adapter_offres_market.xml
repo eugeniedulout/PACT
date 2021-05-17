@@ -10,17 +10,16 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_centerInParent="true"
-        app:cardBackgroundColor="#F8CBBC"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="20dp"
         app:cardElevation="1dp"
         app:cardMaxElevation="2dp"
-        app:cardPreventCornerOverlap="true"
-            >
+        app:cardPreventCornerOverlap="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#0794FF">
+            android:background="#272727">
 
             <ImageView
                 android:id="@+id/marketLogo"
@@ -37,7 +36,7 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:text="Market Name"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/Colorrg"
                 android:textSize="18sp" />
 
         </RelativeLayout>

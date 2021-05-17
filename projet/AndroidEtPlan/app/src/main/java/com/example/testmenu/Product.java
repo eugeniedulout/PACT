@@ -1,22 +1,15 @@
 package com.example.testmenu;
 
 import android.content.Context;
-import android.os.Parcel;
-
-import com.example.testmenu.fragments.ProductInfoFragment;
-
-import java.io.Serializable;
-
 
 import androidx.annotation.NonNull;
 
-import org.json.JSONArray;
+import com.example.testmenu.fragments.ProductInfoFragment;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.io.Serializable;
 
 public class Product implements Serializable{
     protected String name;
@@ -158,8 +151,8 @@ public class Product implements Serializable{
         this.z = z;
     }
 
-    public void displayInfo(Context context) {
-        FragmentController.swapFragmentInMainContainer(new ProductInfoFragment(this), context);
+    public void displayInfo(Context context, int containerId) {
+        FragmentController.swapFragment(new ProductInfoFragment(this), containerId, context);
     }
 
     public void multiplyByQuantity(int quantite) {
