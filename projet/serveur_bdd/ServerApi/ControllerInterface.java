@@ -124,6 +124,44 @@ public class ListProduct {
 
 }
 
+public void shareList(ListProduct liste, int user, int userfriend); // Partage de liste entre deux amis, les deux amis pourront acceder aux listes partagés
+
+public void shareRecipe(Recette recette, int user, int Userfriend); // Partage de recette entre deux amis, les deux amis pourront acceder aux recette partagés
+
+public void updateList(int userId, String listName, ArrayList<Product> newProducts); // Modification des produits dans une liste. On remplace les produits dans la liste par les nouveaux produits "newProducts"  T
+
+public void removeList(String listName, int userId); // Suppression d'une liste pour un utilisateur donné 
+
+public void removeRecipe(String recipeName, int userId); // Suppression d'une recette pour un utilisateur donné 
+
+public Product getProductFromBarCode( int barcode, int marketId); //  renvoie le produit pour un barcode et un magasin donné.
+
+
+/////////////////////////////// Il faudrait aussi ajouter deux attributs à la classe Product ( désolé :(  )
+
+// Premier parametre : nutriscore (c'est un entier entre 0 et 4 : 0 pour un produit de bonne qualité et 4 pour un produit de mauvaise qualité)
+// Second Paramètre : tag  (pour l'algo de suggestion de Charles il va en avoir besoin, c'est une chaine de caractere qui vaudra "Bio" par exemple) 
+
+// Nouveaux constructeur  Constructeur
+
+    private int nutriscore; 
+    private String tag;
+    
+    public Product(String name, String productImageUrl, double price, double x, double y, int z, int nutriscore, String tag) {
+        this(name, productImageUrl, price);
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.nutriscore = nutriscore;
+        this.tag = tag;
+    }
+
+
+
+
+
+
+
 
 
 }
