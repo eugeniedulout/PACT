@@ -1,0 +1,247 @@
+com/example/testmenu/fragments/RecetteFragment.java
+ com.example.testmenu.fragments.RecetteFragment
+ com.example.testmenu.fragments.RecetteFragment$1
+com/example/testmenu/Friends/FriendsActivity.java
+ com.example.testmenu.Friends.FriendsActivity
+ com.example.testmenu.Friends.FriendsActivity$1
+ com.example.testmenu.Friends.FriendsActivity$2
+ com.example.testmenu.Friends.FriendsActivity$3
+ com.example.testmenu.Friends.FriendsActivity$4
+com/example/testmenu/suggestion/ReceiveData.java
+ com.example.testmenu.suggestion.ReceiveData
+com/example/testmenu/algorithmie/point/Plan.java
+ com.example.testmenu.algorithmie.point.Plan
+com/example/testmenu/algorithmie/dijkstra/Previous.java
+ com.example.testmenu.algorithmie.dijkstra.Previous
+com/example/testmenu/Friends/ListAcivity.java
+ com.example.testmenu.Friends.ListAcivity
+com/example/testmenu/plan_dynamique/Square.java
+ com.example.testmenu.plan_dynamique.Square
+com/example/testmenu/adapters/PromotionMarketAdapter.java
+ com.example.testmenu.adapters.PromotionMarketAdapter
+com/example/testmenu/fragments/AddRecetteFragment.java
+ com.example.testmenu.fragments.AddRecetteFragment
+ com.example.testmenu.fragments.AddRecetteFragment$1
+ com.example.testmenu.fragments.AddRecetteFragment$2
+ com.example.testmenu.fragments.AddRecetteFragment$getSiteData
+ com.example.testmenu.fragments.AddRecetteFragment$getSiteData$1
+com/example/testmenu/Product.java
+ com.example.testmenu.Product
+com/example/testmenu/algorithmie/dijkstra/Dijkstra.java
+ com.example.testmenu.algorithmie.dijkstra.Dijkstra
+com/example/testmenu/algorithmie/point/package-info.java
+ com.example.testmenu.algorithmie.point.package-info
+com/example/testmenu/fragments/DisplayIngredientsFromRecetteFragment.java
+ com.example.testmenu.fragments.DisplayIngredientsFromRecetteFragment
+com/example/testmenu/plan_dynamique/Cube.java
+ com.example.testmenu.plan_dynamique.Cube
+com/example/testmenu/algorithmie/dijkstra/VertexInterface.java
+ com.example.testmenu.algorithmie.dijkstra.VertexInterface
+com/example/testmenu/BuildConfig.java
+ com.example.testmenu.BuildConfig
+com/example/testmenu/algorithmie/TspDynamicProgrammingIterative.java
+ com.example.testmenu.algorithmie.TspDynamicProgrammingIterative
+com/example/testmenu/algorithmie/dijkstra/PiInterface.java
+ com.example.testmenu.algorithmie.dijkstra.PiInterface
+com/example/testmenu/algorithmie/dijkstra/PathAndDistances.java
+ com.example.testmenu.algorithmie.dijkstra.PathAndDistances
+com/example/testmenu/algorithmie/dijkstra/ASetInterface.java
+ com.example.testmenu.algorithmie.dijkstra.ASetInterface
+com/example/testmenu/preferencesActivity.java
+ com.example.testmenu.preferencesActivity
+ com.example.testmenu.preferencesActivity$1
+ com.example.testmenu.preferencesActivity$10
+ com.example.testmenu.preferencesActivity$11
+ com.example.testmenu.preferencesActivity$12
+ com.example.testmenu.preferencesActivity$2
+ com.example.testmenu.preferencesActivity$3
+ com.example.testmenu.preferencesActivity$4
+ com.example.testmenu.preferencesActivity$5
+ com.example.testmenu.preferencesActivity$6
+ com.example.testmenu.preferencesActivity$7
+ com.example.testmenu.preferencesActivity$8
+ com.example.testmenu.preferencesActivity$9
+com/example/testmenu/Controller.java
+ com.example.testmenu.Controller
+com/example/testmenu/plan_dynamique/myGlSurfaceView.java
+ com.example.testmenu.plan_dynamique.myGlSurfaceView
+com/example/testmenu/adapters/RecetteAdapter.java
+ com.example.testmenu.adapters.RecetteAdapter
+com/example/testmenu/ListProduct.java
+ com.example.testmenu.ListProduct
+com/example/testmenu/algorithmie/dijkstra/GraphInterface.java
+ com.example.testmenu.algorithmie.dijkstra.GraphInterface
+com/example/testmenu/Account/AccountActivity.java
+ com.example.testmenu.Account.AccountActivity
+ com.example.testmenu.Account.AccountActivity$1
+ com.example.testmenu.Account.AccountActivity$2
+com/example/testmenu/Test.java
+ com.example.testmenu.Test
+ com.example.testmenu.Test$1
+com/example/testmenu/SettingsActivity.java
+ com.example.testmenu.SettingsActivity
+ com.example.testmenu.SettingsActivity$1
+com/example/testmenu/MainActivity.java
+ com.example.testmenu.MainActivity
+ com.example.testmenu.MainActivity$1
+ com.example.testmenu.MainActivity$2
+ com.example.testmenu.MainActivity$3
+com/example/testmenu/ScanActivity.java
+ com.example.testmenu.ScanActivity
+com/example/testmenu/plan_dynamique/MainActivity2.java
+ com.example.testmenu.plan_dynamique.MainActivity2
+com/example/testmenu/suggestion/SlopeOne.java
+ com.example.testmenu.suggestion.SlopeOne
+com/example/testmenu/Account/ModifyAdressEAccount.java
+ com.example.testmenu.Account.ModifyAdressEAccount
+ com.example.testmenu.Account.ModifyAdressEAccount$1
+ com.example.testmenu.Account.ModifyAdressEAccount$2
+com/example/testmenu/fragments/ListFragment.java
+ com.example.testmenu.fragments.ListFragment
+ com.example.testmenu.fragments.ListFragment$1
+ com.example.testmenu.fragments.ListFragment$2
+ com.example.testmenu.fragments.ListFragment$loadLists
+com/example/testmenu/User.java
+ com.example.testmenu.User
+com/example/testmenu/connection/SignUp.java
+ com.example.testmenu.connection.SignUp
+ com.example.testmenu.connection.SignUp$1
+ com.example.testmenu.connection.SignUp$2
+com/example/testmenu/fragments/ProductOnSpecialOfferInfoFragment.java
+ com.example.testmenu.fragments.ProductOnSpecialOfferInfoFragment
+com/example/testmenu/algorithmie/dijkstra/package-info.java
+ com.example.testmenu.algorithmie.dijkstra.package-info
+com/example/testmenu/fragments/DisplayRecetteFragment.java
+ com.example.testmenu.fragments.DisplayRecetteFragment
+ com.example.testmenu.fragments.DisplayRecetteFragment$1
+ com.example.testmenu.fragments.DisplayRecetteFragment$getSiteData
+ com.example.testmenu.fragments.DisplayRecetteFragment$getSiteData$1
+com/example/testmenu/connection/Login.java
+ com.example.testmenu.connection.Login
+ com.example.testmenu.connection.Login$1
+ com.example.testmenu.connection.Login$2
+com/example/testmenu/Recette.java
+ com.example.testmenu.Recette
+com/example/testmenu/adapters/ListAdapter.java
+ com.example.testmenu.adapters.ListAdapter
+com/example/testmenu/Friends/AmiActivity.java
+ com.example.testmenu.Friends.AmiActivity
+ com.example.testmenu.Friends.AmiActivity$1
+com/example/testmenu/ProductOnSpecialOffer.java
+ com.example.testmenu.ProductOnSpecialOffer
+com/example/testmenu/algorithmie/PlusCourtChemin.java
+ com.example.testmenu.algorithmie.PlusCourtChemin
+com/example/testmenu/adapters/RecycleViewMarketsAdapter.java
+ com.example.testmenu.adapters.RecycleViewMarketsAdapter
+ com.example.testmenu.adapters.RecycleViewMarketsAdapter$1
+ com.example.testmenu.adapters.RecycleViewMarketsAdapter$ViewHolder
+com/example/testmenu/fragments/ListOfProductsFragment.java
+ com.example.testmenu.fragments.ListOfProductsFragment
+ com.example.testmenu.fragments.ListOfProductsFragment$1
+com/example/testmenu/algorithmie/point/PointE.java
+ com.example.testmenu.algorithmie.point.PointE
+com/example/testmenu/Friends/Friend.java
+ com.example.testmenu.Friends.Friend
+com/example/testmenu/fragments/OffresFragment.java
+ com.example.testmenu.fragments.OffresFragment
+ com.example.testmenu.fragments.OffresFragment$loadMarkets
+com/example/testmenu/Friends/AddFriendActivity.java
+ com.example.testmenu.Friends.AddFriendActivity
+ com.example.testmenu.Friends.AddFriendActivity$1
+ com.example.testmenu.Friends.AddFriendActivity$2
+ com.example.testmenu.Friends.AddFriendActivity$3
+ com.example.testmenu.Friends.AddFriendActivity$4
+com/example/testmenu/fragments/ProductInfoFragment.java
+ com.example.testmenu.fragments.ProductInfoFragment
+com/example/testmenu/fragments/PlanFragment.java
+ com.example.testmenu.fragments.PlanFragment
+ com.example.testmenu.fragments.PlanFragment$1
+ com.example.testmenu.fragments.PlanFragment$2
+com/example/testmenu/plan_dynamique/Products.java
+ com.example.testmenu.plan_dynamique.Products
+com/example/testmenu/adapters/RecycleViewConsigneRecetteAdapter.java
+ com.example.testmenu.adapters.RecycleViewConsigneRecetteAdapter
+ com.example.testmenu.adapters.RecycleViewConsigneRecetteAdapter$ViewHolder
+com/example/testmenu/plan_dynamique/Triangle.java
+ com.example.testmenu.plan_dynamique.Triangle
+com/example/testmenu/Friends/mesdemandesActivityPrime.java
+ com.example.testmenu.Friends.mesdemandesActivityPrime
+ com.example.testmenu.Friends.mesdemandesActivityPrime$1
+ com.example.testmenu.Friends.mesdemandesActivityPrime$2
+ com.example.testmenu.Friends.mesdemandesActivityPrime$3
+ com.example.testmenu.Friends.mesdemandesActivityPrime$4
+ com.example.testmenu.Friends.mesdemandesActivityPrime$5
+ com.example.testmenu.Friends.mesdemandesActivityPrime$6
+com/example/testmenu/fragments/ProfilFragment.java
+ com.example.testmenu.fragments.ProfilFragment
+com/example/testmenu/algorithmie/dijkstra/ASet.java
+ com.example.testmenu.algorithmie.dijkstra.ASet
+com/example/testmenu/adapters/ListOfRecettesAdapter.java
+ com.example.testmenu.adapters.ListOfRecettesAdapter
+com/example/testmenu/fragments/WebViewFragment.java
+ com.example.testmenu.fragments.WebViewFragment
+ com.example.testmenu.fragments.WebViewFragment$1
+ com.example.testmenu.fragments.WebViewFragment$2
+com/example/testmenu/Ingredient.java
+ com.example.testmenu.Ingredient
+com/example/testmenu/algorithmie/dijkstra/Pi.java
+ com.example.testmenu.algorithmie.dijkstra.Pi
+com/example/testmenu/fragments/DisplayedProductsFromAListFragment.java
+ com.example.testmenu.fragments.DisplayedProductsFromAListFragment
+ com.example.testmenu.fragments.DisplayedProductsFromAListFragment$1
+com/example/testmenu/fragments/DialogMarket.java
+ com.example.testmenu.fragments.DialogMarket
+ com.example.testmenu.fragments.DialogMarket$1
+com/example/testmenu/algorithmie/point/ProductPoint.java
+ com.example.testmenu.algorithmie.point.ProductPoint
+com/example/testmenu/fragments/AddProductFragment.java
+ com.example.testmenu.fragments.AddProductFragment
+ com.example.testmenu.fragments.AddProductFragment$1
+ com.example.testmenu.fragments.AddProductFragment$2
+ com.example.testmenu.fragments.AddProductFragment$3
+ com.example.testmenu.fragments.AddProductFragment$4
+com/example/testmenu/fragments/ListOfMarketPromotionsFragment.java
+ com.example.testmenu.fragments.ListOfMarketPromotionsFragment
+ com.example.testmenu.fragments.ListOfMarketPromotionsFragment$1
+com/example/testmenu/ProfilActivity.java
+ com.example.testmenu.ProfilActivity
+ com.example.testmenu.ProfilActivity$1
+ com.example.testmenu.ProfilActivity$2
+ com.example.testmenu.ProfilActivity$3
+ com.example.testmenu.ProfilActivity$4
+com/example/testmenu/algorithmie/point/Point.java
+ com.example.testmenu.algorithmie.point.Point
+com/example/testmenu/plan_dynamique/Position.java
+ com.example.testmenu.plan_dynamique.Position
+com/example/testmenu/plan_dynamique/myRenderer.java
+ com.example.testmenu.plan_dynamique.myRenderer
+ com.example.testmenu.plan_dynamique.myRenderer$calculPlusCourtChemin
+com/example/testmenu/adapters/ProductAdapter.java
+ com.example.testmenu.adapters.ProductAdapter
+com/example/testmenu/Account/ModifyMdpAccount.java
+ com.example.testmenu.Account.ModifyMdpAccount
+ com.example.testmenu.Account.ModifyMdpAccount$1
+ com.example.testmenu.Account.ModifyMdpAccount$2
+com/example/testmenu/connection/SplashScreen.java
+ com.example.testmenu.connection.SplashScreen
+ com.example.testmenu.connection.SplashScreen$1
+com/example/testmenu/connection/Reception.java
+ com.example.testmenu.connection.Reception
+ com.example.testmenu.connection.Reception$1
+com/example/testmenu/Market.java
+ com.example.testmenu.Market
+com/example/testmenu/FragmentController.java
+ com.example.testmenu.FragmentController
+com/example/testmenu/algorithmie/dijkstra/PreviousAndPi.java
+ com.example.testmenu.algorithmie.dijkstra.PreviousAndPi
+com/example/testmenu/plan_dynamique/Point.java
+ com.example.testmenu.plan_dynamique.Point
+com/example/testmenu/fragments/BuildingListFragment.java
+ com.example.testmenu.fragments.BuildingListFragment
+ com.example.testmenu.fragments.BuildingListFragment$1
+com/example/testmenu/algorithmie/dijkstra/PreviousInterface.java
+ com.example.testmenu.algorithmie.dijkstra.PreviousInterface
+com/example/testmenu/plan_dynamique/Trajet.java
+ com.example.testmenu.plan_dynamique.Trajet
+com/example/testmenu/suggestion/Item.java
+ com.example.testmenu.suggestion.Item
