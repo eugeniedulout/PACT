@@ -311,10 +311,8 @@ public class MainActivity2 extends AppCompatActivity {
 
 
     public void ScanButton(View view){
-        Log.d("COORDS: ", ""+current_position.getX());
-        /*
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
-        intentIntegrator.initiateScan();*/
+        intentIntegrator.initiateScan();
     }
 
     public com.example.testmenu.bluetooth.Point getPosition(){
