@@ -8,6 +8,7 @@ import android.opengl.Matrix;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.algorithmie.PlusCourtChemin;
 import com.example.testmenu.algorithmie.point.Point;
 
@@ -211,8 +212,8 @@ public class myRenderer implements GLSurfaceView.Renderer {
         // x et z sont ici choisis arbitrairement, lors de l'intégration ils proviendront de la fonction
         // renvoyant les coordonnées réelles de l'utilisateur
         // listPosition.addSommet();
-        double x= 3;
-        double z=5;
+        double x= MainActivity2.current_position.getX();
+        double z= MainActivity2.current_position.getY();
         double z_cam1 = z-6;
 
         //code intégré
