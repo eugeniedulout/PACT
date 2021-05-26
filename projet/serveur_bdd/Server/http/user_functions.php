@@ -104,10 +104,10 @@ if(isset($_POST['action'])) {
                 $user_id = $_POST['user_id'];
                 $list_name = $_POST['list_name'];
                 $dir_name = "/var/www/html/data/lists/$user_id/";
-                $filename=$dir_name.$list_name.".json"
-                if(file_exists(filename)) {
-                        unlink(filename);
-        
+                $filename=$dir_name.$list_name.".json";
+                if(file_exists($filename)) {
+                        unlink($filename);
+
                 }
    
 		break;
