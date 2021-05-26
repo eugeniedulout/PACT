@@ -23,6 +23,7 @@ public class ProfilActivity extends Fragment {
     private Button friends;
     private Button parameters;
     private Button deconnexion;
+    Integer id;
 
 
     TextView txtProfil;

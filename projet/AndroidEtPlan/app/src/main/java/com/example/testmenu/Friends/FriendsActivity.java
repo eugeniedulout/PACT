@@ -2,7 +2,6 @@ package com.example.testmenu.Friends;
 
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,23 +17,28 @@ import androidx.fragment.app.Fragment;
 
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
+import com.example.testmenu.MainActivity;
+import com.example.testmenu.ProfilActivity;
 import com.example.testmenu.R;
 import com.example.testmenu.User;
-import com.example.testmenu.fragments.ProfilFragment;
 
 import java.util.ArrayList;
-
 
 
 public class FriendsActivity extends Fragment {
     private Button retour;
     private Button ajoutami;
     private Button demandes;
-
+  //  Integer id;
     private ArrayList<Integer> listFriends = new ArrayList<Integer>();
     public String textName;
     ArrayList<String> listNameOfFriend=new ArrayList<String>();
     private ListView listeamis;
+
+   /* public FriendsActivity(int id){
+        super();
+        this.id=id;
+    }*/
     @Override
     @Nullable
 
@@ -54,7 +58,7 @@ public class FriendsActivity extends Fragment {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentController.swapFragmentInMainContainer(new ProfilFragment(), getContext());
+                FragmentController.swapFragmentInMainContainer(new ProfilActivity(), getContext());
             }
         });
         ajoutami.setOnClickListener(new View.OnClickListener() {
@@ -71,15 +75,17 @@ public class FriendsActivity extends Fragment {
         });
 
 
-
-
-       // listFriends=  Controller.getUserFriends(1);
-
-
-        /*for(int i=0;i<listFriends.size();i++)  {
+        listFriends=  Controller.getUserFriends(MainActivity.user.getId());
+        /*for(int i=0;i<listFriends.size();i++) {
+            listNameOfFriend.add(Controller.getUser(listFriends.get(0)).getFirstname());
+        //}
+        */
+        for(int i=0;i<listFriends.size();i++)  {
             User us = Controller.getUser(listFriends.get(i));
-            listNameOfFriend.add(us.getFirstname()+" "+us.getLastname());
-        }*/
+            if(!listNameOfFriend.contains((us.getFirstname()+" "+us.getLastname()))) {
+                listNameOfFriend.add(us.getFirstname() + " " + us.getLastname());
+            }
+        }
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext() , android.R.layout.simple_list_item_1, listNameOfFriend);
 
