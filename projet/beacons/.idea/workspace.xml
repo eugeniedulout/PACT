@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4bc0f3cb-276c-4751-9182-085807f2852b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../AndroidEtPlan/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidEtPlan/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AndroidEtPlan/app/src/main/java/com/example/testmenu/fragments/PlanFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidEtPlan/app/src/main/java/com/example/testmenu/fragments/PlanFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beacon_finder/app/src/main/java/com/beacons/demo/Beacon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beacon_finder/app/src/main/java/com/beacons/demo/BeaconModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beacon_finder/app/src/main/java/com/beacons/demo/BeaconsAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beacon_finder/app/src/main/java/com/beacons/demo/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beacon_finder/app/src/main/java/com/beacons/demo/Point.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beacon_finder/app/src/main/java/com/beacons/demo/Trilateration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../rapport/images/arch.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/../../rapport/images/arch.PNG" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1r41sr5riI90ai31WieUxXAVo7k" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bc0f3cb-276c-4751-9182-085807f2852b" name="Default Changelist" comment="" />
+      <created>1618220757480</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618220757480</updated>
+    </task>
+    <servers />
+  </component>
+</project>
