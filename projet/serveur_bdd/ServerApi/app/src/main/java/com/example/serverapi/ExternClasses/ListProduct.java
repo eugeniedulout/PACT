@@ -95,8 +95,13 @@ public class ListProduct {
     @Override
     public String toString() {
         String str ="LIST NAME: "+this.listName+" market: " + this.marketId + "\n";
-        for(int i =0; i < this.listOfProducts.size(); i++) {
-            str+="\t"+this.listOfProducts.get(i)+ " x " + this.quantities.get(i) +"\n";
+        try {
+            for (int i = 0; i < this.listOfProducts.size(); i++) {
+                str += "\t" + this.listOfProducts.get(i) + " x " + this.quantities.get(i) + "\n";
+            }
+        } catch (IndexOutOfBoundsException e) {
+            Log.e("BAD QUANTITIES", "in " + this.listName);
+            e.printStackTrace();
         }
         return str;
     }
