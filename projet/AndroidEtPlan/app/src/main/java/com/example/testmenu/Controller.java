@@ -477,17 +477,18 @@ public class Controller {
      * Get the coords of all beacons in a market (here there just one)
      * @return an arrayMap with beacons uuid and their positions
      */
-    public static ArrayMap<String, Point> getBeaconsCoords(int marketId) {
+    public static ArrayMap<String, com.example.testmenu.algorithmie.point.Point> getBeaconsCoords(int marketId) {
         addParam("action", "get_beacons");
         addParam("market", String.valueOf(marketId));
 
-        ArrayMap<String, Point> positions = new ArrayMap<>();
+        ArrayMap<String, com.example.testmenu.algorithmie.point.Point> positions = new ArrayMap<>();
         try {
             JSONArray answer = new JSONArray(post(SERVER_URL + USER_FONCTIONS));
 
             for(int i=0; i<answer.length();i++) {
                 JSONObject value = answer.getJSONObject(i);
-                positions.put(value.getString("uuid"), new Point(value.getJSONObject("coords")));
+                Point p = new Point(value.getJSONObject("coords"));
+                positions.put(value.getString("uuid"), new com.example.testmenu.algorithmie.point.Point(p.getX(), p.getY()));
 
             }
         } catch (JSONException e) {
