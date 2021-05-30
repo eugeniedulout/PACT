@@ -320,14 +320,26 @@ public class Controller {
         String result = post(SERVER_URL+USER_FONCTIONS);
     }
 
-
-
     /**
+     * Suppression d'une liste
      *
-     * @param friendId
-     * @param userId
-     * @return All the lists of friendId shared with userId
      */
+    public static void removeListOfProducts(int userId, ListProduct listProduct) {
+        addParam("action", "remove_list");
+        addParam("user_id", String.valueOf(userId));
+        addParam("list_name", String.valueOf(listProduct.getListName()));
+
+        String result = post(SERVER_URL + USER_FONCTIONS);
+    }
+
+
+
+        /**
+         *
+         * @param friendId
+         * @param userId
+         * @return All the lists of friendId shared with userId
+         */
     public static ArrayList<ListProduct> getFriendLists(int friendId, int userId) {
         addParam("action", "get_friend_lists");
         addParam("friend_id", String.valueOf(friendId));

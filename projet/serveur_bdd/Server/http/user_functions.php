@@ -98,6 +98,23 @@ if(isset($_POST['action'])) {
                 file_put_contents($dir_name.$list_name.'.json',$list_json);
 		break;
 
+	//Supprime une liste
+
+		case "remove_list":
+                $user_id = $_POST['user_id'];
+                $list_name = $_POST['list_name'];
+                $dir_name = "/var/www/html/data/lists/$user_id/";
+                $filename=$dir_name.$list_name.".json";
+                if(file_exists($filename)) {
+                        unlink($filename);
+
+                }
+   
+		break;
+
+
+
+
 
 	// Récupérer toutes les promotions d'un magasin
 	case "get_market_offers":
@@ -315,7 +332,32 @@ if(isset($_POST['action'])) {
 		$db->exec($req);
 		break;
 
+	case "get_beacons":
+		$market_id = $_POST['market_id'];
 
+		$req = "SELECT uuid, x, y FROM beaconsPositions WHERE market_id = $market_id";
+
+		$data = $db->query($req);
+		$positions = array();
+		while($row = $data->fetch()) {
+			array_push($positions, array('uuid' => $row['uuid'], 'coords' => array('x' => $row['x'], 'y' => $row['y'])));
+		}
+		print(json_encode($positions));
+		break;
+
+	case "update_list":
+		$user_id = $_POST['user_id'];
+		$list_name = $_POST['list_name'];
+		$list_json = $_POST['new_list'];
+
+		$path = "/var/www/html/data/lists/$user_id/$list_name.json";
+		if(file_exists($path)) {
+			unlink($path);
+		}
+		file_put_contents($path, $list_json);
+		break;
 	}
+
+
 }
 ?>
