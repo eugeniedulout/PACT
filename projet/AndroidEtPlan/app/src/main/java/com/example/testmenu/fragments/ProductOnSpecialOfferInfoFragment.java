@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.testmenu.ProductOnSpecialOffer;
 import com.example.testmenu.R;
 
@@ -55,11 +56,9 @@ public class ProductOnSpecialOfferInfoFragment extends Fragment {
 
         expirationDateText.setText("Promotion expire le " + productOnSpecialOffer.getExpirationDate());
 
-
-        int id = getResources().getIdentifier(productOnSpecialOffer.getProductImageUrl(), "drawable", getContext().getPackageName());
-        productImage.setImageResource(id);
-
-
+        Glide.with(getContext())
+                .load(productOnSpecialOffer.getProductImageUrl())
+                .into(productImage);
 
         return v;
     }

@@ -2,11 +2,13 @@ package com.example.testmenu.Friends;
 
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -21,6 +23,7 @@ import com.example.testmenu.FragmentController;
 import com.example.testmenu.MainActivity;
 import com.example.testmenu.ProfilActivity;
 import com.example.testmenu.R;
+import com.example.testmenu.User;
 
 import java.util.ArrayList;
 
@@ -31,7 +34,7 @@ public class AddFriendActivity extends Fragment {
     private ListView listesamis;
     private ArrayList<Integer> listFriends;
     ArrayList<String> listNameOfFriend=new ArrayList<String>();
-    EditText newFriend;
+    AutoCompleteTextView searchFriend;
     Button buttonValid;
 
     @Override
@@ -46,7 +49,24 @@ public class AddFriendActivity extends Fragment {
         this.mesdemandes= v.findViewById(R.id.mesdemandes);
         this.listesamis= v.findViewById(R.id.listesamis);
         this.buttonValid=v.findViewById(R.id.btnValider);
-        this.newFriend=v.findViewById(R.id.editTextAddFriend);
+        this.searchFriend=v.findViewById(R.id.searchFriend);
+
+        ArrayList<User> users = new ArrayList<>();
+
+        for (int i =0; i< 80; i++) {
+            User  us = Controller.getUser(i);
+            if(us != null) {
+                Log.e("User ", ""+us);
+                users.add(us);
+            }
+        }
+        ArrayList<String> arrayListFriendsName = new ArrayList<>();
+        for(int i = 0; i < users.size(); i++) {
+            arrayListFriendsName.add(users.get(i).getFirstname() + " " + users.get(i).getLastname());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_selectable_list_item, arrayListFriendsName.toArray(new String[0]));
+        searchFriend.setAdapter(adapter);
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,14 +83,24 @@ public class AddFriendActivity extends Fragment {
         buttonValid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Controller.sendDemand(MainActivity.user.getId(), Integer.getInteger(newFriend.getText().toString()));
+                String nameFriendSelected = searchFriend.getText().toString();
+                int idFriendSelected = 2;
+                for(User us : users) {
+                    String prenomNom = us.getFirstname() + " " + us.getLastname();
+                    if(prenomNom.equals(nameFriendSelected))
+                        idFriendSelected  =us.getId();
+                }
+                Controller.sendDemand(MainActivity.user.getId(), idFriendSelected);
             }
         });
 
         listFriends=  Controller.getUserFriends(MainActivity.user.getId());
         for(Integer e: listFriends){
-            if(!listNameOfFriend.contains((Controller.getUser(e).getFirstname()+" "+ Controller.getUser(e).getLastname()))) {
-                listNameOfFriend.add(Controller.getUser(e).getFirstname() + " " + Controller.getUser(e).getLastname());
+            User us = Controller.getUser(e);
+            if(us != null) {
+                if (!listNameOfFriend.contains((us.getFirstname() + " " + us.getLastname()))) {
+                    listNameOfFriend.add(us.getFirstname() + " " + us.getLastname());
+                }
             }
         }
 

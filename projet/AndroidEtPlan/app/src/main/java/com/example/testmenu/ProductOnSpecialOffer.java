@@ -48,6 +48,11 @@ public class ProductOnSpecialOffer extends Product {
         }
     }
 
+    @Override
+    public boolean isOnPromotion() {
+        return !super.isOnPromotion();
+    }
+
     @NonNull
     @Override
     public String toString() {

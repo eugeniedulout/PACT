@@ -82,8 +82,10 @@ public class FriendsActivity extends Fragment {
         */
         for(int i=0;i<listFriends.size();i++)  {
             User us = Controller.getUser(listFriends.get(i));
-            if(!listNameOfFriend.contains((us.getFirstname()+" "+us.getLastname()))) {
-                listNameOfFriend.add(us.getFirstname() + " " + us.getLastname());
+            if( us != null) {
+                if (!listNameOfFriend.contains((us.getFirstname() + " " + us.getLastname()))) {
+                    listNameOfFriend.add(us.getFirstname() + " " + us.getLastname());
+                }
             }
         }
 
@@ -94,8 +96,8 @@ public class FriendsActivity extends Fragment {
         listeamis.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(), parent.getItemAtPosition(position)+" is selected", Toast.LENGTH_LONG).show();
-                FragmentController.swapFragmentInMainContainer(new AmiActivity(listFriends.get(position)),getContext());
+
+                FragmentController.swapFragmentInMainContainer(new ListFragmentFriend(listFriends.get(position) ) ,getContext());
 
             }
         });

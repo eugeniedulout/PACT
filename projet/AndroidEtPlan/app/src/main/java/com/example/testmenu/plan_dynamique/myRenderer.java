@@ -550,6 +550,8 @@ public class myRenderer implements GLSurfaceView.Renderer {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            MainActivity2.setRecycleViewItemOrder(PlusCourtChemin.getProductOrder());
+
         }
 
         @Override

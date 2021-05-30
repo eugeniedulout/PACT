@@ -36,6 +36,7 @@ import com.example.testmenu.algorithmie.point.Point;
 import com.example.testmenu.bluetooth.BeaconModel;
 import com.example.testmenu.bluetooth.BeaconsAdapter;
 import com.example.testmenu.bluetooth.Trilateration;
+import com.example.testmenu.dialogs.DialogScan;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.example.testmenu.ListProduct;
@@ -51,6 +52,7 @@ public class MainActivity2 extends AppCompatActivity {
     public static Point current_position = new Point(3,1);
     private static ArrayMap<String, Point> beacons_position = new ArrayMap<>();
     private static com.example.testmenu.bluetooth.Point p = new com.example.testmenu.bluetooth.Point(100,100);
+    private static android.app.AlertDialog.Builder recyclerView;
 
     private TextView textView;
 
@@ -77,7 +79,28 @@ public class MainActivity2 extends AppCompatActivity {
     // Liste des packets bluetooth reçus
     public static ArrayMap<BluetoothDevice, byte[]> previous = new ArrayMap<BluetoothDevice, byte[]>();
 
+    private static ArrayList<String> productsName = new ArrayList<>();
 
+    private static RecyclerView recyclerViewProduct;
+
+    private static  RecycleViewConsigneRecetteAdapter adapterConsigne;
+
+    public static void setRecycleViewItemOrder(List<Integer> order) {
+
+        ArrayList<String > productStringRightOrder = new ArrayList<>();
+
+        for(int i =0; i<order.size(); i++) {
+            Log.e("Order" , order.get(i).toString());
+            productStringRightOrder.add(productsName.get(order.get(i)));
+        }
+        productsName.clear();
+
+        for(int i =0; i<productStringRightOrder.size(); i++)
+            productsName.add(productStringRightOrder.get(i));
+
+        adapterConsigne.notifyDataSetChanged();
+       // recyclerViewProduct.setAdapter(adapterConsigne);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,16 +115,15 @@ public class MainActivity2 extends AppCompatActivity {
         pointsProduits = (ArrayList<Point>) getIntent().getSerializableExtra("produits coordonnees");
         listeProduit = (ListProduct) getIntent().getSerializableExtra("produitsOject");
 
-        ArrayList<String> productsName = new ArrayList<>();
 
         for(int i=0; i< listeProduit.getListOfProducts().size(); i++)
             productsName.add(listeProduit.getListOfProducts().get(i).getName());
 
         LinearLayoutManager layoutManager =  new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycleProduit);
-        recyclerView.setLayoutManager(layoutManager);
-        RecycleViewConsigneRecetteAdapter adapterConsigne = new RecycleViewConsigneRecetteAdapter(productsName, getApplicationContext());
-        recyclerView.setAdapter(adapterConsigne);
+        recyclerViewProduct = (RecyclerView)findViewById(R.id.recycleProduit);
+        recyclerViewProduct.setLayoutManager(layoutManager);
+        adapterConsigne = new RecycleViewConsigneRecetteAdapter(productsName, getApplicationContext());
+        recyclerViewProduct.setAdapter(adapterConsigne);
 
 
         FragmentTransaction fr = getSupportFragmentManager().beginTransaction();
@@ -125,7 +147,6 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        textView = findViewById(R.id.codeBarText);
         ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, PackageManager.PERMISSION_GRANTED);
 
 
@@ -404,10 +425,10 @@ public class MainActivity2 extends AppCompatActivity {
 
         if (intentResult != null){
             if (intentResult.getContents() == null){
-                textView.setText("Cancelled");
+                new DialogScan("Cancelled").show(getSupportFragmentManager(),"Dialog !");
             }
             else {
-                textView.setText(intentResult.getContents());
+                new DialogScan(intentResult.getContents()).show(getSupportFragmentManager(),"Dialog !");
             }
         }
         super.onActivityResult(requestCode, resultCode, data);

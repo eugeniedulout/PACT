@@ -59,7 +59,7 @@ public class mesdemandesActivityPrime extends Fragment {
         }
 
         for ( Integer i : listDemands){
-            demandes.add(i.toString()+": Demande de "+ Controller.getUser(i).getFirstname()+ Controller.getUser(i).getLastname());
+            demandes.add(i.toString()+": Demande de "+ Controller.getUser(i).getFirstname()+ " " + Controller.getUser(i).getLastname());
         }
       /*  for (Integer i:listDemands){
             demandes.add(i+": Demande de "+user.getFirstname()+user.getLastname());
@@ -106,7 +106,10 @@ public class mesdemandesActivityPrime extends Fragment {
                     //
                     if(checked.get(i)) {
                         Controller.addFriend(MainActivity.user.getId(), listDemands.get(i));
+                        Controller.addFriend(listDemands.get(i), MainActivity.user.getId());
 
+                        Controller.refuseDemand(MainActivity.user.getId(), listDemands.get(i));
+                        FragmentController.swapFragmentInMainContainer(new mesdemandesActivityPrime(), getContext());
                     }
                 }
             }
@@ -127,7 +130,7 @@ public class mesdemandesActivityPrime extends Fragment {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentController.swapFragmentInMainContainer(new ProfilActivity(), getContext());
+                FragmentController.swapFragmentInMainContainer(new FriendsActivity(), getContext());
             }
         });
 
@@ -141,9 +144,12 @@ public class mesdemandesActivityPrime extends Fragment {
         listFriends= Controller.getUserFriends(MainActivity.user.getId());
         //for(Integer e: listFriends){
         for(int i=0;i<listFriends.size();i++)  {
-            if(!listNameOfFriend.contains((Controller.getUser(listFriends.get(i)).getFirstname()+" "+ Controller.getUser(listFriends.get(i)).getLastname()))) {
+            User us = Controller.getUser(listFriends.get(i));
+            if(us != null) {
+                if (!listNameOfFriend.contains((us.getFirstname() + " " + us.getLastname()))) {
 
-                listNameOfFriend.add(Controller.getUser(listFriends.get(i)).getFirstname() + " " + Controller.getUser(listFriends.get(i)).getLastname());
+                    listNameOfFriend.add(us.getFirstname() + " " + us.getLastname());
+                }
             }
         }
 

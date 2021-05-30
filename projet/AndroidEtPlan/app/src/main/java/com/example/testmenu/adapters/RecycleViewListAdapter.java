@@ -21,12 +21,12 @@ public class RecycleViewListAdapter extends  RecyclerView.Adapter<RecycleViewLis
     private ArrayList<ListProduct> listProducts = new ArrayList<>();
     private Context mContext;
     private ArrayList<Recette> recipes = new ArrayList<>();
-
-    public RecycleViewListAdapter(ArrayList<ListProduct> listProducts, Context mContext) {
+    private boolean canEdit;
+    public RecycleViewListAdapter(ArrayList<ListProduct> listProducts, boolean canEdit, Context mContext) {
         this.listProducts = listProducts;
         this.mContext = mContext;
         int size= listProducts.size();
-
+        this.canEdit = canEdit;
         for(int i =0; i< size; i++) {
             listNames.add(listProducts.get(i).getListName());
         }
@@ -56,7 +56,7 @@ public class RecycleViewListAdapter extends  RecyclerView.Adapter<RecycleViewLis
         holder.cookingBackground.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listProducts.get(position).displayProductsInTheList(mContext);
+                listProducts.get(position).displayProductsInTheList(mContext, canEdit);
             }
         });
 

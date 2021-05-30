@@ -28,7 +28,7 @@ public class WebViewFragment extends Fragment {
         w.getSettings().setDisplayZoomControls(false);
         w.getSettings().setDomStorageEnabled(true);
         w.setWebViewClient(new WebViewClient());
-        w.loadUrl("https://marmiton.org");
+        w.loadUrl("https://www.marmiton.org/recettes/recherche.aspx?aqt=chocolat");
 
         w.getSettings().setBuiltInZoomControls(true);
         w.getSettings().setUseWideViewPort(true);

@@ -21,8 +21,10 @@ import java.util.List;
 
 public class PlusCourtChemin {
 
-
-
+    private  static List<Integer> productOrder;
+    public static List<Integer> getProductOrder() {
+        return productOrder;
+    }
     public static ArrayList<Point>  getCoordonnesChemin(ArrayList<Point> pointProduits)  {
 
 
@@ -171,9 +173,11 @@ public class PlusCourtChemin {
 
 
         List<Integer> ordresolution = TspDynamicProgrammingIterative.getOrdre(adjencyMatrix,taille-2);
+
         Collections.reverse(ordresolution);
 
         List<Integer> realOrderSolution =   ordresolution.subList(0, ordresolution.size()-2);
+        productOrder =realOrderSolution.subList(1, realOrderSolution.size()-1);
 
         int size = realOrderSolution.size();
 

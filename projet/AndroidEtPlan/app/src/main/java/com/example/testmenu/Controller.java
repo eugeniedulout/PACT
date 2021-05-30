@@ -83,6 +83,7 @@ public class Controller {
     }
 
 
+
     /**
      * Create an account
      * @param firstname
@@ -112,11 +113,11 @@ public class Controller {
     }
 
 
-    /**
-     * Change the password
-     * @param userId
-     * @param newPassword
-     */
+        /**
+         * Change the password
+         * @param userId
+         * @param newPassword
+         */
     public static void updatePassword(int userId, String newPassword) {
         addParam("action", "update_password");
         addParam("user_id", String.valueOf(userId));

@@ -15,13 +15,13 @@ import androidx.fragment.app.Fragment;
 
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
 
 public class ModifyAdressEAccount extends Fragment {
 
     TextView nom;
-    TextView prénom;
-    TextView identifiant;
+    TextView prenom;
     EditText newEmail;
     String newMail;
 
@@ -40,13 +40,14 @@ public class ModifyAdressEAccount extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_modify_adress_e_account, container, false);
-        this.identifiant=v.findViewById(R.id.txtIdentifiant);
         this.nom=v.findViewById(R.id.txtNom);
-        this.prénom=v.findViewById(R.id.txtPrenom);
+        this.prenom=v.findViewById(R.id.txtPrenom);
         this.btnValid=v.findViewById(R.id.btnValid);
-        this.btnMdp=v.findViewById(R.id.btnMdpAccount);
+        this.btnMdp=v.findViewById(R.id.btnValid2);
+        this.newEmail = (EditText)v.findViewById(R.id.btnEditAdressE);
 
-        newMail=newEmail.getText().toString();
+        nom.setText(MainActivity.user.getLastname());
+        prenom.setText(MainActivity.user.getFirstname());
 
         btnMdp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,9 +60,11 @@ public class ModifyAdressEAccount extends Fragment {
         btnValid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Controller.setEmail(1, newMail);
+                newMail=newEmail.getText().toString();
+                MainActivity.user.setMail(newMail);
+                Controller.setEmail(MainActivity.user.getId(), newMail);
                 Toast.makeText(getContext(),"E-mail updated",Toast.LENGTH_LONG).show();
-
+                FragmentController.swapFragmentInMainContainer(new AccountActivity(), getContext());
             }
         });
 

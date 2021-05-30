@@ -1,9 +1,10 @@
-package com.example.testmenu.fragments;
+package com.example.testmenu.Friends;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -18,37 +19,52 @@ import com.example.testmenu.FragmentController;
 import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
 import com.example.testmenu.Recette;
+import com.example.testmenu.User;
 import com.example.testmenu.adapters.RecycleViewRecipeAdapter;
+import com.example.testmenu.fragments.ListFragment;
+import com.example.testmenu.fragments.WebViewFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class RecetteFragment extends Fragment implements  View.OnClickListener {
+public class RecetteFragmentFriend extends Fragment implements  View.OnClickListener {
     private CardView switchToListe;
     private ImageButton addNewRecette;
     private ArrayList<Recette> listOfRecette = new ArrayList<>();
     private TextView textWelcomeToAddRecette;
-
+    private int userId;
+    public  RecetteFragmentFriend(int userId)
+    {
+        super();
+        this.userId = userId;
+    }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_recette, container, false);
+        View v = inflater.inflate(R.layout.fragment_recette_friend, container, false);
 
         switchToListe = (CardView) (v.findViewById(R.id.switchToListe));
         switchToListe.setOnClickListener(this::onClick);
+        Button returnToFriend = (Button)v.findViewById(R.id.returnFriend);
 
-        addNewRecette = (ImageButton)v.findViewById(R.id.addNewRecette);
-        addNewRecette.setOnClickListener(this::onClick);
+        returnToFriend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentController.swapFragmentInMainContainer(new FriendsActivity(), getContext());
+            }
+        });
 
-        textWelcomeToAddRecette = (TextView)v.findViewById(R.id.textWelcomeToAddRecette);
-
+        TextView recetteDeFriend = (TextView)v.findViewById(R.id.recetteDeFriend);
+        User us = Controller.getUser(userId);
+        if(us != null) {
+            recetteDeFriend.setText("Recette de " + us.getFirstname() + " " + us.getLastname());
+        }
         //initRecette();
 
-        ArrayList<Recette> recettes = Controller.getUserRecettes(MainActivity.user.getId());
+        ArrayList<Recette> recettes = Controller.getUserRecettes(userId);
 
         LinearLayoutManager layoutManager =  new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        if(!recettes.isEmpty())
-            textWelcomeToAddRecette.setVisibility(View.INVISIBLE);
+
 
         RecyclerView recyclerView = (RecyclerView)v.findViewById(R.id.listOflistOfRecette);
         recyclerView.setLayoutManager(layoutManager);
@@ -75,11 +91,8 @@ public class RecetteFragment extends Fragment implements  View.OnClickListener {
     public void onClick(View v) {
         Fragment destinationFragment;
         switch(v.getId()) {
-            case R.id.addNewRecette:
-                destinationFragment = new WebViewFragment();
-                break;
             default:
-                destinationFragment = new ListFragment();
+                destinationFragment = new ListFragmentFriend(userId);
         }
         FragmentController.swapFragmentInMainContainer(destinationFragment, getContext());
     }

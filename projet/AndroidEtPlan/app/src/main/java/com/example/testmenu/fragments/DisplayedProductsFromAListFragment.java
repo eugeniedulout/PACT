@@ -18,6 +18,8 @@ import com.example.testmenu.Product;
 import com.example.testmenu.R;
 import com.example.testmenu.User;
 import com.example.testmenu.adapters.RecycleViewProductAdapter;
+import com.example.testmenu.dialogs.DialogDeleteList;
+import com.example.testmenu.dialogs.DialogMarket;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -31,9 +33,17 @@ public class DisplayedProductsFromAListFragment extends Fragment {
     private FloatingActionButton editListButton;
     private FloatingActionButton addProductFloatingActionButton;
     private FloatingActionButton shareListToFriendActionButton;
-
+    private  FloatingActionButton deleteTheListButton;
     private int marketId;
     private RecycleViewProductAdapter adapter;
+    private boolean canEditList = true;
+    public DisplayedProductsFromAListFragment() {
+            super();
+    }
+    public DisplayedProductsFromAListFragment(boolean canEditList) {
+        super();
+        this.canEditList = canEditList;
+    }
 
     private  int compteur;
     public DisplayedProductsFromAListFragment(ArrayList<Product> productsToDisplay, String nameOfTheListSelected, int marketId){
@@ -43,7 +53,15 @@ public class DisplayedProductsFromAListFragment extends Fragment {
         this.marketId = marketId;
         this.compteur = 0;
     }
+    public DisplayedProductsFromAListFragment(ArrayList<Product> productsToDisplay, String nameOfTheListSelected, int marketId,boolean canEditList ){
+        super();
+        this.productsToDisplay = productsToDisplay;
+        this.nameOfTheListSelected= nameOfTheListSelected;
+        this.marketId = marketId;
+        this.compteur = 0;
+        this.canEditList = canEditList;
 
+    }
     public DisplayedProductsFromAListFragment(ArrayList<Product> productsToDisplay, String nameOfTheListSelected, int marketId, int compteur){
         super();
         this.productsToDisplay = productsToDisplay;
@@ -68,6 +86,9 @@ public class DisplayedProductsFromAListFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         adapter = new RecycleViewProductAdapter(productsToDisplay,  getContext());
         recyclerView.setAdapter(adapter);
+
+
+
 
 
         adapter.setOnItemClickListener(new RecycleViewProductAdapter.OnItemClickListener() {
@@ -107,9 +128,23 @@ public class DisplayedProductsFromAListFragment extends Fragment {
         });*/
 
 
+        deleteTheListButton =(FloatingActionButton)v.findViewById(R.id.deleteTheListButton) ;
+        deleteTheListButton.setVisibility(View.INVISIBLE);
+
+        deleteTheListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DialogDeleteList().show(getParentFragmentManager(),"Dialog delete list !");
+
+            }
+        });
+
+
 
         addProductFloatingActionButton = (FloatingActionButton)v.findViewById(R.id.addProductFloatingActionButton);
         shareListToFriendActionButton = (FloatingActionButton)v.findViewById(R.id.shareListToFriendActionButton);
+
+        shareListToFriendActionButton.setVisibility(View.INVISIBLE);
 
         addProductFloatingActionButton.setVisibility(View.INVISIBLE);
 
@@ -121,7 +156,8 @@ public class DisplayedProductsFromAListFragment extends Fragment {
         });
 
         editListButton = (FloatingActionButton)v.findViewById(R.id.editListButton);
-
+        if(!canEditList)
+            editListButton.setVisibility(View.INVISIBLE);
         if(compteur % 2 != 0) {
 
             adapter.hideDeleteButton(false);
@@ -135,7 +171,7 @@ public class DisplayedProductsFromAListFragment extends Fragment {
             adapter.hideDeleteButton(true);
 
             addProductFloatingActionButton.setVisibility(View.INVISIBLE);
-            shareListToFriendActionButton.setVisibility(View.VISIBLE);
+           // shareListToFriendActionButton.setVisibility(View.VISIBLE);
 
             editListButton.setImageResource(R.drawable.ic_baseline_edit_24);
 
@@ -147,6 +183,8 @@ public class DisplayedProductsFromAListFragment extends Fragment {
                 if(compteur % 2 == 0) {
                     adapter.hideDeleteButton(false);
 
+                    deleteTheListButton.setVisibility(View.VISIBLE);
+
                     addProductFloatingActionButton.setVisibility(View.VISIBLE);
                     shareListToFriendActionButton.setVisibility(View.INVISIBLE);
 
@@ -155,9 +193,10 @@ public class DisplayedProductsFromAListFragment extends Fragment {
                 else
                 {
                     adapter.hideDeleteButton(true);
+                    deleteTheListButton.setVisibility(View.INVISIBLE);
 
                     addProductFloatingActionButton.setVisibility(View.INVISIBLE);
-                    shareListToFriendActionButton.setVisibility(View.VISIBLE);
+                    //shareListToFriendActionButton.setVisibility(View.VISIBLE);
 
                     editListButton.setImageResource(R.drawable.ic_baseline_edit_24);
 
