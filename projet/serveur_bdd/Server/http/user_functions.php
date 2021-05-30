@@ -345,7 +345,19 @@ if(isset($_POST['action'])) {
 		print(json_encode($positions));
 		break;
 
+	case "update_list":
+		$user_id = $_POST['user_id'];
+		$list_name = $_POST['list_name'];
+		$list_json = $_POST['new_list'];
 
+		$path = "/var/www/html/data/lists/$user_id/$list_name.json";
+		if(file_exists($path)) {
+			unlink($path);
+		}
+		file_put_contents($path, $list_json);
+		break;
 	}
+
+
 }
 ?>
