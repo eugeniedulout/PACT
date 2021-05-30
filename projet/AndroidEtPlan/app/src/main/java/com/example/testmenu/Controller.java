@@ -479,7 +479,7 @@ public class Controller {
      */
     public static ArrayMap<String, com.example.testmenu.algorithmie.point.Point> getBeaconsCoords(int marketId) {
         addParam("action", "get_beacons");
-        addParam("market", String.valueOf(marketId));
+        addParam("market_id", String.valueOf(marketId));
 
         ArrayMap<String, com.example.testmenu.algorithmie.point.Point> positions = new ArrayMap<>();
         try {

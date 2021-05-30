@@ -174,7 +174,11 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     private static void initBeaconsPositions() {
-        beacons_position = Controller.getBeaconsCoords(listeProduit.getMarketId());
+        beacons_position = Controller.getBeaconsCoords(2);
+        for(int i=0; i< beacons_position.size(); i++) {
+            Point p = beacons_position.valueAt(i);
+            Log.d("BEACONS", beacons_position.keyAt(i) + " x: " + p.getX() + " y: " + p.getY());
+        }
     }
 
     private void stopScanning() {
