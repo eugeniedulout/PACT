@@ -311,6 +311,16 @@ public class Controller {
     }
 
 
+    public static void updateList(int userId, String listName, ListProduct newList) {
+        addParam("action", "update_list");
+        addParam("user_id", String.valueOf(userId));
+        addParam("list_id", listName);
+        addParam("new_list", newList.toJSON().toString());
+
+        String result = post(SERVER_URL+USER_FONCTIONS);
+    }
+
+
 
     /**
      *
