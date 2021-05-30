@@ -48,6 +48,7 @@ public class MainActivity2 extends AppCompatActivity {
     public static ArrayList<Point> pointsProduits = new ArrayList<>();
     public static ListProduct listeProduit;
     public static Point current_position = new Point(3,1);
+    private static ArrayMap<String, Point> beacons_position = new ArrayMap<>();
     private static com.example.testmenu.bluetooth.Point p = new com.example.testmenu.bluetooth.Point(100,100);
 
     private TextView textView;
@@ -83,6 +84,7 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main_2);
         getSupportActionBar().hide();
 
+        initBeaconsPositions();
         t.init();
         initializeCallback();
 
@@ -168,6 +170,10 @@ public class MainActivity2 extends AppCompatActivity {
                 scanner.startScan(null, settings, mLeNewCallback);
             }
         }
+    }
+
+    private static void initBeaconsPositions() {
+
     }
 
     private void stopScanning() {
@@ -272,6 +278,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     private static Point getCoords(String uuid) {
         Point coords;
+        return beacons_position.get(uuid);/*
         switch (uuid) {
             case "1cad5144-5bda-11eb-ae93-0242ac130002":
                 //coords = new Point(-3.38,3.61);
@@ -291,7 +298,7 @@ public class MainActivity2 extends AppCompatActivity {
                 break;
         }
         Log.d("[getCoords]",""+coords.getX()+" "+coords.getY());
-        return coords;
+        return coords;*/
     }
 
 

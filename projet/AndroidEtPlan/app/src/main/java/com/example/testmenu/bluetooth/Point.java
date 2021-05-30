@@ -1,5 +1,8 @@
 package com.example.testmenu.bluetooth;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Point {
     private double x;
     private double y;
@@ -7,6 +10,11 @@ public class Point {
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
+    }
+
+    public Point(JSONObject coords) throws JSONException {
+        this.x = coords.getDouble("x");
+        this.y = coords.getDouble("y");
     }
 
     public double getX() {

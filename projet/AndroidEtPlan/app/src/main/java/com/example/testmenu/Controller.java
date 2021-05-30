@@ -1,6 +1,9 @@
 package com.example.testmenu;
 
+import android.util.ArrayMap;
 import android.util.Log;
+
+import com.example.testmenu.bluetooth.Point;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -472,6 +475,30 @@ public class Controller {
     private static void addParam(String key, String value) {
         keys.add(key);
         values.add(value);
+    }
+
+    /**
+     * Get the coords of all beacons in a market (here there just one)
+     * @return an arrayMap with beacons uuid and their positions
+     */
+    private static ArrayMap<String, Point> getBeaconsCoords(Market market) {
+        addParam("action", "get_beacons");
+        addParam("market", String.valueOf(market.getMarketId()));
+
+        ArrayMap<String, Point> positions = new ArrayMap<>();
+        try {
+            JSONArray answer = new JSONArray(post(SERVER_URL + USER_FONCTIONS));
+
+            for(int i=0; i<answer.length();i++) {
+                JSONObject value = answer.getJSONObject(i);
+                positions.put(value.getString("uuid"), new Point(value.getJSONObject("coords")));
+
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return positions;
     }
 
 
