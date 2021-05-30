@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.testmenu.ProductOnSpecialOffer;
 import com.example.testmenu.R;
 
@@ -65,12 +66,12 @@ public class PromotionMarketAdapter extends BaseAdapter {
         TextView expirationDate = (TextView) convertView.findViewById(R.id.expirationDateText);
         expirationDate.setText("Expire le " + expirationDateText);
 
-        int imageId = context.getResources().getIdentifier(productImage, "drawable", context.getPackageName());
-
         ImageView iconProduct= convertView.findViewById(R.id.iconnProduct);
-        iconProduct.setImageResource(imageId);
 
 
+        Glide.with(context)
+                .load(productImage)
+                .into(iconProduct);
         return convertView;
     }
 }

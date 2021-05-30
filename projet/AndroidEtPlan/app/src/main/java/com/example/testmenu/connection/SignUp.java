@@ -38,25 +38,33 @@ public class SignUp extends AppCompatActivity {
         EditText prenom = (EditText)findViewById(R.id.prenomUser) ;
         EditText password = (EditText)findViewById(R.id.password) ;
 
-        String firstName = prenom.getText().toString();
-        String  lastName = nom.getText().toString();
-        String mail  = email.getText().toString();
-        String passw = password.getText().toString();
+
+
+        User userTest = Controller.signUp("sasa", "baba", "testinscription2@gmail.com" , "123");
+        Log.e("USER" , ""+userTest);
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               User user = Controller.signUp(firstName, lastName, mail, passw);
-               Log.e("user",""+user);
-                if(user != null) {
+
+                String firstName = prenom.getText().toString();
+                String  lastName = nom.getText().toString();
+                String mail  = email.getText().toString();
+                String passw = password.getText().toString();
+
+
+                Log.e("User cara" , firstName + " " + lastName + " " + email + " "+ passw);
+               User newUser = Controller.signUp(firstName, lastName, mail, passw);
+               Log.e("user",""+newUser);
+                if(newUser != null) {
 
                     SharedPreferences sharedPreferences = getSharedPreferences("connectionState", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    Log.e("user", ""+user);
+                    Log.e("user", ""+newUser);
 
                     editor.putBoolean("isConnected", true);
                     Gson gson = new Gson();
-                    String userJson = gson.toJson(user);
+                    String userJson = gson.toJson(newUser);
                     editor.putString("userValue", userJson);
                     editor.apply();
 

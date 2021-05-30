@@ -18,6 +18,8 @@ import com.example.testmenu.Product;
 import com.example.testmenu.R;
 import com.example.testmenu.User;
 import com.example.testmenu.adapters.RecycleViewProductAdapter;
+import com.example.testmenu.dialogs.DialogDeleteList;
+import com.example.testmenu.dialogs.DialogMarket;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class DisplayedProductsFromAListFragment extends Fragment {
     private FloatingActionButton editListButton;
     private FloatingActionButton addProductFloatingActionButton;
     private FloatingActionButton shareListToFriendActionButton;
-
+    private  FloatingActionButton deleteTheListButton;
     private int marketId;
     private RecycleViewProductAdapter adapter;
 
@@ -107,6 +109,18 @@ public class DisplayedProductsFromAListFragment extends Fragment {
         });*/
 
 
+        deleteTheListButton =(FloatingActionButton)v.findViewById(R.id.deleteTheListButton) ;
+        deleteTheListButton.setVisibility(View.INVISIBLE);
+
+        deleteTheListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DialogDeleteList().show(getParentFragmentManager(),"Dialog delete list !");
+
+            }
+        });
+
+
 
         addProductFloatingActionButton = (FloatingActionButton)v.findViewById(R.id.addProductFloatingActionButton);
         shareListToFriendActionButton = (FloatingActionButton)v.findViewById(R.id.shareListToFriendActionButton);
@@ -147,6 +161,8 @@ public class DisplayedProductsFromAListFragment extends Fragment {
                 if(compteur % 2 == 0) {
                     adapter.hideDeleteButton(false);
 
+                    deleteTheListButton.setVisibility(View.VISIBLE);
+
                     addProductFloatingActionButton.setVisibility(View.VISIBLE);
                     shareListToFriendActionButton.setVisibility(View.INVISIBLE);
 
@@ -155,6 +171,7 @@ public class DisplayedProductsFromAListFragment extends Fragment {
                 else
                 {
                     adapter.hideDeleteButton(true);
+                    deleteTheListButton.setVisibility(View.INVISIBLE);
 
                     addProductFloatingActionButton.setVisibility(View.INVISIBLE);
                     shareListToFriendActionButton.setVisibility(View.VISIBLE);
