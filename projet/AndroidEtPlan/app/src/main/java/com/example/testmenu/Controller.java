@@ -472,18 +472,14 @@ public class Controller {
         return friends;
     }
 
-    private static void addParam(String key, String value) {
-        keys.add(key);
-        values.add(value);
-    }
 
     /**
      * Get the coords of all beacons in a market (here there just one)
      * @return an arrayMap with beacons uuid and their positions
      */
-    private static ArrayMap<String, Point> getBeaconsCoords(Market market) {
+    public static ArrayMap<String, Point> getBeaconsCoords(int marketId) {
         addParam("action", "get_beacons");
-        addParam("market", String.valueOf(market.getMarketId()));
+        addParam("market", String.valueOf(marketId));
 
         ArrayMap<String, Point> positions = new ArrayMap<>();
         try {
@@ -500,6 +496,12 @@ public class Controller {
 
         return positions;
     }
+
+    private static void addParam(String key, String value) {
+        keys.add(key);
+        values.add(value);
+    }
+
 
 
     /**

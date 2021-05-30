@@ -29,6 +29,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.testmenu.Controller;
 import com.example.testmenu.R;
 import com.example.testmenu.adapters.RecycleViewConsigneRecetteAdapter;
 import com.example.testmenu.algorithmie.point.Point;
@@ -173,7 +174,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     private static void initBeaconsPositions() {
-
+        beacons_position = Controller.getBeaconsCoords(listeProduit.getMarketId());
     }
 
     private void stopScanning() {

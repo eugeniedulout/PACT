@@ -99,6 +99,10 @@ public class ListProduct implements Serializable {
         this.listOfProducts = listOfProducts;
     }
 
+    public int getMarketId() {
+        return this.marketId;
+    }
+
     @NonNull
     @Override
     public String toString() {
