@@ -332,6 +332,19 @@ if(isset($_POST['action'])) {
 		$db->exec($req);
 		break;
 
+	case "get_beacons":
+		$market_id = $_POST['market_id'];
+
+		$req = "SELECT uuid, x, y FROM beaconsPositions WHERE market_id = $market_id";
+
+		$data = $db->query($req);
+		$positions = array();
+		while($row = $data->fetch()) {
+			array_push($positions, array('uuid' => $row['uuid'], 'coords' => array('x' => $row['x'], 'y' => $row['y'])));
+		}
+		print(json_encode($positions));
+		break;
+
 
 	}
 }
