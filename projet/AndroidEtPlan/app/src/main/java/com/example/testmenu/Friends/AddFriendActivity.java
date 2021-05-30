@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.ProfilActivity;
 import com.example.testmenu.R;
 
@@ -62,13 +63,15 @@ public class AddFriendActivity extends Fragment {
         buttonValid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Controller.sendDemand(1, Integer.getInteger(newFriend.getText().toString()));
+                Controller.sendDemand(MainActivity.user.getId(), Integer.getInteger(newFriend.getText().toString()));
             }
         });
 
-        listFriends=  Controller.getUserFriends(1);
+        listFriends=  Controller.getUserFriends(MainActivity.user.getId());
         for(Integer e: listFriends){
-            listNameOfFriend.add(Controller.getUser(e).getFirstname()+" "+Controller.getUser(e).getLastname());
+            if(!listNameOfFriend.contains((Controller.getUser(e).getFirstname()+" "+ Controller.getUser(e).getLastname()))) {
+                listNameOfFriend.add(Controller.getUser(e).getFirstname() + " " + Controller.getUser(e).getLastname());
+            }
         }
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext() , android.R.layout.simple_list_item_1, listNameOfFriend);

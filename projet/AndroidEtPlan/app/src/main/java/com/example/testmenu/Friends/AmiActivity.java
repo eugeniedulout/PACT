@@ -43,7 +43,7 @@ public class AmiActivity extends Fragment {
         this.listes = v.findViewById(R.id.listes);
         this.txtAmi = v.findViewById(R.id.txtAmi);
 
-       txtAmi.setText(Controller.getUser(id).getFirstname()+Controller.getUser(id).getLastname());
+       txtAmi.setText(Controller.getUser(id).getFirstname()+ Controller.getUser(id).getLastname());
         ArrayList<String> sesListes=new ArrayList<String>();
         ArrayList<ListProduct> lists= Controller.getUserLists(MainActivity.user.getId());
         for(ListProduct l: lists){
