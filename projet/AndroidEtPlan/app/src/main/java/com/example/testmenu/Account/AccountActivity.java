@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
 import com.example.testmenu.User;
 
@@ -41,19 +41,20 @@ public class AccountActivity extends Fragment {
         View v = inflater.inflate(R.layout.activity_account, container, false);
 
 
-        this.identifiant=v.findViewById(R.id.txtIdentifiant);
         this.nom=v.findViewById(R.id.txtNom);
         this.prenom=v.findViewById(R.id.txtPrenom);
         this.email=v.findViewById(R.id.txtEmail);
 
         this.btnAdressEAccount= v.findViewById(R.id.btnAdressEAccount);
-        this.btnMdpAccount= v.findViewById(R.id.btnMdpAccount);
+        this.btnMdpAccount= v.findViewById(R.id.btnValid2);
 
-        User user = Controller.getUser(1);
+        User user = MainActivity.user;
 
         Log.e("jejej", ""+user);
         nom.setText(user.getLastname());
         prenom.setText(user.getFirstname());
+        email.setText(user.getMail());
+
 
         btnAdressEAccount.setOnClickListener(new View.OnClickListener() {
             @Override

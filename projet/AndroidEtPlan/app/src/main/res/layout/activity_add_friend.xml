@@ -70,13 +70,14 @@
                         android:layout_height="209dp"
                         android:orientation="vertical">
 
-                        <EditText
-                            android:id="@+id/editTextAddFriend"
+                        <AutoCompleteTextView
+                            android:completionThreshold="1"
+                            android:id="@+id/searchFriend"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:inputType="textPersonName"
-                            android:hint="Entrer Identifiant" />
+                            android:hint="Entrez le nom de votre ami " />
 
                         <Button
                             android:id="@+id/btnValider"

@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/txtProfil"
-        android:layout_width="108dp"
-        android:layout_height="24dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
         android:text="Bonjour Nom,"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

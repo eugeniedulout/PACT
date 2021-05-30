@@ -111,7 +111,13 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
         nameOfTheList.setText(listeNameTexte);
 
         returnTodisplayList = (ImageView)v.findViewById(R.id.returnToDisplayList);
-        returnTodisplayList.setOnClickListener(this::onClick);
+        returnTodisplayList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentController.swapFragmentInMainContainer(new ListFragment(), getContext());
+
+            }
+        });
 
         addTheList = (CardView)v.findViewById(R.id.addTheListCardView);
         addTheList.setOnClickListener(this::onClick);
@@ -123,7 +129,7 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
 
         ArrayList<Product> products = Controller.getAllProducts(marketId);
 
-        ArrayList<Ingredient> ingredients = Controller.getUserRecettes(MainActivity.user.getId()).get(2).getListOfIngredients();
+        /*ArrayList<Ingredient> ingredients = Controller.getUserRecettes(MainActivity.user.getId()).get(2).getListOfIngredients();
 
 
         ArrayList<String> ingredientsName= new ArrayList<>();
@@ -144,7 +150,7 @@ public class BuildingListFragment extends Fragment implements View.OnClickListen
                 Log.e("Products for ingredient " + ingredients.get(i).getName(), "eee");
             }
 
-        }
+        }*/
 
         importRecipeBtn = (CardView)v.findViewById(R.id.cardViewImportRecipe);
         importRecipeBtn.setOnClickListener(new View.OnClickListener() {

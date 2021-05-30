@@ -115,5 +115,8 @@ public class ListProduct implements Serializable {
     public void displayProductsInTheList(Context context) {
         FragmentController.swapFragmentInMainContainer(new DisplayedProductsFromAListFragment(listOfProducts, listName, marketId), context);
     }
+    public void displayProductsInTheList(Context context, boolean canEditTheList) {
+        FragmentController.swapFragmentInMainContainer(new DisplayedProductsFromAListFragment(listOfProducts, listName, marketId, canEditTheList), context);
+    }
 }
 

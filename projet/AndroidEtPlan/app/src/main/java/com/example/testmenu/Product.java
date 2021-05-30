@@ -155,6 +155,9 @@ public class Product implements Serializable{
         FragmentController.swapFragment(new ProductInfoFragment(this), containerId, context);
     }
 
+    public boolean isOnPromotion() {
+        return  false;
+    }
     public void multiplyByQuantity(int quantite) {
         this.price = price * quantite;
         this.name = name + " x" + String.valueOf(quantite);

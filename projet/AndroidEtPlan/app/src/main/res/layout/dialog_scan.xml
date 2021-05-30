@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
-    android:layout_height="180dp"
+    android:layout_height="210dp"
     android:layout_centerInParent="false"
     android:layout_gravity="center"
     android:background="@color/colorBackroundWhite"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Supprimer"
+        android:text="Resultat du scan : "
         android:textColor="#121211"
         android:textSize="24sp" />
 
-    <Button
+    <TextView
         android:id="@+id/scantResultTextView"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:backgroundTint="@color/colorm"
-        android:text="Oui" />
+        android:gravity="center"
+        android:text="Oui"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/updateProductLocation"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
         android:backgroundTint="@color/colorm"
-        android:text="Non " />
+        android:text="Mettre à jour la position du produit" />
 
 </LinearLayout>
