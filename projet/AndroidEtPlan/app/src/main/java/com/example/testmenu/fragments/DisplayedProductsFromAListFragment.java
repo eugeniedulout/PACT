@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
+import com.example.testmenu.ListProduct;
 import com.example.testmenu.MainActivity;
 import com.example.testmenu.Product;
 import com.example.testmenu.R;
@@ -134,7 +135,7 @@ public class DisplayedProductsFromAListFragment extends Fragment {
         deleteTheListButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DialogDeleteList().show(getParentFragmentManager(),"Dialog delete list !");
+                new DialogDeleteList(new ListProduct(nameOfTheListSelected, productsToDisplay, new ArrayList<Integer>(), marketId)).show(getParentFragmentManager(),"Dialog delete list !");
 
             }
         });
@@ -197,6 +198,9 @@ public class DisplayedProductsFromAListFragment extends Fragment {
 
                     addProductFloatingActionButton.setVisibility(View.INVISIBLE);
                     //shareListToFriendActionButton.setVisibility(View.VISIBLE);
+                    Controller.removeListOfProducts(MainActivity.user.getId(), new ListProduct(nameOfTheListSelected, productsToDisplay, new ArrayList<Integer>(), marketId));
+
+                    Controller.updateList(MainActivity.user.getId(), nameOfTheListSelected, (new ListProduct(nameOfTheListSelected, productsToDisplay, new ArrayList<Integer>(), marketId)));
 
                     editListButton.setImageResource(R.drawable.ic_baseline_edit_24);
 

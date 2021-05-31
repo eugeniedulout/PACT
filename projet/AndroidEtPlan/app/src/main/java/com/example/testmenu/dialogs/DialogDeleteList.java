@@ -12,13 +12,20 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.testmenu.Controller;
 import com.example.testmenu.FragmentController;
+import com.example.testmenu.ListProduct;
+import com.example.testmenu.MainActivity;
 import com.example.testmenu.R;
 import com.example.testmenu.fragments.ListFragment;
 
 public class DialogDeleteList extends DialogFragment {
 
     private ListView marketNameListV;
+    private ListProduct listProductToRemove;
+    public  DialogDeleteList(ListProduct listProductToRemove) {
+        this.listProductToRemove = listProductToRemove;
+    }
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -36,7 +43,7 @@ public class DialogDeleteList extends DialogFragment {
                 ///////////// //////////////////////////////////
                 //////////// Fonction à inserer //////////////
                 ////////////////////////////////////////////////
-
+                Controller.removeListOfProducts(MainActivity.user.getId(), listProductToRemove);
                 FragmentController.swapFragmentInMainContainer(new ListFragment(), getContext());
                 getDialog().dismiss();
             }
